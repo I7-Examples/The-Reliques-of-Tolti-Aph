@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<meta name="generator" content="Adobe GoLive">
+		<title>The Reliques of Tolti-Aph - Source Text</title>
+	</head>
+
+	<body bgcolor="#ffffff">
+		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
+					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">The Reliques of Tolti-Aph</font></h3>
+					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Graham Nelson (2005) - the Inform 7 source text</font></h3>
+				</td></tr>
+		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_25.html">Previous</a><br><a href="source_27.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Chapter Z - The Central Ziggurat</b>
+<br>
+
+<br>
+The Ziggurat is north of Icefinger Ford. &quot;<font color=#000080>The only distantly visible building of these ruins to survive, through its sheer vastness: the awesome Ziggurat, a stepped pyramid temple, rises up out of sight. This is clearly the destination of the old lane, which descends slightly to the ford in the south.</font>&quot;
+<br>
+
+<br>
+The stepped pyramid temple is scenery in the Ziggurat.<font color=#404040><sup><a href="#note1">[1]</a></sup></font> Understand &quot;<font color=#000080>ziggurat</font>&quot; as the stepped temple.
+<br>
+
+<br>
+An indifferent wyvern called the green-scaled wyvern is in the Ziggurat. &quot;<font color=#000080>A green-scaled wyvern [if the green-scaled wyvern is wakeful]coils its long neck as it gazes unblinkingly at you[otherwise]snoozes happily[end if], sunning itself on the steps of the Ziggurat. One of the fabled great beasts! You never thought to see one, and know only that it is highly territorial, and vastly too dangerous to provoke.</font>&quot;<font color=#404040><sup><a href="#note2">[2]</a></sup></font> Understand &quot;<font color=#000080>dragon</font>&quot; as the green-scaled wyvern. The description of the green-scaled wyvern is &quot;<font color=#000080>You see nothing special about the green-scaled wyvern. It's just your everyday wyrm the size of a small house, when you come right down to it. Unremarkable.</font>&quot;
+<br>
+
+<br>
+Instead of going up from the Ziggurat in the presence of the wakeful green-scaled wyvern:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the green-scaled wyvern is indifferent, mount an attack from the green-scaled wyvern;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise say &quot;<font color=#000080>The wyvern has every intention of stopping you!</font>&quot;
+<br>
+
+<br>
+Instead of going nowhere from the Ziggurat, say &quot;<font color=#000080>The ruins are impassibly overgrown on all sides. It suddenly strikes you as, well, uncoincidental that the only accessible route appears to lead right here.</font>&quot;
+<br>
+
+<br>
+Instead of going north from the Ziggurat, say &quot;<font color=#000080>That would mean climbing UP the Ziggurat, if you dare.</font>&quot;
+<br>
+
+<br>
+The Exalted Throne is above the Ziggurat. &quot;<font color=#000080>How many of the thousands who lived in Tolti-Aph were ever allowed up, here, you wonder, to this twenty-yard square plateau? The arch-priests and the kings, possibly - on feast days only; and the occasional snow-necked virgin on her way to a spaced-out meeting with [if the Robing Room has been visited]a lustful monarch[otherwise]an obsidian dagger[end if]. It all seems so impossibly long ago now.</font>&quot;
+<br>
+
+<br>
+The town of Tolti-Aph is scenery in the Exalted Throne. Understand &quot;<font color=#000080>ruined</font>&quot; or &quot;<font color=#000080>city</font>&quot; as Tolti-Aph. The description of Tolti-Aph is &quot;<font color=#000080>Only the whitened bones of the ruined settlement of Tolti-Aph can be made out against the encroaching forest. Clearly this was never a city, even by the degenerate standards of what people hereabouts flattered themselves was a 'city'.</font>&quot;
+<br>
+
+<br>
+The stonework throne of the king is a door. &quot;<font color=#000080>[if in the Robing Room]The oddly winding little passage leads back outside.[otherwise]Dominating the summit is a well-founded stonework building in the shape of a low-backed throne, as if it awaits the seating of a god. An oddly winding little passage leads to darkness inside.</font>&quot; The stonework throne of the king is inside from the Exalted Throne and outside from the Robing Room. The stonework throne is open. The stonework throne is not openable. Understand &quot;<font color=#000080>passage</font>&quot; or &quot;<font color=#000080>building</font>&quot; or &quot;<font color=#000080>winding</font>&quot; or &quot;<font color=#000080>little</font>&quot; as the stonework throne. The description of the stonework throne is &quot;<font color=#000080>Think small building, not large furniture.</font>&quot; Instead of climbing the stonework throne, say &quot;<font color=#000080>It seems odd to be frustrated by the last six yards of the climb, but you are. The throne's sides are perfectly smooth.</font>&quot; Instead of going up in the Exalted Throne, try climbing the throne instead. Instead of jumping in the Exalted Throne, say &quot;<font color=#000080>There are many easier forms of suicide in the town, if you just look around a little harder.</font>&quot;
+<br>
+
+<br>
+Understand the command &quot;<font color=#000080>sit</font>&quot; as something new. Understand &quot;<font color=#000080>sit on [something]</font>&quot; or &quot;<font color=#000080>sit in [something]</font>&quot; as climbing.
+<br>
+
+<br>
+The Robing Room is a dark room. &quot;<font color=#000080>By the curious magelight, you see that this modest Robing Room - no doubt a place in which feathered head-dresses, jaguar-skins and the like were arrayed on the numinous chiefs before they showed themselves to the populace - is in fact painted on every side with highly 'artistic' images of succubi. And the floor is, well, a little more padded than might be thought strictly necessary.</font>&quot;
+<br>
+
+<br>
+The artistic images of succubi are scenery in the Robing Room. The description of the artistic images is &quot;<font color=#000080>Centuries have passed since the painting of these images, and it is now possible to regard them as achieved artworks. You do this for a while.</font>&quot; Understand &quot;<font color=#000080>succubus</font>&quot; as the succubi.
+<br>
+
+<br>
+Instead of sleeping in the Robing Room, say &quot;<font color=#000080>Your memories of that day back in the Collegium, when the boys are all taken to see the true form of a succubus, and the girls to see the true form of an incubus, remain just a shade too vivid.</font>&quot;
+<br>
+
+<br>
+Instead of going down in the Exalted Throne, say &quot;<font color=#000080>Every way from here is down, which is kind of the point the architects wanted to make. You get your bearings by figuring out that the wyvern was guarding the south face.</font>&quot; The Ziggurat is south of the Exalted Throne. Instead of going outside in the Exalted Throne, say &quot;<font color=#000080>This is about as outside as it gets.</font>&quot;
+<br>
+
+<br>
+Going northeast is going diagonally. Going northwest is going diagonally. Going southeast is going diagonally. Going southwest is going diagonally. 
+<br>
+
+<br>
+Instead of going diagonally in the Exalted Throne, say &quot;<font color=#000080>It would be perilous to clamber down the four angled corners. Stick to north, east, south or west.</font>&quot;
+<br>
+
+<br>
+Instead of praying in the Robing Room, say &quot;<font color=#000080>There's only one religion in here, and it isn't the sort you pray to on your own.</font>&quot; Instead of praying in the Exalted Throne, say &quot;<font color=#000080>Once this place was sacred, certainly. Now it is merely high-up.</font>&quot;
+<br>
+
+<br>
+After going south from the Exalted Throne: say &quot;<font color=#000080>You climb slowly down the steps to the end of the old north-south lane.</font>&quot;; continue the action.
+<br>
+
+<br>
+After going east from the Exalted Throne: say &quot;<font color=#000080>You climb slowly down the shadowy steps and into a delightful twilit garden.</font>&quot;; continue the action.
+<br>
+
+<br>
+After going west from the Exalted Throne: say &quot;<font color=#000080>You climb slowly down the grandly formal steps, the afternoon sun in your eyes, and at last reach ground level in a narrow channel.</font>&quot;; continue the action.
+<br>
+
+<br>
+</font>
+					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><p><i>Notes</i><p>
+<A name="note1"><font color=#404040>[1].  We seem to be in central America now, whereas the early rooms were more medieval-Europe in flavour. Oh well.</font><p>
+<A name="note2"><font color=#404040>[2].  Play-testers simply wouldn't take "no" for an answer, and kept on, and on, trying to defeat the wyvern. It is meant to be essentially impossible to kill, so that the only way to pass is with the "dragon sleep" spell, because this ensures that the player has solved the Southern Quarter area before proceeding - and that's necessary since, otherwise, the player will not be powerful enough to cope with what follows. In every draft of the game, the wyvern was made stronger and harder to defeat.</font><p>
+</font></p>
+					<p></p>
+				</td></tr></table>
+	</body>
+
+</html>

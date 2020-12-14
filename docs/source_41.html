@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<meta name="generator" content="Adobe GoLive">
+		<title>The Reliques of Tolti-Aph - Source Text</title>
+	</head>
+
+	<body bgcolor="#ffffff">
+		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
+					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">The Reliques of Tolti-Aph</font></h3>
+					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Graham Nelson (2005) - the Inform 7 source text</font></h3>
+				</td></tr>
+		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_40.html">Previous</a><br><a href="source_42.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Section E(n) - Setting up the labyrinth</b>
+<br>
+
+<br>
+To restore the labyrinth to its virgin state:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;make all labyrinth exits lead to Solid Rock;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;position the Hedge Archway at &lt;1,1,12&gt;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;position LR0 at &lt;1,1,11&gt;; change the printed name of LR0 to &quot;<font color=#000080>North-East-South Junction</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;position LR1 at &lt;1,1,13&gt;; change the printed name of LR1 to &quot;<font color=#000080>North-East-South Junction</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;position the Island in the Deep Pool at &lt;3,6,12&gt;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;position Western Shore at &lt;3,5,12&gt;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;position Eastern Shore at &lt;3,7,12&gt;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;position Northern Shore at &lt;3,6,13&gt;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;position Southern Shore at &lt;3,6,11&gt;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;repeat with the locale running through labyrinth rooms
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let the locale shape be the shape of the locale;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the U part of the locale shape is 1, change the minimum level of the locale to 2;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;now the locale is grovelike;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the open space part of the locale shape is 0, now the locale is ungrovelike;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the N part of the locale shape is 1 and the E part of the locale shape is 1 and the S part of the locale shape is 1 and the W part of the locale shape is 1, now the locale is ungrovelike;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the N part of the locale shape is 0 and the E part of the locale shape is 0 and the S part of the locale shape is 0 and the W part of the locale shape is 0, now the locale is ungrovelike;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end repeat.
+<br>
+
+<br>
+When play begins:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;calculate how many labyrinth rooms should have each shape;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;give shape to the shapeless labyrinth rooms;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;restore the labyrinth to its virgin state.
+<br>
+
+<br>
+To tidy the labyrinth for a fresh quest:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;now the branch is almost too high;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;now Terra Incognita is open;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;repeat with maze area running through labyrinth rooms
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the maze area is not the Hedge Archway
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;change the grid position of the maze area to &lt;0,0,0&gt;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;now the maze area is unvisited;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;repeat with trinket running through things in the maze area
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the trinket is not a backdrop and the trinket is not the player, move the trinket to Terra Incognita;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the trinket is a person, restore the health of the trinket;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end repeat;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end repeat;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;remove Eurydice from play;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;restore the labyrinth to its virgin state;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the location is not the Hedge Archway, move the player to the Hedge Archway;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;decrease the permanent strength of the player by 1;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;restore the health of the player.
+<br>
+
+<br>
+</font>
+					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"></font></p>
+					<p></p>
+				</td></tr></table>
+	</body>
+
+</html>

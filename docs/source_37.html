@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<meta name="generator" content="Adobe GoLive">
+		<title>The Reliques of Tolti-Aph - Source Text</title>
+	</head>
+
+	<body bgcolor="#ffffff">
+		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
+					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">The Reliques of Tolti-Aph</font></h3>
+					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Graham Nelson (2005) - the Inform 7 source text</font></h3>
+				</td></tr>
+		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_36.html">Previous</a><br><a href="source_38.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Section E(j) - The force labyrinth spell</b>
+<br>
+
+<br>
+<font color=#404040>[All players are given this spell as a sort of Get Out of Jail Free card, but it tends not to be as good as they imagine. It forces a map connection to work between a given pair of adjacent caves, and can be used if one is stranded by one of the Earthquake hazards.</font>]
+<br>
+
+<br>
+Instead of casting force labyrinth at when Terra Incognita is closed, say &quot;<font color=#000080>The never-children laugh once again.</font>&quot;
+<br>
+
+<br>
+Before casting force labyrinth at:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the location is not a labyrinth room, say &quot;<font color=#000080>That spell has efficacy only in the Maze of Royal Beasts.</font>&quot; instead.<font color=#404040><sup><a href="#note1">[1]</a></sup></font>
+<br>
+
+<br>
+To force a path (way - direction) from (place - room):
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let the current position be the grid position of the location;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let the new position be the vector sum of the current position and the vector of the way;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the new position is &lt;0,0,0&gt;, stop;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let the new room be the room at the new position;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the new room is Solid Rock
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if a labyrinth room is acceptable
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let the new room be a random acceptable labyrinth room;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let the current position be the grid position of the location;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position the new room at the new position;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stop;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;now the new room is Earthquake-undamaged;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;change the way exit of the location to the new room;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let the reverse way be the opposite of the way;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;change the reverse way exit of the new room to the location.
+<br>
+
+<br>
+Effect of casting force labyrinth at:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record outcome &quot;<font color=#000080>the whole area before you fills with mist, momentarily leaving your mind a blur</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the room north from the location is Solid Rock, force a path north from the location;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the room east from the location is Solid Rock, force a path east from the location;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the room south from the location is Solid Rock, force a path south from the location;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the room west from the location is Solid Rock, force a path west from the location;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;continue the action.
+<br>
+
+<br>
+</font>
+					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><p><i>Note</i><p>
+<A name="note1"><font color=#404040>[1].  This is a before rule, unconventionally, to stop players from wasting precious STR finding out what the spell is supposed to do.</font><p>
+</font></p>
+					<p></p>
+				</td></tr></table>
+	</body>
+
+</html>

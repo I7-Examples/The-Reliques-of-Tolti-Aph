@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<meta name="generator" content="Adobe GoLive">
+		<title>The Reliques of Tolti-Aph - Source Text</title>
+	</head>
+
+	<body bgcolor="#ffffff">
+		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
+					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">The Reliques of Tolti-Aph</font></h3>
+					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Graham Nelson (2005) - the Inform 7 source text</font></h3>
+				</td></tr>
+		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_46.html">Previous</a><br><a href="source_48.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Chapter W - Western Quarter</b>
+<br>
+
+<br>
+<b>Section W(a) - Cure baldness, mindsift and corrode</b>
+<br>
+
+<br>
+<font color=#404040>[The four quarters are in effect independent scenarios, but there's a certain amount of cross-talk: the new spells found in each quarter have to have interesting effects on the items and things in the other quarters. Here, at any rate, we create two new W&amp;W monsters, and three new W&amp;W spells.</font>]
+<br>
+
+<br>
+<b>Table of Monstrous Beasts (continued)</b>
+<br>
+<table><tr><td halign="left" valign="top"><u>name</u>&nbsp;&nbsp;</td><td halign="left" valign="top"><u> strength</u>&nbsp;&nbsp;</td><td halign="left" valign="top"><u> hand-to-hand combat method</u>&nbsp;&nbsp;</td><td halign="left" valign="top"><u> unarmed combat hit dice</u>&nbsp;&nbsp;</td><td halign="left" valign="top"><u> defensive charm</u></td></tr>
+<tr><td halign="left" valign="top">reptile&nbsp;&nbsp;</td><td halign="left" valign="top"> 5&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>striking at you</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> 1d6</td></tr>
+<tr><td halign="left" valign="top">priest&nbsp;&nbsp;</td><td halign="left" valign="top"> 12&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>jabbing you with martial artistry</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> 1d6</td></tr>
+</table>
+<br>
+
+<br>
+<b>Table of Enchantments (continued)</b>
+<br>
+<table><tr><td halign="left" valign="top"><u>spell</u>&nbsp;&nbsp;</td><td halign="left" valign="top"><u> nature</u>&nbsp;&nbsp;</td><td halign="left" valign="top"><u> cost</u>&nbsp;&nbsp;</td><td halign="left" valign="top"><u> requirement</u>&nbsp;&nbsp;</td><td halign="left" valign="top"><u> emission</u>&nbsp;&nbsp;</td><td halign="left" valign="top"><u> targeting</u>&nbsp;&nbsp;</td><td halign="left" valign="top"><u> duration</u>&nbsp;&nbsp;</td><td halign="left" valign="top"><u> duration timer</u>&nbsp;&nbsp;</td><td halign="left" valign="top"><u> usage count</u></td></tr>
+<tr><td halign="left" valign="top">mindsift&nbsp;&nbsp;</td><td halign="left" valign="top"> arcana&nbsp;&nbsp;</td><td halign="left" valign="top"> 6&nbsp;&nbsp;</td><td halign="left" valign="top"> metal&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>a tracery of silver lines</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> targeted&nbsp;&nbsp;</td><td halign="left" valign="top"> --&nbsp;&nbsp;</td><td halign="left" valign="top"> </td></tr>
+<tr><td halign="left" valign="top">cure baldness&nbsp;&nbsp;</td><td halign="left" valign="top"> healing&nbsp;&nbsp;</td><td halign="left" valign="top"> 4&nbsp;&nbsp;</td><td halign="left" valign="top"> flesh&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>citrus-scented steam</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> targeted</td></tr>
+<tr><td halign="left" valign="top">corrode&nbsp;&nbsp;</td><td halign="left" valign="top"> offensive&nbsp;&nbsp;</td><td halign="left" valign="top"> 4&nbsp;&nbsp;</td><td halign="left" valign="top"> wood&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>dense fog</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> targeted</td></tr>
+</table>
+<br>
+
+<br>
+Effect of casting cure baldness at something:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record outcome &quot;<font color=#000080>but goes out again without achieving much more than a passing aroma of lemons</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;rule succeeds.
+<br>
+Effect of casting cure baldness at a person:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record outcome &quot;<font color=#000080>but passes again without noticeable effect - these spells never work</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;rule succeeds.
+<br>
+Effect of casting cure baldness at a werespider:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record outcome &quot;<font color=#000080>- a patently foolish proceeding considering that these things are hairy enough already</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;rule succeeds.
+<br>
+
+<br>
+Effect of casting mindsift at something:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record outcome &quot;<font color=#000080>leaving you with a brief, soothing amnesia before your life presses back into your mind</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;rule succeeds. 
+<br>
+Effect of casting mindsift at skeleton:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record outcome &quot;<font color=#000080>and, to your surprise, find there a faint residue of that last fading desire to live - but without breath, memory does not last, and nothing more reaches you</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;rule succeeds.
+<br>
+Effect of casting mindsift at goblin lord:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record outcome &quot;<font color=#000080>but there is nothing specific left, only a burning sensation of singular unpleasantness</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;rule succeeds.
+<br>
+Effect of casting mindsift at a wyvern:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record outcome &quot;<font color=#000080>and are treated to a rapid succession of simple but powerful sensations - flying, lazing in a hot sun, a scorching heat in your throat. No magic, though</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;rule succeeds.
+<br>
+Effect of casting mindsift at the succubi:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record outcome &quot;<font color=#000080>but the memories are your own - if with a bit more sensation than you can usually summon up by just thinking about it. You feel suddenly warm</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;rule succeeds.
+<br>
+Effect of casting mindsift at the copper-scaled snake: now the player knows corrode; record outcome &quot;<font color=#000080>extracting its recollections, simplified by its reptile brain: anger, and a much-decayed memory of the ruination spell it cast here in revenge - which, however decayed, seems to be yours now</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;rule succeeds.
+<br>
+Effect of casting mindsift at a person:   
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;repeat through Table of Enchantments
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the second noun knows the spell entry and the player does not know the spell entry
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let the extracted spell be the spell entry;  
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;now the player knows the extracted spell; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;record outcome &quot;<font color=#000080>and from the whirling mass of thoughts you clutch hold of something powerful and unfamiliar</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rule succeeds;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end repeat;  
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record outcome &quot;<font color=#000080>but there is nothing magical you can extract from that sudden rush of thoughts</font>&quot;; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;rule succeeds. 
+<br>
+
+<br>
+Effect of casting corrode at something metal:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record outcome &quot;<font color=#000080>which now looks a little redder</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;rule succeeds.
+<br>
+Effect of casting corrode at a portable metal thing:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;remove the second noun from play;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record outcome &quot;<font color=#000080>which rusts through and vanishes</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;rule succeeds.
+<br>
+Effect of casting corrode at a weapon when the weapon is not metal:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record outcome &quot;<font color=#000080>but doesn't do much damage because the weapon is not mostly made of metal</font>&quot;; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;rule succeeds.
+<br>
+Effect of casting corrode at a person:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record outcome &quot;<font color=#000080>causing [the second noun] to break out in freckles</font>&quot;; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;rule succeeds.
+<br>
+
+<br>
+</font>
+					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"></font></p>
+					<p></p>
+				</td></tr></table>
+	</body>
+
+</html>

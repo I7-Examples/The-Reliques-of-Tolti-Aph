@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<meta name="generator" content="Adobe GoLive">
+		<title>The Reliques of Tolti-Aph - Source Text</title>
+	</head>
+
+	<body bgcolor="#ffffff">
+		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
+					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">The Reliques of Tolti-Aph</font></h3>
+					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Graham Nelson (2005) - the Inform 7 source text</font></h3>
+				</td></tr>
+		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_19.html">Previous</a><br><a href="source_21.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Chapter S - Southern Quarter</b>
+<br>
+
+<br>
+<b>Section S(a) - Turret, Longwall, Mound</b>
+<br>
+
+<br>
+The stubborn wiry trees are a backdrop. The stubborn wiry trees are everywhere. Instead of doing something to the stubborn wiry trees, say &quot;<font color=#000080>The trees are everywhere, and while they are now the fabric of the city they are also in a sense foreign to it. They need not concern you.</font>&quot; Understand &quot;<font color=#000080>forest</font>&quot; as the stubborn wiry trees.
+<br>
+
+<br>
+Longwall Street is a room. &quot;<font color=#000080>Almost overgrown in the deep forest, collapsed and at once standing, the cyclopean east-west Longwall of the fallen city sinks here to a mostly flat, lichened stone clearing: it must once have been a customs post. To the west, an old wall turret like a broken chess piece still seems enterable by a dark doorway, whereas the eastern side of the wall's gap is only a shapeless ramp of masonry. Northwards, to what was once the interior, stubborn, wiry trees grapple with ancient pavings.</font>&quot;
+<br>
+
+<br>
+The player is in the Longwall Street. The player knows detect trap, memorise, fashion staff, know nature and exorcise undead. The player is wearing a leather jerkin. The player is carrying a dagger.
+<br>
+
+<br>
+The old wall turret is scenery in Longwall Street. Effect of casting mend at the old wall turret: record outcome &quot;<font color=#000080>which lose their focus as they attempt to mend so huge a ruination</font>&quot;; rule succeeds. Instead of pushing the turret, say &quot;<font color=#000080>Unsteady, perhaps. Likely to fall at the touch of your little finger, no.</font>&quot;
+<br>
+
+<br>
+Before going inside in Longwall Street, try going west instead. Before entering the old wall turret, try going west instead.
+<br>
+
+<br>
+Writing it on is an action applying to one topic and one thing. Understand &quot;<font color=#000080>write [text] on [something]</font>&quot; as writing it on. Understand &quot;<font color=#000080>write on [something]</font>&quot; as a mistake (&quot;<font color=#000080>To write, you must say what to write: for instance, WRITE HELLO WORLD ON WALL.</font>&quot;). Check writing it on: if the barbed feather is not carried, say &quot;<font color=#000080>You have nothing to write with.</font>&quot; instead. A thing can be inscribable. A thing is usually not inscribable. Check writing it on: if the second noun is the player, say &quot;<font color=#000080>Tattoos are frowned upon in the magic-user community.</font>&quot; instead; if the second noun is not inscribable, say &quot;<font color=#000080>To go writing all over [the second noun] would achieve nothing.</font>&quot; instead.
+<br>
+
+<br>
+The player is carrying a blank parchment. The blank parchment is inscribable. The deeply scored scroll is a scroll. Understand &quot;<font color=#000080>parchment</font>&quot; as the deeply scored scroll. The inscribed spell of the deeply scored scroll is aerial shield. Carry out writing it on: if the second noun is the blank parchment begin; remove the blank parchment from play; move the deeply scored scroll to the player; say &quot;<font color=#000080>The metal feather, with a will of its own, ignores the motion of your wrist and writes its own desires onto the parchment, which is transformed into a deeply scored scroll.</font>&quot;; award 7 points; end if. The description of the blank parchment is &quot;<font color=#000080>Just plain parchment paper, of no particular value or rarity. One of the tools of the magic-user's trade, though admittedly your mother also likes to use it for lining cake tins.</font>&quot; The blank parchment is paper.
+<br>
+
+<br>
+The dark doorway is an open door. &quot;<font color=#000080>The doorway looks ordinary enough, but it's so difficult to be sure with the unaided eye.</font>&quot; The dark doorway is scenery. The dark doorway is not openable. The dark doorway is west of Longwall Street and east of Turret Roundhouse. The dark doorway is trapped.<font color=#404040><sup><a href="#note1">[1]</a></sup></font>
+<br>
+
+<br>
+After going through the trapped dark doorway:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;now the dark doorway is untrapped;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>Your passage through the doorway triggers off an old trap, of rusty blades swung across by a counterweight! A crude, one-time device, but this doesn't seem the time to sneer at its naive simplicity. You just [italic type]know[roman type] there was something you could have done to avoid this... You soak up </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let the damage be the roll of 4d4;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080> points of damage</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the player is affected by aerial shield
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;decrease the damage by 3;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>, reduced only slightly (-3) by your aerial shield since the blades come mostly sideways</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;make the player take the damage points of damage;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the player is killed, end the game saying &quot;<font color=#000080>You have been killed by a trap</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise continue the action.
+<br>
+
+<br>
+Effect of casting mend at the untrapped dark doorway:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;now the dark doorway is trapped;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record outcome &quot;<font color=#000080>which gives a creaky metal groan that you really don't like the sound of</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;rule succeeds.
+<br>
+
+<br>
+After going through the trapped dark doorway with the ornamental stone ball:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;now the dark doorway is untrapped;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>The rolling of the stone ball through the doorway triggers off an old trap, of rusty blades swung across by a counterweight! A crude, one-time device, which makes a surprisingly nasty noise, but does no actual damage.</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;continue the action.
+<br>
+
+<br>
+A trestle table is a supporter in the Turret Roundhouse. &quot;<font color=#000080>An old trestle table is [if the crumbs are on the trestle table]scattered with a few crumbs, suggesting that somebody has lived here quite recently[otherwise]wiped clean[end if].</font>&quot; The trestle table is wood and fixed in place. The food crumbs are scenery on the trestle table. The food crumbs are sustenance. Instead of taking the crumbs, say &quot;<font color=#000080>They're too small and fiddly.</font>&quot; The wafer of elven bread is a strength potion. The elven bread has additional strength 3d6. The elven bread is sustenance. Effect of casting mend at the crumbs: record outcome &quot;<font color=#000080>and as you watch the fingers reshape the crumbs back into the wafer of elven bread from which they were once crumbled</font>&quot;; remove the food crumbs from play; move the wafer of elven bread to the trestle table; award 7 points; rule succeeds.
+<br>
+
+<br>
+Outside from the Turret Roundhouse is Longwall Street.
+<br>
+
+<br>
+Going south in the Longwall Street is departing Tolti-Aph. Going southeast in the Longwall Street is departing Tolti-Aph. Going southwest in the Longwall Street is departing Tolti-Aph.
+<br>
+
+<br>
+Instead of departing Tolti-Aph:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the level of the player is less than 5, say &quot;<font color=#000080>Oh, but it would be dishonourable to leave so soon. Also a little ridiculous, given the number of friends you told about your intentions: to come back a level 5 magic-user, or never return. And then there's the sea-sickness all over again.</font>&quot; instead;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>Passing the Longwall and out into the wilderness forest, on the long trek back to the triple-kingdoms, you feel distinctly pleased with yourself. A level 5 magic-user, with genuine experience points to your name! Okay, so if anyone ever bowed to a level 5 mage, the light was bad: and you seem just as prone to trip over creepers and stumble into trees as ever you were: but you are now a force to be reckoned with, and if nothing else, you'll always have the memory of Tolti-Aph.</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end the game saying &quot;<font color=#000080>You have won</font>&quot;.
+<br>
+
+<br>
+The Stone Mound is east of Longwall Street. &quot;<font color=#000080>The remains of the Longwall rise steeply up eastward of the curious ruined platform, and also lose their shape, becoming little more than a great stone mound. Here at the top, it looks as if the stonework has been shattered by lightning and not just slow old time, but that seems an unreal idea when the canopies of the forest stretch out in every direction against a clear autumnal-blue sky.</font>&quot;
+<br>
+
+<br>
+Instead of going nowhere from the Stone Mound, say &quot;<font color=#000080>The only safe way down the Mound is back to westward.</font>&quot; Down from the Stone Mound is the Longwall Street.
+<br>
+
+<br>
+Before going to the Stone Mound: if the strength of the player is less than 3, say &quot;<font color=#000080>You are too weak now to contemplate making such a climb.</font>&quot; instead.
+<br>
+
+<br>
+After going to the Stone Mound: say &quot;<font color=#000080>It is a long, steep climb up the ragged eastern side of the Longwall breach, and costs you 1 strength point.</font>&quot;; decrease the strength of the player by 1; continue the action.
+<br>
+
+<br>
+A barbed feather is in the Stone Mound. &quot;<font color=#000080>A barbed metallic feather, from a bird which must have been scaly and very large - also, disconcertingly, metallic - lies in the loose rubble.</font>&quot; The feather is metal. The description of the feather is &quot;<font color=#000080>The feather comes to a metal tip which is - there's no other other word for it - a sort of nib.</font>&quot; After taking the feather for the first time, say &quot;<font color=#000080>Taken. As the feather pulls clear, it occurs to you that the rubble it was sitting in is not any random cairn, but is all of the same kind of stone, and has smooth as well as roughened faces. It's thoroughly broken up now, whatever it was.</font>&quot;
+<br>
+
+<br>
+Understand &quot;<font color=#000080>fly</font>&quot; or &quot;<font color=#000080>fly [text]</font>&quot; as a mistake (&quot;<font color=#000080>Hmm. 'Magicians Who Thought They Could Fly' is a local delicacy back home - little tomato-pancakes dropped into a skillet of olive oil.</font>&quot;).
+<br>
+
+<br>
+The ornamental stone ball is pushable between rooms. Instead of taking the ornamental stone ball, say &quot;<font color=#000080>It's almost as big as you, and made of stone.</font>&quot;
+<br>
+
+<br>
+The loose rubble is scenery in the Stone Mound. Effect of casting mend at the loose rubble: remove the loose rubble from play; move the ornamental stone ball to the Stone Mound; record outcome &quot;<font color=#000080>shaping it back into the ornamental stone ball which must once have stood atop the Longwall</font>&quot;; rule succeeds. Instead of taking the loose rubble, say &quot;<font color=#000080>Whatever you came to this ruin for, it wasn't a handful of rubble.</font>&quot; Instead of pushing the stone ball, say &quot;<font color=#000080>Try saying which way to push it.</font>&quot; After going from the Stone Mound with the ornamental stone ball: say &quot;<font color=#000080>Wheeeeee!</font>&quot;; continue the action. Before pushing the stone ball to down, try pushing the stone ball to west instead. Understand the command &quot;<font color=#000080>roll</font>&quot; as &quot;<font color=#000080>push</font>&quot;. Understand &quot;<font color=#000080>stonework</font>&quot; as the loose rubble.
+<br>
+
+<br>
+Turret Roundhouse is a room. &quot;<font color=#000080>This broad round chamber forms the central well of the turret. Little light enters by the dark doorway from the east, but the crude steps upward presumably lead to a lookout.</font>&quot; A scroll called the battered scroll is in the Turret Roundhouse. &quot;<font color=#000080>Propped against one wall, almost as if it was meant for you to find it, is a battered scroll.</font>&quot; The inscribed spell of the battered scroll is make sanctuary.
+<br>
+
+<br>
+Turret Alcove is above the Turret Roundhouse. A container called the medicine chest is in the Turret Alcove. &quot;<font color=#000080>The rough steps - probably not the original construction - end at a blank-walled alcove, bare except for a medicine chest.</font>&quot; In the medicine chest is a strength potion called the green vial. The green vial has additional strength 1d6+2. In the medicine chest is a strength potion called the ochre vial. The ochre vial has additional strength 1d6+2. In the medicine chest is a strength potion called the crimson vial. The crimson vial has additional strength 1d6+2. The ochre vial is trapped.<font color=#404040><sup><a href="#note2">[2]</a></sup></font> The medicine chest is closed and openable. The medicine chest is wood.
+<br>
+
+<br>
+The arrowslit is fixed in place in the Turret Alcove. &quot;<font color=#000080>A little light shows through a broad arrowslit in the northwestern wall of the turret, which is where the steps have wound around to.</font>&quot; The arrow is a wood thing. Instead of examining the arrowslit for the first time: say &quot;<font color=#000080>As you look curiously out of the arrowslit, there is a wheep! sound. Instinctively, you dodge. </font>&quot;; if a saving roll of 11 by the player to &quot;<font color=#000080>sidestep the arrow</font>&quot; is made begin; say &quot;<font color=#000080>The arrow whings past you and rattles against the far wall of the Turret.</font>&quot;; now the arrow is in the Turret Roundhouse; otherwise; now the player carries the arrow; say &quot;<font color=#000080>The arrow catches you in the shoulder</font>&quot;; make the player take 3 points of damage;<font color=#404040><sup><a href="#note3">[3]</a></sup></font> if the player is alive, say &quot;<font color=#000080>You pull the arrow out ruefully.</font>&quot;; end if. Instead of examining the arrowslit: say &quot;<font color=#000080>You feel a certain reluctance to stick your head out of that a second time.</font>&quot;
+<br>
+
+<br>
+</font>
+					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><p><i>Notes</i><p>
+<A name="note1"><font color=#404040>[1].  Oh, the grief this trapped doorway caused. It's the first test case of the way this game is unlike conventional IF: because one can blunder through and, probably, just about survive to see the inside of the Turret, though one is then too weak to stand much chance of profiting from the experience. Players tended to assume that if they had got inside at all, then they must have "solved" the problem. Several hints were added to suggest otherwise. Another popular confusion was that players felt that "detect trap" ought also to defuse traps, so text was added to the spoof magazine which would in effect explain otherwise.</font><p>
+<A name="note2"><font color=#404040>[2].  This was intended to keep players on their toes: detect trap! detect trap! always detect trap!</font><p>
+<A name="note3"><font color=#404040>[3].  It's almost certainly a good idea to be stoical and accept the 3 points of damage for the sake of getting something wooden which can be used as a spell focus later - so this is not a puzzle to be solved, but a treasure in disguise, really.</font><p>
+</font></p>
+					<p></p>
+				</td></tr></table>
+	</body>
+
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<meta name="generator" content="Adobe GoLive">
+		<title>The Reliques of Tolti-Aph - Source Text</title>
+	</head>
+
+	<body bgcolor="#ffffff">
+		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
+					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">The Reliques of Tolti-Aph</font></h3>
+					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Graham Nelson (2005) - the Inform 7 source text</font></h3>
+				</td></tr>
+		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_9.html">Previous</a><br><a href="source_11.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Section 2(d) - The casting action</b>
+<br>
+
+<br>
+Affectedness relates various people to various spells. The verb to be affected by implies the affectedness relation.<font color=#404040><sup><a href="#note1">[1]</a></sup></font>
+<br>
+
+<br>
+Casting it at is an action applying to one spell and one visible thing. Rule for supplying a missing second noun while casting: change the second noun to the location.<font color=#404040><sup><a href="#note2">[2]</a></sup></font>
+<br>
+
+<br>
+Understand &quot;<font color=#000080>cast [spell]</font>&quot; or &quot;<font color=#000080>[spell]</font>&quot; as casting it at.
+<br>
+Understand &quot;<font color=#000080>cast [spell] on/at [something]</font>&quot; or &quot;<font color=#000080>[spell] [something]</font>&quot; as casting it at.
+<br>
+
+<br>
+The current spell focus is an object which varies.<font color=#404040><sup><a href="#note3">[3]</a></sup></font> Before casting, change the current spell focus to the location.
+<br>
+
+<br>
+Check casting (this is the can't cast what you don't know rule):<font color=#404040><sup><a href="#note4">[4]</a></sup></font>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the player does not know the spell understood, say &quot;<font color=#000080>You do not know the mystery of that enchantment.</font>&quot; instead.
+<br>
+
+<br>
+Check casting (this is the can't cast on the wrong sort of target rule):
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the targeting of the spell understood is targeted
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the second noun is a room, say &quot;<font color=#000080>That enchantment must be cast at something.</font>&quot; instead;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the second noun is not a room, say &quot;<font color=#000080>That enchantment cannot be cast at anything.</font>&quot; instead;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if.
+<br>
+
+<br>
+Check casting (this is the can't cast without strength rule):
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the strength of the player &lt;= the strength cost of the spell understood to the player, say &quot;<font color=#000080>You are weak, and have not sufficient strength of mind.</font>&quot; instead.
+<br>
+
+<br>
+Check casting (this is the can't cast at yourself rule):
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the player is the second noun, say &quot;<font color=#000080>It is a cardinal rule of magic that no mage may cast an enchantment upon himself.</font>&quot; instead.
+<br>
+
+<br>
+Check casting (this is the can't cast without required materials rule):
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let the stuff be the requirement of the spell understood;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the stuff is not air
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the player is carrying something (called the focus) which is made of the stuff,
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;change the current spell focus to the focus;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise say &quot;<font color=#000080>To weave that enchantment, you must have something made of [stuff] in your hands.</font>&quot; instead;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if.
+<br>
+
+<br>
+Check casting (this is the can't magically attack a warded person rule):
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the nature of the spell understood is offensive and the second noun is a person
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let the intended victim be the second noun;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the intended victim knows ward magic, say &quot;<font color=#000080>With a contemptuous wave of orange sparks, [the intended victim] cancels your [spell understood] incantation.</font>&quot; instead;<font color=#404040><sup><a href="#note5">[5]</a></sup></font>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if.
+<br>
+
+<br>
+Effect is a rulebook.<font color=#404040><sup><a href="#note6">[6]</a></sup></font>
+<br>
+
+<br>
+The current spell outcome is a text which varies. To record outcome (eventual message - text): change the current spell outcome to eventual message.
+<br>
+The current spell event is a rule which varies. To record event (eventual rule - rule): change the current spell event to eventual rule.
+<br>
+
+<br>
+This is the no spell event at all rule: stop.
+<br>
+
+<br>
+Carry out casting:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record outcome &quot;<font color=#000080>but then nothing obvious happens</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record event the no spell event at all rule;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;change the strength of the player to the strength of the player minus the strength cost of the spell understood to the player;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;increase the usage count of the spell understood by 1;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the usage count of the spell understood is less than 3<font color=#404040><sup><a href="#note7">[7]</a></sup></font>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;award cost of the spell understood points;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;award cost of the spell understood points;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the cost of the spell understood is at least 5 and the current spell focus is something, remove the current spell focus from play;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;consider the effect rulebook.
+<br>
+
+<br>
+Report casting:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>As you intone the words of the [spell understood] spell, </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the current spell focus is something
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[the current spell focus] </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the player is not holding the current spell focus, say &quot;<font color=#000080>vanishes as it </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>releases </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>your fingers release </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say emission of the spell understood;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the second noun is not a room, say &quot;<font color=#000080> at [the second noun]</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>, [current spell outcome]</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the player is affected by the spell understood begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if duration of the spell understood is greater than 0
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>, which will last for [duration of the spell understood in words] turn[s]</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;change the duration timer of the spell understood to the duration of the spell understood;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;increase the duration timer of the spell understood by 1;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>.</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;consider the current spell event.
+<br>
+
+<br>
+Every turn:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;repeat through the Table of Enchantments
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let the remaining effect be the duration timer entry;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;decrease the remaining effect by 1;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the remaining effect &gt;= 0, change the duration timer entry to the remaining effect;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the remaining effect is 0
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;now the player is not affected by the spell entry;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>(The [spell entry] spell wears off.)</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end repeat.<font color=#404040><sup><a href="#note8">[8]</a></sup></font>
+<br>
+
+<br>
+Understand &quot;<font color=#000080>xyzzy</font>&quot; and &quot;<font color=#000080>plugh</font>&quot; as a mistake (&quot;<font color=#000080>Nobody believes those old children's stories about a colossal cave with magic words any more. Magic's something you spend years and years learning.</font>&quot;).
+<br>
+
+<br>
+</font>
+					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><p><i>Notes</i><p>
+<A name="note1"><font color=#404040>[1].  We now have two verbs connecting people and spells: we can write statements like "Radagast knows summon elemental", or "Henry is affected by ironbones".</font><p>
+<A name="note2"><font color=#404040>[2].  "Casting it at" is an unusual action because it can take two forms, having a sort of transitive and intransitive version: one casts "detect trap" with no target, but "magic missile" must be aimed at something. Inform permits actions to have syntax which leaves a noun optional, but requires that we supply any missing nouns so that by the time the action is processed nothing is missing. We construe a missing target for a spell as being the current location: thus, "detect trap" is actually a spell cast on the ambient surroundings, which seems reasonable enough. (Inform's built-in action "listening" does something similar.)</font><p>
+<A name="note3"><font color=#404040>[3].  The variable "current spell focus" typifies something which tends to happen in complex sequences of rules: later rules need to refer to something worked out in the course of an earlier rule. That means the sort of "let ..." variable will not do, because it is too temporary - it expires when the earlier rule finishes, so will be gone when the later rule is reached. Here we put the value into a permanent variable. This might be problematic if one casting action could be interrupted by another one, but here that never happens.</font><p>
+<A name="note4"><font color=#404040>[4].  We're naming these rules so that the author of a W&W scenario could use procedural rules to suspend or alter them as needed.</font><p>
+<A name="note5"><font color=#404040>[5].  The can't magically attack a warded person rule is a little sloppy: it does not sap the magical strength of the victim to cast the spell, which - if sauce for the wizard is sauce for the necromancer - it perhaps should.</font><p>
+<A name="note6"><font color=#404040>[6]. The carry out and report rules for the casting action are going to be surprisingly short - considering the vast range of possible outcomes when a spell is cast - and they do this by using a more powerful mechanism to allow for more flexible reporting than would ordinarily be possible: they create a new rulebook, "Effect", whose task is to carry out the spell. Effect rules are also expected to set "current spell outcome" to a suitable message about what happens, and (optionally) "current spell event" to a rule which carries out further consequences.</font><p>
+<A name="note7"><font color=#404040>[7].  You gain experience points the first couple of times you cast a spell, but then the novelty wears off.</font><p>
+<A name="note8"><font color=#404040>[8].  For simplicity, and to keep storage requirements from going through the roof, time-limited spells can only be applied to the player.</font><p>
+</font></p>
+					<p></p>
+				</td></tr></table>
+	</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<meta name="generator" content="Adobe GoLive">
+		<title>The Reliques of Tolti-Aph - Source Text</title>
+	</head>
+
+	<body bgcolor="#ffffff">
+		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
+					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">The Reliques of Tolti-Aph</font></h3>
+					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Graham Nelson (2005) - the Inform 7 source text</font></h3>
+				</td></tr>
+		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_5.html">Previous</a><br><a href="source_7.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Section 1(f) - Saving rolls</b>
+<br>
+
+<br>
+Calculating saving roll modifiers of something is an activity.<font color=#404040><sup><a href="#note1">[1]</a></sup></font>
+<br>
+
+<br>
+The to-save roll is a number that varies.
+<br>
+
+<br>
+To modify to-save roll by (amount - a number) for (reason - text):
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the amount &gt;= 0, say &quot;<font color=#000080>, +[amount] for [reason]</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise say &quot;<font color=#000080>, [amount] for [reason]</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;increase the to-save roll by the amount.
+<br>
+
+<br>
+For calculating saving roll modifiers of the player:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;modify to-save roll by the level of the player for &quot;<font color=#000080>your level</font>&quot;;<font color=#404040><sup><a href="#note2">[2]</a></sup></font>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;continue the activity.
+<br>
+
+<br>
+To decide whether a saving roll of (target - a number) by (savee - a person) to (task - a text) is made:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[if savee is the player]You need [otherwise][The savee] needs [end if]to make a saving roll of [target] or better on 1d20 to [task]: </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;change the to-save roll to a random number from 1 to 20;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say the to-save roll;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;carry out the calculating saving roll modifiers activity with the savee;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the to-save roll &gt;= target
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080> - succeeded.</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;decide yes;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080> - failed.</font>&quot;; decide no.
+<br>
+
+<br>
+To decide whether a saving roll of (target - a number) by (savee - a person) to (task - a text) is lost:<font color=#404040><sup><a href="#note3">[3]</a></sup></font>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if a saving roll of target by the savee to task is made, decide no;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;decide yes.
+<br>
+
+<br>
+</font>
+					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><p><i>Notes</i><p>
+<A name="note1"><font color=#404040>[1].  Saving rolls are dice rolls made when the player tries to do something difficult, or avoid some hazard - hence "saving". They tend to be influenced by the context of play: whether the player carries some lucky charm, is presently regarded with disfavour by some demigod, and so forth. Each such influence applies a modifier to the roll: -7 for having just broken a mirror, for instance. We need to calculate all of this without knowing what these influences will be - we need to set up a general framework, in fact, and so we take the unusual step of creating an "activity". These normally handle Inform's housekeeping tasks, but we're perfectly free to create new ones, and the W&W rules contain several.</font><p>
+<A name="note2"><font color=#404040>[2].  See how useful it is to be a higher-level player? This produces text such as "+3 for your level" at the crucial moment.</font><p>
+<A name="note3"><font color=#404040>[3].  Thus we could write, say, 'if a saving roll of 15 by the player to "swim the rapids" is lost'...</font><p>
+</font></p>
+					<p></p>
+				</td></tr></table>
+	</body>
+
+</html>

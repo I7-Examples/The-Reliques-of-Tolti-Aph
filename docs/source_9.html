@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<meta name="generator" content="Adobe GoLive">
+		<title>The Reliques of Tolti-Aph - Source Text</title>
+	</head>
+
+	<body bgcolor="#ffffff">
+		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
+					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">The Reliques of Tolti-Aph</font></h3>
+					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Graham Nelson (2005) - the Inform 7 source text</font></h3>
+				</td></tr>
+		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_8.html">Previous</a><br><a href="source_10.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Section 2(c) - Staffs, strength potions and scrolls</b>
+<br>
+
+<br>
+After examining something made of magic-imbued wood, say &quot;<font color=#000080>Holding [the noun] reduces the strength cost of any spell by 2.</font>&quot;
+<br>
+
+<br>
+After printing the name of something made of magic-imbued wood while taking inventory: say &quot;<font color=#000080> (magic-imbued)</font>&quot;.
+<br>
+
+<br>
+To decide which number is the strength cost of (incantation - a spell) to (wizard - a person):
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let the damage be the cost of the incantation;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the wizard is carrying something made of magic-imbued wood, decrease the damage by 2;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the damage is less than zero, let the damage be zero;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;decide on the damage.<font color=#404040><sup><a href="#note1">[1]</a></sup></font>
+<br>
+
+<br>
+A strength potion is a kind of thing. A potion has a die roll called additional strength. Instead of examining a potion, say &quot;<font color=#000080>[The noun] is a [additional strength] strength potion.</font>&quot; A strength potion is usually sustenance.
+<br>
+
+<br>
+Instead of eating or drinking a strength potion:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;remove the noun from play;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You swallow [the noun], gaining </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let the extra be the roll of the additional strength of the noun;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;increase the strength of the player by the extra;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the strength of the player is greater than the permanent strength of the player
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;change the strength of the player to the permanent strength of the player;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080> - more than enough to restore you to full strength.</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stop;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080> strength points.</font>&quot;
+<br>
+
+<br>
+A scroll is a kind of thing. A scroll has a spell called the inscribed spell. A scroll is paper. The description of a scroll is &quot;<font color=#000080>Careful to take only a glance, you see that [the item described] is inscribed with the runes of the [inscribed spell] spell.</font>&quot; After printing the name of a scroll while taking inventory: say &quot;<font color=#000080> (bearing the [inscribed spell] spell)</font>&quot;.<font color=#404040><sup><a href="#note2">[2]</a></sup></font>
+<br>
+
+<br>
+</font>
+					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><p><i>Notes</i><p>
+<A name="note1"><font color=#404040>[1].  This phrase calculates the actual strength cost to a given person of casting a given spell, and as we see this cost is reduced if the person is carrying a "magic staff"-like item.</font><p>
+<A name="note2"><font color=#404040>[2].  Scrolls will be the player's objects of desire, since they carry new spells to be memorised and added to the player's current repertoire.</font><p>
+</font></p>
+					<p></p>
+				</td></tr></table>
+	</body>
+
+</html>

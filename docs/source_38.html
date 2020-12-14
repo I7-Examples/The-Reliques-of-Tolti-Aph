@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<meta name="generator" content="Adobe GoLive">
+		<title>The Reliques of Tolti-Aph - Source Text</title>
+	</head>
+
+	<body bgcolor="#ffffff">
+		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
+					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">The Reliques of Tolti-Aph</font></h3>
+					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Graham Nelson (2005) - the Inform 7 source text</font></h3>
+				</td></tr>
+		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_37.html">Previous</a><br><a href="source_39.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Section E(k) - The Hedge Archway and the leaves</b>
+<br>
+
+<br>
+The current maze task is a thing that varies. The maze victory count is a number that varies.
+<br>
+
+<br>
+The Hedge Archway is a labyrinth room with shape L0/0-0-1-1-1-0. The Hedge Archway has map legend &quot;<font color=#000080>&lt;H&gt;</font>&quot;. &quot;<font color=#000080>The Maze is composed of solid, impenetrable hedges that might as well be dungeon walls, and are certainly too high to see over. Paths lead north, east and south into the labyrinth.</font>&quot;
+<br>
+
+<br>
+The branch like an extended hand is fixed in place in the Hedge Archway. &quot;<font color=#000080>A branch, hanging out over the archway, seems almost like an extended hand: and you cannot help noticing, hanging down from the branch, [the list of leaves which are part of the branch].</font>&quot; Before doing something to the branch, say &quot;<font color=#000080>The branch itself is too high above you.</font>&quot; instead. The branch can be too high or almost too high. The branch is almost too high. The branch is wood.
+<br>
+
+<br>
+Before going north in the Hedge Archway when the branch is almost too high, say &quot;<font color=#000080>The hedge somehow closes to prevent you, pushing you back without pushing you. A moment later, it's as if nothing had happened.</font>&quot; instead.
+<br>
+
+<br>
+Before going east in the Hedge Archway when the branch is almost too high, say &quot;<font color=#000080>The hedge somehow closes to prevent you, pushing you back without pushing you. A moment later, it's as if nothing had happened.</font>&quot; instead.
+<br>
+
+<br>
+Before going south in the Hedge Archway when the branch is almost too high, say &quot;<font color=#000080>The hedge somehow closes to prevent you, pushing you back without pushing you. A moment later, it's as if nothing had happened.</font>&quot; instead.
+<br>
+
+<br>
+The plural of leaf is leaves. A leaf is a kind of thing. A leaf is usually magical essence. Some leaves part of the branch are defined by the Table of Task Leaves. The description of a leaf is &quot;<font color=#000080>The leaf unrolls to reveal black writing on its open face: Your task, o mage, is to [task briefing]. Fail not in this quest: yet, if it must be so, you may tear this leaf to abandon your effort and return here (if you be not in combat at the time), at a permanent cost of 1 STR point. And remember always that if the maze be exhausted, you may never reach your goal... so do not tarry, do not meander.</font>&quot;
+<br>
+
+<br>
+Instead of examining a leaf which is part of the branch, say &quot;<font color=#000080>It is rolled up, as if not quite opened by the sun, and although there is evidently writing inside, you can make little out except the word [clue word of the noun].</font>&quot; Instead of taking a leaf which is part of the branch, say &quot;<font color=#000080>The branch is high enough up that its leaves are just slightly out of reach.</font>&quot;
+<br>
+
+<br>
+Understand &quot;<font color=#000080>tear [something]</font>&quot; or &quot;<font color=#000080>tear up [something]</font>&quot; or &quot;<font color=#000080>tear [something] up</font>&quot; as attacking.
+<br>
+
+<br>
+Instead of jumping in the Hedge Archway when a leaf is part of the branch:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the branch is too high, say &quot;<font color=#000080>The branch is just too high, even at a jump. Perhaps your earlier pulling disturbed it.</font>&quot; instead;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;now the branch is too high;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let the grasped leaf be a random leaf which is part of the branch;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;now the player carries the grasped leaf;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;now the player knows force labyrinth;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;change the current maze task to the grasped leaf;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the grasped leaf is the mauve leaf, move Eurydice to the Island in the Deep Pool;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>Jumping up, you manage to catch [the grasped leaf] in your hand and it pulls away.</font>&quot;
+<br>
+
+<br>
+Instead of attacking a leaf:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if combat proceeds, say &quot;<font color=#000080>The leaf might as well be made of bronze. It won't tear.</font>&quot; instead;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;remove the noun from play;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You tear [the noun] across, feeling a sudden stabbing pain, and the world is momentarily hazy. When you reappear, even the hedges themselves are somehow shaking, adjusting, changing.</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if a leaf is part of the branch
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tidy the labyrinth for a fresh quest;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[paragraph break]But it seems there will be no more patience. Even as you reassemble at the archway, the never-children tear you limb from limb!</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end the game saying &quot;<font color=#000080>You exhausted the Maze of Royal Beasts</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if.
+<br>
+
+<br>
+</font>
+					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"></font></p>
+					<p></p>
+				</td></tr></table>
+	</body>
+
+</html>

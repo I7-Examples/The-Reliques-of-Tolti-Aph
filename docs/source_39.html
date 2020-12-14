@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<meta name="generator" content="Adobe GoLive">
+		<title>The Reliques of Tolti-Aph - Source Text</title>
+	</head>
+
+	<body bgcolor="#ffffff">
+		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
+					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">The Reliques of Tolti-Aph</font></h3>
+					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Graham Nelson (2005) - the Inform 7 source text</font></h3>
+				</td></tr>
+		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_38.html">Previous</a><br><a href="source_40.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Section E(l) - The four tasks</b>
+<br>
+
+<br>
+<b>Table of Task Leaves</b>
+<br>
+<table><tr><td halign="left" valign="top"><u>name</u>&nbsp;&nbsp;</td><td halign="left" valign="top"><u> clue word</u>&nbsp;&nbsp;</td><td halign="left" valign="top"><u> task briefing</u></td></tr>
+<tr><td halign="left" valign="top">a mauve leaf&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>awaken</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>awaken Eurydice from her enchanted sleep on the Island in the Deep Pool</font>&quot;</td></tr>
+<tr><td halign="left" valign="top">a russet leaf&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>visit</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>visit all [number of grovelike unvisited labyrinth rooms in words] remaining chambers and grove[s], and return</font>&quot;</td></tr>
+<tr><td halign="left" valign="top">a piebald leaf&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>slay</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>slay a monster on level 4 or below, and return</font>&quot;</td></tr>
+<tr><td halign="left" valign="top">a pea-green leaf&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>eye</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>find and bring back the Eye of God</font>&quot;</td></tr>
+</table>
+<br>
+To win the maze task:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the player carries the current maze task, say &quot;<font color=#000080>The leaf pulses with life in your hand. </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You have fulfilled your task ([task briefing of the current maze task]) in the Maze of Royal Beasts! You sense that, now, the never-children will not dare stand in your way.</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;award 100 points;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;increase the maze victory count by 1;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;remove the current maze task from play;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if a leaf is part of the branch, tidy the labyrinth for a fresh quest;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise remove the branch from play;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;change the current maze task to the branch; <font color=#404040>[i.e., no task at all</font>]
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the location is not the Hedge Archway, move the player to the Hedge Archway.
+<br>
+
+<br>
+The deepest slaying level is a number that varies. Rule for dead body disposal of a monster (called the victim) when the location is a labyrinth room: restore the health of the victim; return the victim to the pack; if the current maze level is greater than the deepest slaying level, change the deepest slaying level to the current maze level; continue the activity.
+<br>
+
+<br>
+Every turn when the location is the Hedge Archway:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the current maze task is the piebald leaf and the deepest slaying level is greater than 3, win the maze task;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the current maze task is the pea-green leaf and the player carries the Eye of God, win the maze task;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the current maze task is the russet leaf and all grovelike labyrinth rooms are visited, win the maze task.
+<br>
+
+<br>
+Eurydice is a woman. &quot;<font color=#000080>Eurydice, the beautiful maiden you are bidden to rescue, turns out to be just eight inches tall. Or rather longways, since she is lying down asleep.</font>&quot; Instead of kissing Eurydice, say &quot;<font color=#000080>Mmm. I'm just going to pause for a moment to let the grotesqueness of that image sink in.</font>&quot; Instead of attacking Eurydice, say &quot;<font color=#000080>But she's so delicate.</font>&quot; Instead of taking Eurydice, say &quot;<font color=#000080>That would be... well. The taboos in your culture protect the faerie-folk from such abuse.</font>&quot; Instead of doing something to Eurydice in the presence of a hostile monster, say &quot;<font color=#000080>Eurydice is too well guarded to approach.</font>&quot; Instead of turning Eurydice: say &quot;<font color=#000080>As you turn Eurydice delicately around, and she comes to face north, she awakens with a start. 'Free! I am free!' And she flies away into the cavern, apparently never even having noticed you, much less offered any thanks.</font>&quot;; win the maze task. Instead of pushing or pulling Eurydice, say &quot;<font color=#000080>There is too little room on the Island to do much more than turn on the spot.</font>&quot;
+<br>
+
+<br>
+Effect of casting mindsift at Eurydice:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record outcome &quot;<font color=#000080>and you 'remember' lying down on this desolate rock, all hope gone with your strength, and resting: your last act to arrange yourself east-west, as no faerie can rest when turned north-south</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;rule succeeds.
+<br>
+
+<br>
+</font>
+					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"></font></p>
+					<p></p>
+				</td></tr></table>
+	</body>
+
+</html>

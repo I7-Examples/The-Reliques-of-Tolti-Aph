@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<meta name="generator" content="Adobe GoLive">
+		<title>The Reliques of Tolti-Aph - Source Text</title>
+	</head>
+
+	<body bgcolor="#ffffff">
+		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
+					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">The Reliques of Tolti-Aph</font></h3>
+					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Graham Nelson (2005) - the Inform 7 source text</font></h3>
+				</td></tr>
+		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_45.html">Previous</a><br><a href="source_47.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Section E(s) - Traps and earthquakes</b>
+<br>
+
+<br>
+<font color=#404040>[Donnelly's original &quot;Sorcerer's Cave&quot; had four hazards, the others being Medusa and Mutiny, but neither works very well for a game played with a single character rather than a &quot;party&quot; acting as a team. Trap and Earthquake are essentially unchanged from the original.</font>]
+<br>
+
+<br>
+Hazard-playing is an action out of world applying to one thing.
+<br>
+
+<br>
+Every turn:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let the locale be the location;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;repeat with hazard card running through hazards in the locale
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try hazard-playing the hazard card;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end repeat.
+<br>
+
+<br>
+To make the player fall to (destination - room):
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the destination is unvisited, draw cards for the destination;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;move the player to the destination.
+<br>
+
+<br>
+Carry out hazard-playing a Trap:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return the noun to the pack;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let the position below be the vector sum of the grid position of the location and the vector of down;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the position below is &lt;0,0,0&gt;, continue the action;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the location is descending, continue the action;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let the place below be the room at the position below;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the place below is not Solid Rock
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You fall through a concealed Trap in the cave floor, to emerge back at...</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;change the down exit of the location to the place below;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;make the player fall to the place below;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stop;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if a labyrinth room (called the place below) is unplaced
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You fall through a concealed Trap in the cave floor!</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position the place below at the position below;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;change the down exit of the location to the place below;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the place below is not ascending,
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;change the up exit of the place below to Solid Rock;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;make the player fall to the place below;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if.
+<br>
+
+<br>
+A room can be Earthquake-damaged or Earthquake-undamaged. A room is usually not Earthquake-damaged. Instead of going to an Earthquake-damaged room, say &quot;<font color=#000080>That whole cave has collapsed in an earthquake, and is impassible.</font>&quot;
+<br>
+
+<br>
+Carry out hazard-playing an Earthquake:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return the noun to the pack;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the previous location is not a labyrinth room, continue the action;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the previous maze level is 1, continue the action;<font color=#404040><sup><a href="#note1">[1]</a></sup></font>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the player is in the previous location, continue the action;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>An Earthquake causes a rockfall back in [the previous location]!</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;now the previous location is Earthquake-damaged.
+<br>
+
+<br>
+
+<br>
+</font>
+					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><p><i>Note</i><p>
+<A name="note1"><font color=#404040>[1].  An Earthquake causes a rockfall to block the room just left behind: that would make no sense up in the hedge maze on level 1.</font><p>
+</font></p>
+					<p></p>
+				</td></tr></table>
+	</body>
+
+</html>

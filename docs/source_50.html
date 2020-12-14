@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<meta name="generator" content="Adobe GoLive">
+		<title>The Reliques of Tolti-Aph - Source Text</title>
+	</head>
+
+	<body bgcolor="#ffffff">
+		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
+					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">The Reliques of Tolti-Aph</font></h3>
+					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Graham Nelson (2005) - the Inform 7 source text</font></h3>
+				</td></tr>
+		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_49.html">Previous</a><br><a href="source_51.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Section W(d) - Knots</b>
+<br>
+
+<br>
+The Knotted Room is north of the Temple Plaza. &quot;<font color=#000080>High above you is a round opening to the room up there[if the rope ladder is not in the location]. Whatever stairs or ladder might once have reached it is now long-since eroded or removed[end if].</font>&quot;
+<br>
+
+<br>
+The ropes are fixed in place in the Knotted Room. &quot;<font color=#000080>Hanging from the ceiling are hundreds of threads - some thick as rope, some gossamer - and each is knotted at intervals. If you knew their code, you could read histories in these, and bloody legends. As it is, they brush over you as you pass, but leave you unenlightened.</font>&quot; Understand &quot;<font color=#000080>knots</font>&quot; or &quot;<font color=#000080>knot</font>&quot; or &quot;<font color=#000080>thread</font>&quot; or &quot;<font color=#000080>threads</font>&quot; as the ropes. Instead of pulling or taking the ropes: say &quot;<font color=#000080>They are all too firmly secured to the ceiling.</font>&quot; Instead of touching or examining the ropes, say &quot;<font color=#000080>You run your fingers down the nearest filament, and read the following: bump, bump-bump, bump-space-bump...</font>&quot; Instead of tieing something to the ropes: try tieing the second noun to the noun. Instead of tieing the ropes to something: say &quot;<font color=#000080>They are an awkward thickness to tie to things. Other than themselves, that is.</font>&quot; Instead of tieing ropes to ropes: say &quot;<font color=#000080>You try fashioning a ladder of sorts, but it does not entirely work: your knotwork skills are lacking, and the strands are too different in thickness and composition.</font>&quot;
+<br>
+
+<br>
+Effect of casting web at the ropes:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;remove the ropes from play;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;move the rope ladder to the location;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record outcome &quot;<font color=#000080>joining one to another with the cross-bars of a spiderweb</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;rule succeeds.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Effect of casting mend at the rope ladder:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;remove the rope ladder from play;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;move the ropes to the location;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record outcome &quot;<font color=#000080>clearing away the detritus of spider-silk and restoring the threads to their original pristine glory</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;rule succeeds.
+<br>
+Effect of casting mend at the ropes:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record outcome &quot;<font color=#000080>causing the knots to shift very slightly on the nearest strand. It's impossible to guess the effect, but one can hope that you have undone some centuries-old bowdlerization of a venerable text</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;rule succeeds.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Effect of casting mindsift at ropes:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record outcome &quot;<font color=#000080>which reveals to you a brief history of a hero, a god with eagle-wings, and a woman disguised as a frog</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;rule succeeds.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+The rope ladder is a fixed in place thing. &quot;<font color=#000080>A curious sort of rope ladder has been made of webbing and the threads that hang from the ceiling here.</font>&quot;  Instead of climbing the rope ladder, try going up.
+<br>
+
+<br>
+Instead of going up in the Knotted Room in the presence of the ropes, try climbing the ropes. Instead of jumping in the presence of the ropes: say &quot;<font color=#000080>The hole remains far out of your reach.</font>&quot;
+<br>
+
+<br>
+Instead of climbing the ropes:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the strength of the player &lt; 3, say &quot;<font color=#000080>You are too physically weak to attempt it.</font>&quot; instead;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;decrease the strength of the player by 1;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if a saving roll of 25 by the player to &quot;<font color=#000080>climb the ropes</font>&quot; is made
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;move the player to the Dim Garret;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You don't make it. This is really more the sort of thing you leave to fighters.</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if.
+<br>
+
+<br>
+</font>
+					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"></font></p>
+					<p></p>
+				</td></tr></table>
+	</body>
+
+</html>

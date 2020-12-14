@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<meta name="generator" content="Adobe GoLive">
+		<title>The Reliques of Tolti-Aph - Source Text</title>
+	</head>
+
+	<body bgcolor="#ffffff">
+		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
+					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">The Reliques of Tolti-Aph</font></h3>
+					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Graham Nelson (2005) - the Inform 7 source text</font></h3>
+				</td></tr>
+		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_39.html">Previous</a><br><a href="source_41.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Section E(m) - The fifty rooms of the inner labyrinth</b>
+<br>
+
+<br>
+LR0, LR1, LR2, LR3, LR4, LR5, LR6, LR7, LR8 and LR9 are labyrinth rooms.
+<br>
+LR10, LR11, LR12, LR13, LR14, LR15, LR16, LR17, LR18 and LR19 are labyrinth rooms.
+<br>
+LR20, LR21, LR22, LR23, LR24, LR25, LR26, LR27, LR28 and LR29 are labyrinth rooms.
+<br>
+LR30, LR31, LR32, LR33, LR34, LR35, LR36, LR37, LR38 and LR39 are labyrinth rooms.
+<br>
+LR40 and LR41 are labyrinth rooms.
+<br>
+
+<br>
+LR0 has shape L0/0-0-1-1-1-0. LR1 has shape L0/0-0-1-1-1-0.<font color=#404040><sup><a href="#note1">[1]</a></sup></font>
+<br>
+
+<br>
+The Temple of Peace is a labyrinth room with shape L0/0-0-1-1-1-1. &quot;<font color=#000080>The cave walls soften, become less harsh: glisten with warm reflections: congregate with soft sounds. This is almost a temple, a place of such perfect peace that it feels almost like sanctuary.</font>&quot; The Temple of Peace has map legend &quot;<font color=#000080>&lt;T&gt;</font>&quot;. The Temple of Peace has minimum level 2.
+<br>
+
+<br>
+The Island in the Deep Pool is a labyrinth room with shape L1/0-0-0-0-0-0. &quot;<font color=#000080>This rocky islet, in the centre of a deep pool of ice-cold mountain water, must be one of the most seldom-visited places in all of Tolti-Aph. There is no apparent way off.</font>&quot; The Island in the Deep Pool has map legend &quot;<font color=#000080>(O)</font>&quot;.
+<br>
+
+<br>
+The Dome of the White Bones is a labyrinth room with shape L3/0-0-1-1-1-1. &quot;<font color=#000080>The walls of this spectacularly high cave are whitened and ridged, so that to stand in this natural arena is to imagine oneself inside the ribcage of a long-dead behemoth.</font>&quot; The Dome of the White Bones has map legend &quot;<font color=#000080>(B)</font>&quot;. The Dome of the White Bones has minimum level 2.
+<br>
+
+<br>
+A shoreline room is a kind of labyrinth room. The Western Shore is a shoreline room with shape L0/0-0-1-0-1-1. The Northern Shore is a shoreline room with shape L0/0-0-1-1-0-1. The Eastern Shore is a shoreline room with shape L0/0-0-1-1-1-0. The Southern Shore is a shoreline room with shape L0/0-0-0-1-1-1. The Northern Shore is northeast of the Western Shore. The Eastern Shore is southeast of the Northern Shore. The Southern Shore is southwest of the Eastern Shore. The Western Shore is northwest of the Southern Shore. The description of a shoreline room is &quot;<font color=#000080>This cavern shelves away into a deep pool of pure, ice-cold mountain water, almost a subterranean lake. In the centre is clearly an island, but you can make out little more in this dim light. As the lake is far too deep to ford, the only routes are back away from the water, or diagonally around its edge.</font>&quot;
+<br>
+
+<br>
+Deep Pool Environs is a region. The Island in the Deep Pool, the Eastern Shore, the Northern Shore, the Western Shore and the Southern Shore are in the Deep Pool Environs.
+<br>
+
+<br>
+The pure ice-cold lake of mountain water is a scenery backdrop. The ice-cold lake is in the Deep Pool Environs. Understand &quot;<font color=#000080>deep</font>&quot; as the ice-cold lake. Understand &quot;<font color=#000080>pool</font>&quot; as the ice-cold lake. Instead of drinking the pure ice-cold mountain water, say &quot;<font color=#000080>It is cold enough that you can momentarily feel distinct sensations in each of your teeth.</font>&quot; The ice-cold lake is air.
+<br>
+
+<br>
+The rocky island is a scenery backdrop. The rocky island is in the Eastern Shore, the Northern Shore, the Western Shore and the Southern Shore. Instead of doing something to the rocky island, say &quot;<font color=#000080>The rocky island is too far away.</font>&quot;
+<br>
+
+<br>
+Instead of swimming in the Deep Pool Environs:<font color=#404040><sup><a href="#note2">[2]</a></sup></font>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the player is not affected by inner warmth, say &quot;<font color=#000080>You step into the water, intending to swim, but twenty seconds later you are out again, yelping.</font>&quot; instead;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the location is the Island in the Deep Pool
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>Protected from the icy chill by the inner warmth spell, you swim confidently across to the north.</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;move player to the Northern Shore;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>Protected from the icy chill by the inner warmth spell, you swim confidently across to the island.</font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the Island in the Deep Pool is unvisited, draw cards for the Island in the Deep Pool;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;move player to the Island in the Deep Pool;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if.
+<br>
+
+<br>
+</font>
+					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><p><i>Notes</i><p>
+<A name="note1"><font color=#404040>[1].  There are several obviously special labyrinth rooms, with exotic names and behaviour. These two rooms are less obviously special. They are T-junctions pointing into the maze, which will be placed just north and just south of the Hedge Archway respectively, and their purpose is to maximize the initial connectedness of the maze - they guarantee the explorer initial access to five possible rooms rather than the three which the Hedge Archway alone would lead into, and this decreases the chances of a boringly quick game in which the maze is fully blocked off in a couple of rooms.</font><p>
+<A name="note2"><font color=#404040>[2].  Play-testers generally assumed that this was the only way to reach the Island - which the player must of course do in order to win the "rescue Eurydice" quest. In fact, there are two other ways: to use the Magic Carpet to fly across the lake from any of the four shores, or to get lucky and find a staircase down from the room vertically above the island - or a staircase up from the room vertically below.</font><p>
+</font></p>
+					<p></p>
+				</td></tr></table>
+	</body>
+
+</html>

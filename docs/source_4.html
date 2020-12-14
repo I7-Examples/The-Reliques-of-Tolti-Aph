@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<meta name="generator" content="Adobe GoLive">
+		<title>The Reliques of Tolti-Aph - Source Text</title>
+	</head>
+
+	<body bgcolor="#ffffff">
+		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
+					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">The Reliques of Tolti-Aph</font></h3>
+					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Graham Nelson (2005) - the Inform 7 source text</font></h3>
+				</td></tr>
+		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_3.html">Previous</a><br><a href="source_5.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Section 1(d) - Strength</b>
+<br>
+
+<br>
+A person has a number called strength. The strength of a person is usually 14.
+<br>
+
+<br>
+Definition: A person is alive if its strength is 1 or more. Definition: A person is killed<font color=#404040><sup><a href="#note1">[1]</a></sup></font> if its strength is 0 or less.
+<br>
+
+<br>
+A person has a number called permanent strength.<font color=#404040><sup><a href="#note2">[2]</a></sup></font>
+<br>
+
+<br>
+When play begins:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;repeat with the patient running through people begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;change the permanent strength of the patient to the strength of the patient;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end repeat.<font color=#404040><sup><a href="#note3">[3]</a></sup></font>
+<br>
+
+<br>
+To restore the health of (patient - a person): change the strength of the patient to the permanent strength of the patient.
+<br>
+
+<br>
+Understand &quot;<font color=#000080>str</font>&quot; as a mistake (&quot;<font color=#000080>STR is not a command, but a numerical measure of your current strength. It is constantly displayed in the status line bar at the top of the window, and you are (usually) notified of any changes.</font>&quot;).<font color=#404040><sup><a href="#note4">[4]</a></sup></font>
+<br>
+
+<br>
+Understand &quot;<font color=#000080>diagnose</font>&quot; as a mistake (&quot;<font color=#000080>You can check your STR at any time from the status line, the bar at the top of the window. It's currently [strength of the player].</font>&quot;).<font color=#404040><sup><a href="#note5">[5]</a></sup></font>
+<br>
+
+<br>
+</font>
+					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><p><i>Notes</i><p>
+<A name="note1"><font color=#404040>[1].  There are no natural deaths in Tolti-Aph.</font><p>
+<A name="note2"><font color=#404040>[2].  The strength you would have after a square meal and a good night's sleep.</font><p>
+<A name="note3"><font color=#404040>[3].  Specifying both the permanent strength and the (current) strength for everyone in the game would be tiresome. To simplify matters we assume that everyone begins the game in rude health, and that we can therefore deduce the permanent strength from the (current) strength.</font><p>
+<A name="note4"><font color=#404040>[4].  A quick way to respond to a mistaken command by the player. Testing showed that some people misunderstood the HELP text's mention of STR, and that others never noticed the status line.</font><p>
+<A name="note5"><font color=#404040>[5].  Some of the Infocom games had a "diagnose" verb, and the play-testers asked for this to be added out of nostalgia.</font><p>
+</font></p>
+					<p></p>
+				</td></tr></table>
+	</body>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<meta name="generator" content="Adobe GoLive">
+		<title>The Reliques of Tolti-Aph - Source Text</title>
+	</head>
+
+	<body bgcolor="#ffffff">
+		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
+					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">The Reliques of Tolti-Aph</font></h3>
+					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Graham Nelson (2005) - the Inform 7 source text</font></h3>
+				</td></tr>
+		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_47.html">Previous</a><br><a href="source_49.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Section W(b) - The Dry Channel</b>
+<br>
+
+<br>
+Sandy Area is a region. The Dry Channel, the Temple Plaza, and the Knotted Room are rooms. The Dry Channel, the Temple Plaza, and the Knotted Room are in the Sandy Area.
+<br>
+
+<br>
+The Dry Channel is west of the Exalted Throne. The Dry Channel is below the Exalted Throne. &quot;<font color=#000080>Heavy stones line the walls [if the layer is in location]of this channel, now only about half as deep as it once was. Underfoot are many feet of sand[otherwise]and floor of this channel, though most of the floor is also covered by a thin layer of very fine sand[end if]. Once the walls were plastered, and some hints of the original wall-paintings remain.</font>&quot; The thick door is west of the Dry Channel. It is a door. &quot;<font color=#000080>A thick sliding stone door [if the thick door is closed]closes off[otherwise]stands open at[end if] [if in the Channel]the west end of the channel[otherwise]the ceremonial procession-way[end if].</font>&quot; The thick door is trapped. Instead of opening the thick door for the first time: say &quot;<font color=#000080>You grip the handles on the door and pull sideways. Sand flows quickly through the crack. You force it closed again before you can be overwhelmed.</font>&quot; Instead of closing the open thick door, say &quot;<font color=#000080>The sand-slide seems to have wedged it permanently open.</font>&quot;
+<br>
+
+<br>
+The wall-paintings are scenery in the Dry Channel. Understand &quot;<font color=#000080>paintings</font>&quot; or &quot;<font color=#000080>plaster</font>&quot; as the wall-paintings. The description is &quot;<font color=#000080>Fluid strokes of blue and black suggest the shapes of leaping dolphins, an octopus, and a single swimmer.</font>&quot; Effect of casting mend at the wall-paintings: record outcome &quot;<font color=#000080>seeming to search about for more bits of the original plaster, but there is none to reassemble</font>&quot;; rule succeeds.
+<br>
+
+<br>
+The gritty floor is scenery in the Channel. Understand &quot;<font color=#000080>sand</font>&quot; or &quot;<font color=#000080>fine</font>&quot; as the gritty floor. The description is &quot;<font color=#000080>There is sand between the cracks and scattered across the surface of the stones, which have been worn to a fine polish.</font>&quot; Instead of digging or pushing or blowing or turning the gritty floor, try looking under the gritty floor. Instead of looking under the gritty floor, say &quot;<font color=#000080>The sand is too thin to be concealing anything of interest.</font>&quot; Instead of touching the gritty floor, say &quot;<font color=#000080>You brush aside a little of the sand, but to no interesting effect.</font>&quot;
+<br>
+
+<br>
+The flimsy scroll is a scroll. &quot;<font color=#000080>The edge of a half-buried scroll emerges from the sand.</font>&quot; The inscribed spell of the flimsy scroll is cure baldness. Effect of casting mend at the flimsy scroll: record outcome &quot;<font color=#000080>erasing the more recent handwriting and replacing it with older letter-forms...</font>&quot;; change the inscribed spell of the flimsy scroll to mindsift; rule succeeds. Understand &quot;<font color=#000080>half-buried</font>&quot; as the flimsy scroll.
+<br>
+
+<br>
+Instead of casting memorise at the flimsy scroll when the inscribed spell of the flimsy scroll is cure baldness for the first time: say &quot;<font color=#000080>You glance over the cure baldness spell and find yourself distracted by the shadowy evidence of older writing, once underlying it and now scraped away. But with another try you could no doubt get past that impediment.</font>&quot;
+<br>
+
+<br>
+After opening the thick door:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;now the thick door is untrapped;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;remove the gritty floor from play;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;move the layer of sand to the Sandy Area;<font color=#404040><sup><a href="#note1">[1]</a></sup></font>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You open the thick door. From beyond comes a flood of sand so swift and deep that it threatens to bury you, and it is still coming...</font>&quot;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+The description of the thick door is &quot;<font color=#000080>Sturdy enough to hold back a very considerable weight.</font>&quot; Before going through the closed thick door, say &quot;<font color=#000080>It's not the kind of door you just thoughtlessly open and slip through - this thing takes some effort to shove aside.</font>&quot; instead. Instead of turning the thick door, say &quot;<font color=#000080>It opens by sliding, not turning.</font>&quot; Instead of pushing the thick door: try closing the thick door. Instead of pulling the thick door: try opening the thick door. Instead of listening to the thick door, say &quot;<font color=#000080>It is entirely silent.</font>&quot;
+<br>
+
+<br>
+Understand &quot;<font color=#000080>pick [a locked thing]</font>&quot; as a mistake (&quot;<font color=#000080>You have no rogue skills at all.</font>&quot;). 
+<br>
+
+<br>
+The layer of sand is a backdrop. The layer can be flowing or still. The layer is flowing. The description is &quot;<font color=#000080>The layer of sand would come up to your knees, perhaps further, if you were standing at the bottom of it.</font>&quot; Instead of going through the thick door in the presence of the layer when the layer is flowing: say &quot;<font color=#000080>You cannot possibly fight your way upstream.</font>&quot; Instead of going to the Exalted Throne in the presence of the layer when the layer is flowing: say &quot;<font color=#000080>You head away from the torrent of sand, but it is already a struggle to move fast enough with the sand underfoot, and you don't make it to the base of the ziggurat.</font>&quot; Effect of casting mend at the layer of sand: record outcome &quot;<font color=#000080>smoothing the surface of the sand to perfect flatness</font>&quot;; rule succeeds. Instead of digging the sand: say &quot;<font color=#000080>You turn over the sand looking for more detritus from inside, but find nothing of interest.</font>&quot; Instead of searching the sand: try digging the sand.
+<br>
+
+<br>
+After deciding the scope of the player when the player is in the Sanctorum:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the rainbow outlines are in the Dry Channel 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if we have opened the thick door, place the sand in scope;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if.
+<br>
+
+<br>
+Every turn when the layer is flowing:  
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if opening the thick door, rule succeeds;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the player can see the sand
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;now the sand is still;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;move the flimsy scroll to the Dry Channel;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the player is in the Sanctum
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>The sand flows up and around the walls of your sanctuary, but you, inside, continue breathing easily. Eventually the flood subsides.</font>&quot;; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the player is affected by aerial shield, say &quot;<font color=#000080>Your aerial shield is no help, when your legs, waist and chest are being overwhelmed. </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>The sand keeps pouring around you until your face is covered by fine suffocating powder. It does </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let the damage be the roll of 10d6;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080> points of damage</font>&quot;; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;make the player take the damage points of damage;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the player is killed, end the game saying &quot;<font color=#000080>You have died like a moth in an hourglass</font>&quot;; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if.
+<br>
+
+<br>
+</font>
+					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><p><i>Note</i><p>
+<A name="note1"><font color=#404040>[1].  This makes the sand simultaneously present in all three of the rooms which make up the Sandy Area region.</font><p>
+</font></p>
+					<p></p>
+				</td></tr></table>
+	</body>
+
+</html>

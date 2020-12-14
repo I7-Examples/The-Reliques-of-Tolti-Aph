@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<meta name="generator" content="Adobe GoLive">
+		<title>The Reliques of Tolti-Aph - Source Text</title>
+	</head>
+
+	<body bgcolor="#ffffff">
+		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
+					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">The Reliques of Tolti-Aph</font></h3>
+					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Graham Nelson (2005) - the Inform 7 source text</font></h3>
+				</td></tr>
+		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_14.html">Previous</a><br><a href="source_16.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Section 3(d) - Combat-readiness</b>
+<br>
+
+<br>
+To decide whether combat proceeds:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if a hostile alive monster (called the baddie) is in the location, decide yes;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;decide no.
+<br>
+
+<br>
+Before reading a command:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if combat proceeds, change the command prompt to &quot;<font color=#000080>Combat&gt; </font>&quot;;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise change the command prompt to &quot;<font color=#000080>&gt; </font>&quot;.
+<br>
+
+<br>
+After waiting when combat proceeds: stop the action.
+<br>
+
+<br>
+Check going (this is the need a saving roll to retreat rule):
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if combat proceeds
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if a saving roll of 11 by the player to &quot;<font color=#000080>disengage from the fight</font>&quot; is made, continue the action;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>So you are unable to break away.</font>&quot; instead;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if.
+<br>
+
+<br>
+Check casting (this is the can't cast non-combat spells in combat rule):
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let the warlike nature be the nature of the spell understood;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the warlike nature is defensive, let the warlike nature be offensive;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if combat proceeds and the warlike nature is not offensive
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>The nature of that spell is [nature of the spell understood]: unlike offensive and defensive spells - which are structured for use in combat - [nature of the spell understood] spells need a little peace and calm to be cast.</font>&quot; instead;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end if.
+<br>
+
+<br>
+A person can be surprised or ready. A person is usually ready.
+<br>
+
+<br>
+Instead of attacking a monster:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the noun is hostile, say &quot;<font color=#000080>You are already locked in combat.</font>&quot; instead;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;now the noun is hostile;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;now the noun is surprised;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;now the player is ready;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You make a surprise attack on [the noun]!</font>&quot; instead.
+<br>
+
+<br>
+To mount an attack from (bad guy - a monster):
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;now the bad guy is hostile;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;now the bad guy is ready;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;now the player is surprised;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[The bad guy] attacks!</font>&quot;
+<br>
+
+<br>
+Every turn when a hostile monster is in the location:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if the player is ready, make the player strike a blow against the scariest hostile monster in the location;<font color=#404040><sup><a href="#note1">[1]</a></sup></font>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;repeat with the opponent running through hostile monsters in the location
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the player is killed, stop;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the opponent is ready
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if Zoorl is in the location, make the opponent strike a blow against Zoorl;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise make the opponent strike a blow against the player;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end repeat;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;now the player is ready;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;now all hostile monsters are ready.
+<br>
+
+<br>
+</font>
+					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><p><i>Note</i><p>
+<A name="note1"><font color=#404040>[1].  Recall that "scary" was defined in 3(a) above: "scariest" automatically acquires the meaning of "that which is most scary".</font><p>
+</font></p>
+					<p></p>
+				</td></tr></table>
+	</body>
+
+</html>
