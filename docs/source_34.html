@@ -1,102 +1,49 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<head>
+  <title>Graham Nelson - The Reliques of Tolti-Aph — 36 of 57</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="author" content="Graham Nelson" />
+  <meta name="description" content="A page for the game The Reliques of Tolti-Aph by Graham Nelson." />
+  <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+</head>
 
-	<head>
-		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
-		<meta name="generator" content="Adobe GoLive">
-		<title>The Reliques of Tolti-Aph - Source Text</title>
-	</head>
+<body>
 
-	<body bgcolor="#ffffff">
-		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
-					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">The Reliques of Tolti-Aph</font></h3>
-					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Graham Nelson (2005) - the Inform 7 source text</font></h3>
-				</td></tr>
-		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_33.html">Previous</a><br><a href="source_35.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Section E(g) - Terra Incognita</b>
-<br>
+<div class = "container">
 
-<br>
-<font color=#404040>[Like &quot;Solid Rock&quot;, &quot;Terra Incognita&quot; is a room which is never visited. The rule is that a maze exit leads to TI if and only if it would take one to a grid position which is still inside the boundaries of the maze, but at which no room has yet been located. Except for the special case of the Hedge Archway joining the maze to the outside world, all exits in the maze lead either to Solid Rock (no way through), Terra Incognita (we try extending the maze if this exit is taken) or another room in the maze.
-<br>
-</font><font color=#404040>
-<br>
-</font><font color=#404040>The &quot;position ... at ...&quot; phrase is crucial in establishing the game's mechanics, because it maintains these rules about exits, and checks to see whether adjacent rooms have exits which join up or not. Note that up and down staircases always work (the &quot;vertical&quot; directions), but are sometimes secret and invisible from the other side - a quirk of the original &quot;Sorcerer's Cave&quot; board game which lives on here.</font>]
-<br>
+<div class ="sourcecoverimage">
+	<span><a href="Cover.jpg"><img src="Small Cover.jpg" border="1" /></a></span>
+</div>
 
-<br>
-Terra Incognita is a room.
-<br>
+<div class ="sourceintroduction">
+	<h1>
+		<span>The Reliques of Tolti-Aph</span> <span class="pagination">— 36 of 57</span>
+	</h1>
+	<h2>
+		<span>Graham Nelson</span>
+	</h2>
+	<div class ="sourcebibliography">
+		<span>Release 1</span>
+	</div>
+</div>
 
-<br>
-Egress relates a room (called the place) to a direction (called that way) when the room that way from the place is a room. The verb to exit (it exits) implies the egress relation.
-<br>
+<div class = "links">
+<ul>
+<li><a href="index.html">Home page</a></li><li><a href="source.html">Beginning</a></li><li><a href="source_33.html">Previous</a></li><li><a href="source_35.html">Next</a></li>
+</ul>
+</div>
 
-<br>
-To position (new room - a room) at (grid ref - a spatial coordinate):
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;change the grid position of the new room to the grid ref;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;repeat with this way running through vectorial directions
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let the further position be the vector sum of the grid ref and the vector of this way;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#404040>[say &quot;In direction <font color=#404040>[this way</font>], the position would be <font color=#404040>[further position</font>].&quot;<font color=#000080>;]
-<br>
-</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the further position is not &lt;0,0,0&gt;
-<br>
-</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let the further room be the room at the further position;
-<br>
-</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the further room is Solid Rock
-<br>
-</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the new room exits this way then change this way exit of the new room to Terra Incognita;
-<br>
-</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
-<br>
-</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let the reverse way be the opposite of this way;
-<br>
-</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if this way is vertical or the new room exits this way
-<br>
-</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the further room exits the reverse way
-<br>
-</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;change this way exit of the new room to the further room;
-<br>
-</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;change the reverse way exit of the further room to the new room;
-<br>
-</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
-<br>
-</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;change this way exit of the new room to Solid Rock;
-<br>
-</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if;
-<br>
-</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
-<br>
-</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the further room exits the reverse way, change the reverse way exit of the further room to Solid Rock;
-<br>
-</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if;
-<br>
-</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if;
-<br>
-</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if;
-<br>
-</font><font color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;end repeat.
-<br>
-</font><font color=#000080>
-<br>
-</font><font color=#000080></font>
-					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"></font></p>
-					<p></p>
-				</td></tr></table>
-	</body>
+<div class = "source">
+<p class="indent0"><span class="heading">Section E(g) - Terra Incognita</span></p><p class="indent0"></p><p class="indent0"><span class="comment">[Like &quot;Solid Rock&quot;, &quot;Terra Incognita&quot; is a room which is never visited. The rule is that a maze exit leads to TI if and only if it would take one to a grid position which is still inside the boundaries of the maze, but at which no room has yet been located. Except for the special case of the Hedge Archway joining the maze to the outside world, all exits in the maze lead either to Solid Rock (no way through), Terra Incognita (we try extending the maze if this exit is taken) or another room in the maze.</span></p><p class="indent0"><span class="comment"></span></p><p class="indent0"><span class="comment">The &quot;position ... at ...&quot; phrase is crucial in establishing the game's mechanics, because it maintains these rules about exits, and checks to see whether adjacent rooms have exits which join up or not. Note that up and down staircases always work (the &quot;vertical&quot; directions), but are sometimes secret and invisible from the other side - a quirk of the original &quot;Sorcerer's Cave&quot; board game which lives on here.]</span></p><p class="indent0"></p><p class="indent0">Terra Incognita is a room.</p><p class="indent0"></p><p class="indent0">Egress relates a room (called the place) to a direction (called that way) when the room that way from the place is a room. The verb to exit (it exits) implies the egress relation.</p><p class="indent0"></p><p class="indent0">To position (new room - a room) at (grid ref - a spatial coordinate):</p><p class="indent1">change the grid position of the new room to the grid ref;</p><p class="indent1">repeat with this way running through vectorial directions:</p><p class="indent2">let the further position be the vector sum of the grid ref and the vector of this way;</p><p class="indent2"><span class="comment">[say &quot;In direction [this way], the position would be [further position].&quot;;]</span></p><p class="indent2">if the further position is not &lt;0,0,0&gt;:</p><p class="indent3">let the further room be the room at the further position;</p><p class="indent3">if the further room is Solid Rock:</p><p class="indent4">if the new room exits this way then change this way exit of the new room to Terra Incognita;</p><p class="indent3">otherwise:</p><p class="indent4">let the reverse way be the opposite of this way;</p><p class="indent4">if this way is vertical or the new room exits this way:</p><p class="indent5">if the further room exits the reverse way:</p><p class="indent6">change this way exit of the new room to the further room;</p><p class="indent6">change the reverse way exit of the further room to the new room;</p><p class="indent5">otherwise:</p><p class="indent6">change this way exit of the new room to Solid Rock;</p><p class="indent4">otherwise:</p><p class="indent5">if the further room exits the reverse way, change the reverse way exit of the further room to Solid Rock.</p><p class="indent0"></p>
+</div>
+
+<div class ="notes">
+
+</div>
+
+</div>
+
+</body>
 
 </html>

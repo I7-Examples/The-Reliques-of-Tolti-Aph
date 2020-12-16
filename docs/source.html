@@ -1,108 +1,111 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<head>
+  <title>Graham Nelson - The Reliques of Tolti-Aph — 1 of 57</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="author" content="Graham Nelson" />
+  <meta name="description" content="A page for the game The Reliques of Tolti-Aph by Graham Nelson." />
+  <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+</head>
 
-	<head>
-		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
-		<meta name="generator" content="Adobe GoLive">
-		<title>The Reliques of Tolti-Aph - Source Text</title>
-	</head>
+<body>
 
-	<body bgcolor="#ffffff">
-		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
-					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">The Reliques of Tolti-Aph</font></h3>
-					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Graham Nelson (2005) - the Inform 7 source text</font></h3>
-				</td></tr>
-		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>&quot;<font color=#000080>The Reliques of Tolti-Aph</font>&quot; by Graham Nelson</b>
-<br>
+<div class = "container">
 
-<br>
-Include (- Serial &quot;<font color=#000080>060430</font>&quot;; -).
-<br>
+<div class ="sourcecoverimage">
+	<span><a href="Cover.jpg"><img src="Small Cover.jpg" border="1" /></a></span>
+</div>
 
-<br>
-<font color=#404040>[Some commentators on interactive fiction suggest that it arose directly from the invention of role-playing games in the 1970s, when the nineteenth-century tabletop wargame collided with the potent cult of J. R. R. Tolkien in American college campuses. It is certainly true that Will Crowther, co-author of what is generally regarded as the first true work of IF, had been an early player of E. Gary Gygax and Dave Arneson's prototype role-playing game &quot;Dungeons and Dragons: Rules for Fantastic Medieval Wargames Campaigns Playable with Paper and Pencil and Miniature Figures&quot; (1974) - later, more snappily, just D&amp;D. On the other hand, surprisingly few IF authors in the last thirty years have adopted styles of play which resemble RPGs at all closely; and the book-keeping, the randomness, the simulationist nature, the volume of detail and the open-endedness implied by a &quot;campaign&quot; all make the implementation of a RPG in interactive fiction something of a technical challenge. So that is what we are going to do: or at least we will work through enough of a system of RPG-like rules to demonstrate the possibility.</font>]
-<br>
+<div class ="sourceintroduction">
+	<h1>
+		<span>The Reliques of Tolti-Aph</span> <span class="pagination">— 1 of 57</span>
+	</h1>
+	<h2>
+		<span>Graham Nelson</span>
+	</h2>
+	<div class ="sourcebibliography">
+		<span>Release 1</span>
+	</div>
+</div>
 
-<br>
-The story description is &quot;<font color=#000080>It used to be said that there are two kinds of magic-user: those who have been to Tolti-Aph, and charlatans. It used to be generally understood that the attempt to prove oneself in the unforgiving society of Tolti-Aph was a bid for rapid level advancement or else romantic, thin-young-mage-in-midnight-black-robes death. The closer you get to the wilderness island vaguely marked 'Tholtaff' on the agate globe in your great-great-grandfather's study, the better the alternative sounds: settling down in some coastal village, perhaps, a little weathermongering, some polymancy, and helping out with the nets after a bad storm. Retire at maybe level 3, with most of your experience points gained from observing rare fish-based poisons carry off those villagers careless about gutting. Publish an awesomely tedious monograph on the correct usage of the 'untangle rigging' spell. You know, the good life.</font>&quot;
-<br>
+<div class = "links">
+<ul>
+<li><a href="index.html">Home page</a></li><li><a href="source.txt">Complete text</a></li>
+</ul>
+</div>
 
-<br>
-The story creation year is 2005.
-<br>
+<div class = "source">
+<p class="indent0"><span class="heading">&quot;<span class="quote">The Reliques of Tolti-Aph</span>&quot; by Graham Nelson</span></p><p class="indent0"></p><p class="indent0">Include (-<span class="i6code"> Serial &quot;101025&quot;; </span>-).</p><p class="indent0"></p><p class="indent0"><span class="comment">[Some commentators on interactive fiction suggest that it arose directly from the invention of role-playing games in the 1970s, when the nineteenth-century tabletop wargame collided with the potent cult of J. R. R. Tolkien in American college campuses. It is certainly true that Will Crowther, co-author of what is generally regarded as the first true work of IF, had been an early player of E. Gary Gygax and Dave Arneson's prototype role-playing game &quot;Dungeons and Dragons: Rules for Fantastic Medieval Wargames Campaigns Playable with Paper and Pencil and Miniature Figures&quot; (1974) - later, more snappily, just D&amp;D. On the other hand, surprisingly few IF authors in the last thirty years have adopted styles of play which resemble RPGs at all closely; and the book-keeping, the randomness, the simulationist nature, the volume of detail and the open-endedness implied by a &quot;campaign&quot; all make the implementation of a RPG in interactive fiction something of a technical challenge. So that is what we are going to do: or at least we will work through enough of a system of RPG-like rules to demonstrate the possibility.]</span></p><p class="indent0"></p><p class="indent0"></p><p class="indent0">The story description is &quot;<span class="quote">It used to be said that there are two kinds of magic-user: those who have been to Tolti-Aph, and charlatans. It used to be generally understood that the attempt to prove oneself in the unforgiving society of Tolti-Aph was a bid for rapid level advancement or else romantic, thin-young-mage-in-midnight-black-robes death. The closer you get to the wilderness island vaguely marked 'Tholtaff' on the agate globe in your great-great-grandfather's study, the better the alternative sounds: settling down in some coastal village, perhaps, a little weathermongering, some polymancy, and helping out with the nets after a bad storm. Retire at maybe level 3, with most of your experience points gained from observing rare fish-based poisons carry off those villagers careless about gutting. Publish an awesomely tedious monograph on the correct usage of the 'untangle rigging' spell. You know, the good life.</span>&quot;</p><p class="indent0"></p><p class="indent0">The story creation year is 2005.</p><p class="indent0"></p><p class="indent0">Release along with cover art, the source text, a website and a file of &quot;<span class="quote">Collegio magazine</span>&quot; called &quot;<span class="quote">Collegio.pdf</span>&quot;.</p><p class="indent0"></p><ul><li><a href=source_0.html>Part I - Mechanics of a Simple Role-Playing Game</a></li>
+<ul><li><a href=source_1.html>Chapter 1 - Fundamentals</a></li>
+<ul><li><a href=source_1.html>Section 1(a) - Substance</a></li>
+<li><a href=source_2.html>Section 1(b) - Dice</a></li>
+<li><a href=source_3.html>Section 1(c) - Percentages</a></li>
+<li><a href=source_4.html>Section 1(d) - Strength</a></li>
+<li><a href=source_5.html>Section 1(e) - Experience and levels</a></li>
+<li><a href=source_6.html>Section 1(f) - Saving rolls</a></li>
+</ul><li><a href=source_7.html>Chapter 2 - Magic</a></li>
+<ul><li><a href=source_7.html>Section 2(a) - The phenomenon of magic</a></li>
+<li><a href=source_8.html>Section 2(b) - The capacity for magic</a></li>
+<li><a href=source_9.html>Section 2(c) - Staffs, strength potions and scrolls</a></li>
+<li><a href=source_10.html>Section 2(d) - The casting action</a></li>
+<li><a href=source_11.html>Section 2(e) - Effect of standard spells in alphabetical order</a></li>
+</ul><li><a href=source_12.html>Chapter 3 - Combat</a></li>
+<ul><li><a href=source_12.html>Section 3(a) - Monsters are People Too</a></li>
+<li><a href=source_13.html>Section 3(b) - Weaponry</a></li>
+<li><a href=source_14.html>Section 3(c) - Armour</a></li>
+<li><a href=source_15.html>Section 3(d) - Combat-readiness</a></li>
+<li><a href=source_16.html>Section 3(e) - Damage</a></li>
+<li><a href=source_17.html>Section 3(f) - Striking blows</a></li>
+<li><a href=source_18.html>Section 3(g) - Missile weapons, lack of</a></li>
+</ul></ul><li><a href=source_19.html>Part II - The Reliques of Tolti-Aph Scenario</a></li>
+<ul><li><a href=source_20.html>Chapter S - Southern Quarter</a></li>
+<ul><li><a href=source_20.html>Section S(a) - Turret, Longwall, Mound</a></li>
+<li><a href=source_21.html>Section S(b) - The Journal and Orion</a></li>
+<li><a href=source_22.html>Section S(c) - The Fallen Tree and the Fullers</a></li>
+<li><a href=source_23.html>Section S(d) - The Broken Lane and the Spiders</a></li>
+<li><a href=source_24.html>Section S(e) - The Icefinger River</a></li>
+<li><a href=source_25.html>Section S(f) - The Marshes</a></li>
+</ul><li><a href=source_26.html>Chapter Z - The Central Ziggurat</a></li>
+<li><a href=source_27.html>Chapter E - Eastern Quarter</a></li>
+<ul><li><a href=source_28.html>Section E(a) - The Budless Grove</a></li>
+<li><a href=source_29.html>Section E(b) - The Maze of Royal Beasts</a></li>
+<li><a href=source_30.html>Section E(c) - Spatial coordinates</a></li>
+<li><a href=source_31.html>Section E(d) - Shapes of individual rooms in the labyrinth</a></li>
+<li><a href=source_32.html>Section E(e) - Labyrinth rooms</a></li>
+<li><a href=source_33.html>Section E(f) - Solid Rock and labyrinth boundaries</a></li>
+<li><a href=source_34.html>Section E(g) - Terra Incognita</a></li>
+<li><a href=source_35.html>Section E(h) - Exhausting the maze and retrieving rooms</a></li>
+<li><a href=source_36.html>Section E(i) - Exploring the labyrinth</a></li>
+<li><a href=source_37.html>Section E(j) - The force labyrinth spell</a></li>
+<li><a href=source_38.html>Section E(k) - The Hedge Archway and the leaves</a></li>
+<li><a href=source_39.html>Section E(l) - The four tasks</a></li>
+<li><a href=source_40.html>Section E(m) - The fifty rooms of the inner labyrinth</a></li>
+<li><a href=source_41.html>Section E(n) - Setting up the labyrinth</a></li>
+<li><a href=source_42.html>Section E(o) - The solitaire game variant</a></li>
+<li><a href=source_43.html>Section E(p) - Treasures of sorts</a></li>
+<li><a href=source_44.html>Section E(q) - The seven artefacts</a></li>
+<li><a href=source_45.html>Section E(r) - The encounters pack</a></li>
+<li><a href=source_46.html>Section E(s) - Traps and earthquakes</a></li>
+</ul><li><a href=source_47.html>Chapter W - Western Quarter</a></li>
+<ul><li><a href=source_47.html>Section W(a) - Cure baldness, mindsift and corrode</a></li>
+<li><a href=source_48.html>Section W(b) - The Dry Channel</a></li>
+<li><a href=source_49.html>Section W(c) - The Goddess and the Snake</a></li>
+<li><a href=source_50.html>Section W(d) - Knots</a></li>
+<li><a href=source_51.html>Section W(e) - The Garret and the Archivist</a></li>
+</ul><li><a href=source_52.html>Chapter N - Northern Quarter</a></li>
+<ul><li><a href=source_52.html>Section N(a) - That Was Old School</a></li>
+<li><a href=source_53.html>Section N(b) - Rescued!</a></li>
+<li><a href=source_54.html>Section N(c) - Rescuing!</a></li>
+</ul><li><a href=source_55.html>Chapter the Last - Not for release</a></li>
+</ul></ul>
+</div>
 
-<br>
-Release along with cover art, the source text, a website and a file of &quot;<font color=#000080>Collegio magazine</font>&quot; called &quot;<font color=#000080>Collegio.pdf</font>&quot;.
-<br>
+<div class ="notes">
 
-<br>
-<ul><li><a href=source_0.html>Part I - Mechanics of a Simple Role-Playing Game</a></li>
-<li>- <a href=source_1.html>Chapter 1 - Fundamentals</a></li>
-<li>- - <a href=source_1.html>Section 1(a) - Substance</a></li>
-<li>- - <a href=source_2.html>Section 1(b) - Dice</a></li>
-<li>- - <a href=source_3.html>Section 1(c) - Percentages</a></li>
-<li>- - <a href=source_4.html>Section 1(d) - Strength</a></li>
-<li>- - <a href=source_5.html>Section 1(e) - Experience and levels</a></li>
-<li>- - <a href=source_6.html>Section 1(f) - Saving rolls</a></li>
-<li>- <a href=source_7.html>Chapter 2 - Magic</a></li>
-<li>- - <a href=source_7.html>Section 2(a) - The phenomenon of magic</a></li>
-<li>- - <a href=source_8.html>Section 2(b) - The capacity for magic</a></li>
-<li>- - <a href=source_9.html>Section 2(c) - Staffs, strength potions and scrolls</a></li>
-<li>- - <a href=source_10.html>Section 2(d) - The casting action</a></li>
-<li>- - <a href=source_11.html>Section 2(e) - Effect of standard spells in alphabetical order</a></li>
-<li>- <a href=source_12.html>Chapter 3 - Combat</a></li>
-<li>- - <a href=source_12.html>Section 3(a) - Monsters are People Too</a></li>
-<li>- - <a href=source_13.html>Section 3(b) - Weaponry</a></li>
-<li>- - <a href=source_14.html>Section 3(c) - Armour</a></li>
-<li>- - <a href=source_15.html>Section 3(d) - Combat-readiness</a></li>
-<li>- - <a href=source_16.html>Section 3(e) - Damage</a></li>
-<li>- - <a href=source_17.html>Section 3(f) - Striking blows</a></li>
-<li>- - <a href=source_18.html>Section 3(g) - Missile weapons, lack of</a></li>
-<li><a href=source_19.html>Part II - The Reliques of Tolti-Aph Scenario</a></li>
-<li>- <a href=source_20.html>Chapter S - Southern Quarter</a></li>
-<li>- - <a href=source_20.html>Section S(a) - Turret, Longwall, Mound</a></li>
-<li>- - <a href=source_21.html>Section S(b) - The Journal and Orion</a></li>
-<li>- - <a href=source_22.html>Section S(c) - The Fallen Tree and the Fullers</a></li>
-<li>- - <a href=source_23.html>Section S(d) - The Broken Lane and the Spiders</a></li>
-<li>- - <a href=source_24.html>Section S(e) - The Icefinger River</a></li>
-<li>- - <a href=source_25.html>Section S(f) - The Marshes</a></li>
-<li>- <a href=source_26.html>Chapter Z - The Central Ziggurat</a></li>
-<li>- <a href=source_27.html>Chapter E - Eastern Quarter</a></li>
-<li>- - <a href=source_28.html>Section E(a) - The Budless Grove</a></li>
-<li>- - <a href=source_29.html>Section E(b) - The Maze of Royal Beasts</a></li>
-<li>- - <a href=source_30.html>Section E(c) - Spatial coordinates</a></li>
-<li>- - <a href=source_31.html>Section E(d) - Shapes of individual rooms in the labyrinth</a></li>
-<li>- - <a href=source_32.html>Section E(e) - Labyrinth rooms</a></li>
-<li>- - <a href=source_33.html>Section E(f) - Solid Rock and labyrinth boundaries</a></li>
-<li>- - <a href=source_34.html>Section E(g) - Terra Incognita</a></li>
-<li>- - <a href=source_35.html>Section E(h) - Exhausting the maze and retrieving rooms</a></li>
-<li>- - <a href=source_36.html>Section E(i) - Exploring the labyrinth</a></li>
-<li>- - <a href=source_37.html>Section E(j) - The force labyrinth spell</a></li>
-<li>- - <a href=source_38.html>Section E(k) - The Hedge Archway and the leaves</a></li>
-<li>- - <a href=source_39.html>Section E(l) - The four tasks</a></li>
-<li>- - <a href=source_40.html>Section E(m) - The fifty rooms of the inner labyrinth</a></li>
-<li>- - <a href=source_41.html>Section E(n) - Setting up the labyrinth</a></li>
-<li>- - <a href=source_42.html>Section E(o) - The solitaire game variant</a></li>
-<li>- - <a href=source_43.html>Section E(p) - Treasures of sorts</a></li>
-<li>- - <a href=source_44.html>Section E(q) - The seven artefacts</a></li>
-<li>- - <a href=source_45.html>Section E(r) - The encounters pack</a></li>
-<li>- - <a href=source_46.html>Section E(s) - Traps and earthquakes</a></li>
-<li>- <a href=source_47.html>Chapter W - Western Quarter</a></li>
-<li>- - <a href=source_47.html>Section W(a) - Cure baldness, mindsift and corrode</a></li>
-<li>- - <a href=source_48.html>Section W(b) - The Dry Channel</a></li>
-<li>- - <a href=source_49.html>Section W(c) - The Goddess and the Snake</a></li>
-<li>- - <a href=source_50.html>Section W(d) - Knots</a></li>
-<li>- - <a href=source_51.html>Section W(e) - The Garret and the Archivist</a></li>
-<li>- <a href=source_52.html>Chapter N - Northern Quarter</a></li>
-<li>- - <a href=source_52.html>Section N(a) - That Was Old School</a></li>
-<li>- - <a href=source_53.html>Section N(b) - Rescued!</a></li>
-<li>- - <a href=source_54.html>Section N(c) - Rescuing!</a></li>
-<li>- <a href=source_55.html>Chapter the Last - Not for release</a></li>
-</ul></font>
-					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"></font></p>
-					<p></p>
-				</td></tr></table>
-	</body>
+</div>
+
+</div>
+
+</body>
 
 </html>

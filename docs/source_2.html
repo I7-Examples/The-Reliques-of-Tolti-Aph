@@ -1,68 +1,53 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<head>
+  <title>Graham Nelson - The Reliques of Tolti-Aph — 4 of 57</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="author" content="Graham Nelson" />
+  <meta name="description" content="A page for the game The Reliques of Tolti-Aph by Graham Nelson." />
+  <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+</head>
 
-	<head>
-		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
-		<meta name="generator" content="Adobe GoLive">
-		<title>The Reliques of Tolti-Aph - Source Text</title>
-	</head>
+<body>
 
-	<body bgcolor="#ffffff">
-		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
-					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">The Reliques of Tolti-Aph</font></h3>
-					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Graham Nelson (2005) - the Inform 7 source text</font></h3>
-				</td></tr>
-		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_1.html">Previous</a><br><a href="source_3.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Section 1(b) - Dice</b>
-<br>
+<div class = "container">
 
-<br>
-A die roll is a kind of value. 3d20+9 specifies a die roll<font color=#404040><sup><a href="#note1">[1]</a></sup></font> with parts dice, sides (without leading zeros), adds (without leading zeros, optional, preamble optional).<font color=#404040><sup><a href="#note2">[2]</a></sup></font>
-<br>
+<div class ="sourcecoverimage">
+	<span><a href="Cover.jpg"><img src="Small Cover.jpg" border="1" /></a></span>
+</div>
 
-<br>
-To decide which number is roll of (dr - a die roll):
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;let the total be the adds part of dr;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[dr]: </font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;repeat with counter running from 1 to the dice part of dr
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let the roll be a random number from 1 to the sides part of dr;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the counter is not 1, say &quot;<font color=#000080>,</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say the roll;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;increase the total by the roll;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;end repeat;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the adds part of dr is 0 and the dice part of dr is 1, decide on the total;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the adds part of dr is not 0, say &quot;<font color=#000080>+</font>&quot;, adds part of dr;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>=</font>&quot;, total;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;decide on the total.
-<br>
+<div class ="sourceintroduction">
+	<h1>
+		<span>The Reliques of Tolti-Aph</span> <span class="pagination">— 4 of 57</span>
+	</h1>
+	<h2>
+		<span>Graham Nelson</span>
+	</h2>
+	<div class ="sourcebibliography">
+		<span>Release 1</span>
+	</div>
+</div>
 
-<br>
-Test rolling is an action out of world applying to one die roll. Understand &quot;<font color=#000080>dice [die roll]</font>&quot; as test rolling. Carry out test rolling: say &quot;<font color=#000080>For your own amusement, you roll </font>&quot;; let the outcome be the roll of the die roll understood; say &quot;<font color=#000080>, making [outcome in words].</font>&quot; <font color=#404040><sup><a href="#note3">[3]</a></sup></font>
-<br>
+<div class = "links">
+<ul>
+<li><a href="index.html">Home page</a></li><li><a href="source.html">Beginning</a></li><li><a href="source_1.html">Previous</a></li><li><a href="source_3.html">Next</a></li>
+</ul>
+</div>
 
-<br>
-</font>
-					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><p><i>Notes</i><p>
-<A name="note1"><font color=#404040>[1].  RPGs are games of chance as well as skill, and the actual rolling of the dice is as much a part of the experience as the randomised outcome. The polyhedral four-, six-, eight-, ten-, twenty- and even hundred-sided dice ubiquitous to RPGs are pleasingly exotic in the hand, but also make possible a wide range of random distributions. W&W uses the traditional notation for such rolls (which evolved as the D&D rules went through successive printings, but became standard around 1980): "3d6+2" means we should roll three six-sided dice, add up the scores showing, then add 2.</font><p>
-<A name="note2"><font color=#404040>[2].  The optional nature of the adds part of a die roll means that "2d4", for instance, is also a legal form. Again, this is a convention imitating the tables which appear in printed RPG rulebooks. What Inform means by the preamble to the adds part is the plus sign: if this had not been specified to be optional, "2d4+" would be legal.</font><p>
-<A name="note3"><font color=#404040>[3].  We added the pointless verb "roll" as a harmless convenience for testing that die rolls work: if the player types "ROLL 3D6+2", the game might reply "For your own amusement, you roll 3d6+2: 2,5,4+2=13, making thirteen."</font><p>
-</font></p>
-					<p></p>
-				</td></tr></table>
-	</body>
+<div class = "source">
+<p class="indent0"><span class="heading">Section 1(b) - Dice</span></p><p class="indent0"></p><p class="indent0">A die roll is a kind of value. 3d20+9 specifies a die roll<a name="note1ref"></a><span class="notecue"><a href="#note1">[1]</a></span> with parts dice, sides (without leading zeros), adds (without leading zeros, optional, preamble optional).<a name="note2ref"></a><span class="notecue"><a href="#note2">[2]</a></span></p><p class="indent0"></p><p class="indent0">To decide which number is roll of (dr - a die roll):</p><p class="indent1">let the total be the adds part of dr;</p><p class="indent1">say &quot;<span class="quote">[</span><span class="substitution">dr</span><span class="quote">]: </span>&quot;;</p><p class="indent1">repeat with counter running from 1 to the dice part of dr:</p><p class="indent2">let the roll be a random number from 1 to the sides part of dr;</p><p class="indent2">unless the counter is 1, say &quot;<span class="quote">,</span>&quot;;</p><p class="indent2">say the roll;</p><p class="indent2">increase the total by the roll;</p><p class="indent1">if the adds part of dr is 0 and the dice part of dr is 1, decide on the total;</p><p class="indent1">if the adds part of dr is not 0, say &quot;<span class="quote">+</span>&quot;, adds part of dr;</p><p class="indent1">say &quot;<span class="quote">=</span>&quot;, total;</p><p class="indent1">decide on the total.</p><p class="indent0"></p><p class="indent0">Test rolling is an action out of world applying to one die roll. Understand &quot;<span class="quote">dice [</span><span class="substitution">die roll</span><span class="quote">]</span>&quot; as test rolling. Carry out test rolling: say &quot;<span class="quote">For your own amusement, you roll </span>&quot;; let the total thrown be the roll of the die roll understood; say &quot;<span class="quote">, making [</span><span class="substitution">total thrown in words</span><span class="quote">].</span>&quot; <a name="note3ref"></a><span class="notecue"><a href="#note3">[3]</a></span></p><p class="indent0"></p>
+</div>
+
+<div class ="notes">
+<p><span class="notesheading">Notes</span></p>
+<p><a name="note1"></a><span class="notetext"><a href="#note1ref">[1]</a>.  RPGs are games of chance as well as skill, and the actual rolling of the dice is as much a part of the experience as the randomised outcome. The polyhedral four-, six-, eight-, ten-, twenty- and even hundred-sided dice ubiquitous to RPGs are pleasingly exotic in the hand, but also make possible a wide range of random distributions. W&W uses the traditional notation for such rolls (which evolved as the D&D rules went through successive printings, but became standard around 1980): "3d6+2" means we should roll three six-sided dice, add up the scores showing, then add 2.</span></p>
+<p><a name="note2"></a><span class="notetext"><a href="#note2ref">[2]</a>.  The optional nature of the adds part of a die roll means that "2d4", for instance, is also a legal form. Again, this is a convention imitating the tables which appear in printed RPG rulebooks. What Inform means by the preamble to the adds part is the plus sign: if this had not been specified to be optional, "2d4+" would be legal.</span></p>
+<p><a name="note3"></a><span class="notetext"><a href="#note3ref">[3]</a>.  We added the pointless verb "roll" as a harmless convenience for testing that die rolls work: if the player types "ROLL 3D6+2", the game might reply "For your own amusement, you roll 3d6+2: 2,5,4+2=13, making thirteen."</span></p>
+
+</div>
+
+</div>
+
+</body>
 
 </html>

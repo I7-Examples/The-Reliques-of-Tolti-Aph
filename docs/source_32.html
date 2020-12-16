@@ -1,190 +1,51 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<head>
+  <title>Graham Nelson - The Reliques of Tolti-Aph — 34 of 57</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="author" content="Graham Nelson" />
+  <meta name="description" content="A page for the game The Reliques of Tolti-Aph by Graham Nelson." />
+  <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+</head>
 
-	<head>
-		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
-		<meta name="generator" content="Adobe GoLive">
-		<title>The Reliques of Tolti-Aph - Source Text</title>
-	</head>
+<body>
 
-	<body bgcolor="#ffffff">
-		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
-					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">The Reliques of Tolti-Aph</font></h3>
-					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Graham Nelson (2005) - the Inform 7 source text</font></h3>
-				</td></tr>
-		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_31.html">Previous</a><br><a href="source_33.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Section E(e) - Labyrinth rooms</b>
-<br>
+<div class = "container">
 
-<br>
-A labyrinth room is a kind of room. A labyrinth room has a labyrinth shape called shape. A labyrinth room has a text called map legend. A labyrinth room usually has map legend &quot;<font color=#000080>-+-</font>&quot;. A labyrinth room has a number called minimum level. A labyrinth room usually has minimum level 1. A labyrinth room can be grovelike or ungrovelike. A labyrinth room is usually ungrovelike.
-<br>
+<div class ="sourcecoverimage">
+	<span><a href="Cover.jpg"><img src="Small Cover.jpg" border="1" /></a></span>
+</div>
 
-<br>
-Definition: A labyrinth room is unplaced if its grid position is &lt;0,0,0&gt;.
-<br>
-Definition: A labyrinth room is unshaped if its shape is L0/0-0-0-0-0-0.
-<br>
-Definition: A labyrinth room is ascending if the U part of its shape is 1 and the maze level part of its grid position is not 1.
-<br>
-Definition: A labyrinth room is descending if the D part of its shape is 1 and the maze level part of its grid position is not 9.
-<br>
-Definition: A labyrinth room is non-ascending if it is not ascending.
-<br>
-Definition: A labyrinth room is non-descending if it is not descending.<font color=#404040><sup><a href="#note1">[1]</a></sup></font>
-<br>
+<div class ="sourceintroduction">
+	<h1>
+		<span>The Reliques of Tolti-Aph</span> <span class="pagination">— 34 of 57</span>
+	</h1>
+	<h2>
+		<span>Graham Nelson</span>
+	</h2>
+	<div class ="sourcebibliography">
+		<span>Release 1</span>
+	</div>
+</div>
 
-<br>
-After printing the name of an ascending labyrinth room, say &quot;<font color=#000080> with Staircase Up</font>&quot;.
-<br>
-After printing the name of an descending labyrinth room, say &quot;<font color=#000080> with Staircase Down</font>&quot;.
-<br>
+<div class = "links">
+<ul>
+<li><a href="index.html">Home page</a></li><li><a href="source.html">Beginning</a></li><li><a href="source_31.html">Previous</a></li><li><a href="source_33.html">Next</a></li>
+</ul>
+</div>
 
-<br>
-<font color=#404040>[At the start of play, the game contains a large stock of labyrinth rooms which are not committed to any shape or position, but are waiting to be joined to the maze. The previous section's table is used to assign shapes to the rooms, but respecting their relative frequencies.</font>]
-<br>
+<div class = "source">
+<p class="indent0"><span class="heading">Section E(e) - Labyrinth rooms</span></p><p class="indent0"></p><p class="indent0">A labyrinth room is a kind of room. A labyrinth room has a labyrinth shape called shape. A labyrinth room has a text called map legend. A labyrinth room usually has map legend &quot;<span class="quote">-+-</span>&quot;. A labyrinth room has a number called minimum level. A labyrinth room usually has minimum level 1. A labyrinth room can be grovelike or ungrovelike. A labyrinth room is usually ungrovelike.</p><p class="indent0"></p><p class="indent0">Definition: A labyrinth room is unplaced if its grid position is &lt;0,0,0&gt;.</p><p class="indent0">Definition: A labyrinth room is unshaped if its shape is L0/0-0-0-0-0-0.</p><p class="indent0">Definition: A labyrinth room is ascending rather than non-ascending if the U part of its shape is 1 and the maze level part of its grid position is not 1.</p><p class="indent0">Definition: A labyrinth room is descending rather than non-descending if the D part of its shape is 1 and the maze level part of its grid position is not 9.</p><p class="indent0"><a name="note1ref"></a><span class="notecue"><a href="#note1">[1]</a></span></p><p class="indent0"></p><p class="indent0">After printing the name of an ascending labyrinth room, say &quot;<span class="quote"> with Staircase Up</span>&quot;.</p><p class="indent0">After printing the name of an descending labyrinth room, say &quot;<span class="quote"> with Staircase Down</span>&quot;.</p><p class="indent0"></p><p class="indent0"><span class="comment">[At the start of play, the game contains a large stock of labyrinth rooms which are not committed to any shape or position, but are waiting to be joined to the maze. The previous section's table is used to assign shapes to the rooms, but respecting their relative frequencies.]</span></p><p class="indent0"></p><p class="indent0">To calculate how many labyrinth rooms should have each shape:</p><p class="indent1">let total space be the number of unshaped labyrinth rooms;</p><p class="indent1">let total allocated be 0;</p><p class="indent1">let total frequency be 0%;</p><p class="indent1">if the total space is 0, stop;</p><p class="indent1">repeat through the Table of Shape Frequencies:</p><p class="indent2">change the shape count entry to 0;</p><p class="indent1">repeat through the Table of Shape Frequencies:</p><p class="indent2">let N be the parts per hundred part of the frequency entry;</p><p class="indent2">let N be N multiplied by the total space;</p><p class="indent2">change the shape count entry to N divided by 100;</p><p class="indent2">change the total allocated to the total allocated plus the shape count entry;</p><p class="indent2">let total frequency be total frequency plus the frequency entry;</p><p class="indent1">unless the total frequency is 100%,</p><p class="indent2">say &quot;<span class="quote">Oops: the frequency table totals up to [</span><span class="substitution">total frequency</span><span class="quote">].</span>&quot;;</p><p class="indent1"><span class="comment">[Nevertheless, if the cave extent is not a multiple of 50 we have probably under-allocated due to rounding errors. We make random draws to put this right.]</span></p><p class="indent1">while the total allocated is less than the total space:</p><p class="indent2">let total frequency be 0%;</p><p class="indent2">let R be a random number from 1 to 100;</p><p class="indent2">let the weighted percentage be the percentage with parts per hundred part R;</p><p class="indent2">repeat through the Table of Shape Frequencies:</p><p class="indent3">let total frequency be total frequency plus the frequency entry;</p><p class="indent3">if the weighted percentage &gt; 0% and the weighted percentage &lt;= the total frequency:</p><p class="indent4">change the shape count entry to the shape count entry plus 1;</p><p class="indent4">change the total allocated to the total allocated plus 1;</p><p class="indent4">change the weighted percentage to 0%.</p><p class="indent0"></p><p class="indent0">To give shape to the shapeless labyrinth rooms:</p><p class="indent1"><span class="comment">[Now we change the count entries so that a count entry of X means that the Xth room is the first to have the characteristics of the present row. In particular, there is guaranteed to be a row with a count entry of 1.]</span></p><p class="indent1">let total allocated be 0;</p><p class="indent1">repeat through the Table of Shape Frequencies:</p><p class="indent2">unless the shape count entry is 0:</p><p class="indent3">let new value be the total allocated plus 1;</p><p class="indent3">let total allocated be total allocated plus shape count entry;</p><p class="indent3">change the shape count entry to the new value;</p><p class="indent1"><span class="comment">[Now we go through the rooms, using the current row to set each one, and moving to the appropriate row whenever one of the start counts is hit. Since there is guaranteed to be a count entry of 1 somewhere, the changes can only be reached when a row has been chosen.]</span></p><p class="indent1">let total allocated be 0;</p><p class="indent1">repeat with blank room running through unshaped labyrinth rooms:</p><p class="indent2">let total allocated be total allocated plus 1;</p><p class="indent2">if there is a shape count of total allocated in the Table of Shape Frequencies then choose row with a shape count of total allocated in the Table of Shape Frequencies;</p><p class="indent2">change the shape of the blank room to the shape entry;</p><p class="indent2">change the map legend of the blank room to the legend entry;</p><p class="indent2">change the printed name of the blank room to the shape name entry.</p><p class="indent0"></p><p class="indent0">Before casting make sanctuary at: if the location is a labyrinth room or the location is the Budless Grove, say &quot;<span class="quote">You hear the laughter of the never-children in your mind, and know that you might as well save your strength.</span>&quot; instead.</p><p class="indent0"></p><p class="indent0">Before listing nondescript items when the location is a labyrinth room:</p><p class="indent1">now all hazards are unmarked for listing;</p><p class="indent1">if a hostile monster is marked for listing, say &quot;<span class="quote">The [</span><span class="substitution">if the current maze level is 1</span><span class="quote">]lawn[</span><span class="substitution">otherwise</span><span class="quote">]cave[</span><span class="substitution">end if</span><span class="quote">] is guarded by [</span><span class="substitution">a list of hostile monsters which are marked for listing</span><span class="quote">].</span>&quot;;</p><p class="indent1">now all hostile monsters are unmarked for listing.</p><p class="indent0"></p>
+</div>
 
-<br>
-To calculate how many labyrinth rooms should have each shape:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;let total space be the number of unshaped labyrinth rooms;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;let total allocated be 0;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;let total frequency be 0%;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the total space is 0, stop;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;repeat through the Table of Shape Frequencies
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;change the shape count entry to 0;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;end repeat;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;repeat through the Table of Shape Frequencies
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let N be the parts per hundred part of the frequency entry;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let N be N multiplied by the total space;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;change the shape count entry to N divided by 100;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;change the total allocated to the total allocated plus the shape count entry;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let total frequency be total frequency plus the frequency entry;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;end repeat;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the total frequency is not 100%,
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>Oops: the frequency table totals up to [total frequency].</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<font color=#404040>[Nevertheless, if the cave extent is not a multiple of 50 we have probably under-allocated due to rounding errors. We make random draws to put this right.</font>]
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;while the total allocated is less than the total space
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let total frequency be 0%;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let R be a random number from 1 to 100;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let the weighted percentage be the percentage with parts per hundred part R;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;repeat through the Table of Shape Frequencies
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let total frequency be total frequency plus the frequency entry;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the weighted percentage &gt; 0% and the weighted percentage &lt;= the total frequency
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;change the shape count entry to the shape count entry plus 1;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;change the total allocated to the total allocated plus 1;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;change the weighted percentage to 0%;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end repeat;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;end while.
-<br>
+<div class ="notes">
+<p><span class="notesheading">Note</span></p>
+<p><a name="note1"></a><span class="notetext"><a href="#note1ref">[1]</a>.  The point here is that if a cave with an up staircase is found on the top level, the staircase must be ignored: similarly a down staircase on the bottom level.</span></p>
 
-<br>
-To give shape to the shapeless labyrinth rooms:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<font color=#404040>[Now we change the count entries so that a count entry of X means that the Xth room is the first to have the characteristics of the present row. In particular, there is guaranteed to be a row with a count entry of 1.</font>]
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;let total allocated be 0;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;repeat through the Table of Shape Frequencies
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the shape count entry is not 0
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let new value be the total allocated plus 1;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let total allocated be total allocated plus shape count entry;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;change the shape count entry to the new value;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;end repeat;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<font color=#404040>[Now we go through the rooms, using the current row to set each one, and moving to the appropriate row whenever one of the start counts is hit. Since there is guaranteed to be a count entry of 1 somewhere, the changes can only be reached when a row has been chosen.</font>]
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;let total allocated be 0;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;repeat with blank room running through unshaped labyrinth rooms
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let total allocated be total allocated plus 1;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if there is a shape count of total allocated in the Table of Shape Frequencies then choose row with a shape count of total allocated in the Table of Shape Frequencies;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;change the shape of the blank room to the shape entry;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;change the map legend of the blank room to the legend entry;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;change the printed name of the blank room to the shape name entry;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;end repeat.
-<br>
+</div>
 
-<br>
-Before casting make sanctuary at: if the location is a labyrinth room or the location is the Budless Grove, say &quot;<font color=#000080>You hear the laughter of the never-children in your mind, and know that you might as well save your strength.</font>&quot; instead.
-<br>
+</div>
 
-<br>
-Before listing nondescript items when the location is a labyrinth room:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;now all hazards are unmarked for listing;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if a hostile monster is marked for listing, say &quot;<font color=#000080>The [if the current maze level is 1]lawn[otherwise]cave[end if] is guarded by [a list of hostile monsters which are marked for listing].</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;now all hostile monsters are unmarked for listing.
-<br>
-
-<br>
-</font>
-					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><p><i>Note</i><p>
-<A name="note1"><font color=#404040>[1].  The point here is that if a cave with an up staircase is found on the top level, the staircase must be ignored: similarly a down staircase on the bottom level.</font><p>
-</font></p>
-					<p></p>
-				</td></tr></table>
-	</body>
+</body>
 
 </html>

@@ -1,148 +1,55 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<head>
+  <title>Graham Nelson - The Reliques of Tolti-Aph — 47 of 57</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="author" content="Graham Nelson" />
+  <meta name="description" content="A page for the game The Reliques of Tolti-Aph by Graham Nelson." />
+  <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+</head>
 
-	<head>
-		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
-		<meta name="generator" content="Adobe GoLive">
-		<title>The Reliques of Tolti-Aph - Source Text</title>
-	</head>
+<body>
 
-	<body bgcolor="#ffffff">
-		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
-					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">The Reliques of Tolti-Aph</font></h3>
-					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Graham Nelson (2005) - the Inform 7 source text</font></h3>
-				</td></tr>
-		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_44.html">Previous</a><br><a href="source_46.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Section E(r) - The encounters pack</b>
-<br>
+<div class = "container">
 
-<br>
-<font color=#404040>[Here we populate the maze. When the player enters a new-found room which has open space, &quot;cards&quot; are drawn from the &quot;encounters pack&quot; to see what will be found there. The cards are actually the things (monsters, etc.) themselves and the pack is a container - though, like the Solid Rock and Terra Incognita rooms, it exists in a somewhat metaphysical way and is not actually to be found in the player's world.
-<br>
-</font><font color=#404040>
-<br>
-</font><font color=#404040>We arrange these &quot;cards&quot; in a pack because dead monsters, used artefacts and played hazard cards need to be returned to the bottom of the pack. It would not do to simply draw randomly from the pool of out-of-world cards: then there would be a chance of immediately redrawing the Charmed Flute, say, only a turn after giving it up.
-<br>
-</font><font color=#404040>
-<br>
-</font><font color=#404040>Although not much Inform code uses or notices this, the contents of a room or container are in fact organised as a list, and we sneakily use this as the ordering of the pack. Note that &quot;return X to the pack&quot;, defined below, puts X at the bottom by removing all of the cards, putting X in, then putting all the cards back again - which sounds slow, but it's a trifling exercise for the computer, and in any case happens relatively seldom in play.</font>]
-<br>
+<div class ="sourcecoverimage">
+	<span><a href="Cover.jpg"><img src="Small Cover.jpg" border="1" /></a></span>
+</div>
 
-<br>
-The encounters pack is a container.
-<br>
+<div class ="sourceintroduction">
+	<h1>
+		<span>The Reliques of Tolti-Aph</span> <span class="pagination">— 47 of 57</span>
+	</h1>
+	<h2>
+		<span>Graham Nelson</span>
+	</h2>
+	<div class ="sourcebibliography">
+		<span>Release 1</span>
+	</div>
+</div>
 
-<br>
-Definition: a thing is out-of-the-pack if it is in Terra Incognita.
-<br>
+<div class = "links">
+<ul>
+<li><a href="index.html">Home page</a></li><li><a href="source.html">Beginning</a></li><li><a href="source_44.html">Previous</a></li><li><a href="source_46.html">Next</a></li>
+</ul>
+</div>
 
-<br>
-When play begins:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;let the pack size be the number of out-of-the-pack things;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;let the total shuffled be 0;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;while the total shuffled is less than the pack size
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let the next card be a random out-of-the-pack thing;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;move the next card to the encounters pack;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let the total shuffled be the total shuffled plus 1;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;end while.
-<br>
+<div class = "source">
+<p class="indent0"><span class="heading">Section E(r) - The encounters pack</span></p><p class="indent0"></p><p class="indent0"><span class="comment">[Here we populate the maze. When the player enters a new-found room which has open space, &quot;cards&quot; are drawn from the &quot;encounters pack&quot; to see what will be found there. The cards are actually the things (monsters, etc.) themselves and the pack is a container - though, like the Solid Rock and Terra Incognita rooms, it exists in a somewhat metaphysical way and is not actually to be found in the player's world.</span></p><p class="indent0"><span class="comment"></span></p><p class="indent0"><span class="comment">We arrange these &quot;cards&quot; in a pack because dead monsters, used artefacts and played hazard cards need to be returned to the bottom of the pack. It would not do to simply draw randomly from the pool of out-of-world cards: then there would be a chance of immediately redrawing the Charmed Flute, say, only a turn after giving it up.</span></p><p class="indent0"><span class="comment"></span></p><p class="indent0"><span class="comment">Although not much Inform code uses or notices this, the contents of a room or container are in fact organised as a list, and we sneakily use this as the ordering of the pack. Note that &quot;return X to the pack&quot;, defined below, puts X at the bottom by removing all of the cards, putting X in, then putting all the cards back again - which sounds slow, but it's a trifling exercise for the computer, and in any case happens relatively seldom in play.]</span></p><p class="indent0"></p><p class="indent0">The encounters pack is a container.</p><p class="indent0"></p><p class="indent0">Definition: a thing is out-of-the-pack if it is in Terra Incognita.</p><p class="indent0"></p><p class="indent0">When play begins:</p><p class="indent1">let the pack size be the number of out-of-the-pack things;</p><p class="indent1">let the total shuffled be 0;</p><p class="indent1">while the total shuffled is less than the pack size</p><p class="indent1">begin;</p><p class="indent2">let the next card be a random out-of-the-pack thing;</p><p class="indent2">move the next card to the encounters pack;</p><p class="indent2">let the total shuffled be the total shuffled plus 1;</p><p class="indent1">end while.</p><p class="indent0"></p><p class="indent0">To return (this card - a thing) to the pack:</p><p class="indent1">move this card to Terra Incognita;</p><p class="indent1">now all things in the encounters pack are in Terra Incognita;</p><p class="indent1">now all things in Terra Incognita are in the encounters pack.</p><p class="indent0"></p><p class="indent0">The previous location is a room that varies. Before going, change the previous location to the location.</p><p class="indent0"></p><p class="indent0">After going to an unvisited labyrinth room (called the locale): draw cards for the locale; continue the action.</p><p class="indent0"></p><p class="indent0">To draw cards for (locale - a room):</p><p class="indent1">if the open space part of the shape of the locale is 0, stop;</p><p class="indent1">let the draw count be the open space part of the shape of the locale plus the maze level part of the grid position of the locale;</p><p class="indent1">let the preferred artefact be the Enchanted Map;</p><p class="indent1">if the current maze task is the mauve leaf, let the preferred artefact be the Charmed Flute;</p><p class="indent1">if the current maze level is 1 and the preferred artefact is in the encounters pack:<a name="note1ref"></a><span class="notecue"><a href="#note1">[1]</a></span></p><p class="indent2">move the preferred artefact to the locale;</p><p class="indent2">stop;</p><p class="indent1">if the current maze task is the pea-green leaf and the Eye of God is in the encounters pack and the number of unvisited labyrinth rooms is less than 10:<a name="note2ref"></a><span class="notecue"><a href="#note2">[2]</a></span></p><p class="indent2">move the Eye of God to the locale;</p><p class="indent2">decrease the draw count by 1;</p><p class="indent1">while the draw count is greater than 1 and something (called the top card) is in the encounters pack:</p><p class="indent2">move the top card to the locale;</p><p class="indent2">if the current maze level is 1:<a name="note3ref"></a><span class="notecue"><a href="#note3">[3]</a></span></p><p class="indent3">if the top card is a hazard, return the top card to the pack;</p><p class="indent3">if the top card is a monster and the defensive charm of the top card is exorcise undead, return the top card to the pack;</p><p class="indent2">if the locale is the Dome of the White Bones and the top card is a hazard, return the top card to the pack;<a name="note4ref"></a><span class="notecue"><a href="#note4">[4]</a></span></p><p class="indent2">if the top card is an artefact and the current maze level is less than the minimum level of the top card, return the top card to the pack;<a name="note5ref"></a><span class="notecue"><a href="#note5">[5]</a></span></p><p class="indent2">if the top card is a monster, now the top card is surprised;</p><p class="indent2">decrease the draw count by 1.</p><p class="indent0"></p>
+</div>
 
-<br>
-To return (this card - a thing) to the pack:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;move this card to Terra Incognita;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;now all things in the encounters pack are in Terra Incognita;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;now all things in Terra Incognita are in the encounters pack.
-<br>
+<div class ="notes">
+<p><span class="notesheading">Notes</span></p>
+<p><a name="note1"></a><span class="notetext"><a href="#note1ref">[1]</a>.  We rig the draw to make sure that the first thing the player encounters is a useful artefact: ordinarily the Map, but in the "rescue Eurydice" quest it's the Charmed Flute instead, since we picture the player as Orpheus.</span></p>
+<p><a name="note2"></a><span class="notetext"><a href="#note2ref">[2]</a>.  In the quest to bring back the Eye of God, it would be a bit unfair for the Eye to remain at the bottom of the pack for the whole game: so once four-fifths of the maze is played out, the Eye of God is rigged to come up next.</span></p>
+<p><a name="note3"></a><span class="notetext"><a href="#note3ref">[3]</a>.  The garden maze does not suffer from trap-doors, earthquakes or the baleful presence of the undead.</span></p>
+<p><a name="note4"></a><span class="notetext"><a href="#note4ref">[4]</a>.  The Dome is a huge cave and likely to result in many cards being drawn, which means there is a good chance of a Trap or an Earthquake: when these did indeed happen in play-testing, the effect was unsatisfactory in the first case, unfair in the second. So the Dome has been made hazard-free.</span></p>
+<p><a name="note5"></a><span class="notetext"><a href="#note5ref">[5]</a>.  For instance, you won't find the Ring by wandering around the hedge maze.</span></p>
 
-<br>
-The previous location is a room that varies. Before going, change the previous location to the location.
-<br>
+</div>
 
-<br>
-After going to an unvisited labyrinth room (called the locale): draw cards for the locale; continue the action.
-<br>
+</div>
 
-<br>
-To draw cards for (locale - a room):
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the open space part of the shape of the locale is 0, stop;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;let the draw count be the open space part of the shape of the locale plus the maze level part of the grid position of the locale;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;let the preferred artefact be the Enchanted Map;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the current maze task is the mauve leaf, let the preferred artefact be the Charmed Flute;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the current maze level is 1 and the preferred artefact is in the encounters pack<font color=#404040><sup><a href="#note1">[1]</a></sup></font>
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;move the preferred artefact to the locale;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stop;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;end if;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the current maze task is the pea-green leaf and the Eye of God is in the encounters pack and the number of unvisited labyrinth rooms is less than 10<font color=#404040><sup><a href="#note2">[2]</a></sup></font>
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;move the Eye of God to the locale;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;decrease the draw count by 1;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;end if;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;while the draw count is greater than 1 and something (called the top card) is in the encounters pack
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;move the top card to the locale;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the current maze level is 1<font color=#404040><sup><a href="#note3">[3]</a></sup></font>
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the top card is a hazard, return the top card to the pack;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the top card is a monster and the defensive charm of the top card is exorcise undead, return the top card to the pack;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the locale is the Dome of the White Bones and the top card is a hazard, return the top card to the pack;<font color=#404040><sup><a href="#note4">[4]</a></sup></font>
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the top card is an artefact and the current maze level is less than the minimum level of the top card, return the top card to the pack;<font color=#404040><sup><a href="#note5">[5]</a></sup></font>
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the top card is a monster, now the top card is surprised;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;decrease the draw count by 1;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;end while.
-<br>
-
-<br>
-</font>
-					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><p><i>Notes</i><p>
-<A name="note1"><font color=#404040>[1].  We rig the draw to make sure that the first thing the player encounters is a useful artefact: ordinarily the Map, but in the "rescue Eurydice" quest it's the Charmed Flute instead, since we picture the player as Orpheus.</font><p>
-<A name="note2"><font color=#404040>[2].  In the quest to bring back the Eye of God, it would be a bit unfair for the Eye to remain at the bottom of the pack for the whole game: so once four-fifths of the maze is played out, the Eye of God is rigged to come up next.</font><p>
-<A name="note3"><font color=#404040>[3].  The garden maze does not suffer from trap-doors, earthquakes or the baleful presence of the undead.</font><p>
-<A name="note4"><font color=#404040>[4].  The Dome is a huge cave and likely to result in many cards being drawn, which means there is a good chance of a Trap or an Earthquake: when these did indeed happen in play-testing, the effect was unsatisfactory in the first case, unfair in the second. So the Dome has been made hazard-free.</font><p>
-<A name="note5"><font color=#404040>[5].  For instance, you won't find the Ring by wandering around the hedge maze.</font><p>
-</font></p>
-					<p></p>
-				</td></tr></table>
-	</body>
+</body>
 
 </html>

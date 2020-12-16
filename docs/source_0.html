@@ -1,55 +1,51 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<head>
+  <title>Graham Nelson - The Reliques of Tolti-Aph — 2 of 57</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="author" content="Graham Nelson" />
+  <meta name="description" content="A page for the game The Reliques of Tolti-Aph by Graham Nelson." />
+  <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+</head>
 
-	<head>
-		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
-		<meta name="generator" content="Adobe GoLive">
-		<title>The Reliques of Tolti-Aph - Source Text</title>
-	</head>
+<body>
 
-	<body bgcolor="#ffffff">
-		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
-					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">The Reliques of Tolti-Aph</font></h3>
-					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Graham Nelson (2005) - the Inform 7 source text</font></h3>
-				</td></tr>
-		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_1.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Part I - Mechanics of a Simple Role-Playing Game</b>
-<br>
+<div class = "container">
 
-<br>
-The story headline is &quot;<font color=#000080>A W&amp;W Scenario</font>&quot;.<font color=#404040><sup><a href="#note1">[1]</a></sup></font> The story genre is &quot;<font color=#000080>Fantasy</font>&quot;. Use full-length room descriptions and memory economy<font color=#404040><sup><a href="#note2">[2]</a></sup></font>.
-<br>
+<div class ="sourcecoverimage">
+	<span><a href="Cover.jpg"><img src="Small Cover.jpg" border="1" /></a></span>
+</div>
 
-<br>
-Understand &quot;<font color=#000080>help</font>&quot; or &quot;<font color=#000080>hint</font>&quot; or &quot;<font color=#000080>hints</font>&quot; or &quot;<font color=#000080>about</font>&quot; as calling for help. Calling for help is an action out of world applying to nothing. Carry out calling for help: say &quot;<font color=#000080>(This game is being run according to the rules of a simplified role-playing game which we will call Woodpulp &amp; Wyverns, or W&amp;W. The protagonist is a magic-user, whose main ability is to cast spells. We are not in search of riches but of experience: by collecting experience points, the protagonist may progress upwards in 'level': the SCORE command shows this. An INVENTORY (or I) lists the spells known as well as the items carried.
-<br>
-</font><font color=#000080>
-<br>
-</font><font color=#000080>One's strength, STR, is drained both by casting spells and by being wounded, and - especially early on - it is important to husband this carefully: but the means of restoration can also be found. It will probably take several games to work out the best tactics of play. Tolti-Aph is not a safe place, so expect to be killed every now and again (i.e. with terrifying frequency - E.S.).
-<br>
-</font><font color=#000080>
-<br>
-</font><font color=#000080>W&amp;W play differs from conventional interactive fiction in that there is a great deal of randomised behaviour. Notations like 4d6+2 express the (virtual) dice rolls to be made: this one would involve rolling 4 six-sided dice, then adding 2 to the result. Combat is an especially unpredictable business, but note that one can often run away from a fight which is going badly.
-<br>
-</font><font color=#000080>
-<br>
-</font><font color=#000080>It is possible to get yourself into some insanely hard fights, or to run risks of appalling strength loss, where you might get lucky, but will die nine times out of ten. This is almost always a sign that you've missed something. The designer intends that a sufficiently ingenious player of IF can win through with even the worst luck. Still, with life and death hanging on the roll of a die, the UNDO command has been withdrawn. SAVE is allowed, but an important early puzzle is to work out how to do it.
-<br>
-</font><font color=#000080>
-<br>
-</font><font color=#000080>Lastly, this is one of the worked examples whose source text is included in full in the documentation for Inform 7, a system to create interactive fiction. About the first quarter lays out general rules for W&amp;W play, and can be borrowed to write new W&amp;W scenarios.)</font>&quot;
-<br>
+<div class ="sourceintroduction">
+	<h1>
+		<span>The Reliques of Tolti-Aph</span> <span class="pagination">— 2 of 57</span>
+	</h1>
+	<h2>
+		<span>Graham Nelson</span>
+	</h2>
+	<div class ="sourcebibliography">
+		<span>Release 1</span>
+	</div>
+</div>
 
-<br>
+<div class = "links">
+<ul>
+<li><a href="index.html">Home page</a></li><li><a href="source.html">Beginning</a></li><li><a href="source.html">Previous</a></li><li><a href="source_1.html">Next</a></li>
+</ul>
+</div>
 
-<br>
-</font>
-					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><p><i>Notes</i><p>
-<A name="note1"><font color=#404040>[1].  W&W is "Woodpulp and Wyverns", the name for our imaginary RPG, which will be a simplified mixture of ingredients from the various late-1970s rulebooks: besides D&D, one might also mention "Tunnels and Trolls" by Ken St Andre (crazy name, crazy guy).</font><p>
-<A name="note2"><font color=#404040>[2].  W&W games use lots and lots of tables, and only just squeezes into the Z-machine.</font><p>
-</font></p>
-					<p></p>
-				</td></tr></table>
-	</body>
+<div class = "source">
+<p class="indent0"><span class="heading">Part I - Mechanics of a Simple Role-Playing Game</span></p><p class="indent0"></p><p class="indent0">The story headline is &quot;<span class="quote">A W&amp;W Scenario</span>&quot;.<a name="note1ref"></a><span class="notecue"><a href="#note1">[1]</a></span> The story genre is &quot;<span class="quote">Fantasy</span>&quot;. Use full-length room descriptions. Use MAX_STATIC_DATA of 150000.</p><p class="indent0"></p><p class="indent0">Understand &quot;<span class="quote">help</span>&quot; or &quot;<span class="quote">hint</span>&quot; or &quot;<span class="quote">hints</span>&quot; or &quot;<span class="quote">about</span>&quot; as calling for help. Calling for help is an action out of world applying to nothing. Carry out calling for help: say &quot;<span class="quote">(This game is being run according to the rules of a simplified role-playing game which we will call Woodpulp &amp; Wyverns, or W&amp;W. The protagonist is a magic-user, whose main ability is to cast spells. We are not in search of riches but of experience: by collecting experience points, the protagonist may progress upwards in 'level': the SCORE command shows this. An INVENTORY (or I) lists the spells known as well as the items carried.</span></p><p class="indent0"><span class="quote"></span></p><p class="indent0"><span class="quote">One's strength, STR, is drained both by casting spells and by being wounded, and - especially early on - it is important to husband this carefully: but the means of restoration can also be found. It will probably take several games to work out the best tactics of play. Tolti-Aph is not a safe place, so expect to be killed every now and again (i.e. with terrifying frequency - E.S.).</span></p><p class="indent0"><span class="quote"></span></p><p class="indent0"><span class="quote">W&amp;W play differs from conventional interactive fiction in that there is a great deal of randomised behaviour. Notations like 4d6+2 express the (virtual) dice rolls to be made: this one would involve rolling 4 six-sided dice, then adding 2 to the result. Combat is an especially unpredictable business, but note that one can often run away from a fight which is going badly.</span></p><p class="indent0"><span class="quote"></span></p><p class="indent0"><span class="quote">It is possible to get yourself into some insanely hard fights, or to run risks of appalling strength loss, where you might get lucky, but will die nine times out of ten. This is almost always a sign that you've missed something. The designer intends that a sufficiently ingenious player of IF can win through with even the worst luck. Still, with life and death hanging on the roll of a die, the UNDO command has been withdrawn. SAVE is allowed, but an important early puzzle is to work out how to do it.</span></p><p class="indent0"><span class="quote"></span></p><p class="indent0"><span class="quote">Lastly, this is one of the worked examples whose source text is included in full in the documentation for Inform 7, a system to create interactive fiction. About the first quarter lays out general rules for W&amp;W play, and can be borrowed to write new W&amp;W scenarios.)</span>&quot;</p><p class="indent0"></p><p class="indent0"></p>
+</div>
+
+<div class ="notes">
+<p><span class="notesheading">Note</span></p>
+<p><a name="note1"></a><span class="notetext"><a href="#note1ref">[1]</a>.  W&W is "Woodpulp and Wyverns", the name for our imaginary RPG, which will be a simplified mixture of ingredients from the various late-1970s rulebooks: besides D&D, one might also mention "Tunnels and Trolls" by Ken St Andre (crazy name, crazy guy).</span></p>
+
+</div>
+
+</div>
+
+</body>
 
 </html>

@@ -1,74 +1,49 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<head>
+  <title>Graham Nelson - The Reliques of Tolti-Aph — 35 of 57</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="author" content="Graham Nelson" />
+  <meta name="description" content="A page for the game The Reliques of Tolti-Aph by Graham Nelson." />
+  <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+</head>
 
-	<head>
-		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
-		<meta name="generator" content="Adobe GoLive">
-		<title>The Reliques of Tolti-Aph - Source Text</title>
-	</head>
+<body>
 
-	<body bgcolor="#ffffff">
-		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
-					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">The Reliques of Tolti-Aph</font></h3>
-					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Graham Nelson (2005) - the Inform 7 source text</font></h3>
-				</td></tr>
-		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_32.html">Previous</a><br><a href="source_34.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Section E(f) - Solid Rock and labyrinth boundaries</b>
-<br>
+<div class = "container">
 
-<br>
-<font color=#404040>[&quot;Solid Rock&quot; is a room which is never visited, but which is used to indicate blocked-off routes: an exit leading to Solid Rock is considered blocked. Initially, when none of the labyrinth rooms have been &quot;played&quot; into the maze, all exits are blocked in this way. Solid Rock is also used as a special value meaning that no room is at a given grid position: thus &quot;the room at &lt;1,4,12&gt;&quot; might evaluate to a room present in the maze, or it might evaluate to Solid Rock.</font>]
-<br>
+<div class ="sourcecoverimage">
+	<span><a href="Cover.jpg"><img src="Small Cover.jpg" border="1" /></a></span>
+</div>
 
-<br>
-Solid Rock is a room.
-<br>
+<div class ="sourceintroduction">
+	<h1>
+		<span>The Reliques of Tolti-Aph</span> <span class="pagination">— 35 of 57</span>
+	</h1>
+	<h2>
+		<span>Graham Nelson</span>
+	</h2>
+	<div class ="sourcebibliography">
+		<span>Release 1</span>
+	</div>
+</div>
 
-<br>
-To make all labyrinth exits lead to Solid Rock:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;repeat with blank room running through labyrinth rooms
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let Sh be the shape of the blank room;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if U part of Sh is 1, change the up exit of blank room to Solid Rock;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if D part of Sh is 1, change the down exit of blank room to Solid Rock;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if N part of Sh is 1, change the north exit of blank room to Solid Rock;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if E part of Sh is 1, change the east exit of blank room to Solid Rock;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if S part of Sh is 1, change the south exit of blank room to Solid Rock;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if W part of Sh is 1, change the west exit of blank room to Solid Rock;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;end repeat.
-<br>
+<div class = "links">
+<ul>
+<li><a href="index.html">Home page</a></li><li><a href="source.html">Beginning</a></li><li><a href="source_32.html">Previous</a></li><li><a href="source_34.html">Next</a></li>
+</ul>
+</div>
 
-<br>
-To decide which room is the room at (grid ref - a spatial coordinate):
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if grid ref is &lt;0,0,0&gt; then decide on Solid Rock;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;repeat with R running through rooms
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the grid position of R is grid ref then decide on R;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;end repeat;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;decide on Solid Rock.
-<br>
+<div class = "source">
+<p class="indent0"><span class="heading">Section E(f) - Solid Rock and labyrinth boundaries</span></p><p class="indent0"></p><p class="indent0"><span class="comment">[&quot;Solid Rock&quot; is a room which is never visited, but which is used to indicate blocked-off routes: an exit leading to Solid Rock is considered blocked. Initially, when none of the labyrinth rooms have been &quot;played&quot; into the maze, all exits are blocked in this way. Solid Rock is also used as a special value meaning that no room is at a given grid position: thus &quot;the room at &lt;1,4,12&gt;&quot; might evaluate to a room present in the maze, or it might evaluate to Solid Rock.]</span></p><p class="indent0"></p><p class="indent0">Solid Rock is a room.</p><p class="indent0"></p><p class="indent0">To make all labyrinth exits lead to Solid Rock:</p><p class="indent1">repeat with blank room running through labyrinth rooms:</p><p class="indent2">let Sh be the shape of the blank room;</p><p class="indent2">if U part of Sh is 1, change the up exit of blank room to Solid Rock;</p><p class="indent2">if D part of Sh is 1, change the down exit of blank room to Solid Rock;</p><p class="indent2">if N part of Sh is 1, change the north exit of blank room to Solid Rock;</p><p class="indent2">if E part of Sh is 1, change the east exit of blank room to Solid Rock;</p><p class="indent2">if S part of Sh is 1, change the south exit of blank room to Solid Rock;</p><p class="indent2">if W part of Sh is 1, change the west exit of blank room to Solid Rock.</p><p class="indent0"></p><p class="indent0">To decide which room is the room at (grid ref - a spatial coordinate):</p><p class="indent1">if grid ref is &lt;0,0,0&gt; then decide on Solid Rock;</p><p class="indent1">repeat with R running through rooms:</p><p class="indent2">if the grid position of R is grid ref then decide on R;</p><p class="indent1">decide on Solid Rock.</p><p class="indent0"></p>
+</div>
 
-<br>
-</font>
-					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"></font></p>
-					<p></p>
-				</td></tr></table>
-	</body>
+<div class ="notes">
+
+</div>
+
+</div>
+
+</body>
 
 </html>

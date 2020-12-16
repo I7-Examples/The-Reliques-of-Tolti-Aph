@@ -1,184 +1,49 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<head>
+  <title>Graham Nelson - The Reliques of Tolti-Aph — 19 of 57</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="author" content="Graham Nelson" />
+  <meta name="description" content="A page for the game The Reliques of Tolti-Aph by Graham Nelson." />
+  <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+</head>
 
-	<head>
-		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
-		<meta name="generator" content="Adobe GoLive">
-		<title>The Reliques of Tolti-Aph - Source Text</title>
-	</head>
+<body>
 
-	<body bgcolor="#ffffff">
-		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
-					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">The Reliques of Tolti-Aph</font></h3>
-					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Graham Nelson (2005) - the Inform 7 source text</font></h3>
-				</td></tr>
-		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_16.html">Previous</a><br><a href="source_18.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Section 3(f) - Striking blows</b>
-<br>
+<div class = "container">
 
-<br>
-The to-hit roll is a number that varies.
-<br>
+<div class ="sourcecoverimage">
+	<span><a href="Cover.jpg"><img src="Small Cover.jpg" border="1" /></a></span>
+</div>
 
-<br>
-To modify to-hit roll by (amount - a number) for (reason - text):
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the amount &gt;= 0, say &quot;<font color=#000080>, +[amount] for [reason]</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;otherwise say &quot;<font color=#000080>, [amount] for [reason]</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;increase the to-hit roll by the amount.
-<br>
+<div class ="sourceintroduction">
+	<h1>
+		<span>The Reliques of Tolti-Aph</span> <span class="pagination">— 19 of 57</span>
+	</h1>
+	<h2>
+		<span>Graham Nelson</span>
+	</h2>
+	<div class ="sourcebibliography">
+		<span>Release 1</span>
+	</div>
+</div>
 
-<br>
-Calculating combat modifiers of something is an activity.
-<br>
+<div class = "links">
+<ul>
+<li><a href="index.html">Home page</a></li><li><a href="source.html">Beginning</a></li><li><a href="source_16.html">Previous</a></li><li><a href="source_18.html">Next</a></li>
+</ul>
+</div>
 
-<br>
-For calculating combat modifiers of the player:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;modify to-hit roll by the level of the player for &quot;<font color=#000080>your level</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;continue the activity.
-<br>
+<div class = "source">
+<p class="indent0"><span class="heading">Section 3(f) - Striking blows</span></p><p class="indent0"></p><p class="indent0">The to-hit roll is a number that varies.</p><p class="indent0"></p><p class="indent0">To modify to-hit roll by (amount - a number) for (reason - text):</p><p class="indent1">if the amount &gt;= 0, say &quot;<span class="quote">, +[</span><span class="substitution">amount</span><span class="quote">] for [</span><span class="substitution">reason</span><span class="quote">]</span>&quot;;</p><p class="indent1">otherwise say &quot;<span class="quote">, [</span><span class="substitution">amount</span><span class="quote">] for [</span><span class="substitution">reason</span><span class="quote">]</span>&quot;;</p><p class="indent1">increase the to-hit roll by the amount.</p><p class="indent0"></p><p class="indent0">Calculating combat modifiers of something is an activity.</p><p class="indent0"></p><p class="indent0">For calculating combat modifiers of the player:</p><p class="indent1">modify to-hit roll by the level of the player for &quot;<span class="quote">your level</span>&quot;;</p><p class="indent1">continue the activity.</p><p class="indent0"></p><p class="indent0">To make (attacker - a person) strike a blow against (defender - a person):</p><p class="indent1">if the attacker is the player, say &quot;<span class="quote">You attack </span>&quot;;</p><p class="indent1">otherwise say &quot;<span class="quote">[</span><span class="substitution">The attacker</span><span class="quote">] attacks </span>&quot;;</p><p class="indent1">if the defender is the player, say &quot;<span class="quote">you, </span>&quot;;</p><p class="indent1">otherwise say &quot;<span class="quote">[</span><span class="substitution">the defender</span><span class="quote">], </span>&quot;;</p><p class="indent1">let the damage done be the unarmed combat hit dice of the attacker;</p><p class="indent1">let the instrument be nothing;</p><p class="indent1">if the attacker carries a weapon:</p><p class="indent2">let the instrument be the savagest weapon carried by the attacker;</p><p class="indent2">let the damage done be the hit dice of the instrument;</p><p class="indent2">say &quot;<span class="quote">[</span><span class="substitution">technique of the instrument</span><span class="quote">] [</span><span class="substitution">the instrument</span><span class="quote">]</span>&quot;;</p><p class="indent1">otherwise:</p><p class="indent2">say hand-to-hand combat method of the attacker;</p><p class="indent1">change the to-hit roll to a random number from 1 to 20;</p><p class="indent1">say &quot;<span class="quote">, making an attack roll (1d20) of [</span><span class="substitution">to-hit roll</span><span class="quote">]</span>&quot;;</p><p class="indent1">carry out the calculating combat modifiers activity with the attacker;</p><p class="indent1">if the instrument is a weapon and the to-hit bonus of the instrument is not 0, modify to-hit roll by the to-hit bonus of the instrument for &quot;<span class="quote">wielding a blessed weapon</span>&quot;;</p><p class="indent1">let the hits be 0;</p><p class="indent1">if the to-hit roll &lt;= 2:</p><p class="indent2">say &quot;<span class="quote"> - critical miss (2 or less): </span>&quot;;</p><p class="indent2">if the instrument is a weapon:</p><p class="indent3">if the attacker is the player:</p><p class="indent4">silently try dropping the instrument;</p><p class="indent4">if the player does not carry the instrument, say &quot;<span class="quote">you dropped [</span><span class="substitution">the instrument</span><span class="quote">]!</span>&quot;;</p><p class="indent4">otherwise say &quot;<span class="quote">[</span><span class="substitution">the instrument</span><span class="quote">] shook in your hand!</span>&quot;;</p><p class="indent3">otherwise:</p><p class="indent4">now the instrument is in the location;</p><p class="indent4">say &quot;<span class="quote">[</span><span class="substitution">the attacker</span><span class="quote">] drops [</span><span class="substitution">the instrument</span><span class="quote">]!</span>&quot;;</p><p class="indent2">otherwise:</p><p class="indent3">decrease the strength of the attacker by 1;</p><p class="indent3">if the attacker is the player:</p><p class="indent4">say &quot;<span class="quote">you actually injure yourself!</span>&quot;;</p><p class="indent4">if the player is killed, end the game saying &quot;<span class="quote">You have fumbled into an inglorious demise</span>&quot;;</p><p class="indent3">otherwise:</p><p class="indent4">say &quot;<span class="quote">[</span><span class="substitution">the attacker</span><span class="quote">] roars with impotent rage!</span>&quot;;</p><p class="indent2">stop;</p><p class="indent1">if the to-hit roll &lt;= 10:</p><p class="indent2">say &quot;<span class="quote"> - miss (3 to 10): no damage done!</span>&quot;;</p><p class="indent2">stop;</p><p class="indent1">if the to-hit roll &lt;= 19:</p><p class="indent2">say &quot;<span class="quote"> - hit (11 to 19), doing [</span><span class="substitution">damage done</span><span class="quote">] of damage: </span>&quot;;</p><p class="indent2">let the hits be the roll of the damage done;</p><p class="indent2">if the hits is 1, say &quot;<span class="quote"> point</span>&quot;;</p><p class="indent2">otherwise say &quot;<span class="quote"> points</span>&quot;;</p><p class="indent1">otherwise:</p><p class="indent2">say &quot;<span class="quote"> - critical hit (20 or more), doing [</span><span class="substitution">damage done</span><span class="quote">] doubled of damage: </span>&quot;;</p><p class="indent2">let the hits be the roll of the damage done;</p><p class="indent2">let the hits be the hits multiplied by 2;</p><p class="indent2">say &quot;<span class="quote">, doubled up to [</span><span class="substitution">hits</span><span class="quote">] points</span>&quot;;</p><p class="indent1">let the counter-charm be the defensive charm of the attacker;</p><p class="indent1">if the defender is affected by the counter-charm:</p><p class="indent2">say &quot;<span class="quote">, soaked up by the [</span><span class="substitution">counter-charm</span><span class="quote">] spell.</span>&quot;;</p><p class="indent2">stop;</p><p class="indent1">make the defender take hits points of damage.</p><p class="indent0"></p>
+</div>
 
-<br>
-To make (attacker - a person) strike a blow against (defender - a person):
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the attacker is the player, say &quot;<font color=#000080>You attack </font>&quot;; otherwise say &quot;<font color=#000080>[The attacker] attacks </font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the defender is the player, say &quot;<font color=#000080>you, </font>&quot;; otherwise say &quot;<font color=#000080>[the defender], </font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;let the damage done be the unarmed combat hit dice of the attacker;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the attacker carries a weapon
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let the instrument be the savagest weapon carried by the attacker;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let the damage done be the hit dice of the instrument;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[technique of the instrument] [the instrument]</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say hand-to-hand combat method of the attacker;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;end if;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;change the to-hit roll to a random number from 1 to 20;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>, making an attack roll (1d20) of [to-hit roll]</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;carry out the calculating combat modifiers activity with the attacker;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the instrument is a weapon and the to-hit bonus of the instrument is not 0, modify to-hit roll by the to-hit bonus of the instrument for &quot;<font color=#000080>wielding a blessed weapon</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the to-hit roll &lt;= 2
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080> - critical miss (2 or less): </font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the instrument is a weapon
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the attacker is the player
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;silently try dropping the instrument;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the player does not carry the instrument, say &quot;<font color=#000080>you dropped [the instrument]!</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise say &quot;<font color=#000080>[the instrument] shook in your hand!</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;now the instrument is in the location;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[the attacker] drops [the instrument]!</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;decrease the strength of the attacker by 1;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the attacker is the player
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>you actually injure yourself!</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the player is killed, end the game saying &quot;<font color=#000080>You have fumbled into an inglorious demise</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[the attacker] roars with impotent rage!</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stop;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;end if;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the to-hit roll &lt;= 10
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080> - miss (3 to 10): no damage done!</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stop;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;end if;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the to-hit roll &lt;= 19
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080> - hit (11 to 19), doing [damage done] of damage: </font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let the hits be the roll of the damage done;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the hits is 1, say &quot;<font color=#000080> point</font>&quot;; otherwise say &quot;<font color=#000080> points</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080> - critical hit (20 or more), doing [damage done] doubled of damage: </font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let the hits be the roll of the damage done;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let the hits be the hits multiplied by 2;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>, doubled up to [hits] points</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;end if;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;let the counter-charm be the defensive charm of the attacker;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the defender is affected by the counter-charm
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>, soaked up by the [counter-charm] spell.</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stop;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;end if;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;make the defender take hits points of damage.
-<br>
+<div class ="notes">
 
-<br>
-</font>
-					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"></font></p>
-					<p></p>
-				</td></tr></table>
-	</body>
+</div>
+
+</div>
+
+</body>
 
 </html>

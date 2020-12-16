@@ -1,103 +1,52 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<head>
+  <title>Graham Nelson - The Reliques of Tolti-Aph — 38 of 57</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="author" content="Graham Nelson" />
+  <meta name="description" content="A page for the game The Reliques of Tolti-Aph by Graham Nelson." />
+  <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+</head>
 
-	<head>
-		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
-		<meta name="generator" content="Adobe GoLive">
-		<title>The Reliques of Tolti-Aph - Source Text</title>
-	</head>
+<body>
 
-	<body bgcolor="#ffffff">
-		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
-					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">The Reliques of Tolti-Aph</font></h3>
-					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Graham Nelson (2005) - the Inform 7 source text</font></h3>
-				</td></tr>
-		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_35.html">Previous</a><br><a href="source_37.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Section E(i) - Exploring the labyrinth</b>
-<br>
+<div class = "container">
 
-<br>
-Definition: A labyrinth room is acceptable if it is unplaced and its minimum level &lt;= the current maze level.
-<br>
+<div class ="sourcecoverimage">
+	<span><a href="Cover.jpg"><img src="Small Cover.jpg" border="1" /></a></span>
+</div>
 
-<br>
-Before going a direction (called this way) to Terra Incognita:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the location is unplaced or this way is not vectorial, say &quot;<font color=#000080>Oops! You should only reach terra incognita from a placed room via a vectorial direction.</font>&quot;; <font color=#404040><sup><a href="#note1">[1]</a></sup></font> 
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if Terra Incognita is closed, say &quot;<font color=#000080>The way is barred by some enchantment of the never-children.</font>&quot; instead;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;let possibles be the number of acceptable labyrinth rooms;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if possibles is 0
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;retrieve inaccessible labyrinth rooms;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let possibles be the number of acceptable labyrinth rooms;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if possibles is 0<font color=#404040><sup><a href="#note2">[2]</a></sup></font>
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;now Terra Incognita is closed;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>In your mind, you hear the scornful laughter of the never-children. 'Magic-uther has run out of labyrinth!' And certainly the way is blocked.</font>&quot; instead;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;end if;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if possibles &gt; 0
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let the new room be a random acceptable labyrinth room;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let the current position be the grid position of the location;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let the new position be the vector sum of the current position and the vector of this way;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position the new room at the new position;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;change this way exit of the location to Solid Rock;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;end if;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;try going this way instead.
-<br>
+<div class ="sourceintroduction">
+	<h1>
+		<span>The Reliques of Tolti-Aph</span> <span class="pagination">— 38 of 57</span>
+	</h1>
+	<h2>
+		<span>Graham Nelson</span>
+	</h2>
+	<div class ="sourcebibliography">
+		<span>Release 1</span>
+	</div>
+</div>
 
-<br>
-After going up to a labyrinth room from a non-ascending labyrinth room: say &quot;<font color=#000080>You take the well-remembered secret staircase up.</font>&quot;; continue the action.
-<br>
+<div class = "links">
+<ul>
+<li><a href="index.html">Home page</a></li><li><a href="source.html">Beginning</a></li><li><a href="source_35.html">Previous</a></li><li><a href="source_37.html">Next</a></li>
+</ul>
+</div>
 
-<br>
-After going down to a labyrinth room from a non-descending labyrinth room: say &quot;<font color=#000080>You take the well-remembered secret staircase down.</font>&quot;; continue the action.
-<br>
+<div class = "source">
+<p class="indent0"><span class="heading">Section E(i) - Exploring the labyrinth</span></p><p class="indent0"></p><p class="indent0">Definition: A labyrinth room is acceptable if it is unplaced and its minimum level &lt;= the current maze level.</p><p class="indent0"></p><p class="indent0">Before going a direction (called this way) to Terra Incognita:</p><p class="indent1">if the location is unplaced or this way is not vectorial, say &quot;<span class="quote">Oops! You should only reach terra incognita from a placed room via a vectorial direction.</span>&quot;; <a name="note1ref"></a><span class="notecue"><a href="#note1">[1]</a></span> </p><p class="indent1">if Terra Incognita is closed, say &quot;<span class="quote">The way is barred by some enchantment of the never-children.</span>&quot; instead;</p><p class="indent1">let possibles be the number of acceptable labyrinth rooms;</p><p class="indent1">if possibles is 0:</p><p class="indent2">retrieve inaccessible labyrinth rooms;</p><p class="indent2">let possibles be the number of acceptable labyrinth rooms;</p><p class="indent2">if possibles is 0:<a name="note2ref"></a><span class="notecue"><a href="#note2">[2]</a></span></p><p class="indent3">now Terra Incognita is closed;</p><p class="indent3">say &quot;<span class="quote">In your mind, you hear the scornful laughter of the never-children. 'Magic-uther has run out of labyrinth!' And certainly the way is blocked.</span>&quot; instead;</p><p class="indent1">if possibles &gt; 0:</p><p class="indent2">let the new room be a random acceptable labyrinth room;</p><p class="indent2">let the current position be the grid position of the location;</p><p class="indent2">let the new position be the vector sum of the current position and the vector of this way;</p><p class="indent2">position the new room at the new position;</p><p class="indent1">otherwise:</p><p class="indent2">change this way exit of the location to Solid Rock;</p><p class="indent1">try going this way instead.</p><p class="indent0"></p><p class="indent0">After going up to a labyrinth room from a non-ascending labyrinth room: say &quot;<span class="quote">You take the well-remembered secret staircase up.</span>&quot;; continue the action.</p><p class="indent0"></p><p class="indent0">After going down to a labyrinth room from a non-descending labyrinth room: say &quot;<span class="quote">You take the well-remembered secret staircase down.</span>&quot;; continue the action.</p><p class="indent0"></p><p class="indent0">Instead of going to Solid Rock:</p><p class="indent1">say &quot;<span class="quote">After a few strides, the way gives out into </span>&quot;;</p><p class="indent1">if the current maze level is 1, say &quot;<span class="quote">dense, impenetrable undergrowth</span>&quot;;</p><p class="indent1">otherwise say &quot;<span class="quote">solid rock</span>&quot;;</p><p class="indent1">say &quot;<span class="quote">. You step back again.</span>&quot;</p><p class="indent0"></p>
+</div>
 
-<br>
-Instead of going to Solid Rock:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>After a few strides, the way gives out into </font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the current maze level is 1, say &quot;<font color=#000080>dense, impenetrable undergrowth</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;otherwise say &quot;<font color=#000080>solid rock</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>. You step back again.</font>&quot;
-<br>
+<div class ="notes">
+<p><span class="notesheading">Notes</span></p>
+<p><a name="note1"></a><span class="notetext"><a href="#note1ref">[1]</a>.  This never happens, of course: it was put in to test the game.</span></p>
+<p><a name="note2"></a><span class="notetext"><a href="#note2ref">[2]</a>.  I.e., if even retrieving unvisited rooms didn't help: now the maze really is exhausted.</span></p>
 
-<br>
-</font>
-					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><p><i>Notes</i><p>
-<A name="note1"><font color=#404040>[1].  This never happens, of course: it was put in to test the game.</font><p>
-<A name="note2"><font color=#404040>[2].  I.e., if even retrieving unvisited rooms didn't help: now the maze really is exhausted.</font><p>
-</font></p>
-					<p></p>
-				</td></tr></table>
-	</body>
+</div>
+
+</div>
+
+</body>
 
 </html>

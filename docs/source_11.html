@@ -1,411 +1,52 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<head>
+  <title>Graham Nelson - The Reliques of Tolti-Aph — 13 of 57</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="author" content="Graham Nelson" />
+  <meta name="description" content="A page for the game The Reliques of Tolti-Aph by Graham Nelson." />
+  <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+</head>
 
-	<head>
-		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
-		<meta name="generator" content="Adobe GoLive">
-		<title>The Reliques of Tolti-Aph - Source Text</title>
-	</head>
+<body>
 
-	<body bgcolor="#ffffff">
-		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
-					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">The Reliques of Tolti-Aph</font></h3>
-					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Graham Nelson (2005) - the Inform 7 source text</font></h3>
-				</td></tr>
-		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_10.html">Previous</a><br><a href="source_12.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Section 2(e) - Effect of standard spells in alphabetical order</b>
-<br>
+<div class = "container">
 
-<br>
-Effect of casting aerial shield at:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;record outcome &quot;<font color=#000080>and forms an almost invisible saucer-like shield over your head, which moves with you</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;now the player is affected by aerial shield;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;rule succeeds.
-<br>
+<div class ="sourcecoverimage">
+	<span><a href="Cover.jpg"><img src="Small Cover.jpg" border="1" /></a></span>
+</div>
 
-<br>
-A thing can be trapped or untrapped. A thing is usually not trapped.
-<br>
+<div class ="sourceintroduction">
+	<h1>
+		<span>The Reliques of Tolti-Aph</span> <span class="pagination">— 13 of 57</span>
+	</h1>
+	<h2>
+		<span>Graham Nelson</span>
+	</h2>
+	<div class ="sourcebibliography">
+		<span>Release 1</span>
+	</div>
+</div>
 
-<br>
-Instead of drinking a trapped strength potion:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;remove the noun from play;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You quaff [the noun], but it is poison! And it harms you by </font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;let the extra be the roll of the additional strength of the noun;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;decrease the strength of the player by the extra;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080> strength points.</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the player is killed, end the game saying &quot;<font color=#000080>You have been poisoned</font>&quot;.
-<br>
+<div class = "links">
+<ul>
+<li><a href="index.html">Home page</a></li><li><a href="source.html">Beginning</a></li><li><a href="source_10.html">Previous</a></li><li><a href="source_12.html">Next</a></li>
+</ul>
+</div>
 
-<br>
-Instead of putting a trapped strength potion on a weapon:<font color=#404040><sup><a href="#note1">[1]</a></sup></font>
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;remove the noun from play;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;let the hit power be the hit dice of the second noun;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;let N be the dice part of the hit power;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;let S be the sides part of the hit power;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;let A be the adds part of the hit power;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;increase A by 2;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;increase N by 1;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;change the hit dice of the second noun to the die roll with dice part N sides part S adds part A;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>Carefully, you apply the poison from [the noun] to [the second noun], using it all up.</font>&quot;
-<br>
+<div class = "source">
+<p class="indent0"><span class="heading">Section 2(e) - Effect of standard spells in alphabetical order</span></p><p class="indent0"></p><p class="indent0">Effect of casting aerial shield at:</p><p class="indent1">record outcome &quot;<span class="quote">and forms an almost invisible saucer-like shield over your head, which moves with you</span>&quot;;</p><p class="indent1">now the player is affected by aerial shield;</p><p class="indent1">rule succeeds.</p><p class="indent0"></p><p class="indent0">A thing can be trapped or untrapped. A thing is usually not trapped.</p><p class="indent0"></p><p class="indent0">Instead of drinking a trapped strength potion:</p><p class="indent1">remove the noun from play;</p><p class="indent1">say &quot;<span class="quote">You quaff [</span><span class="substitution">the noun</span><span class="quote">], but it is poison! And it harms you by </span>&quot;;</p><p class="indent1">let the extra be the roll of the additional strength of the noun;</p><p class="indent1">decrease the strength of the player by the extra;</p><p class="indent1">say &quot;<span class="quote"> strength points.</span>&quot;;</p><p class="indent1">if the player is killed, end the game saying &quot;<span class="quote">You have been poisoned</span>&quot;.</p><p class="indent0"></p><p class="indent0">Instead of putting a trapped strength potion on a weapon:<a name="note1ref"></a><span class="notecue"><a href="#note1">[1]</a></span></p><p class="indent1">remove the noun from play;</p><p class="indent1">let the hit power be the hit dice of the second noun;</p><p class="indent1">let N be the dice part of the hit power;</p><p class="indent1">let S be the sides part of the hit power;</p><p class="indent1">let A be the adds part of the hit power;</p><p class="indent1">increase A by 2;</p><p class="indent1">increase N by 1;</p><p class="indent1">change the hit dice of the second noun to the die roll with dice part N sides part S adds part A;</p><p class="indent1">say &quot;<span class="quote">Carefully, you apply the poison from [</span><span class="substitution">the noun</span><span class="quote">] to [</span><span class="substitution">the second noun</span><span class="quote">], using it all up.</span>&quot;</p><p class="indent0"></p><p class="indent0">Understand &quot;<span class="quote">poison [</span><span class="substitution">something</span><span class="quote">]</span>&quot; as a mistake (&quot;<span class="quote">How, exactly?</span>&quot;).</p><p class="indent0"></p><p class="indent0">A person can be slumbering or wakeful.</p><p class="indent0"></p><p class="indent0">Effect of casting dragon sleep at a wyvern:</p><p class="indent1">if the second noun is wakeful:</p><p class="indent2">record outcome &quot;<span class="quote">and quite beguiles the wyvern which, though not properly speaking a dragon, is always flattered by any suggestion that it counts as one in the great scheme of things. Enormous snores soon result</span>&quot;;</p><p class="indent2">award 4 points;</p><p class="indent2">now the second noun is slumbering;</p><p class="indent1">otherwise:</p><p class="indent2">record outcome &quot;<span class="quote">but, after all, the wyvern is already asleep</span>&quot;;</p><p class="indent1">rule succeeds.</p><p class="indent0"></p><p class="indent0">Instead of doing something to a slumbering wyvern, say &quot;<span class="quote">Best let sleeping wyverns lie.</span>&quot;</p><p class="indent0"></p><p class="indent0">Effect of casting detect trap at:</p><p class="indent1">if a trapped thing is visible:</p><p class="indent2">record outcome &quot;<span class="quote">and it swirls around you for a time before finally settling upon [</span><span class="substitution">the list of trapped visible things</span><span class="quote">]. You give a grim smile</span>&quot;;</p><p class="indent1">otherwise:</p><p class="indent2">record outcome &quot;<span class="quote">but it radiates away with a sense of calm normality</span>&quot;;</p><p class="indent1">rule succeeds.</p><p class="indent0"></p><p class="indent0">Effect of casting fashion staff at:</p><p class="indent1">now the current spell focus is magic-imbued wood;</p><p class="indent1">record outcome &quot;<span class="quote">growing scorch-hot in your hands as the wood is transformed into a magical hybrid, imbuing it with strength</span>&quot;;</p><p class="indent1">rule succeeds.</p><p class="indent0"></p><p class="indent0">Effect of casting inner warmth at:</p><p class="indent1">record outcome &quot;<span class="quote">and surrounds you with a cosy feeling of well-being</span>&quot;;</p><p class="indent1">now the player is affected by inner warmth;</p><p class="indent1">rule succeeds.</p><p class="indent0"></p><p class="indent0">Effect of casting ironbones at:</p><p class="indent1">record outcome &quot;<span class="quote">and fortifies your whole body</span>&quot;;</p><p class="indent1">now the player is affected by ironbones;</p><p class="indent1">rule succeeds.</p><p class="indent0"></p><p class="indent0">Effect of casting know nature at:</p><p class="indent1">if the second noun is a direction, record outcome &quot;<span class="quote">never to return</span>&quot;;</p><p class="indent1">otherwise record outcome &quot;<span class="quote">which make a curious sort of examination and then trace the sigil of [</span><span class="substitution">material of the second noun</span><span class="quote">] in mid-air</span>&quot;;</p><p class="indent1">rule succeeds.</p><p class="indent0"></p><p class="indent0">Effect of casting magelight at:</p><p class="indent1">record outcome &quot;<span class="quote">which bathe your upper body in radiance</span>&quot;;</p><p class="indent1">now the player is affected by magelight;</p><p class="indent1">now the player is lit;</p><p class="indent1">rule succeeds.</p><p class="indent0"></p><p class="indent0">Every turn: unless the player is affected by magelight, now the player is unlit.</p><p class="indent0"></p><p class="indent0">Effect of casting magic missile at something:</p><p class="indent1">if the second noun is a person:</p><p class="indent2">record outcome &quot;<span class="quote">bursting in a splash of magical fire</span>&quot;;</p><p class="indent2">record event the magic missile strike rule;</p><p class="indent1">otherwise:</p><p class="indent2">if the second noun is portable and the second noun is not scenery:</p><p class="indent3">remove the second noun from play;</p><p class="indent3">record outcome &quot;<span class="quote">which vapourises into a whiff of smoke</span>&quot;;</p><p class="indent2">otherwise:</p><p class="indent3">record outcome &quot;<span class="quote">which shakes as it absorbs the blow, but withstands it</span>&quot;;</p><p class="indent1">rule succeeds.</p><p class="indent0"></p><p class="indent0">This is the magic missile strike rule:</p><p class="indent1">say &quot;<span class="quote">A magic missile does 1d6 damage per level of the caster, so: </span>&quot;;</p><p class="indent1">let L be the level of the player;</p><p class="indent1">let the strike power be the die roll with dice part L sides part 6 adds part 0;</p><p class="indent1">let the strike amount be the roll of the strike power;</p><p class="indent1">say &quot;<span class="quote"> points of damage</span>&quot;;</p><p class="indent1">now the second noun is hostile;</p><p class="indent1">make the second noun take the strike amount points of damage.</p><p class="indent0"></p><p class="indent0">Sanctum Sanctorum is a room. &quot;<span class="quote">Here in the calm, still centre of the turning world, you find Sanctuary. It is a place to rest, to meditate. Through the hazy rainbow walls, you can vaguely see the [</span><span class="substitution">room outside from the Sanctum Sanctorum</span><span class="quote">], but it is as unreal as a dream.</span>&quot; Before going outside from the Sanctum Sanctorum, say &quot;<span class="quote">You blink as your eyes adjust to the harshness of reality - the unforgiving vividness of existence.</span>&quot;</p><p class="indent0"></p><p class="indent0">The rainbow outlines of your sanctuary are fixed in place. &quot;<span class="quote">Before you are the rainbow outlines of your sanctuary, which you alone can see, never mind enter.</span>&quot; Instead of entering the rainbow outlines: move the player to the Sanctum Sanctorum. Understand &quot;<span class="quote">sanctum</span>&quot; as the rainbow outlines.</p><p class="indent0"></p><p class="indent0">Understand the command &quot;<span class="quote">rest</span>&quot; as &quot;<span class="quote">sleep</span>&quot;. Understand the command &quot;<span class="quote">dream</span>&quot; as &quot;<span class="quote">sleep</span>&quot;. Understand the command &quot;<span class="quote">meditate</span>&quot; as &quot;<span class="quote">sleep</span>&quot;. Check sleeping (this is the can't sleep outside of sanctuary rule): if the location is not the Sanctum Sanctorum and the location is not the Temple of Peace, say &quot;<span class="quote">This is not a safe enough place to recuperate. Nowhere exposed to attack is ever safe.</span>&quot; instead. Check sleeping: if the strength of the player is the permanent strength of the player, say &quot;<span class="quote">You are hale and hearty, with no need of rest.</span>&quot; instead.</p><p class="indent0"></p><p class="indent0">Carry out sleeping: restore the health of the player. Report sleeping: say &quot;<span class="quote">You rest, soaking up the healing goodness of the sanctuary.</span>&quot; Procedural rule: ignore the block sleeping rule.</p><p class="indent0"></p><p class="indent0">Check saving the game: if the location is not the Sanctum Sanctorum and the location is not the Temple of Peace, say &quot;<span class="quote">(The game can only be saved when in an indisputably safe place. This is not that place. You will know it when you find it.)</span>&quot; instead.<a name="note2ref"></a><span class="notecue"><a href="#note2">[2]</a></span></p><p class="indent0"></p><p class="indent0">Effect of casting make sanctuary at:</p><p class="indent1">if the location is the Sanctum Sanctorum:</p><p class="indent2">record outcome &quot;<span class="quote">which - thankfully - dissipate harmlessly. There probably are necromancers in this world who could get away with a stunt like that, but you're not one of them.</span>&quot;;</p><p class="indent2">rule succeeds;</p><p class="indent1">record outcome &quot;<span class="quote">which - sketchily at first, but with growing confidence of purpose - come together into the ghostly rainbow outlines of a sanctuary before you</span>&quot;;</p><p class="indent1">change the outside exit of the Sanctum Sanctorum to the location;</p><p class="indent1">move the rainbow outlines of your sanctuary to the location;</p><p class="indent1">rule succeeds.</p><p class="indent0"></p><p class="indent0">Effect of casting memorise at something:</p><p class="indent1">record outcome &quot;<span class="quote">which fades and recovers itself, in a curiously unsatisfying way</span>&quot;;</p><p class="indent1">rule succeeds.</p><p class="indent0">Effect of casting memorise at a scroll:</p><p class="indent1">unless the player is carrying the second noun:</p><p class="indent2">record outcome &quot;<span class="quote">which, not being in your hands, tantalises more than it reveals</span>&quot;;</p><p class="indent2">rule succeeds;</p><p class="indent1">remove the second noun from play;</p><p class="indent1">now the player knows the inscribed spell of the second noun;</p><p class="indent1">record outcome &quot;<span class="quote">which crumbles into dust, filling your mind with thoughts of the [</span><span class="substitution">inscribed spell of the second noun</span><span class="quote">] spell</span>&quot;;</p><p class="indent1">rule succeeds.</p><p class="indent0"></p><p class="indent0">Effect of casting mend at something:</p><p class="indent1">record outcome &quot;<span class="quote">which almost imperceptibly straightens and tidies itself, but with no real effect</span>&quot;;</p><p class="indent1">rule succeeds.</p><p class="indent0"></p><p class="indent0">Effect of casting mend at a person:</p><p class="indent1">record outcome &quot;<span class="quote">which pats [</span><span class="substitution">the second noun</span><span class="quote">] on the head, to no practical benefit</span>&quot;;</p><p class="indent1">rule succeeds.</p><p class="indent0"></p><p class="indent0">Definition: A person is undead if exorcise undead is its defensive charm.</p><p class="indent0"></p><p class="indent0">This is the exorcise undead removal rule:</p><p class="indent1">repeat with turned one running through the undead people in the location:</p><p class="indent2">remove the turned one from play;</p><p class="indent2">award the permanent strength of the turned one points.</p><p class="indent0"></p><p class="indent0">Effect of casting exorcise undead at:</p><p class="indent1">if an undead person is in the location:</p><p class="indent2">record outcome &quot;<span class="quote">which, as if a kind of lassoo, loops around [</span><span class="substitution">the list of undead people in the location</span><span class="quote">] and drags the unclean down beneath the earth</span>&quot;;</p><p class="indent2">record event the exorcise undead removal rule;</p><p class="indent2">rule succeeds;</p><p class="indent1">record outcome &quot;<span class="quote">which throws a kind of lassoo around nothing in particular, then pulls tight until it disappears</span>&quot;;</p><p class="indent1">rule succeeds.</p><p class="indent0"></p><p class="indent0">Effect of casting silence at:</p><p class="indent1">record outcome &quot;<span class="quote">and a silence settles mufflingly around your feet</span>&quot;;</p><p class="indent1">now the player is affected by silence;</p><p class="indent1">rule succeeds.</p><p class="indent0"></p><p class="indent0">Effect of casting summon elemental at:</p><p class="indent1">record outcome &quot;<span class="quote">and there is a horrendous tearing sound from the very earth</span>&quot;;</p><p class="indent1">move Zoorl to the location;</p><p class="indent1">now Zoorl is indifferent;</p><p class="indent1">rule succeeds.</p><p class="indent0"></p><p class="indent0">Effect of casting web at a hostile monster:</p><p class="indent1">record outcome &quot;<span class="quote">and the silken strands drape themselves over [</span><span class="substitution">the second noun</span><span class="quote">], impeding all movement</span>&quot;;</p><p class="indent1">now the second noun is affected by web;</p><p class="indent1">rule succeeds.</p><p class="indent0">After printing the name of a person who is affected by web when we are looking, say &quot;<span class="quote"> (webbed)</span>&quot;.</p><p class="indent0">For calculating combat modifiers of a person who is affected by web:</p><p class="indent1">modify to-hit roll by -8 for &quot;<span class="quote">trying to fight through web</span>&quot;;</p><p class="indent1">continue the activity.</p><p class="indent0"></p><p class="indent0">Effect of casting web at:</p><p class="indent1">record outcome &quot;<span class="quote">but the silken strands fall away, half-hearted and half-meant</span>&quot;;</p><p class="indent1">rule succeeds.</p><p class="indent0"></p>
+</div>
 
-<br>
-Understand &quot;<font color=#000080>poison [something]</font>&quot; as a mistake (&quot;<font color=#000080>How, exactly?</font>&quot;).
-<br>
+<div class ="notes">
+<p><span class="notesheading">Notes</span></p>
+<p><a name="note1"></a><span class="notetext"><a href="#note1ref">[1]</a>.  This didn't occur to the author at all - one of the playtesters tried it, and then the idea seemed irresistable. Poisoning a weapon adds a whole extra die and +2 in adds, so there's quite a reward for anyone resourceful enough to think of this.</span></p>
+<p><a name="note2"></a><span class="notetext"><a href="#note2ref">[2]</a>.  An exceptionally unpopular rule with players, this. But it does make the reward for those who discover "make sanctuary" all the sweeter.</span></p>
 
-<br>
-A person can be slumbering or wakeful.
-<br>
+</div>
 
-<br>
-Effect of casting dragon sleep at a wyvern:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the second noun is wakeful
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;record outcome &quot;<font color=#000080>and quite beguiles the wyvern which, though not properly speaking a dragon, is always flattered by any suggestion that it counts as one in the great scheme of things. Enormous snores soon result</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;award 4 points;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;now the second noun is slumbering;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;record outcome &quot;<font color=#000080>but, after all, the wyvern is already asleep</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;end if;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;rule succeeds.
-<br>
+</div>
 
-<br>
-Instead of doing something to a slumbering wyvern, say &quot;<font color=#000080>Best let sleeping wyverns lie.</font>&quot;
-<br>
-
-<br>
-Effect of casting detect trap at:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if a trapped thing is visible
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;record outcome &quot;<font color=#000080>and it swirls around you for a time before finally settling upon [the list of trapped visible things]. You give a grim smile</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;record outcome &quot;<font color=#000080>but it radiates away with a sense of calm normality</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;end if;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;rule succeeds.
-<br>
-
-<br>
-Effect of casting fashion staff at:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;now the current spell focus is magic-imbued wood;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;record outcome &quot;<font color=#000080>growing scorch-hot in your hands as the wood is transformed into a magical hybrid, imbuing it with strength</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;rule succeeds.
-<br>
-
-<br>
-Effect of casting inner warmth at:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;record outcome &quot;<font color=#000080>and surrounds you with a cosy feeling of well-being</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;now the player is affected by inner warmth;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;rule succeeds.
-<br>
-
-<br>
-Effect of casting ironbones at:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;record outcome &quot;<font color=#000080>and fortifies your whole body</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;now the player is affected by ironbones;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;rule succeeds.
-<br>
-
-<br>
-Effect of casting know nature at:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the second noun is a direction, record outcome &quot;<font color=#000080>never to return</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;otherwise record outcome &quot;<font color=#000080>which make a curious sort of examination and then trace the sigil of [material of the second noun] in mid-air</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;rule succeeds.
-<br>
-
-<br>
-Effect of casting magelight at:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;record outcome &quot;<font color=#000080>which bathe your upper body in radiance</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;now the player is affected by magelight;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;now the player is lit;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;rule succeeds.
-<br>
-
-<br>
-Every turn: if the player is not affected by magelight, now the player is unlit.
-<br>
-
-<br>
-Effect of casting magic missile at something:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the second noun is a person
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;record outcome &quot;<font color=#000080>bursting in a splash of magical fire</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;record event the magic missile strike rule;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the second noun is portable and the second noun is not scenery
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;remove the second noun from play;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;record outcome &quot;<font color=#000080>which vapourises into a whiff of smoke</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;record outcome &quot;<font color=#000080>which shakes as it absorbs the blow, but withstands it</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;end if;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;rule succeeds.
-<br>
-
-<br>
-This is the magic missile strike rule:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>A magic missile does 1d6 damage per level of the caster, so: </font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;let L be the level of the player;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;let the strike power be the die roll with dice part L sides part 6 adds part 0;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;let the strike amount be the roll of the strike power;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080> points of damage</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;now the second noun is hostile;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;make the second noun take the strike amount points of damage.
-<br>
-
-<br>
-Sanctum Sanctorum is a room. &quot;<font color=#000080>Here in the calm, still centre of the turning world, you find Sanctuary. It is a place to rest, to meditate. Through the hazy rainbow walls, you can vaguely see the [room outside from the Sanctum Sanctorum], but it is as unreal as a dream.</font>&quot; Before going outside from the Sanctum Sanctorum, say &quot;<font color=#000080>You blink as your eyes adjust to the harshness of reality - the unforgiving vividness of existence.</font>&quot;
-<br>
-
-<br>
-The rainbow outlines of your sanctuary are fixed in place. &quot;<font color=#000080>Before you are the rainbow outlines of your sanctuary, which you alone can see, never mind enter.</font>&quot; Instead of entering the rainbow outlines: move the player to the Sanctum Sanctorum. Understand &quot;<font color=#000080>sanctum</font>&quot; as the rainbow outlines.
-<br>
-
-<br>
-Understand the command &quot;<font color=#000080>rest</font>&quot; as &quot;<font color=#000080>sleep</font>&quot;. Understand the command &quot;<font color=#000080>dream</font>&quot; as &quot;<font color=#000080>sleep</font>&quot;. Understand the command &quot;<font color=#000080>meditate</font>&quot; as &quot;<font color=#000080>sleep</font>&quot;. Check sleeping (this is the can't sleep outside of sanctuary rule): if the location is not the Sanctum Sanctorum and the location is not the Temple of Peace, say &quot;<font color=#000080>This is not a safe enough place to recuperate. Nowhere exposed to attack is ever safe.</font>&quot; instead. Check sleeping: if the strength of the player is the permanent strength of the player, say &quot;<font color=#000080>You are hale and hearty, with no need of rest.</font>&quot; instead.
-<br>
-
-<br>
-Carry out sleeping: restore the health of the player. Report sleeping: say &quot;<font color=#000080>You rest, soaking up the healing goodness of the sanctuary.</font>&quot; Procedural rule: ignore the block sleeping rule.
-<br>
-
-<br>
-Check saving the game: if the location is not the Sanctum Sanctorum and the location is not the Temple of Peace, say &quot;<font color=#000080>(The game can only be saved when in an indisputably safe place. This is not that place. You will know it when you find it.)</font>&quot; instead.<font color=#404040><sup><a href="#note2">[2]</a></sup></font>
-<br>
-
-<br>
-Effect of casting make sanctuary at:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the location is the Sanctum Sanctorum
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;record outcome &quot;<font color=#000080>which - thankfully - dissipate harmlessly. There probably are necromancers in this world who could get away with a stunt like that, but you're not one of them.</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rule succeeds;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;end if;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;record outcome &quot;<font color=#000080>which - sketchily at first, but with growing confidence of purpose - come together into the ghostly rainbow outlines of a sanctuary before you</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;change the outside exit of the Sanctum Sanctorum to the location;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;move the rainbow outlines of your sanctuary to the location;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;rule succeeds.
-<br>
-
-<br>
-Effect of casting memorise at something:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;record outcome &quot;<font color=#000080>which fades and recovers itself, in a curiously unsatisfying way</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;rule succeeds.
-<br>
-Effect of casting memorise at a scroll:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the player is not carrying the second noun
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;record outcome &quot;<font color=#000080>which, not being in your hands, tantalises more than it reveals</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rule succeeds;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;end if;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;remove the second noun from play;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;now the player knows the inscribed spell of the second noun;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;record outcome &quot;<font color=#000080>which crumbles into dust, filling your mind with thoughts of the [inscribed spell of the second noun] spell</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;rule succeeds.
-<br>
-
-<br>
-Effect of casting mend at something:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;record outcome &quot;<font color=#000080>which almost imperceptibly straightens and tidies itself, but with no real effect</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;rule succeeds.
-<br>
-
-<br>
-Effect of casting mend at a person:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;record outcome &quot;<font color=#000080>which pats [the second noun] on the head, to no practical benefit</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;rule succeeds.
-<br>
-
-<br>
-Definition: A person is undead if exorcise undead is its defensive charm.
-<br>
-
-<br>
-This is the exorcise undead removal rule:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;repeat with turned one running through the undead people in the location
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;remove the turned one from play;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;award the permanent strength of the turned one points;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;end repeat.
-<br>
-
-<br>
-Effect of casting exorcise undead at:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if an undead person is in the location
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;record outcome &quot;<font color=#000080>which, as if a kind of lassoo, loops around [the list of undead people in the location] and drags the unclean down beneath the earth</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;record event the exorcise undead removal rule;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rule succeeds;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;end if;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;record outcome &quot;<font color=#000080>which throws a kind of lassoo around nothing in particular, then pulls tight until it disappears</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;rule succeeds.
-<br>
-
-<br>
-Effect of casting silence at:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;record outcome &quot;<font color=#000080>and a silence settles mufflingly around your feet</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;now the player is affected by silence;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;rule succeeds.
-<br>
-
-<br>
-Effect of casting summon elemental at:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;record outcome &quot;<font color=#000080>and there is a horrendous tearing sound from the very earth</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;move Zoorl to the location;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;now Zoorl is indifferent;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;rule succeeds.
-<br>
-
-<br>
-Effect of casting web at a hostile monster:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;record outcome &quot;<font color=#000080>and the silken strands drape themselves over [the second noun], impeding all movement</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;now the second noun is affected by web;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;rule succeeds.
-<br>
-After printing the name of a person who is affected by web when we are looking, say &quot;<font color=#000080> (webbed)</font>&quot;.
-<br>
-For calculating combat modifiers of a person who is affected by web:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;modify to-hit roll by -8 for &quot;<font color=#000080>trying to fight through web</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;continue the activity.
-<br>
-
-<br>
-Effect of casting web at:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;record outcome &quot;<font color=#000080>but the silken strands fall away, half-hearted and half-meant</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;rule succeeds.
-<br>
-
-<br>
-</font>
-					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><p><i>Notes</i><p>
-<A name="note1"><font color=#404040>[1].  This didn't occur to the author at all - one of the playtesters tried it, and then the idea seemed irresistable. Poisoning a weapon adds a whole extra die and +2 in adds, so there's quite a reward for anyone resourceful enough to think of this.</font><p>
-<A name="note2"><font color=#404040>[2].  An exceptionally unpopular rule with players, this. But it does make the reward for those who discover "make sanctuary" all the sweeter.</font><p>
-</font></p>
-					<p></p>
-				</td></tr></table>
-	</body>
+</body>
 
 </html>

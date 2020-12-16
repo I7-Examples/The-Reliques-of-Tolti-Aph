@@ -1,120 +1,49 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<head>
+  <title>Graham Nelson - The Reliques of Tolti-Aph — 43 of 57</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="author" content="Graham Nelson" />
+  <meta name="description" content="A page for the game The Reliques of Tolti-Aph by Graham Nelson." />
+  <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+</head>
 
-	<head>
-		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
-		<meta name="generator" content="Adobe GoLive">
-		<title>The Reliques of Tolti-Aph - Source Text</title>
-	</head>
+<body>
 
-	<body bgcolor="#ffffff">
-		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
-					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">The Reliques of Tolti-Aph</font></h3>
-					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Graham Nelson (2005) - the Inform 7 source text</font></h3>
-				</td></tr>
-		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_40.html">Previous</a><br><a href="source_42.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Section E(n) - Setting up the labyrinth</b>
-<br>
+<div class = "container">
 
-<br>
-To restore the labyrinth to its virgin state:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;make all labyrinth exits lead to Solid Rock;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;position the Hedge Archway at &lt;1,1,12&gt;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;position LR0 at &lt;1,1,11&gt;; change the printed name of LR0 to &quot;<font color=#000080>North-East-South Junction</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;position LR1 at &lt;1,1,13&gt;; change the printed name of LR1 to &quot;<font color=#000080>North-East-South Junction</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;position the Island in the Deep Pool at &lt;3,6,12&gt;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;position Western Shore at &lt;3,5,12&gt;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;position Eastern Shore at &lt;3,7,12&gt;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;position Northern Shore at &lt;3,6,13&gt;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;position Southern Shore at &lt;3,6,11&gt;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;repeat with the locale running through labyrinth rooms
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let the locale shape be the shape of the locale;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the U part of the locale shape is 1, change the minimum level of the locale to 2;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;now the locale is grovelike;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the open space part of the locale shape is 0, now the locale is ungrovelike;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the N part of the locale shape is 1 and the E part of the locale shape is 1 and the S part of the locale shape is 1 and the W part of the locale shape is 1, now the locale is ungrovelike;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the N part of the locale shape is 0 and the E part of the locale shape is 0 and the S part of the locale shape is 0 and the W part of the locale shape is 0, now the locale is ungrovelike;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;end repeat.
-<br>
+<div class ="sourcecoverimage">
+	<span><a href="Cover.jpg"><img src="Small Cover.jpg" border="1" /></a></span>
+</div>
 
-<br>
-When play begins:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;calculate how many labyrinth rooms should have each shape;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;give shape to the shapeless labyrinth rooms;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;restore the labyrinth to its virgin state.
-<br>
+<div class ="sourceintroduction">
+	<h1>
+		<span>The Reliques of Tolti-Aph</span> <span class="pagination">— 43 of 57</span>
+	</h1>
+	<h2>
+		<span>Graham Nelson</span>
+	</h2>
+	<div class ="sourcebibliography">
+		<span>Release 1</span>
+	</div>
+</div>
 
-<br>
-To tidy the labyrinth for a fresh quest:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;now the branch is almost too high;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;now Terra Incognita is open;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;repeat with maze area running through labyrinth rooms
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the maze area is not the Hedge Archway
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;change the grid position of the maze area to &lt;0,0,0&gt;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;now the maze area is unvisited;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;repeat with trinket running through things in the maze area
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the trinket is not a backdrop and the trinket is not the player, move the trinket to Terra Incognita;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the trinket is a person, restore the health of the trinket;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end repeat;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;end repeat;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;remove Eurydice from play;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;restore the labyrinth to its virgin state;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the location is not the Hedge Archway, move the player to the Hedge Archway;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;decrease the permanent strength of the player by 1;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;restore the health of the player.
-<br>
+<div class = "links">
+<ul>
+<li><a href="index.html">Home page</a></li><li><a href="source.html">Beginning</a></li><li><a href="source_40.html">Previous</a></li><li><a href="source_42.html">Next</a></li>
+</ul>
+</div>
 
-<br>
-</font>
-					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"></font></p>
-					<p></p>
-				</td></tr></table>
-	</body>
+<div class = "source">
+<p class="indent0"><span class="heading">Section E(n) - Setting up the labyrinth</span></p><p class="indent0"></p><p class="indent0">To restore the labyrinth to its virgin state:</p><p class="indent1">make all labyrinth exits lead to Solid Rock;</p><p class="indent1">position the Hedge Archway at &lt;1,1,12&gt;;</p><p class="indent1">position LR0 at &lt;1,1,11&gt;;</p><p class="indent1">change the printed name of LR0 to &quot;<span class="quote">North-East-South Junction</span>&quot;;</p><p class="indent1">position LR1 at &lt;1,1,13&gt;;</p><p class="indent1">change the printed name of LR1 to &quot;<span class="quote">North-East-South Junction</span>&quot;;</p><p class="indent1">position the Island in the Deep Pool at &lt;3,6,12&gt;;</p><p class="indent1">position Western Shore at &lt;3,5,12&gt;;</p><p class="indent1">position Eastern Shore at &lt;3,7,12&gt;;</p><p class="indent1">position Northern Shore at &lt;3,6,13&gt;;</p><p class="indent1">position Southern Shore at &lt;3,6,11&gt;;</p><p class="indent1">repeat with the locale running through labyrinth rooms:</p><p class="indent2">let the locale shape be the shape of the locale;</p><p class="indent2">if the U part of the locale shape is 1, change the minimum level of the locale to 2;</p><p class="indent2">now the locale is grovelike;</p><p class="indent2">if the open space part of the locale shape is 0, now the locale is ungrovelike;</p><p class="indent2">if the N part of the locale shape is 1 and the E part of the locale shape is 1 and the S part of the locale shape is 1 and the W part of the locale shape is 1, now the locale is ungrovelike;</p><p class="indent2">if the N part of the locale shape is 0 and the E part of the locale shape is 0 and the S part of the locale shape is 0 and the W part of the locale shape is 0, now the locale is ungrovelike.</p><p class="indent0"></p><p class="indent0">When play begins:</p><p class="indent1">calculate how many labyrinth rooms should have each shape;</p><p class="indent1">give shape to the shapeless labyrinth rooms;</p><p class="indent1">restore the labyrinth to its virgin state.</p><p class="indent0"></p><p class="indent0">To tidy the labyrinth for a fresh quest:</p><p class="indent1">now the branch is almost too high;</p><p class="indent1">now Terra Incognita is open;</p><p class="indent1">repeat with maze area running through labyrinth rooms:</p><p class="indent2">unless the maze area is the Hedge Archway:</p><p class="indent3">change the grid position of the maze area to &lt;0,0,0&gt;;</p><p class="indent3">now the maze area is unvisited;</p><p class="indent3">repeat with trinket running through things in the maze area:</p><p class="indent4">if the trinket is not a backdrop and the trinket is not the player, move the trinket to Terra Incognita;</p><p class="indent4">if the trinket is a person, restore the health of the trinket;</p><p class="indent1">remove Eurydice from play;</p><p class="indent1">restore the labyrinth to its virgin state;</p><p class="indent1">unless the location is the Hedge Archway, move the player to the Hedge Archway;</p><p class="indent1">decrease the permanent strength of the player by 1;</p><p class="indent1">restore the health of the player.</p><p class="indent0"></p>
+</div>
+
+<div class ="notes">
+
+</div>
+
+</div>
+
+</body>
 
 </html>

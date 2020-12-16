@@ -1,78 +1,49 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<head>
+  <title>Graham Nelson - The Reliques of Tolti-Aph — 37 of 57</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="author" content="Graham Nelson" />
+  <meta name="description" content="A page for the game The Reliques of Tolti-Aph by Graham Nelson." />
+  <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+</head>
 
-	<head>
-		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
-		<meta name="generator" content="Adobe GoLive">
-		<title>The Reliques of Tolti-Aph - Source Text</title>
-	</head>
+<body>
 
-	<body bgcolor="#ffffff">
-		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
-					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">The Reliques of Tolti-Aph</font></h3>
-					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Graham Nelson (2005) - the Inform 7 source text</font></h3>
-				</td></tr>
-		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_34.html">Previous</a><br><a href="source_36.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Section E(h) - Exhausting the maze and retrieving rooms</b>
-<br>
+<div class = "container">
 
-<br>
-<font color=#404040>[Terra Incognita is said to be &quot;open&quot; if there are still maze rooms left to discover, and &quot;closed&quot; if they have all been played, so that the maze is exhausted.</font>]
-<br>
+<div class ="sourcecoverimage">
+	<span><a href="Cover.jpg"><img src="Small Cover.jpg" border="1" /></a></span>
+</div>
 
-<br>
-Terra Incognita can be open or closed. Terra Incognita is open.
-<br>
+<div class ="sourceintroduction">
+	<h1>
+		<span>The Reliques of Tolti-Aph</span> <span class="pagination">— 37 of 57</span>
+	</h1>
+	<h2>
+		<span>Graham Nelson</span>
+	</h2>
+	<div class ="sourcebibliography">
+		<span>Release 1</span>
+	</div>
+</div>
 
-<br>
-<font color=#404040>[When the maze has been exhausted, it often happens that several of the rooms played have never been visited. If the player tries going east into Terra Incognita, say, a new room is placed at the appropriate grid position. If that new room has a connection back west, all well and good. If it doesn't, the player is stymied, and the original map connection changed to Solid Rock. But the new room is not removed again: instead, it waits in the labyrinth to be discovered from another side. (Such rooms were played as face-down cards in the original board game.) But what if the player never does discover another way in? They then remain unvisited forever.
-<br>
-</font><font color=#404040>
-<br>
-</font><font color=#404040>Except that they don't, because we follow a procedure called retrieval to take such rooms back into the pack for further playing if the pack ever runs out. Note that the Deep Pool Environs area is fixed: those few rooms stay put whether or not they are ever visited.</font>]
-<br>
+<div class = "links">
+<ul>
+<li><a href="index.html">Home page</a></li><li><a href="source.html">Beginning</a></li><li><a href="source_34.html">Previous</a></li><li><a href="source_36.html">Next</a></li>
+</ul>
+</div>
 
-<br>
-Definition: A labyrinth room is retrievable if it is unvisited and it is not in the Deep Pool Environs.
-<br>
+<div class = "source">
+<p class="indent0"><span class="heading">Section E(h) - Exhausting the maze and retrieving rooms</span></p><p class="indent0"></p><p class="indent0"><span class="comment">[Terra Incognita is said to be &quot;open&quot; if there are still maze rooms left to discover, and &quot;closed&quot; if they have all been played, so that the maze is exhausted.]</span></p><p class="indent0"></p><p class="indent0">Terra Incognita can be open or closed. Terra Incognita is open.</p><p class="indent0"></p><p class="indent0"><span class="comment">[When the maze has been exhausted, it often happens that several of the rooms played have never been visited. If the player tries going east into Terra Incognita, say, a new room is placed at the appropriate grid position. If that new room has a connection back west, all well and good. If it doesn't, the player is stymied, and the original map connection changed to Solid Rock. But the new room is not removed again: instead, it waits in the labyrinth to be discovered from another side. (Such rooms were played as face-down cards in the original board game.) But what if the player never does discover another way in? They then remain unvisited forever.</span></p><p class="indent0"><span class="comment"></span></p><p class="indent0"><span class="comment">Except that they don't, because we follow a procedure called retrieval to take such rooms back into the pack for further playing if the pack ever runs out. Note that the Deep Pool Environs area is fixed: those few rooms stay put whether or not they are ever visited.]</span></p><p class="indent0"></p><p class="indent0">Definition: A labyrinth room is retrievable if it is unvisited and it is not in the Deep Pool Environs.</p><p class="indent0"></p><p class="indent0">To re-plumb (place - a room) to (way - a direction):</p><p class="indent1">let the connection be the room way from the place;</p><p class="indent1">if the connection is a retrievable labyrinth room, change the way exit of the place to Terra Incognita.</p><p class="indent0"></p><p class="indent0">To retrieve inaccessible labyrinth rooms:</p><p class="indent1">repeat with maze area running through retrievable labyrinth rooms:</p><p class="indent2">re-plumb the maze area to north;</p><p class="indent2">re-plumb the maze area to east;</p><p class="indent2">re-plumb the maze area to south;</p><p class="indent2">re-plumb the maze area to west;</p><p class="indent2">re-plumb the maze area to up;</p><p class="indent2">re-plumb the maze area to down;</p><p class="indent2">change the grid position of the maze area to &lt;0,0,0&gt;.</p><p class="indent0"></p>
+</div>
 
-<br>
-To re-plumb (place - a room) to (way - a direction):
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;let the connection be the room way from the place;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the connection is a retrievable labyrinth room, change the way exit of the place to Terra Incognita.
-<br>
+<div class ="notes">
 
-<br>
-To retrieve inaccessible labyrinth rooms:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;repeat with maze area running through retrievable labyrinth rooms
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;re-plumb the maze area to north;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;re-plumb the maze area to east;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;re-plumb the maze area to south;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;re-plumb the maze area to west;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;re-plumb the maze area to up;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;re-plumb the maze area to down;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;change the grid position of the maze area to &lt;0,0,0&gt;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;end repeat.
-<br>
+</div>
 
-<br>
-</font>
-					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"></font></p>
-					<p></p>
-				</td></tr></table>
-	</body>
+</div>
+
+</body>
 
 </html>

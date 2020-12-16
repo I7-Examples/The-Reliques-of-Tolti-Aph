@@ -1,56 +1,59 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<head>
+  <title>Graham Nelson - The Reliques of Tolti-Aph — 15 of 57</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="author" content="Graham Nelson" />
+  <meta name="description" content="A page for the game The Reliques of Tolti-Aph by Graham Nelson." />
+  <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+</head>
 
-	<head>
-		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
-		<meta name="generator" content="Adobe GoLive">
-		<title>The Reliques of Tolti-Aph - Source Text</title>
-	</head>
+<body>
 
-	<body bgcolor="#ffffff">
-		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
-					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">The Reliques of Tolti-Aph</font></h3>
-					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Graham Nelson (2005) - the Inform 7 source text</font></h3>
-				</td></tr>
-		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_12.html">Previous</a><br><a href="source_14.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Section 3(b) - Weaponry</b>
-<br>
+<div class = "container">
 
-<br>
-A weapon is a kind of thing. A weapon has a die roll called hit dice. Definition: A weapon is savage if its hit dice are 3d6 or more. A weapon has a text called technique. The technique of a weapon is usually &quot;<font color=#000080>swinging</font>&quot;. Some kinds of weapon are defined by the Table of Weaponry.<font color=#404040><sup><a href="#note1">[1]</a></sup></font> Weapons are usually metal. A spear is wood. A quarterstaff is wood. A lance is wood.
-<br>
+<div class ="sourcecoverimage">
+	<span><a href="Cover.jpg"><img src="Small Cover.jpg" border="1" /></a></span>
+</div>
 
-<br>
-After printing the name of a weapon while taking inventory: say &quot;<font color=#000080> ([hit dice] attack)</font>&quot;. Instead of examining a weapon, say &quot;<font color=#000080>[The noun] is a weapon with a [hit dice of the noun] attack.</font>&quot;
-<br>
+<div class ="sourceintroduction">
+	<h1>
+		<span>The Reliques of Tolti-Aph</span> <span class="pagination">— 15 of 57</span>
+	</h1>
+	<h2>
+		<span>Graham Nelson</span>
+	</h2>
+	<div class ="sourcebibliography">
+		<span>Release 1</span>
+	</div>
+</div>
 
-<br>
-A weapon has a number called the to-hit bonus.
-<br>
+<div class = "links">
+<ul>
+<li><a href="index.html">Home page</a></li><li><a href="source.html">Beginning</a></li><li><a href="source_12.html">Previous</a></li><li><a href="source_14.html">Next</a></li>
+</ul>
+</div>
 
-<br>
-<b>Table of Weaponry</b>
-<br>
-<table><tr><td halign="left" valign="top"><u>name</u>&nbsp;&nbsp;</td><td halign="left" valign="top"><u> hit dice</u>&nbsp;&nbsp;</td><td halign="left" valign="top"><u> technique</u></td></tr>
-<tr><td halign="left" valign="top">dagger&nbsp;&nbsp;</td><td halign="left" valign="top"> 1d3&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>stabbing</font>&quot;</td></tr>
-<tr><td halign="left" valign="top">quarterstaff&nbsp;&nbsp;</td><td halign="left" valign="top"> 1d6&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>swinging</font>&quot;</td></tr>
-<tr><td halign="left" valign="top">battle axe&nbsp;&nbsp;</td><td halign="left" valign="top"> 1d8&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>hewing</font>&quot;</td></tr>
-<tr><td halign="left" valign="top">short sword&nbsp;&nbsp;</td><td halign="left" valign="top"> 1d6&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>swinging</font>&quot;</td></tr>
-<tr><td halign="left" valign="top">broad sword&nbsp;&nbsp;</td><td halign="left" valign="top"> 2d4&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>swinging</font>&quot;</td></tr>
-<tr><td halign="left" valign="top">spear&nbsp;&nbsp;</td><td halign="left" valign="top"> 1d6&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>lunging with</font>&quot;</td></tr>
-<tr><td halign="left" valign="top">lance&nbsp;&nbsp;</td><td halign="left" valign="top"> 1d8+1&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>lunging with</font>&quot;</td></tr>
-</table>
-<br>
+<div class = "source">
+<p class="indent0"><span class="heading">Section 3(b) - Weaponry</span></p><p class="indent0"></p><p class="indent0">A weapon is a kind of thing. A weapon has a die roll called hit dice. Definition: A weapon is savage if its hit dice are 3d6 or more. A weapon has a text called technique. The technique of a weapon is usually &quot;<span class="quote">swinging</span>&quot;. Some kinds of weapon are defined by the Table of Weaponry.<a name="note1ref"></a><span class="notecue"><a href="#note1">[1]</a></span> Weapons are usually metal. A spear is wood. A quarterstaff is wood. A lance is wood.</p><p class="indent0"></p><p class="indent0">After printing the name of a weapon while taking inventory: say &quot;<span class="quote"> ([</span><span class="substitution">hit dice</span><span class="quote">] attack)</span>&quot;. Instead of examining a weapon, say &quot;<span class="quote">[</span><span class="substitution">The noun</span><span class="quote">] is a weapon with a [</span><span class="substitution">hit dice of the noun</span><span class="quote">] attack.</span>&quot;</p><p class="indent0"></p><p class="indent0">A weapon has a number called the to-hit bonus.</p><p class="indent0"></p><p class="indent0"><span class="heading">Table of Weaponry</span></p><table><tr><td><span class="columnhead">name</span></td><td><span class="columnhead">hit dice</span></td><td><span class="columnhead">technique</span></td></tr>
+<tr><td>dagger</td><td>1d3</td><td>&quot;<span class="quote">stabbing</span>&quot;</td></tr>
+<tr><td>quarterstaff</td><td>1d6</td><td>&quot;<span class="quote">swinging</span>&quot;</td></tr>
+<tr><td>battle axe</td><td>1d8</td><td>&quot;<span class="quote">hewing</span>&quot;</td></tr>
+<tr><td>short sword</td><td>1d6</td><td>&quot;<span class="quote">swinging</span>&quot;</td></tr>
+<tr><td>broad sword</td><td>2d4</td><td>&quot;<span class="quote">swinging</span>&quot;</td></tr>
+<tr><td>spear</td><td>1d6</td><td>&quot;<span class="quote">lunging with</span>&quot;</td></tr>
+<tr><td>lance</td><td>1d8+1</td><td>&quot;<span class="quote">lunging with</span>&quot;</td></tr>
+</table><p class="indent0"></p><p class="indent0"></p><p class="indent0"></p>
+</div>
 
-<br>
+<div class ="notes">
+<p><span class="notesheading">Note</span></p>
+<p><a name="note1"></a><span class="notetext"><a href="#note1ref">[1]</a>.  This innocent-looking sentence is doing something rather sophisticated: it makes a new kind for every row of the table.</span></p>
 
-<br>
-</font>
-					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><p><i>Note</i><p>
-<A name="note1"><font color=#404040>[1].  This innocent-looking sentence is doing something rather sophisticated: it makes a new kind for every row of the table.</font><p>
-</font></p>
-					<p></p>
-				</td></tr></table>
-	</body>
+</div>
+
+</div>
+
+</body>
 
 </html>

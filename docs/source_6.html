@@ -1,88 +1,53 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<head>
+  <title>Graham Nelson - The Reliques of Tolti-Aph — 8 of 57</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="author" content="Graham Nelson" />
+  <meta name="description" content="A page for the game The Reliques of Tolti-Aph by Graham Nelson." />
+  <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+</head>
 
-	<head>
-		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
-		<meta name="generator" content="Adobe GoLive">
-		<title>The Reliques of Tolti-Aph - Source Text</title>
-	</head>
+<body>
 
-	<body bgcolor="#ffffff">
-		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
-					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">The Reliques of Tolti-Aph</font></h3>
-					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Graham Nelson (2005) - the Inform 7 source text</font></h3>
-				</td></tr>
-		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_5.html">Previous</a><br><a href="source_7.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Section 1(f) - Saving rolls</b>
-<br>
+<div class = "container">
 
-<br>
-Calculating saving roll modifiers of something is an activity.<font color=#404040><sup><a href="#note1">[1]</a></sup></font>
-<br>
+<div class ="sourcecoverimage">
+	<span><a href="Cover.jpg"><img src="Small Cover.jpg" border="1" /></a></span>
+</div>
 
-<br>
-The to-save roll is a number that varies.
-<br>
+<div class ="sourceintroduction">
+	<h1>
+		<span>The Reliques of Tolti-Aph</span> <span class="pagination">— 8 of 57</span>
+	</h1>
+	<h2>
+		<span>Graham Nelson</span>
+	</h2>
+	<div class ="sourcebibliography">
+		<span>Release 1</span>
+	</div>
+</div>
 
-<br>
-To modify to-save roll by (amount - a number) for (reason - text):
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the amount &gt;= 0, say &quot;<font color=#000080>, +[amount] for [reason]</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;otherwise say &quot;<font color=#000080>, [amount] for [reason]</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;increase the to-save roll by the amount.
-<br>
+<div class = "links">
+<ul>
+<li><a href="index.html">Home page</a></li><li><a href="source.html">Beginning</a></li><li><a href="source_5.html">Previous</a></li><li><a href="source_7.html">Next</a></li>
+</ul>
+</div>
 
-<br>
-For calculating saving roll modifiers of the player:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;modify to-save roll by the level of the player for &quot;<font color=#000080>your level</font>&quot;;<font color=#404040><sup><a href="#note2">[2]</a></sup></font>
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;continue the activity.
-<br>
+<div class = "source">
+<p class="indent0"><span class="heading">Section 1(f) - Saving rolls</span></p><p class="indent0"></p><p class="indent0">Calculating saving roll modifiers of something is an activity.<a name="note1ref"></a><span class="notecue"><a href="#note1">[1]</a></span></p><p class="indent0"></p><p class="indent0">The to-save roll is a number that varies.</p><p class="indent0"></p><p class="indent0">To modify to-save roll by (amount - a number) for (reason - text):</p><p class="indent1">if the amount &gt;= 0, say &quot;<span class="quote">, +[</span><span class="substitution">amount</span><span class="quote">] for [</span><span class="substitution">reason</span><span class="quote">]</span>&quot;;</p><p class="indent1">otherwise say &quot;<span class="quote">, [</span><span class="substitution">amount</span><span class="quote">] for [</span><span class="substitution">reason</span><span class="quote">]</span>&quot;;</p><p class="indent1">increase the to-save roll by the amount.</p><p class="indent0"></p><p class="indent0">For calculating saving roll modifiers of the player:</p><p class="indent1">modify to-save roll by the level of the player for &quot;<span class="quote">your level</span>&quot;;<a name="note2ref"></a><span class="notecue"><a href="#note2">[2]</a></span></p><p class="indent1">continue the activity.</p><p class="indent0"></p><p class="indent0">To decide whether a saving roll of (target - a number) by (savee - a person) to (task - a text) is made:</p><p class="indent1">say &quot;<span class="quote">[</span><span class="substitution">if savee is the player</span><span class="quote">]You need [</span><span class="substitution">otherwise</span><span class="quote">][</span><span class="substitution">The savee</span><span class="quote">] needs [</span><span class="substitution">end if</span><span class="quote">]to make a saving roll of [</span><span class="substitution">target</span><span class="quote">] or better on 1d20 to [</span><span class="substitution">task</span><span class="quote">]: </span>&quot;;</p><p class="indent1">change the to-save roll to a random number from 1 to 20;</p><p class="indent1">say the to-save roll;</p><p class="indent1">carry out the calculating saving roll modifiers activity with the savee;</p><p class="indent1">if the to-save roll &gt;= target:</p><p class="indent2">say &quot;<span class="quote"> - succeeded.</span>&quot;;</p><p class="indent2">decide yes;</p><p class="indent1">say &quot;<span class="quote"> - failed.</span>&quot;;</p><p class="indent1">decide no.</p><p class="indent0"></p><p class="indent0">To decide whether a saving roll of (target - a number) by (savee - a person) to (task - a text) is lost:<a name="note3ref"></a><span class="notecue"><a href="#note3">[3]</a></span></p><p class="indent1">if a saving roll of target by the savee to task is made, decide no;</p><p class="indent1">decide yes.</p><p class="indent0"></p>
+</div>
 
-<br>
-To decide whether a saving roll of (target - a number) by (savee - a person) to (task - a text) is made:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[if savee is the player]You need [otherwise][The savee] needs [end if]to make a saving roll of [target] or better on 1d20 to [task]: </font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;change the to-save roll to a random number from 1 to 20;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;say the to-save roll;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;carry out the calculating saving roll modifiers activity with the savee;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the to-save roll &gt;= target
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080> - succeeded.</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;decide yes;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;end if;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080> - failed.</font>&quot;; decide no.
-<br>
+<div class ="notes">
+<p><span class="notesheading">Notes</span></p>
+<p><a name="note1"></a><span class="notetext"><a href="#note1ref">[1]</a>.  Saving rolls are dice rolls made when the player tries to do something difficult, or avoid some hazard - hence "saving". They tend to be influenced by the context of play: whether the player carries some lucky charm, is presently regarded with disfavour by some demigod, and so forth. Each such influence applies a modifier to the roll: -7 for having just broken a mirror, for instance. We need to calculate all of this without knowing what these influences will be - we need to set up a general framework, in fact, and so we take the unusual step of creating an "activity". These normally handle Inform's housekeeping tasks, but we're perfectly free to create new ones, and the W&W rules contain several.</span></p>
+<p><a name="note2"></a><span class="notetext"><a href="#note2ref">[2]</a>.  See how useful it is to be a higher-level player? This produces text such as "+3 for your level" at the crucial moment.</span></p>
+<p><a name="note3"></a><span class="notetext"><a href="#note3ref">[3]</a>.  Thus we could write, say, 'if a saving roll of 15 by the player to "swim the rapids" is lost'...</span></p>
 
-<br>
-To decide whether a saving roll of (target - a number) by (savee - a person) to (task - a text) is lost:<font color=#404040><sup><a href="#note3">[3]</a></sup></font>
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if a saving roll of target by the savee to task is made, decide no;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;decide yes.
-<br>
+</div>
 
-<br>
-</font>
-					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><p><i>Notes</i><p>
-<A name="note1"><font color=#404040>[1].  Saving rolls are dice rolls made when the player tries to do something difficult, or avoid some hazard - hence "saving". They tend to be influenced by the context of play: whether the player carries some lucky charm, is presently regarded with disfavour by some demigod, and so forth. Each such influence applies a modifier to the roll: -7 for having just broken a mirror, for instance. We need to calculate all of this without knowing what these influences will be - we need to set up a general framework, in fact, and so we take the unusual step of creating an "activity". These normally handle Inform's housekeeping tasks, but we're perfectly free to create new ones, and the W&W rules contain several.</font><p>
-<A name="note2"><font color=#404040>[2].  See how useful it is to be a higher-level player? This produces text such as "+3 for your level" at the crucial moment.</font><p>
-<A name="note3"><font color=#404040>[3].  Thus we could write, say, 'if a saving roll of 15 by the player to "swim the rapids" is lost'...</font><p>
-</font></p>
-					<p></p>
-				</td></tr></table>
-	</body>
+</div>
+
+</body>
 
 </html>

@@ -1,69 +1,52 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<head>
+  <title>Graham Nelson - The Reliques of Tolti-Aph — 10 of 57</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="author" content="Graham Nelson" />
+  <meta name="description" content="A page for the game The Reliques of Tolti-Aph by Graham Nelson." />
+  <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+</head>
 
-	<head>
-		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
-		<meta name="generator" content="Adobe GoLive">
-		<title>The Reliques of Tolti-Aph - Source Text</title>
-	</head>
+<body>
 
-	<body bgcolor="#ffffff">
-		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
-					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">The Reliques of Tolti-Aph</font></h3>
-					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Graham Nelson (2005) - the Inform 7 source text</font></h3>
-				</td></tr>
-		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_7.html">Previous</a><br><a href="source_9.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Section 2(b) - The capacity for magic</b>
-<br>
+<div class = "container">
 
-<br>
-Memorisation relates various people to various spells. The verb to know (he knows, they know, he knew, it is known) implies the memorisation relation.
-<br>
+<div class ="sourcecoverimage">
+	<span><a href="Cover.jpg"><img src="Small Cover.jpg" border="1" /></a></span>
+</div>
 
-<br>
-Understand &quot;<font color=#000080>spells</font>&quot; as listing spells. Listing spells is an action applying to nothing. Carry out listing spells: reel off the spells.<font color=#404040><sup><a href="#note1">[1]</a></sup></font>
-<br>
+<div class ="sourceintroduction">
+	<h1>
+		<span>The Reliques of Tolti-Aph</span> <span class="pagination">— 10 of 57</span>
+	</h1>
+	<h2>
+		<span>Graham Nelson</span>
+	</h2>
+	<div class ="sourcebibliography">
+		<span>Release 1</span>
+	</div>
+</div>
 
-<br>
-After taking inventory: reel off the spells; continue the action.
-<br>
+<div class = "links">
+<ul>
+<li><a href="index.html">Home page</a></li><li><a href="source.html">Beginning</a></li><li><a href="source_7.html">Previous</a></li><li><a href="source_9.html">Next</a></li>
+</ul>
+</div>
 
-<br>
-To reel off the spells:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You have the following spells committed to memory:[line break]</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;repeat through the Table of Enchantments in cost column order<font color=#404040><sup><a href="#note2">[2]</a></sup></font>
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let this spell be the spell entry;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the player knows this spell
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>  [this spell] ([nature of this spell]): cost [cost of this spell] strength</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the requirement of this spell is not air, say &quot;<font color=#000080>, requires [requirement of this spell]</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[line break]</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;end repeat;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[line break]</font>&quot;.
-<br>
+<div class = "source">
+<p class="indent0"><span class="heading">Section 2(b) - The capacity for magic</span></p><p class="indent0"></p><p class="indent0">Memorisation relates various people to various spells. The verb to know (he knows, they know, he knew, it is known) implies the memorisation relation.</p><p class="indent0"></p><p class="indent0">Understand &quot;<span class="quote">spells</span>&quot; as listing spells. Listing spells is an action applying to nothing. Carry out listing spells: reel off the spells.<a name="note1ref"></a><span class="notecue"><a href="#note1">[1]</a></span></p><p class="indent0"></p><p class="indent0">After taking inventory: reel off the spells; continue the action.</p><p class="indent0"></p><p class="indent0">To reel off the spells:</p><p class="indent1">say &quot;<span class="quote">You have the following spells committed to memory:[</span><span class="substitution">line break</span><span class="quote">]</span>&quot;;</p><p class="indent1">repeat through the Table of Enchantments in cost column order:<a name="note2ref"></a><span class="notecue"><a href="#note2">[2]</a></span></p><p class="indent2">let this spell be the spell entry;</p><p class="indent2">if the player knows this spell:</p><p class="indent3">say &quot;<span class="quote">  [</span><span class="substitution">this spell</span><span class="quote">] ([</span><span class="substitution">nature of this spell</span><span class="quote">]): cost [</span><span class="substitution">cost of this spell</span><span class="quote">] strength</span>&quot;;</p><p class="indent3">unless the requirement of this spell is air, say &quot;<span class="quote">, requires [</span><span class="substitution">requirement of this spell</span><span class="quote">]</span>&quot;;</p><p class="indent3">say &quot;<span class="quote">[</span><span class="substitution">line break</span><span class="quote">]</span>&quot;.</p><p class="indent0"></p>
+</div>
 
-<br>
-</font>
-					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><p><i>Notes</i><p>
-<A name="note1"><font color=#404040>[1].  Like "DIAGNOSE", this command and its consequent action were added to satisfy the nostalgia of the playtesters.</font><p>
-<A name="note2"><font color=#404040>[2].  Each time we need to list the spells known by the player, we are requiring the computer to work out how to look through the table of spells in cost order, which is a little inefficient - but it causes no perceptible delay in play. We don't list the spells in the right order to start with because we can't be bothered, and because it would be problematic when we come to add extension rules later on; and we don't sort the table in cost order at the start of play because we are not allowed to disturb the ordering of a table which defines properties attached to values.</font><p>
-</font></p>
-					<p></p>
-				</td></tr></table>
-	</body>
+<div class ="notes">
+<p><span class="notesheading">Notes</span></p>
+<p><a name="note1"></a><span class="notetext"><a href="#note1ref">[1]</a>.  Like "DIAGNOSE", this command and its consequent action were added to satisfy the nostalgia of the playtesters.</span></p>
+<p><a name="note2"></a><span class="notetext"><a href="#note2ref">[2]</a>.  Each time we need to list the spells known by the player, we are requiring the computer to work out how to look through the table of spells in cost order, which is a little inefficient - but it causes no perceptible delay in play. We don't list the spells in the right order to start with because we can't be bothered, and because it would be problematic when we come to add extension rules later on; and we don't sort the table in cost order at the start of play because we are not allowed to disturb the ordering of a table which defines properties attached to values.</span></p>
+
+</div>
+
+</div>
+
+</body>
 
 </html>

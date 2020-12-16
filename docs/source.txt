@@ -1,8 +1,9 @@
 "The Reliques of Tolti-Aph" by Graham Nelson
 
-Include (- Serial "060430"; -).
+Include (- Serial "101025"; -).
 
 [Some commentators on interactive fiction suggest that it arose directly from the invention of role-playing games in the 1970s, when the nineteenth-century tabletop wargame collided with the potent cult of J. R. R. Tolkien in American college campuses. It is certainly true that Will Crowther, co-author of what is generally regarded as the first true work of IF, had been an early player of E. Gary Gygax and Dave Arneson's prototype role-playing game "Dungeons and Dragons: Rules for Fantastic Medieval Wargames Campaigns Playable with Paper and Pencil and Miniature Figures" (1974) - later, more snappily, just D&D. On the other hand, surprisingly few IF authors in the last thirty years have adopted styles of play which resemble RPGs at all closely; and the book-keeping, the randomness, the simulationist nature, the volume of detail and the open-endedness implied by a "campaign" all make the implementation of a RPG in interactive fiction something of a technical challenge. So that is what we are going to do: or at least we will work through enough of a system of RPG-like rules to demonstrate the possibility.]
+
 
 The story description is "It used to be said that there are two kinds of magic-user: those who have been to Tolti-Aph, and charlatans. It used to be generally understood that the attempt to prove oneself in the unforgiving society of Tolti-Aph was a bid for rapid level advancement or else romantic, thin-young-mage-in-midnight-black-robes death. The closer you get to the wilderness island vaguely marked 'Tholtaff' on the agate globe in your great-great-grandfather's study, the better the alternative sounds: settling down in some coastal village, perhaps, a little weathermongering, some polymancy, and helping out with the nets after a bad storm. Retire at maybe level 3, with most of your experience points gained from observing rare fish-based poisons carry off those villagers careless about gutting. Publish an awesomely tedious monograph on the correct usage of the 'untangle rigging' spell. You know, the good life."
 
@@ -13,7 +14,7 @@ Release along with cover art, the source text, a website and a file of "Collegio
 
 Part I - Mechanics of a Simple Role-Playing Game
 
-The story headline is "A W&W Scenario".[* W&W is "Woodpulp and Wyverns", the name for our imaginary RPG, which will be a simplified mixture of ingredients from the various late-1970s rulebooks: besides D&D, one might also mention "Tunnels and Trolls" by Ken St Andre (crazy name, crazy guy).] The story genre is "Fantasy". Use full-length room descriptions and memory economy[* W&W games use lots and lots of tables, and only just squeezes into the Z-machine.].
+The story headline is "A W&W Scenario".[* W&W is "Woodpulp and Wyverns", the name for our imaginary RPG, which will be a simplified mixture of ingredients from the various late-1970s rulebooks: besides D&D, one might also mention "Tunnels and Trolls" by Ken St Andre (crazy name, crazy guy).] The story genre is "Fantasy". Use full-length room descriptions. Use MAX_STATIC_DATA of 150000.
 
 Understand "help" or "hint" or "hints" or "about" as calling for help. Calling for help is an action out of world applying to nothing. Carry out calling for help: say "(This game is being run according to the rules of a simplified role-playing game which we will call Woodpulp & Wyverns, or W&W. The protagonist is a magic-user, whose main ability is to cast spells. We are not in search of riches but of experience: by collecting experience points, the protagonist may progress upwards in 'level': the SCORE command shows this. An INVENTORY (or I) lists the spells known as well as the items carried.
 
@@ -43,19 +44,17 @@ A die roll is a kind of value. 3d20+9 specifies a die roll[* RPGs are games of c
 To decide which number is roll of (dr - a die roll):
 	let the total be the adds part of dr;
 	say "[dr]: ";
-	repeat with counter running from 1 to the dice part of dr
-	begin;
+	repeat with counter running from 1 to the dice part of dr:
 		let the roll be a random number from 1 to the sides part of dr;
-		if the counter is not 1, say ",";
+		unless the counter is 1, say ",";
 		say the roll;
 		increase the total by the roll;
-	end repeat;
 	if the adds part of dr is 0 and the dice part of dr is 1, decide on the total;
 	if the adds part of dr is not 0, say "+", adds part of dr;
 	say "=", total;
 	decide on the total.
 
-Test rolling is an action out of world applying to one die roll. Understand "dice [die roll]" as test rolling. Carry out test rolling: say "For your own amusement, you roll "; let the outcome be the roll of the die roll understood; say ", making [outcome in words]." [* We added the pointless verb "roll" as a harmless convenience for testing that die rolls work: if the player types "ROLL 3D6+2", the game might reply "For your own amusement, you roll 3d6+2: 2,5,4+2=13, making thirteen."]
+Test rolling is an action out of world applying to one die roll. Understand "dice [die roll]" as test rolling. Carry out test rolling: say "For your own amusement, you roll "; let the total thrown be the roll of the die roll understood; say ", making [total thrown in words]." [* We added the pointless verb "roll" as a harmless convenience for testing that die rolls work: if the player types "ROLL 3D6+2", the game might reply "For your own amusement, you roll 3d6+2: 2,5,4+2=13, making thirteen."]
 
 Section 1(c) - Percentages
 
@@ -70,9 +69,8 @@ Definition: A person is alive if its strength is 1 or more. Definition: A person
 A person has a number called permanent strength.[* The strength you would have after a square meal and a good night's sleep.]
 
 When play begins:
-	repeat with the patient running through people begin;
-		change the permanent strength of the patient to the strength of the patient;
-	end repeat.[* Specifying both the permanent strength and the (current) strength for everyone in the game would be tiresome. To simplify matters we assume that everyone begins the game in rude health, and that we can therefore deduce the permanent strength from the (current) strength.]
+	repeat with the patient running through people:
+		change the permanent strength of the patient to the strength of the patient.[* Specifying both the permanent strength and the (current) strength for everyone in the game would be tiresome. To simplify matters we assume that everyone begins the game in rude health, and that we can therefore deduce the permanent strength from the (current) strength.]
 
 To restore the health of (patient - a person): change the strength of the patient to the permanent strength of the patient.
 
@@ -96,11 +94,9 @@ Every turn:
 	let the current level be the level of the player;
 	if the current level is 5, stop;
 	let the target be the experience points to progress corresponding to a level number of the current level in the Table of Level Advancement;
-	if the score is greater than the target
-	begin;
+	if the score is greater than the target:
 		say "You progress to level [current level plus 1]!";
-		increase the level of the player by 1;
-	end if.
+		increase the level of the player by 1.
 
 Procedural rule: ignore the announce the score rule.[* This is the built-in rule which ordinarily handles SCORE commands. We need to throw it out because we are somewhat subverting the usual conventions by using the score to represent the total accumulated experience points of the player; which means we need to write our own rule to tell the player his current score, as follows.]
 
@@ -135,12 +131,11 @@ To decide whether a saving roll of (target - a number) by (savee - a person) to 
 	change the to-save roll to a random number from 1 to 20;
 	say the to-save roll;
 	carry out the calculating saving roll modifiers activity with the savee;
-	if the to-save roll >= target
-	begin;
+	if the to-save roll >= target:
 		say " - succeeded.";
 		decide yes;
-	end if;
-	say " - failed."; decide no.
+	say " - failed.";
+	decide no.
 
 To decide whether a saving roll of (target - a number) by (savee - a person) to (task - a text) is lost:[* Thus we could write, say, 'if a saving roll of 15 by the player to "swim the rapids" is lost'...]
 	if a saving roll of target by the savee to task is made, decide no;
@@ -187,17 +182,12 @@ After taking inventory: reel off the spells; continue the action.
 
 To reel off the spells:
 	say "You have the following spells committed to memory:[line break]";
-	repeat through the Table of Enchantments in cost column order[* Each time we need to list the spells known by the player, we are requiring the computer to work out how to look through the table of spells in cost order, which is a little inefficient - but it causes no perceptible delay in play. We don't list the spells in the right order to start with because we can't be bothered, and because it would be problematic when we come to add extension rules later on; and we don't sort the table in cost order at the start of play because we are not allowed to disturb the ordering of a table which defines properties attached to values.]
-	begin;
+	repeat through the Table of Enchantments in cost column order:[* Each time we need to list the spells known by the player, we are requiring the computer to work out how to look through the table of spells in cost order, which is a little inefficient - but it causes no perceptible delay in play. We don't list the spells in the right order to start with because we can't be bothered, and because it would be problematic when we come to add extension rules later on; and we don't sort the table in cost order at the start of play because we are not allowed to disturb the ordering of a table which defines properties attached to values.]
 		let this spell be the spell entry;
-		if the player knows this spell
-		begin;
+		if the player knows this spell:
 			say "  [this spell] ([nature of this spell]): cost [cost of this spell] strength";
-			if the requirement of this spell is not air, say ", requires [requirement of this spell]";
-			say "[line break]";
-		end if;
-	end repeat;
-	say "[line break]".
+			unless the requirement of this spell is air, say ", requires [requirement of this spell]";
+			say "[line break]".
 
 Section 2(c) - Staffs, strength potions and scrolls
 
@@ -211,19 +201,17 @@ To decide which number is the strength cost of (incantation - a spell) to (wizar
 	if the damage is less than zero, let the damage be zero;
 	decide on the damage.[* This phrase calculates the actual strength cost to a given person of casting a given spell, and as we see this cost is reduced if the person is carrying a "magic staff"-like item.]
 
-A strength potion is a kind of thing. A potion has a die roll called additional strength. Instead of examining a potion, say "[The noun] is a [additional strength] strength potion." A strength potion is usually sustenance.
+A strength potion is a kind of thing. A strength potion has a die roll called additional strength. Instead of examining a strength potion, say "[The noun] is a [additional strength] strength potion." A strength potion is usually sustenance.
 
 Instead of eating or drinking a strength potion:
 	remove the noun from play;
 	say "You swallow [the noun], gaining ";
 	let the extra be the roll of the additional strength of the noun;
 	increase the strength of the player by the extra;
-	if the strength of the player is greater than the permanent strength of the player
-	begin;
+	if the strength of the player is greater than the permanent strength of the player:
 		change the strength of the player to the permanent strength of the player;
 		say " - more than enough to restore you to full strength.";
 		stop;
-	end if;
 	say " strength points."
 
 A scroll is a kind of thing. A scroll has a spell called the inscribed spell. A scroll is paper. The description of a scroll is "Careful to take only a glance, you see that [the item described] is inscribed with the runes of the [inscribed spell] spell." After printing the name of a scroll while taking inventory: say " (bearing the [inscribed spell] spell)".[* Scrolls will be the player's objects of desire, since they carry new spells to be memorised and added to the player's current repertoire.]
@@ -237,18 +225,16 @@ Casting it at is an action applying to one spell and one visible thing. Rule for
 Understand "cast [spell]" or "[spell]" as casting it at.
 Understand "cast [spell] on/at [something]" or "[spell] [something]" as casting it at.
 
-The current spell focus is an object which varies.[* The variable "current spell focus" typifies something which tends to happen in complex sequences of rules: later rules need to refer to something worked out in the course of an earlier rule. That means the sort of "let ..." variable will not do, because it is too temporary - it expires when the earlier rule finishes, so will be gone when the later rule is reached. Here we put the value into a permanent variable. This might be problematic if one casting action could be interrupted by another one, but here that never happens.] Before casting, change the current spell focus to the location.
+The current spell focus is an object which varies.[* The variable "current spell focus" typifies something which tends to happen in complex sequences of rules: later rules need to refer to something worked out in the course of an earlier rule. That means the sort of "let ..." variable will not do, because it is too temporary - it expires when the earlier rule finishes, so will be gone when the later rule is reached. Here we put the value into a permanent variable. This might be problematic if one casting action could be interrupted by another one, but here that never happens.] Before casting, change the current spell focus to the location. 
 
 Check casting (this is the can't cast what you don't know rule):[* We're naming these rules so that the author of a W&W scenario could use procedural rules to suspend or alter them as needed.]
 	if the player does not know the spell understood, say "You do not know the mystery of that enchantment." instead.
 
 Check casting (this is the can't cast on the wrong sort of target rule):
-	if the targeting of the spell understood is targeted
-	begin;
+	if the targeting of the spell understood is targeted:
 		if the second noun is a room, say "That enchantment must be cast at something." instead;
-	otherwise;
-		if the second noun is not a room, say "That enchantment cannot be cast at anything." instead;
-	end if.
+	otherwise:
+		unless the second noun is a room, say "That enchantment cannot be cast at anything." instead.
 
 Check casting (this is the can't cast without strength rule):
 	if the strength of the player <= the strength cost of the spell understood to the player, say "You are weak, and have not sufficient strength of mind." instead.
@@ -258,23 +244,20 @@ Check casting (this is the can't cast at yourself rule):
 
 Check casting (this is the can't cast without required materials rule):
 	let the stuff be the requirement of the spell understood;
-	if the stuff is not air
-	begin;
+	unless the stuff is air:
 		if the player is carrying something (called the focus) which is made of the stuff,
 			change the current spell focus to the focus;
-		otherwise say "To weave that enchantment, you must have something made of [stuff] in your hands." instead;
-	end if.
+		otherwise say "To weave that enchantment, you must have something made of [stuff] in your hands." instead.
 
 Check casting (this is the can't magically attack a warded person rule):
-	if the nature of the spell understood is offensive and the second noun is a person
-	begin;
+	if the nature of the spell understood is offensive and the second noun is a person:
 		let the intended victim be the second noun;
-		if the intended victim knows ward magic, say "With a contemptuous wave of orange sparks, [the intended victim] cancels your [spell understood] incantation." instead;[* The can't magically attack a warded person rule is a little sloppy: it does not sap the magical strength of the victim to cast the spell, which - if sauce for the wizard is sauce for the necromancer - it perhaps should.]
-	end if.
+		if the intended victim knows ward magic, say "With a contemptuous wave of orange sparks, [the intended victim] cancels your [spell understood] incantation." instead.[* The can't magically attack a warded person rule is a little sloppy: it does not sap the magical strength of the victim to cast the spell, which - if sauce for the wizard is sauce for the necromancer - it perhaps should.]
 
 Effect is a rulebook.[*The carry out and report rules for the casting action are going to be surprisingly short - considering the vast range of possible outcomes when a spell is cast - and they do this by using a more powerful mechanism to allow for more flexible reporting than would ordinarily be possible: they create a new rulebook, "Effect", whose task is to carry out the spell. Effect rules are also expected to set "current spell outcome" to a suitable message about what happens, and (optionally) "current spell event" to a rule which carries out further consequences.]
 
-The current spell outcome is a text which varies. To record outcome (eventual message - text): change the current spell outcome to eventual message.
+The current spell outcome is an indexed text which varies. To record outcome (eventual message - text): change the current spell outcome to eventual message.
+
 The current spell event is a rule which varies. To record event (eventual rule - rule): change the current spell event to eventual rule.
 
 This is the no spell event at all rule: stop.
@@ -284,50 +267,39 @@ Carry out casting:
 	record event the no spell event at all rule;
 	change the strength of the player to the strength of the player minus the strength cost of the spell understood to the player;
 	increase the usage count of the spell understood by 1;
-	if the usage count of the spell understood is less than 3[* You gain experience points the first couple of times you cast a spell, but then the novelty wears off.]
-	begin;
+	if the usage count of the spell understood is less than 3[* You gain experience points the first couple of times you cast a spell, but then the novelty wears off.]:
 		award cost of the spell understood points;
 		award cost of the spell understood points;
-	end if;
 	if the cost of the spell understood is at least 5 and the current spell focus is something, remove the current spell focus from play;
 	consider the effect rulebook.
 
 Report casting:
 	say "As you intone the words of the [spell understood] spell, ";
-	if the current spell focus is something
-	begin;
+	if the current spell focus is something:
 		say "[the current spell focus] ";
-		if the player is not holding the current spell focus, say "vanishes as it ";
+		unless the player is holding the current spell focus, say "vanishes as it ";
 		say "releases ";
-	otherwise;
+	otherwise:
 		say "your fingers release ";
-	end if;
 	say emission of the spell understood;
-	if the second noun is not a room, say " at [the second noun]";
+	unless the second noun is a room, say " at [the second noun]";
 	say ", [current spell outcome]";
-	if the player is affected by the spell understood begin;
-		if duration of the spell understood is greater than 0
-		begin;
+	if the player is affected by the spell understood:
+		if duration of the spell understood is greater than 0:
 			say ", which will last for [duration of the spell understood in words] turn[s]";
 			change the duration timer of the spell understood to the duration of the spell understood;
 			increase the duration timer of the spell understood by 1;
-		end if;
-	end if;
 	say ".";
 	consider the current spell event.
 
 Every turn:
-	repeat through the Table of Enchantments
-	begin;
+	repeat through the Table of Enchantments:
 		let the remaining effect be the duration timer entry;
 		decrease the remaining effect by 1;
 		if the remaining effect >= 0, change the duration timer entry to the remaining effect;
-		if the remaining effect is 0
-		begin;
+		if the remaining effect is 0:
 			now the player is not affected by the spell entry;
-			say "(The [spell entry] spell wears off.)";
-		end if;			
-	end repeat.[* For simplicity, and to keep storage requirements from going through the roof, time-limited spells can only be applied to the player.]
+			say "(The [spell entry] spell wears off.)".[* For simplicity, and to keep storage requirements from going through the roof, time-limited spells can only be applied to the player.]
 
 Understand "xyzzy" and "plugh" as a mistake ("Nobody believes those old children's stories about a colossal cave with magic words any more. Magic's something you spend years and years learning.").
 
@@ -364,25 +336,21 @@ Understand "poison [something]" as a mistake ("How, exactly?").
 A person can be slumbering or wakeful.
 
 Effect of casting dragon sleep at a wyvern:
-	if the second noun is wakeful
-	begin;
+	if the second noun is wakeful:
 		record outcome "and quite beguiles the wyvern which, though not properly speaking a dragon, is always flattered by any suggestion that it counts as one in the great scheme of things. Enormous snores soon result";
 		award 4 points;
 		now the second noun is slumbering;
-	otherwise;
+	otherwise:
 		record outcome "but, after all, the wyvern is already asleep";
-	end if;
 	rule succeeds.
 
 Instead of doing something to a slumbering wyvern, say "Best let sleeping wyverns lie."
 
 Effect of casting detect trap at:
-	if a trapped thing is visible
-	begin;
+	if a trapped thing is visible:
 		record outcome "and it swirls around you for a time before finally settling upon [the list of trapped visible things]. You give a grim smile";
-	otherwise;
+	otherwise:
 		record outcome "but it radiates away with a sense of calm normality";
-	end if;
 	rule succeeds.
 
 Effect of casting fashion staff at:
@@ -411,22 +379,18 @@ Effect of casting magelight at:
 	now the player is lit;
 	rule succeeds.
 
-Every turn: if the player is not affected by magelight, now the player is unlit.
+Every turn: unless the player is affected by magelight, now the player is unlit.
 
 Effect of casting magic missile at something:
-	if the second noun is a person
-	begin;
+	if the second noun is a person:
 		record outcome "bursting in a splash of magical fire";
 		record event the magic missile strike rule;
-	otherwise;
-		if the second noun is portable and the second noun is not scenery
-		begin;
+	otherwise:
+		if the second noun is portable and the second noun is not scenery:
 			remove the second noun from play;
 			record outcome "which vapourises into a whiff of smoke";
-		otherwise;
+		otherwise:
 			record outcome "which shakes as it absorbs the blow, but withstands it";
-		end if;
-	end if;
 	rule succeeds.
 
 This is the magic missile strike rule:
@@ -449,11 +413,9 @@ Carry out sleeping: restore the health of the player. Report sleeping: say "You 
 Check saving the game: if the location is not the Sanctum Sanctorum and the location is not the Temple of Peace, say "(The game can only be saved when in an indisputably safe place. This is not that place. You will know it when you find it.)" instead.[* An exceptionally unpopular rule with players, this. But it does make the reward for those who discover "make sanctuary" all the sweeter.]
 
 Effect of casting make sanctuary at:
-	if the location is the Sanctum Sanctorum
-	begin;
+	if the location is the Sanctum Sanctorum:
 		record outcome "which - thankfully - dissipate harmlessly. There probably are necromancers in this world who could get away with a stunt like that, but you're not one of them.";
 		rule succeeds;
-	end if;
 	record outcome "which - sketchily at first, but with growing confidence of purpose - come together into the ghostly rainbow outlines of a sanctuary before you";
 	change the outside exit of the Sanctum Sanctorum to the location;
 	move the rainbow outlines of your sanctuary to the location;
@@ -463,11 +425,9 @@ Effect of casting memorise at something:
 	record outcome "which fades and recovers itself, in a curiously unsatisfying way";
 	rule succeeds.
 Effect of casting memorise at a scroll:
-	if the player is not carrying the second noun
-	begin;
+	unless the player is carrying the second noun:
 		record outcome "which, not being in your hands, tantalises more than it reveals";
 		rule succeeds;
-	end if;
 	remove the second noun from play;
 	now the player knows the inscribed spell of the second noun;
 	record outcome "which crumbles into dust, filling your mind with thoughts of the [inscribed spell of the second noun] spell";
@@ -484,19 +444,15 @@ Effect of casting mend at a person:
 Definition: A person is undead if exorcise undead is its defensive charm.
 
 This is the exorcise undead removal rule:
-	repeat with turned one running through the undead people in the location
-	begin;
+	repeat with turned one running through the undead people in the location:
 		remove the turned one from play;
-		award the permanent strength of the turned one points;
-	end repeat.
+		award the permanent strength of the turned one points.
 
 Effect of casting exorcise undead at:
-	if an undead person is in the location
-	begin;
+	if an undead person is in the location:
 		record outcome "which, as if a kind of lassoo, loops around [the list of undead people in the location] and drags the unclean down beneath the earth";
 		record event the exorcise undead removal rule;
 		rule succeeds;
-	end if;
 	record outcome "which throws a kind of lassoo around nothing in particular, then pulls tight until it disappears";
 	rule succeeds.
 
@@ -562,19 +518,12 @@ elemental demon	35	"whirling with venom"	4d4+2			--
 An elemental demon called Zoorl the Elemental Demon is indifferent.[* Oh, the ennui of the underworld. The practical effect of this line is to create Zoorl and leave him out of play at the start of the game: he is the demon brought into being by the "summon elemental" spell.]
 
 Every turn:
-	if Zoorl is in a room (called the haunt)
-	begin;
-		if the haunt is not the location
-		begin;
+	if Zoorl is in a room (called the haunt):
+		unless the haunt is the location:
 			remove Zoorl from play;
-		otherwise;
-			if Zoorl is indifferent and a hostile monster is in the location
-			begin;
-				let the victim be a random hostile monster in the location;
-				make Zoorl strike a blow against the victim;
-			end if;
-		end if;
-	end if.
+		otherwise:
+			if Zoorl is indifferent and a hostile monster (called the victim) is in the location,
+				make Zoorl strike a blow against the victim.
 
 Effect of casting web at a wyvern:[* It turns out to be convenient to have at least one monster which is basically proof against anything the player can throw at it, and that's the wyvern. In testing, it turned out that "web" gave a lucky player a chance to defeat a wyvern, which was inconvenient for the plot. So...]
 	record outcome "but the web is pathetically small compared to the great scale of the wyvern, and your efforts seem laughable";
@@ -632,19 +581,15 @@ Before reading a command:
 After waiting when combat proceeds: stop the action.
 
 Check going (this is the need a saving roll to retreat rule):
-	if combat proceeds
-	begin;
+	if combat proceeds:
 		if a saving roll of 11 by the player to "disengage from the fight" is made, continue the action;
-		say "So you are unable to break away." instead;
-	end if.
+		say "So you are unable to break away." instead.
 
 Check casting (this is the can't cast non-combat spells in combat rule):
 	let the warlike nature be the nature of the spell understood;
 	if the warlike nature is defensive, let the warlike nature be offensive;
-	if combat proceeds and the warlike nature is not offensive
-	begin;
-		say "The nature of that spell is [nature of the spell understood]: unlike offensive and defensive spells - which are structured for use in combat - [nature of the spell understood] spells need a little peace and calm to be cast." instead;
-	end if.
+	if combat proceeds and the warlike nature is not offensive:
+		say "The nature of that spell is [nature of the spell understood]: unlike offensive and defensive spells - which are structured for use in combat - [nature of the spell understood] spells need a little peace and calm to be cast." instead.
 
 A person can be surprised or ready. A person is usually ready.
 
@@ -663,15 +608,11 @@ To mount an attack from (bad guy - a monster):
 
 Every turn when a hostile monster is in the location:
 	if the player is ready, make the player strike a blow against the scariest hostile monster in the location;[* Recall that "scary" was defined in 3(a) above: "scariest" automatically acquires the meaning of "that which is most scary".]
-	repeat with the opponent running through hostile monsters in the location
-	begin;
+	repeat with the opponent running through hostile monsters in the location:
 		if the player is killed, stop;
-		if the opponent is ready
-		begin;
+		if the opponent is ready:
 			if Zoorl is in the location, make the opponent strike a blow against Zoorl;
 			otherwise make the opponent strike a blow against the player;
-		end if;
-	end repeat;
 	now the player is ready;
 	now all hostile monsters are ready.
 
@@ -679,29 +620,23 @@ Section 3(e) - Damage
 
 The damage incurred is a number that varies.
 
-Calculating damage modifiers of something is an activity.
+Calculating damage modifiers of something is an activity. 
 
 For calculating damage modifiers of a person (called the defender):
-	if the defender is wearing armour (called the protector) and the damage incurred is greater than 1
-	begin;
+	if the defender is wearing armour (called the protector) and the damage incurred is greater than 1:
 		say ": [the protector] absorbs ";
 		let the absorbency be the armour class of the protector;
-		if the absorbency >= the damage incurred
-		begin;
+		if the absorbency >= the damage incurred:
 			let the absorbency be the damage incurred;
 			decrease the absorbency by 1;
-		end if;
 		decrease the damage incurred by the absorbency;
 		say the absorbency;
-	end if;
 	continue the activity.
 
 For calculating damage modifiers of a person (called the defender):
-	if the defender is affected by ironbones and the damage incurred is greater than 1
-	begin;
+	if the defender is affected by ironbones and the damage incurred is greater than 1:
 		say ": the ironbones spell halves the damage";
 		change the damage incurred to the damage incurred divided by 2;
-	end if;
 	continue the activity.
 
 Dead body disposal of something is an activity.[* This is provided for the benefit of anyone using these rules who wants to make something special happen to dead bodies, which otherwise quietly vanish from the field of battle.]
@@ -711,31 +646,24 @@ To make (defender - a person) take (hits - a number) points of damage:
 	change the damage incurred to the hits;
 	carry out the calculating damage modifiers activity with the defender;
 	let the hits be the damage incurred;
-	if the hits <= 0
-	begin;
+	if the hits <= 0:
 		say " - so no damage is done.";
 		stop;
-	end if;
 	if the original hits are not the hits, say ", leaving [hits] to take";
 	decrease the strength of the defender by the hits;
-	if the defender is killed
-	begin;
+	if the defender is killed:
 		say " - a fatal blow!";
-		if the player is the defender begin;
+		if the player is the defender:
 			end the game saying "You have been killed in combat";
 			stop;
-		end if;
 		carry out the dead body disposal activity with the defender;
 		if the defender is in the location, remove the defender from play;
 		award the permanent strength of the defender points;
-		repeat with the item running through things which are had by the defender
-		begin;
+		repeat with the item running through things which are had by the defender: 
 			move the item to the location;
-		end repeat;
-	otherwise;
+	otherwise:
 		if the player is the defender, say ", reducing your strength to [strength of the player].";
-		otherwise say ", wounding [the defender] to a strength of [strength of the defender].";
-	end if.
+		otherwise say ", wounding [the defender] to a strength of [strength of the defender].".
 
 Section 3(f) - Striking blows
 
@@ -753,69 +681,58 @@ For calculating combat modifiers of the player:
 	continue the activity.
 
 To make (attacker - a person) strike a blow against (defender - a person):
-	if the attacker is the player, say "You attack "; otherwise say "[The attacker] attacks ";
-	if the defender is the player, say "you, "; otherwise say "[the defender], ";
+	if the attacker is the player, say "You attack ";
+	otherwise say "[The attacker] attacks ";
+	if the defender is the player, say "you, ";
+	otherwise say "[the defender], ";
 	let the damage done be the unarmed combat hit dice of the attacker;
-	if the attacker carries a weapon
-	begin;
+	let the instrument be nothing;
+	if the attacker carries a weapon:
 		let the instrument be the savagest weapon carried by the attacker;
 		let the damage done be the hit dice of the instrument;
 		say "[technique of the instrument] [the instrument]";
-	otherwise;
+	otherwise:
 		say hand-to-hand combat method of the attacker;
-	end if;
 	change the to-hit roll to a random number from 1 to 20;
 	say ", making an attack roll (1d20) of [to-hit roll]";
 	carry out the calculating combat modifiers activity with the attacker;
 	if the instrument is a weapon and the to-hit bonus of the instrument is not 0, modify to-hit roll by the to-hit bonus of the instrument for "wielding a blessed weapon";
-	if the to-hit roll <= 2
-	begin;
+	let the hits be 0;
+	if the to-hit roll <= 2:
 		say " - critical miss (2 or less): ";
-		if the instrument is a weapon
-		begin;
-			if the attacker is the player
-			begin;
+		if the instrument is a weapon:
+			if the attacker is the player:
 				silently try dropping the instrument;
 				if the player does not carry the instrument, say "you dropped [the instrument]!";
 				otherwise say "[the instrument] shook in your hand!";
-			otherwise;
+			otherwise:
 				now the instrument is in the location;
 				say "[the attacker] drops [the instrument]!";
-			end if;
-		otherwise;
+		otherwise:
 			decrease the strength of the attacker by 1;
-			if the attacker is the player
-			begin;
+			if the attacker is the player:
 				say "you actually injure yourself!";
 				if the player is killed, end the game saying "You have fumbled into an inglorious demise";
-			otherwise;
+			otherwise:
 				say "[the attacker] roars with impotent rage!";
-			end if;
-		end if;
 		stop;
-	end if;
-	if the to-hit roll <= 10
-	begin;
+	if the to-hit roll <= 10:
 		say " - miss (3 to 10): no damage done!";
 		stop;
-	end if;
-	if the to-hit roll <= 19
-	begin;
+	if the to-hit roll <= 19:
 		say " - hit (11 to 19), doing [damage done] of damage: ";
 		let the hits be the roll of the damage done;
-		if the hits is 1, say " point"; otherwise say " points";
-	otherwise;
+		if the hits is 1, say " point";
+		otherwise say " points";
+	otherwise:
 		say " - critical hit (20 or more), doing [damage done] doubled of damage: ";
 		let the hits be the roll of the damage done;
 		let the hits be the hits multiplied by 2;
 		say ", doubled up to [hits] points";
-	end if;
 	let the counter-charm be the defensive charm of the attacker;
-	if the defender is affected by the counter-charm
-	begin;
+	if the defender is affected by the counter-charm:
 		say ", soaked up by the [counter-charm] spell.";
 		stop;
-	end if;
 	make the defender take hits points of damage.
 
 Section 3(g) - Missile weapons, lack of
@@ -841,13 +758,13 @@ The stubborn wiry trees are a backdrop. The stubborn wiry trees are everywhere. 
 
 Longwall Street is a room. "Almost overgrown in the deep forest, collapsed and at once standing, the cyclopean east-west Longwall of the fallen city sinks here to a mostly flat, lichened stone clearing: it must once have been a customs post. To the west, an old wall turret like a broken chess piece still seems enterable by a dark doorway, whereas the eastern side of the wall's gap is only a shapeless ramp of masonry. Northwards, to what was once the interior, stubborn, wiry trees grapple with ancient pavings."
 
-The player is in the Longwall Street. The player knows detect trap, memorise, fashion staff, know nature and exorcise undead. The player is wearing a leather jerkin. The player is carrying a dagger.
+The player is in Longwall Street. The player knows detect trap, memorise, fashion staff, know nature and exorcise undead. The player wears a leather jerkin. The player carries a dagger.
 
 The old wall turret is scenery in Longwall Street. Effect of casting mend at the old wall turret: record outcome "which lose their focus as they attempt to mend so huge a ruination"; rule succeeds. Instead of pushing the turret, say "Unsteady, perhaps. Likely to fall at the touch of your little finger, no."
 
 Before going inside in Longwall Street, try going west instead. Before entering the old wall turret, try going west instead.
 
-Writing it on is an action applying to one topic and one thing. Understand "write [text] on [something]" as writing it on. Understand "write on [something]" as a mistake ("To write, you must say what to write: for instance, WRITE HELLO WORLD ON WALL."). Check writing it on: if the barbed feather is not carried, say "You have nothing to write with." instead. A thing can be inscribable. A thing is usually not inscribable. Check writing it on: if the second noun is the player, say "Tattoos are frowned upon in the magic-user community." instead; if the second noun is not inscribable, say "To go writing all over [the second noun] would achieve nothing." instead.
+Writing it on is an action applying to one topic and one thing. Understand "write [text] on [something]" as writing it on. Understand "write on [something]" as a mistake ("To write, you must say what to write: for instance, WRITE HELLO WORLD ON WALL."). Check writing it on: unless the barbed feather is carried, say "You have nothing to write with." instead. A thing can be inscribable. A thing is usually not inscribable. Check writing it on: if the second noun is the player, say "Tattoos are frowned upon in the magic-user community." instead; unless the second noun is inscribable, say "To go writing all over [the second noun] would achieve nothing." instead.
 
 The player is carrying a blank parchment. The blank parchment is inscribable. The deeply scored scroll is a scroll. Understand "parchment" as the deeply scored scroll. The inscribed spell of the deeply scored scroll is aerial shield. Carry out writing it on: if the second noun is the blank parchment begin; remove the blank parchment from play; move the deeply scored scroll to the player; say "The metal feather, with a will of its own, ignores the motion of your wrist and writes its own desires onto the parchment, which is transformed into a deeply scored scroll."; award 7 points; end if. The description of the blank parchment is "Just plain parchment paper, of no particular value or rarity. One of the tools of the magic-user's trade, though admittedly your mother also likes to use it for lining cake tins." The blank parchment is paper.
 
@@ -858,11 +775,9 @@ After going through the trapped dark doorway:
 	say "Your passage through the doorway triggers off an old trap, of rusty blades swung across by a counterweight! A crude, one-time device, but this doesn't seem the time to sneer at its naive simplicity. You just [italic type]know[roman type] there was something you could have done to avoid this... You soak up ";
 	let the damage be the roll of 4d4;
 	say " points of damage";
-	if the player is affected by aerial shield
-	begin;
+	if the player is affected by aerial shield:
 		decrease the damage by 3;
 		say ", reduced only slightly (-3) by your aerial shield since the blades come mostly sideways";
-	end if;
 	make the player take the damage points of damage;
 	if the player is killed, end the game saying "You have been killed by a trap";
 	otherwise continue the action.
@@ -916,7 +831,7 @@ The player is carrying a new-looking journal. The journal is paper. Understand "
 
 (Try TURN JOURNAL TO RIGEL for a sample of the sort of twaddle you wrote in your distant student days, which finished, oh, three or four weeks ago now.)"
 
-An Orion star is a kind of value. The Orion stars are defined by the Table of Journal Entries.[* The play-testers were distinctly piqued by the idea that they were supposed to remember the names of the stars of Orion from general knowledge, and transcripts showed that the most popular response was to try everything in the Wikipedia entry. The Table tries to cater for all the variant names used in popular references, but in any case contains no really crucial information: and as one reaches the more obscure stars, it communicates less and less. All the same, it was the play-testers' annoyance about Orion that led to the writing of the game's "feelie", the spoof Collegium magazine, which includes clues on Orion and excuses for many odd things about the rules.] Journal-turning it to is an action applying to one thing and one Orion star. Understand "turn [something] to [Orion star]" as journal-turning it to. Understand "look up [Orion star] in [something]" as journal-turning it to (with nouns reversed). Understand "turn to [Orion star] in [something]" as journal-turning it to (with nouns reversed). Check journal-turning: if the noun is not the new-looking journal, say "That has no star references." instead. Carry out journal-turning: say the corresponding journal entry of the Orion star understood; say paragraph break. Before writing: if the second noun is the journal, say "You have vowed not to write in this journal until your expedition is complete." instead.
+An Orion star is a kind of value. The Orion stars are defined by the Table of Journal Entries.[* The play-testers were distinctly piqued by the idea that they were supposed to remember the names of the stars of Orion from general knowledge, and transcripts showed that the most popular response was to try everything in the Wikipedia entry. The Table tries to cater for all the variant names used in popular references, but in any case contains no really crucial information: and as one reaches the more obscure stars, it communicates less and less. All the same, it was the play-testers' annoyance about Orion that led to the writing of the game's "feelie", the spoof Collegium magazine, which includes clues on Orion and excuses for many odd things about the rules.] Journal-turning it to is an action applying to one thing and one Orion star. Understand "turn [something] to [Orion star]" as journal-turning it to. Understand "look up [Orion star] in [something]" as journal-turning it to (with nouns reversed). Understand "turn to [Orion star] in [something]" as journal-turning it to (with nouns reversed). Check journal-turning: unless the noun is the new-looking journal, say "That has no star references." instead. Carry out journal-turning: say the corresponding journal entry of the Orion star understood; say paragraph break. Before writing: if the second noun is the journal, say "You have vowed not to write in this journal until your expedition is complete." instead.
 
 Table of Journal Entries
 star name		corresponding journal entry
@@ -977,7 +892,7 @@ Looking behind is an action applying to one visible thing. Understand "look behi
 
 A cloth loom is a supporter in the Fullers' Town-House. "The centrepiece of the room is the cloth loom on which the wispy strands of wool were once washed, combed and woven into cloth." The stretched scroll is a scroll on the cloth loom. The inscribed spell of the stretched scroll is circumvent lock. Before casting memorise at the stretched scroll, say "Under the terms of the recent Sorcery Millennium Property Act, all magic-users are now hypnotised to make it impossible for them to learn certain spells connected with the breaking or circumvention of locks or other devices intended to protect property. Like all magic-users, you resent the implication that you are some kind of kleptomaniac, and regard this as an outrageous infringement of your personal liberty. Especially since these are the same people who go on and on about the right to bear 'apocalyptic fireball' wands! Tsk." instead.[* The Recording Industry Association of America may like to note that this annoyed the play-testers very much indeed.]
 
-The description of the cloth loom is "Painted around the base of the loom is the score, it seems, for a song, in the traditional tablature notation." The tablature song score is scenery in the Town-House. Understand "sing song" as singing. Singing from is an action applying to one visible thing. Understand "sing [something]" or "sing from [something]" as singing from. Check singing from: if the noun is not the tablature, say "You might sing from a score, perhaps, but not [the noun]." Before singing in the Town-House: try singing from the tablature instead. Instead of singing from the tablature: say "You walk slowly around all four sides of the loom, singing the song - a round, it seems, and the sort of cheery number written by those engaged in basically repetitive crafts. A pretty little song, but you're not sorry your father apprenticed you to a magic-user instead."; display the boxed quotation
+The description of the cloth loom is "Painted around the base of the loom is the score, it seems, for a song, in the traditional tablature notation." The tablature song score is scenery in the Town-House. Understand "sing song" as singing. Singing from is an action applying to one visible thing. Understand "sing [something]" or "sing from [something]" as singing from. Check singing from: unless the noun is the tablature, say "You might sing from a score, perhaps, but not [the noun]." Before singing in the Town-House: try singing from the tablature instead. Instead of singing from the tablature: say "You walk slowly around all four sides of the loom, singing the song - a round, it seems, and the sort of cheery number written by those engaged in basically repetitive crafts. A pretty little song, but you're not sorry your father apprenticed you to a magic-user instead."; display the boxed quotation
 "Oh the fuller turns
 And the world turns
 So turns the day
@@ -996,11 +911,9 @@ The loom can be known to be broken. The loom is not known to be broken.
 
 The cloth loom is trapped. Instead of turning the cloth loom:
 	say "Your fingers finally locate the hidden catch which turns the loom, and would have enabled the fullers to work on both sides of the cloth. ";
-	if the cloth loom is trapped
-	begin;
+	if the cloth loom is trapped:
 		now the loom is known to be broken;
 		say "But the mechanism is jammed in some way." instead;
-	end if;
 	say "The mechanism turns smoothly";
 	if something is on the cloth loom, say ", winding [the list of things on the cloth loom] out of sight";
 	if something is in the Internal Cavity, say ", bringing [the list of things in the Internal Cavity] up into view";
@@ -1010,12 +923,10 @@ The cloth loom is trapped. Instead of turning the cloth loom:
 	now all the things in the Temporary Cavity are on the cloth loom.
 
 Effect of casting mend at the trapped cloth loom:
-	if the loom is known to be broken
-	begin;
+	if the loom is known to be broken:
 		record outcome "which reach into the mechanism of the cloth loom - it's not trapped at all, just full of enmeshed gearing, and soon the obstruction is eased";
 		now the loom is untrapped;
-		rule succeeds;
-	end if.
+		rule succeeds.
 
 Understand "kick" or "kick [text]" as a mistake ("In case you are the kind of adventurer who kicks things when frustrated, we may as well agree right now that this will not help matters.").[* There was a certain amount of loom-kicking when this room was tested.]
 
@@ -1029,7 +940,7 @@ Instead of going nowhere from the Broken Lane, say "Though the humps around the 
 
 The stolen tombstones are scenery in the Broken Lane. The description of the stolen tombstones is "These tombstones have clearly been dug up, carted here and thrown carelessly down into something that somebody very careless might, charitably, call a roadway. Frankly, they are a mess, broken up like so much biscuit." Effect of casting mend at the stolen tombstones: record outcome "which make a half-hearted attempt to set all right, but the task is way beyond so basic a spell"; if the broken half-brick is fixed in place begin; now the broken half-brick is portable; move the broken half-brick to the player; end if; rule succeeds.
 
-The broken half-brick is fixed in place. The half-brick is clay.[* Another tricky-to-find clay focus, in case the player didn't find the clay pipe.] The inventory listing of the broken half-brick is "that broken half-brick you absent-mindedly picked up when trying to mend the roadway". Understand "brick" as the broken half-brick.
+The broken half-brick is fixed in place. The half-brick is clay.[* Another tricky-to-find clay focus, in case the player didn't find the clay pipe.] Understand "brick" as the broken half-brick.
 
 The flame-blackened door is west of the Broken Lane and east of the Sunken Courtyard East. The flame-blackened door is a closed openable door. "Set into the slab-sided [if the location is the Broken Lane]western cutting of the lane[otherwise]eastern apex of the courtyard[end if] is a flame-blackened door, no more than four feet high." The flame-blackened door is lockable and locked. The flame-blackened door is wood. The matching key of the flame-blackened door is the eight-legged key. Effect of casting mend at the flame-blackened door: record outcome "which gives off an air of superiority - in so far as doors can do such a thing - and somehow communicates to you that it [italic type]likes[roman type] being flame-blackened, thank you very much. Gives a door a certain air, a certain rakehell dash"; rule succeeds. The eight-legged key is metal.
 
@@ -1045,7 +956,7 @@ The Sunken Courtyard North is northwest of the Sunken Courtyard East. "This nort
 
 The Sunken Courtyard West is southwest of the Sunken Courtyard North. "Is it a coincidence that this western apex of the Courtyard is the only one retaining some semblance of its original purpose? A flight of steps leads southward and up to what looks like an old workshop."
 
-A person can be poisoned or unpoisoned. Every turn when the player is poisoned: if the location is the Sanctum Sanctorum begin; now the player is unpoisoned; say "With profound relief you realise that entrance into sanctuary has purged your blood of poison."; stop; end if; decrease the strength of the player by 1;if the strength of the player < 5, say "You feel weakened by some inner corruption. Only the peace of sanctuary can cure this."; if the player is killed, end the game saying "You have been poisoned".
+A person can be poisoned or unpoisoned. Every turn when the player is poisoned: if the location is the Sanctum Sanctorum begin; now the player is unpoisoned; say "With profound relief you realise that entrance into sanctuary has purged your blood of poison."; stop; end if; decrease the strength of the player by 1; if the strength of the player < 5, say "You feel weakened by some inner corruption. Only the peace of sanctuary can cure this."; if the player is killed, end the game saying "You have been poisoned".
 
 The Apothecary's Workshop is above Sunken Courtyard West. The Apothecary's Workshop is south of Sunken Courtyard West. "Many hundreds of tiny bright eyes follow you from the shadows of this ancient workshop, which seems once to have been where the local apothecary mixed, ground and filtered his wares. At least, that was his day job; you have a sneaking suspicion that his hobby may have been the collection of exotic species of spiders..." A closed openable trapped transparent container called the glass bottle is in the Workshop. "Most of the detritus is rubbish, and almost surely deadly to touch, but a glass bottle with a scroll inside it catches your eye." In the glass bottle is a scroll called the cobwebbed scroll. The inscribed spell of the cobwebbed scroll is web. Instead of opening the bottle, say "There is no obvious way to open the bottle short of breaking it." Instead of attacking the bottle for the first time, say "As you heft the bottle, ready to smash it, you notice a tiny red spider inside - just for a moment - and, although it vanishes almost at once, it gives you pause for thought." Instead of attacking the bottle: now the player is poisoned; now the cobwebbed scroll is in the location; remove the bottle from play; say "As the bottle smashes almost into powder - the glass must be ancient - and the cobwebbed scroll falls out, you notice an almost imperceptible stinging sensation on your forearm." After dropping the bottle, say "Miraculously, it doesn't break."
 
@@ -1079,22 +990,16 @@ Five werespiders are in the Sump of the Fountain-Grove.[* The sump is not in fac
 
 After going from a werespider-infested room to a werespider-infested room:
 	say "You tread warily around the periphery of the sunken courtyard. ";
-	if the player is affected by silence
-	begin;
+	if the player is affected by silence:
 		say "But the silence charm holds true, and you do not disturb the werespiders.";
 		continue the action;
-	end if;
-	if a saving roll of 17 by the player to "tiptoe past the werespiders" is lost
-	begin;
-		repeat with legsy running through the alive werespiders
-		begin;
+	if a saving roll of 17 by the player to "tiptoe past the werespiders" is lost:
+		repeat with legsy running through the alive werespiders:
 			move legsy to the location;
 			now legsy is hostile;
-		end repeat;
 		say "The werespiders, with ears on all eight knees, are not fooled!";
-	otherwise;
+	otherwise:
 		say "Thank the gods for that.";
-	end if;
 	continue the action.
 
  Rule for dead body disposal of a werespider (called the victim) when the location is a werespider-infested room: restore the health of the victim; move the victim to the Sump of the Fountain-Grove; continue the activity.
@@ -1115,7 +1020,7 @@ Instead of going to the Ford for the first time, say "Just a warning before proc
 
 Icefinger Ford is north of the Gravel Track. "A shallow, rapid torrent washes over the Lane from northwest to southeast here, and no forest creek by the feel of it against your ankles but a mountain spring that must have burst from the ground no more than a mile away. This is goblin-work."
 
-In Icefinger Ford are four goblins, a bundle of kindling and a cracked cooking pot. The kindling is wood. The pot is clay. Instead of filling the pot, say "Ugh. Use a pot which goblins have been cooking with? I don't think so." Instead of burning the kindling, say "The kindling is hopelessly too damp to catch light, even if you had something to light it with. Goblins [italic type]have[roman type] discovered fire, but they do keep forgetting the essential points." Effect of casting mend at the cooking pot: record outcome "but the pot isn't boken, as such: it was just badly made in the first place"; rule succeeds. 
+In Icefinger Ford are four goblins, a bundle of kindling and a cracked cooking pot. The kindling is wood. The pot is clay. Instead of burning the kindling, say "The kindling is hopelessly too damp to catch light, even if you had something to light it with. Goblins [italic type]have[roman type] discovered fire, but they do keep forgetting the essential points." Effect of casting mend at the cooking pot: record outcome "but the pot isn't broken, as such: it was just badly made in the first place"; rule succeeds. 
 
 The river Icefinger is a backdrop. The river is in the Icefinger Ford, the Divide and the Icefinger Source. Understand "water" or "torrent" as the river Icefinger. Instead of drinking the river, say "It is cold enough that you can feel each separate tooth in your jaw." The river is air.[* In some metaphysical sense. There is an excuse - I don't think we could call it an explanation - in the accompanying spoof magazine.]
 
@@ -1128,8 +1033,6 @@ For calculating saving roll modifiers of the player:
 		modify to-save roll by 10 for "splashing back out the way you came";
 	continue the activity.[* This is to protect players who, despite the warning, march straight into the goblins and the middle of a rather difficult battle. Assuming they wish to run away, they need to make a saving roll to get out: failure to roll it means almost certain slaughter. That seems a little rough, so we give them a +10 bonus on this saving roll (making it virtually certain to succeed) so long as they only want to run back to the early rooms.]
 
-Instead of swimming in the Riverbed Course, say "The water is too shallow to swim in: it can be waded through quite easily, though, so feel free to walk around."
-
 Instead of going nowhere from the Icefinger Ford, say "The lane, of course, runs north to south; the shallow river washes through it from northwest to southeast."
 
 The Divide is northwest of Icefinger Ford. "The Icefinger runs west to southeast through a cutting here which is so deep that the river flows almost underground." The majestic erratic outcrop of rock is in the Divide. The outcrop is fixed in place. "In the centre of the stream is a startlingly majestic erratic outcrop of rock. It must be older than the river, older yet than the city."
@@ -1141,37 +1044,33 @@ Before climbing the erratic outcrop for the first time, say "Warning: you might 
 Instead of climbing the erratic outcrop:
 	if the strength of the player < 3, say "You are too physically weak to attempt it." instead;
 	decrease the strength of the player by 1;
-	if a saving roll of 15 by the player to "scale the erratic outcrop" is made
-	begin;
+	if a saving roll of 15 by the player to "scale the erratic outcrop" is made:
 		move the player to the Shrine of the Pinnacle;
-	otherwise;
-		say "Your attempt fails, and you land back with a jarring splash - the water is shallow and the riverbed unyielding.";
-	end if.
+	otherwise:
+		say "Your attempt fails, and you land back with a jarring splash - the water is shallow and the riverbed unyielding.".
 
 The Shrine of the Pinnacle is a room. "The flattened top of the erratic outcrop is, at once, both severely plain and unmistakeably sacred, and you sense that this must be a place sacred to one of the gods of the old city."
 
-Instead of praying, say "It would cheapen the appeal to the gods to make it in such a place as this."
+Praying is an action applying to nothing. Understand "pray" as praying.
+
+Carry out praying: say "It would cheapen the appeal to the gods to make it in such a place as this."
 
 Instead of praying in the Sanctum Sanctorum, say "This is where one comes to hide from the gods."
 
 Instead of praying in the Shrine of the Pinnacle, say "You prepare yourself with due solemnity, and yet - and yet - you sense somehow that the proper words must be used, if the prayer is to be answered."
 
-Praying to clouds is an action applying to nothing. Understand "you loose-roaming clouds be with me" or "pray you loose-roaming clouds be with me" as praying to clouds. Check praying to clouds: if the location is not the Shrine of the Pinnacle, say "Nothing could happen here." instead. Carry out praying to clouds: if the player does not know magic missile, award 12 points; now the player knows magic missile. Report praying to clouds: say "Communing in this special place with the swirling clouds - but was this not, a moment before, a clear autumnal sky - you feel seized with a sense of purpose and ability."
+Praying to clouds is an action applying to nothing. Understand "you loose-roaming clouds be with me" or "pray you loose-roaming clouds be with me" as praying to clouds. Check praying to clouds: unless the location is the Shrine of the Pinnacle, say "Nothing could happen here." instead. Carry out praying to clouds: if the player does not know magic missile, award 12 points; now the player knows magic missile. Report praying to clouds: say "Communing in this special place with the swirling clouds - but was this not, a moment before, a clear autumnal sky - you feel seized with a sense of purpose and ability."
 
 Instead of going down in the Shrine of the Pinnacle:
-	if a saving roll of 15 by the player to "get down safely from the erratic outcrop" is made
-	begin;
+	if a saving roll of 15 by the player to "get down safely from the erratic outcrop" is made:
 		say "You breathe a sigh of relief, then hiss a little as the Icefinger reminds you of the coldness of mountain water.";
-	otherwise;
+	otherwise:
 		say "You fall as you descend, taking ";
 		let the damage be the roll of 1d6+1;
 		say " points of damage.";
 		decrease the strength of the player by the damage;
-		if the player is killed
-		begin;
+		if the player is killed:
 			end the game saying "You have fallen to your death";
-		end if;
-	end if;
 	move player to the Divide.
 
 The Source of the Icefinger is west of the Divide. "The deep-cut channel becomes at last almost a cave, as hollowed walls of long-smoothed stone come abruptly to a halt. You might wade back east, but otherwise all ways are impassible."
@@ -1294,11 +1193,9 @@ The cowardice count is a number that varies. The never-children can be satisfied
 Instead of attacking a scroll:
 	remove the noun from play;
 	say "You tear up [the noun], and it loses coherence as it melts into thinnest air. Apparently only magic really gave it any substance, and that is now gone.";
-	if the player is in the Budless Grove and the never-children are unsatisfied
-	begin;
+	if the player is in the Budless Grove and the never-children are unsatisfied:
 		now the never-children are satisfied;
-		say "'The magic-uther tore up the [inscribed spell of the noun] all for uth!' one of the vile little creatures says, and the others make grudging gestures. 'All wight. Can come play.'";
-	end if.
+		say "'The magic-uther tore up the [inscribed spell of the noun] all for uth!' one of the vile little creatures says, and the others make grudging gestures. 'All wight. Can come play.'".
 
 Understand the command "play" as "sing". Understand the command "dance" as "sing". Instead of singing in the presence of the never-children, say "The merest look from them would be enough to stop you, but in fact they give you quite a lot more than the merest look. At any rate - you stop."
 
@@ -1318,14 +1215,12 @@ Every turn when the player is in the Budless Grove and the cowardice count is no
 	increase the cowardice count by 1;
 	if the cowardice count is 2, stop;
 	if the cowardice count is 3, say "One of the never-children slaps you in the face. 'Coward!'";
-	if the cowardice count > 3
-	begin;
+	if the cowardice count > 3:
 		say "The never-children slap you harder, and there is a nastier overtone to their taunting. 'Coward! You must enter the Labyrinth!' The blow has real effect";
 		if the player is affected by aerial shield, say ", and your aerial shield is no hope when they're reaching up from below";
 		let the slap strength be the cowardice count;
 		decrease the slap strength by 3;
-		make the player take the slap strength points of damage;
-	end if.
+		make the player take the slap strength points of damage.
 
 Before taking inventory: if the player is affected by compel postulant, say "Your forehead bears the Orange Flower of the Postulant, age-old symbol of one held by the 'compel postulant' spell."
 
@@ -1358,7 +1253,7 @@ On with the show, but let me encourage curious readers to seek out the original 
 
 Section E(c) - Spatial coordinates
 
-A spatial coordinate is a kind of value. <9,24,24> specifies a spatial coordinate with parts maze level, easting (without leading zeros), northing (without leading zeros). A room has a spatial coordinate called grid position. Definition: A room is unlocated if its grid position is <0,0,0>. Definition: A room is located if it is not unlocated.[* Inform does not automatically construct un- prefixes: they're too unpredictable in English. For instance, in ROTA "undead" has a definition which is by no means equivalent to "not dead".]
+A spatial coordinate is a kind of value. <9,24,24> specifies a spatial coordinate with parts maze level, easting (without leading zeros), northing (without leading zeros). A room has a spatial coordinate called grid position. Definition: A room is unlocated rather than located if its grid position is <0,0,0>.[* Inform does not automatically construct un- prefixes: they're too unpredictable in English. For instance, in ROTA "undead" has a definition which is by no means equivalent to "not dead".]
 
 To decide which number is the current maze level:
 	let L be the maze level part of the grid position of the location;
@@ -1367,14 +1262,10 @@ To decide which number is the current maze level:
 The previous maze level is a number that varies.
 
 Every turn:
-	if the location is a labyrinth room and the location is not the Hedge Archway
-	begin;
-		if the current maze level is not the previous maze level
-		begin;
+	if the location is a labyrinth room and the location is not the Hedge Archway:
+		if the current maze level is not the previous maze level:
 			if the current maze level is 1, say "You blink in the shadowy, but natural twilight, feeling a faint breeze on your face once again. You are back in the familiar hedge-maze at the surface.";
 			if the previous maze level is 1, say "Underground, the labyrinth continues with clean-cut, magically lit passages.";
-		end if;
-	end if;
 	change the previous maze level to the current maze level.
 
 A direction has a spatial coordinate called vector. North has vector <0,0,1>. South has vector <0,0,24>. East has vector <0,1,0>. West has vector <0,24,0>. Down has vector <1,0,0>. Up has vector <9,0,0>.[* As this demonstrates, Inform allows us to add to or modify even the most fundamental built-in concepts.] Definition: A direction is vectorial if its vector is not <0,0,0>.[* For instance, "northeast" and "outside" are non-vectorial directions in this sense. The Maze occupies a cubical lattice and never has connections in those directions.] Definition: A direction is vertical if it is up or it is down.
@@ -1459,10 +1350,9 @@ A labyrinth room is a kind of room. A labyrinth room has a labyrinth shape calle
 
 Definition: A labyrinth room is unplaced if its grid position is <0,0,0>.
 Definition: A labyrinth room is unshaped if its shape is L0/0-0-0-0-0-0.
-Definition: A labyrinth room is ascending if the U part of its shape is 1 and the maze level part of its grid position is not 1.
-Definition: A labyrinth room is descending if the D part of its shape is 1 and the maze level part of its grid position is not 9.
-Definition: A labyrinth room is non-ascending if it is not ascending.
-Definition: A labyrinth room is non-descending if it is not descending.[* The point here is that if a cave with an up staircase is found on the top level, the staircase must be ignored: similarly a down staircase on the bottom level.]
+Definition: A labyrinth room is ascending rather than non-ascending if the U part of its shape is 1 and the maze level part of its grid position is not 1.
+Definition: A labyrinth room is descending rather than non-descending if the D part of its shape is 1 and the maze level part of its grid position is not 9.
+[* The point here is that if a cave with an up staircase is found on the top level, the staircase must be ignored: similarly a down staircase on the bottom level.]
 
 After printing the name of an ascending labyrinth room, say " with Staircase Up".
 After printing the name of an descending labyrinth room, say " with Staircase Down".
@@ -1474,60 +1364,44 @@ To calculate how many labyrinth rooms should have each shape:
 	let total allocated be 0;
 	let total frequency be 0%;
 	if the total space is 0, stop;
-	repeat through the Table of Shape Frequencies
-	begin;
+	repeat through the Table of Shape Frequencies:
 		change the shape count entry to 0;
-	end repeat;
-	repeat through the Table of Shape Frequencies
-	begin;
+	repeat through the Table of Shape Frequencies:
 		let N be the parts per hundred part of the frequency entry;
 		let N be N multiplied by the total space;
 		change the shape count entry to N divided by 100;
 		change the total allocated to the total allocated plus the shape count entry;
 		let total frequency be total frequency plus the frequency entry;
-	end repeat;
-	if the total frequency is not 100%,
+	unless the total frequency is 100%,
 		say "Oops: the frequency table totals up to [total frequency].";
 	[Nevertheless, if the cave extent is not a multiple of 50 we have probably under-allocated due to rounding errors. We make random draws to put this right.]
-	while the total allocated is less than the total space
-	begin;
+	while the total allocated is less than the total space:
 		let total frequency be 0%;
 		let R be a random number from 1 to 100;
 		let the weighted percentage be the percentage with parts per hundred part R;
-		repeat through the Table of Shape Frequencies
-		begin;
+		repeat through the Table of Shape Frequencies:
 			let total frequency be total frequency plus the frequency entry;
-			if the weighted percentage > 0% and the weighted percentage <= the total frequency
-			begin;
+			if the weighted percentage > 0% and the weighted percentage <= the total frequency:
 				change the shape count entry to the shape count entry plus 1;
 				change the total allocated to the total allocated plus 1;
-				change the weighted percentage to 0%;
-			end if;
-		end repeat;
-	end while.
+				change the weighted percentage to 0%.
 
 To give shape to the shapeless labyrinth rooms:
 	[Now we change the count entries so that a count entry of X means that the Xth room is the first to have the characteristics of the present row. In particular, there is guaranteed to be a row with a count entry of 1.]
 	let total allocated be 0;
-	repeat through the Table of Shape Frequencies
-	begin;
-		if the shape count entry is not 0
-		begin;
+	repeat through the Table of Shape Frequencies:
+		unless the shape count entry is 0:
 			let new value be the total allocated plus 1;
 			let total allocated be total allocated plus shape count entry;
 			change the shape count entry to the new value;
-		end if;
-	end repeat;
 	[Now we go through the rooms, using the current row to set each one, and moving to the appropriate row whenever one of the start counts is hit. Since there is guaranteed to be a count entry of 1 somewhere, the changes can only be reached when a row has been chosen.]
 	let total allocated be 0;
-	repeat with blank room running through unshaped labyrinth rooms
-	begin;
+	repeat with blank room running through unshaped labyrinth rooms:
 		let total allocated be total allocated plus 1;
 		if there is a shape count of total allocated in the Table of Shape Frequencies then choose row with a shape count of total allocated in the Table of Shape Frequencies;
 		change the shape of the blank room to the shape entry;
 		change the map legend of the blank room to the legend entry;
-		change the printed name of the blank room to the shape name entry;
-	end repeat.
+		change the printed name of the blank room to the shape name entry.
 
 Before casting make sanctuary at: if the location is a labyrinth room or the location is the Budless Grove, say "You hear the laughter of the never-children in your mind, and know that you might as well save your strength." instead.
 
@@ -1543,23 +1417,19 @@ Section E(f) - Solid Rock and labyrinth boundaries
 Solid Rock is a room.
 
 To make all labyrinth exits lead to Solid Rock:
-	repeat with blank room running through labyrinth rooms
-	begin;
+	repeat with blank room running through labyrinth rooms:
 		let Sh be the shape of the blank room;
 		if U part of Sh is 1, change the up exit of blank room to Solid Rock;
 		if D part of Sh is 1, change the down exit of blank room to Solid Rock;
 		if N part of Sh is 1, change the north exit of blank room to Solid Rock;
 		if E part of Sh is 1, change the east exit of blank room to Solid Rock;
 		if S part of Sh is 1, change the south exit of blank room to Solid Rock;
-		if W part of Sh is 1, change the west exit of blank room to Solid Rock;
-	end repeat.
+		if W part of Sh is 1, change the west exit of blank room to Solid Rock.
 
 To decide which room is the room at (grid ref - a spatial coordinate):
 	if grid ref is <0,0,0> then decide on Solid Rock;
-	repeat with R running through rooms
-	begin;
+	repeat with R running through rooms:
 		if the grid position of R is grid ref then decide on R;
-	end repeat;
 	decide on Solid Rock.
 
 Section E(g) - Terra Incognita
@@ -1574,33 +1444,23 @@ Egress relates a room (called the place) to a direction (called that way) when t
 
 To position (new room - a room) at (grid ref - a spatial coordinate):
 	change the grid position of the new room to the grid ref;
-	repeat with this way running through vectorial directions
-	begin;
+	repeat with this way running through vectorial directions:
 		let the further position be the vector sum of the grid ref and the vector of this way;
 		[say "In direction [this way], the position would be [further position].";]
-		if the further position is not <0,0,0>
-		begin;
+		if the further position is not <0,0,0>:
 			let the further room be the room at the further position;
-			if the further room is Solid Rock
-			begin;
+			if the further room is Solid Rock:
 				if the new room exits this way then change this way exit of the new room to Terra Incognita;
-			otherwise;
+			otherwise:
 				let the reverse way be the opposite of this way;
-				if this way is vertical or the new room exits this way
-				begin;
-					if the further room exits the reverse way
-					begin;
+				if this way is vertical or the new room exits this way:
+					if the further room exits the reverse way:
 						change this way exit of the new room to the further room;
 						change the reverse way exit of the further room to the new room;
-					otherwise;
+					otherwise:
 						change this way exit of the new room to Solid Rock;
-					end if;
-				otherwise;
-					if the further room exits the reverse way, change the reverse way exit of the further room to Solid Rock;
-				end if;
-			end if;
-		end if;
-	end repeat.
+				otherwise:
+					if the further room exits the reverse way, change the reverse way exit of the further room to Solid Rock.
 
 Section E(h) - Exhausting the maze and retrieving rooms
 
@@ -1619,16 +1479,14 @@ To re-plumb (place - a room) to (way - a direction):
 	if the connection is a retrievable labyrinth room, change the way exit of the place to Terra Incognita.
 
 To retrieve inaccessible labyrinth rooms:
-	repeat with maze area running through retrievable labyrinth rooms
-	begin;
+	repeat with maze area running through retrievable labyrinth rooms:
 		re-plumb the maze area to north;
 		re-plumb the maze area to east;
 		re-plumb the maze area to south;
 		re-plumb the maze area to west;
 		re-plumb the maze area to up;
 		re-plumb the maze area to down;
-		change the grid position of the maze area to <0,0,0>;
-	end repeat.
+		change the grid position of the maze area to <0,0,0>.
 
 Section E(i) - Exploring the labyrinth
 
@@ -1638,25 +1496,19 @@ Before going a direction (called this way) to Terra Incognita:
 	if the location is unplaced or this way is not vectorial, say "Oops! You should only reach terra incognita from a placed room via a vectorial direction."; [* This never happens, of course: it was put in to test the game.] 
 	if Terra Incognita is closed, say "The way is barred by some enchantment of the never-children." instead;
 	let possibles be the number of acceptable labyrinth rooms;
-	if possibles is 0
-	begin;
+	if possibles is 0:
 		retrieve inaccessible labyrinth rooms;
 		let possibles be the number of acceptable labyrinth rooms;
-		if possibles is 0[* I.e., if even retrieving unvisited rooms didn't help: now the maze really is exhausted.]
-		begin;
+		if possibles is 0:[* I.e., if even retrieving unvisited rooms didn't help: now the maze really is exhausted.]
 			now Terra Incognita is closed;
 			say "In your mind, you hear the scornful laughter of the never-children. 'Magic-uther has run out of labyrinth!' And certainly the way is blocked." instead;
-		end if;
-	end if;
-	if possibles > 0
-	begin;
+	if possibles > 0:
 		let the new room be a random acceptable labyrinth room;
 		let the current position be the grid position of the location;
 		let the new position be the vector sum of the current position and the vector of this way;
 		position the new room at the new position;
-	otherwise;
+	otherwise:
 		change this way exit of the location to Solid Rock;
-	end if;
 	try going this way instead.
 
 After going up to a labyrinth room from a non-ascending labyrinth room: say "You take the well-remembered secret staircase up."; continue the action.
@@ -1676,24 +1528,20 @@ Section E(j) - The force labyrinth spell
 Instead of casting force labyrinth at when Terra Incognita is closed, say "The never-children laugh once again."
 
 Before casting force labyrinth at:
-	if the location is not a labyrinth room, say "That spell has efficacy only in the Maze of Royal Beasts." instead.[* This is a before rule, unconventionally, to stop players from wasting precious STR finding out what the spell is supposed to do.]
+	unless the location is a labyrinth room, say "That spell has efficacy only in the Maze of Royal Beasts." instead.[* This is a before rule, unconventionally, to stop players from wasting precious STR finding out what the spell is supposed to do.]
 
 To force a path (way - direction) from (place - room):
 	let the current position be the grid position of the location;
 	let the new position be the vector sum of the current position and the vector of the way;
 	if the new position is <0,0,0>, stop;
 	let the new room be the room at the new position;
-	if the new room is Solid Rock
-	begin;
-		if a labyrinth room is acceptable
-		begin;
+	if the new room is Solid Rock:
+		if a labyrinth room is acceptable:
 			let the new room be a random acceptable labyrinth room;
 			let the current position be the grid position of the location;
 			position the new room at the new position;
-		otherwise;
+		otherwise:
 			stop;
-		end if;
-	end if;
 	now the new room is Earthquake-undamaged;
 	change the way exit of the location to the new room;
 	let the reverse way be the opposite of the way;
@@ -1715,11 +1563,7 @@ The Hedge Archway is a labyrinth room with shape L0/0-0-1-1-1-0. The Hedge Archw
 
 The branch like an extended hand is fixed in place in the Hedge Archway. "A branch, hanging out over the archway, seems almost like an extended hand: and you cannot help noticing, hanging down from the branch, [the list of leaves which are part of the branch]." Before doing something to the branch, say "The branch itself is too high above you." instead. The branch can be too high or almost too high. The branch is almost too high. The branch is wood.
 
-Before going north in the Hedge Archway when the branch is almost too high, say "The hedge somehow closes to prevent you, pushing you back without pushing you. A moment later, it's as if nothing had happened." instead.
-
-Before going east in the Hedge Archway when the branch is almost too high, say "The hedge somehow closes to prevent you, pushing you back without pushing you. A moment later, it's as if nothing had happened." instead.
-
-Before going south in the Hedge Archway when the branch is almost too high, say "The hedge somehow closes to prevent you, pushing you back without pushing you. A moment later, it's as if nothing had happened." instead.
+Before going in the Hedge Archway when the branch is almost too high and ( noun is north or noun is east or noun is south ) , say "The hedge somehow closes to prevent you, pushing you back without pushing you. A moment later, it's as if nothing had happened." instead.
 
 The plural of leaf is leaves. A leaf is a kind of thing. A leaf is usually magical essence. Some leaves part of the branch are defined by the Table of Task Leaves. The description of a leaf is "The leaf unrolls to reveal black writing on its open face: Your task, o mage, is to [task briefing]. Fail not in this quest: yet, if it must be so, you may tear this leaf to abandon your effort and return here (if you be not in combat at the time), at a permanent cost of 1 STR point. And remember always that if the maze be exhausted, you may never reach your goal... so do not tarry, do not meander."
 
@@ -1741,13 +1585,11 @@ Instead of attacking a leaf:
 	if combat proceeds, say "The leaf might as well be made of bronze. It won't tear." instead;
 	remove the noun from play;
 	say "You tear [the noun] across, feeling a sudden stabbing pain, and the world is momentarily hazy. When you reappear, even the hedges themselves are somehow shaking, adjusting, changing.";
-	if a leaf is part of the branch
-	begin;
+	if a leaf is part of the branch:
 		tidy the labyrinth for a fresh quest;
-	otherwise;
+	otherwise:
 		say "[paragraph break]But it seems there will be no more patience. Even as you reassemble at the archway, the never-children tear you limb from limb!";
-		end the game saying "You exhausted the Maze of Royal Beasts";
-	end if.
+		end the game saying "You exhausted the Maze of Royal Beasts".
 
 Section E(l) - The four tasks
 
@@ -1767,7 +1609,7 @@ To win the maze task:
 	if a leaf is part of the branch, tidy the labyrinth for a fresh quest;
 	otherwise remove the branch from play;
 	change the current maze task to the branch; [i.e., no task at all]
-	if the location is not the Hedge Archway, move the player to the Hedge Archway.
+	unless the location is the Hedge Archway, move the player to the Hedge Archway.
 
 The deepest slaying level is a number that varies. Rule for dead body disposal of a monster (called the victim) when the location is a labyrinth room: restore the health of the victim; return the victim to the pack; if the current maze level is greater than the deepest slaying level, change the deepest slaying level to the current maze level; continue the activity.
 
@@ -1806,39 +1648,39 @@ The pure ice-cold lake of mountain water is a scenery backdrop. The ice-cold lak
 
 The rocky island is a scenery backdrop. The rocky island is in the Eastern Shore, the Northern Shore, the Western Shore and the Southern Shore. Instead of doing something to the rocky island, say "The rocky island is too far away."
 
+Swimming is an action applying to nothing. Carry out swimming: say "There's no very appealing pool here."
+
 Instead of swimming in the Deep Pool Environs:[* Play-testers generally assumed that this was the only way to reach the Island - which the player must of course do in order to win the "rescue Eurydice" quest. In fact, there are two other ways: to use the Magic Carpet to fly across the lake from any of the four shores, or to get lucky and find a staircase down from the room vertically above the island - or a staircase up from the room vertically below.]
-	if the player is not affected by inner warmth, say "You step into the water, intending to swim, but twenty seconds later you are out again, yelping." instead;
-	if the location is the Island in the Deep Pool
-	begin;
+	unless the player is affected by inner warmth, say "You step into the water, intending to swim, but twenty seconds later you are out again, yelping." instead;
+	if the location is the Island in the Deep Pool:
 		say "Protected from the icy chill by the inner warmth spell, you swim confidently across to the north.";
 		move player to the Northern Shore;
-	otherwise;
+	otherwise:
 		say "Protected from the icy chill by the inner warmth spell, you swim confidently across to the island.";
 		if the Island in the Deep Pool is unvisited, draw cards for the Island in the Deep Pool;
-		move player to the Island in the Deep Pool;
-	end if.
+		move player to the Island in the Deep Pool.
 
 Section E(n) - Setting up the labyrinth
 
 To restore the labyrinth to its virgin state:
 	make all labyrinth exits lead to Solid Rock;
 	position the Hedge Archway at <1,1,12>;
-	position LR0 at <1,1,11>; change the printed name of LR0 to "North-East-South Junction";
-	position LR1 at <1,1,13>; change the printed name of LR1 to "North-East-South Junction";
+	position LR0 at <1,1,11>;
+	change the printed name of LR0 to "North-East-South Junction";
+	position LR1 at <1,1,13>;
+	change the printed name of LR1 to "North-East-South Junction";
 	position the Island in the Deep Pool at <3,6,12>;
 	position Western Shore at <3,5,12>;
 	position Eastern Shore at <3,7,12>;
 	position Northern Shore at <3,6,13>;
 	position Southern Shore at <3,6,11>;
-	repeat with the locale running through labyrinth rooms
-	begin;
+	repeat with the locale running through labyrinth rooms:
 		let the locale shape be the shape of the locale;
 		if the U part of the locale shape is 1, change the minimum level of the locale to 2;
 		now the locale is grovelike;
 		if the open space part of the locale shape is 0, now the locale is ungrovelike;
 		if the N part of the locale shape is 1 and the E part of the locale shape is 1 and the S part of the locale shape is 1 and the W part of the locale shape is 1, now the locale is ungrovelike;
-		if the N part of the locale shape is 0 and the E part of the locale shape is 0 and the S part of the locale shape is 0 and the W part of the locale shape is 0, now the locale is ungrovelike;
-	end repeat.
+		if the N part of the locale shape is 0 and the E part of the locale shape is 0 and the S part of the locale shape is 0 and the W part of the locale shape is 0, now the locale is ungrovelike.
 
 When play begins:
 	calculate how many labyrinth rooms should have each shape;
@@ -1848,22 +1690,16 @@ When play begins:
 To tidy the labyrinth for a fresh quest:
 	now the branch is almost too high;
 	now Terra Incognita is open;
-	repeat with maze area running through labyrinth rooms
-	begin;
-		if the maze area is not the Hedge Archway
-		begin;
+	repeat with maze area running through labyrinth rooms:
+		unless the maze area is the Hedge Archway:
 			change the grid position of the maze area to <0,0,0>;
 			now the maze area is unvisited;
-			repeat with trinket running through things in the maze area
-			begin;
+			repeat with trinket running through things in the maze area:
 				if the trinket is not a backdrop and the trinket is not the player, move the trinket to Terra Incognita;
 				if the trinket is a person, restore the health of the trinket;
-			end repeat;
-		end if;
-	end repeat;
 	remove Eurydice from play;
 	restore the labyrinth to its virgin state;
-	if the location is not the Hedge Archway, move the player to the Hedge Archway;
+	unless the location is the Hedge Archway, move the player to the Hedge Archway;
 	decrease the permanent strength of the player by 1;
 	restore the health of the player.
 
@@ -1873,7 +1709,7 @@ Section E(o) - The solitaire game variant
 
 The solitaire game count is a number that varies.
 
-Preparing to maze is an action out of world applying to nothing. Understand "solitaire" as preparing to maze. Check preparing to maze: if the turn count is not 1, say "Solitaire maze play is only allowed if chosen on the opening round." instead. Carry out preparing to maze: change the solitaire game count to 1; change the level of the player to 3; change the permanent strength of the player to 16; restore the health of the player; now the player knows magic missile; now the player knows make sanctuary; now the player knows mend; move the old pipe to the player; now the player carries the arrow; now the player knows web; now the player knows aerial shield; move player to the Hedge Archway.
+Preparing to maze is an action out of world applying to nothing. Understand "solitaire" as preparing to maze. Check preparing to maze: unless the turn count is 1, say "Solitaire maze play is only allowed if chosen on the opening round." instead. Carry out preparing to maze: change the solitaire game count to 1; change the level of the player to 3; change the permanent strength of the player to 16; restore the health of the player; now the player knows magic missile; now the player knows make sanctuary; now the player knows mend; move the old pipe to the player; now the player carries the arrow; now the player knows web; now the player knows aerial shield; move player to the Hedge Archway.
 
 Before going west from the Hedge Archway when the solitaire game count is not 0:
 	end the game saying "You have left the Maze of Royal Beasts" instead.
@@ -1902,17 +1738,15 @@ Instead of inserting an artefact into something, say "The artefacts of the maze 
 
 The Charmed Flute is an artefact in Terra Incognita. "The Charmed Flute, a precious artefact, lies discarded here." The description is "When played, the Charmed Flute soothes any hostile creatures (other than the undead) to quiescence: but the Flute may be played only once before vanishing again into the labyrinth."
 
-Musically playing is an action applying to one thing. Understand "play [something held]" as musically playing. Check musically playing: if the noun is not the Charmed Flute, say "That is not a musical instrument you know how to play." instead.
+Musically playing is an action applying to one carried thing. Understand "play [something]" as musically playing. Check musically playing: unless the noun is the Charmed Flute, say "That is not a musical instrument you know how to play." instead.
 
 Carry out musically playing:
-	if a hostile monster is in the location
-	begin;
+	if a hostile monster is in the location:
 		say "As you play an unearthly lullaby on the Charmed Flute, it is as if you soothe [the list of hostile monsters in the location]. You are now free to walk peaceably here; but the Flute, its task performed, vanishes away.";
 		now all monsters in the location are indifferent;
 		return the Charmed Flute to the pack;
-	otherwise;
-		say "You play a short passacaglia to pass the time. But in the absence of hostile creatures, there is no effect beyond the soothing of your tired soul.";
-	end if.
+	otherwise:
+		say "You play a short passacaglia to pass the time. But in the absence of hostile creatures, there is no effect beyond the soothing of your tired soul.".
 
 The Eye of God is an artefact in Terra Incognita. "The Eye of God, a baleful green gemstone, glares up at you." It has minimum level 3. The description is "Cursed and yet precious, the Eye of God is the strangest of all the artefacts of the labyrinth."
 
@@ -1933,20 +1767,18 @@ For calculating damage modifiers of the player:
 	let the threshold be the threshold multiplied by 2;
 	let the putative strength be the strength of the player;
 	decrease the putative strength by the damage incurred;
-	if the player is wearing the Ring of Power and the current maze level is greater than 2 and the putative strength is less than the threshold
-	begin;
+	if the player is wearing the Ring of Power and the current maze level is greater than 2 and the putative strength is less than the threshold:
 		say ": the Ring of Power on your finger glows fire-red";
 		let the largest safe amount be the strength of the player;
 		decrease the largest safe amount by the threshold;
 		if the largest safe amount is less than 0, let the largest safe amount be 0;
 		change the damage incurred to the largest safe amount;
 		stop; [I.e., don't continue the activity: there's no point.]
-	end if;
 	continue the activity.
 
 The Magic Carpet is an artefact in Terra Incognita. "Rolled up in front of you is the Magic Carpet." It has minimum level 2. The description is "A useful artefact of the labyrinth: it enables the mage, once only, to move one position in any direction (north, south, east, west, up or down) regardless of walls or hedges. (Type RIDE CARPET NORTH, or how may you.)"
 
-Carpet-riding is an action applying to two visible things. Understand "ride [something held] [direction]" as carpet-riding. Check carpet-riding: if the noun is not the Magic Carpet, say "That's not something you can ride." instead; if the second noun is not a direction, say "That's not a direction you can take the carpet in." instead.
+Carpet-riding is an action applying to one carried thing and one visible thing. Understand "ride [something] [direction]" as carpet-riding. Check carpet-riding: unless the noun is the Magic Carpet, say "That's not something you can ride." instead; unless the second noun is a direction, say "That's not a direction you can take the carpet in." instead.
 
 Carry out carpet-riding:
 	let the current position be the grid position of the location;
@@ -1954,32 +1786,24 @@ Carry out carpet-riding:
 	if the new position is <0,0,0>, say "The carpet is unable to take you that way, which would lie outwith the labyrinth." instead;
 	let the destination room be the room at the new position;
 	let the novelty factor be 0;
-	if the destination room is Solid Rock
-	begin;
-		if a labyrinth room is acceptable
-		begin;
+	if the destination room is Solid Rock:
+		if a labyrinth room is acceptable:
 			let the destination room be a random acceptable labyrinth room;
 			position the destination room at the new position;
 			let the novelty factor be 1;
-		otherwise;
+		otherwise:
 			say "The carpet is unable to take you that way, which would lie outwith the labyrinth." instead;
-		end if;
-	end if;
 	return the Magic Carpet to the pack;
 	say "The Magic Carpet transports you one place [second noun] in the labyrinth, then melts away into air.";
 	let the way be the second noun;
 	let the reverse way be the opposite of the second noun;
-	if the room the way from the location is Terra Incognita
-	begin;
-		if the room the reverse way from the destination room is Terra Incognita
-		begin;
+	if the room the way from the location is Terra Incognita:
+		if the room the reverse way from the destination room is Terra Incognita:
 			change the way exit of the location to the destination room;
 			change the reverse way exit of the destination room to the location;
-		otherwise;
+		otherwise:
 			change the way exit of the location to Solid Rock;
 			change the reverse way exit of the destination room to Solid Rock;
-		end if;
-	end if;
 	if the novelty factor is 1, draw cards for the destination room;
 	move the player to the destination room.
 
@@ -1988,7 +1812,7 @@ An artefact called the Divining Rod is in Terra Incognita. "The Divining Rod, on
 Instead of waving the Divining Rod:
 	say "The Divining Rod senses that ";
 	if the location is the Hedge Archway, say "you are in the Archway. Well, there's a surprise." instead;
-	if the current maze level is not 1, say "you are below ground, in level [current maze level] of the labyrinth; ";
+	unless the current maze level is 1, say "you are below ground, in level [current maze level] of the labyrinth; ";
 	let the current position be the grid position of the location;
 	let the budless position be the grid position of the Hedge Archway;
 	let the eastward journey be the easting part of the current position;
@@ -1997,16 +1821,14 @@ Instead of waving the Divining Rod:
 	decrease the northward journey by the northing part of the budless position;	
 	let the westward journey be 0 minus the eastward journey;
 	let the southward journey be 0 minus the northward journey;
-	if the eastward journey is 0 and the northward journey is 0
-	begin;
+	if the eastward journey is 0 and the northward journey is 0:
 		say "you are vertically below the Archway, ";
-	otherwise;
+	otherwise:
 		say "you have travelled ";
 		if the eastward journey > 0, say "east by [eastward journey in words], ";
 		if the westward journey > 0, say "west by [westward journey in words], ";
 		if the northward journey > 0, say "north by [northward journey in words], ";
 		if the southward journey > 0, say "south by [southward journey in words], ";
-	end if;
 	let the way out be the best route from the location to the Hedge Archway;
 	if the way out is a direction, say "and it pulls your hand to the direction [way out].";
 	otherwise say "and it shakes in your hand."
@@ -2014,51 +1836,55 @@ Instead of waving the Divining Rod:
 The Enchanted Map is an artefact in Terra Incognita. "The Enchanted Map, one of the artefacts of the Maze, lies here for you to find."
 
 To plot line (N - a number) of room (R - a room):
-	if R is Solid Rock begin; say "     "; stop; end if;
-	if R is unvisited begin; say ":::::"; stop; end if;
-	if R is Earthquake-damaged begin; say "#####"; stop; end if;
-	if R is the Island in the Deep Pool
-	begin;
+	if R is Solid Rock:
+		say "     ";
+		stop;
+	if R is unvisited:
+		say ":::::";
+		stop;
+	if R is Earthquake-damaged:
+		say "#####";
+		stop;
+	if R is the Island in the Deep Pool:
 		if N is 1, say "~~~~~";
 		if N is 2, say "~~O~~";
 		if N is 3, say "~~~~~";
 		stop;
-	end if;
-	if N is 1
-	begin;
-		if R exits north, say "  |"; otherwise say "   ";
-		if R is ascending, say "/ "; otherwise say "  ";
-	end if;
-	if N is 2
-	begin;
-		if R exits west, say "-"; otherwise say " ";
-		say the map legend of R;
-		if R exits east, say "-"; otherwise say " ";
-	end if;
-	if N is 3
-	begin;
-		if R is descending, say " /"; otherwise say "  ";
-		if R exits south, say "|  "; otherwise say "   ";
-	end if.
+	if N is:
+		-- 1:
+			if R exits north, say "  |";
+			otherwise say "   ";
+			if R is ascending, say "/ ";
+			otherwise say "  ";
+		-- 2:
+			if R exits west, say "-";
+			otherwise say " ";
+			say the map legend of R;
+			if R exits east, say "-";
+			otherwise say " ";
+		-- 3:
+			if R is descending, say " /";
+			otherwise say "  ";
+			if R exits south, say "|  ";
+			otherwise say "   ".
+
 
 Instead of examining the Enchanted Map:
 	let grid ref be the grid position of the location;
 	if grid ref is <0,0,0>, stop;
 	let L be the maze level part of the grid ref;
-	if L is 1, let the design be "=-=-=";
-	if L is 2, let the design be "-=-=-";
-	if L is 3, let the design be "=+=+=";
-	if L is 4, let the design be "=====";
-	if L is 5, let the design be "=+o+=";
+	if L is:
+		-- 1: let the design be "=-=-=";
+		-- 2: let the design be "-=-=-";
+		-- 3: let the design be "=+=+=";
+		-- 4: let the design be "=====";
+		-- 5: let the design be "=+o+=";
 	if L is greater than 5, let the design be "#####";
 	say "[fixed letter spacing]+[design][design][design][design][design]+[line break]";
-	repeat with dN running from -1 to 1
-	begin;
-		repeat with stripe running from 1 to 3
-		begin;
+	repeat with dN running from -1 to 1:
+		repeat with stripe running from 1 to 3:
 			say "#";
-			repeat with dE running from -2 to 2
-			begin;
+			repeat with dE running from -2 to 2:
 				let E be the easting part of the grid ref;
 				let N be the northing part of the grid ref;
 				let L be the maze level part of the grid ref;
@@ -2067,11 +1893,8 @@ Instead of examining the Enchanted Map:
 				let the offset ref be the spatial coordinate with maze level part L easting part E northing part N;
 				let the offset room be the room at the offset ref;
 				plot line stripe of room offset room;
-			end repeat;
 			say "#[line break]";
-		end repeat;
-	end repeat;
-	say "+[design][design][design][design][design]+[line break][variable letter spacing][line break]".
+	say "+[design][design][design][design][design]+[line break][variable letter spacing]".
 
 Section E(r) - The encounters pack
 
@@ -2109,29 +1932,21 @@ To draw cards for (locale - a room):
 	let the draw count be the open space part of the shape of the locale plus the maze level part of the grid position of the locale;
 	let the preferred artefact be the Enchanted Map;
 	if the current maze task is the mauve leaf, let the preferred artefact be the Charmed Flute;
-	if the current maze level is 1 and the preferred artefact is in the encounters pack[* We rig the draw to make sure that the first thing the player encounters is a useful artefact: ordinarily the Map, but in the "rescue Eurydice" quest it's the Charmed Flute instead, since we picture the player as Orpheus.]
-	begin;
+	if the current maze level is 1 and the preferred artefact is in the encounters pack:[* We rig the draw to make sure that the first thing the player encounters is a useful artefact: ordinarily the Map, but in the "rescue Eurydice" quest it's the Charmed Flute instead, since we picture the player as Orpheus.]
 		move the preferred artefact to the locale;
 		stop;
-	end if;
-	if the current maze task is the pea-green leaf and the Eye of God is in the encounters pack and the number of unvisited labyrinth rooms is less than 10[* In the quest to bring back the Eye of God, it would be a bit unfair for the Eye to remain at the bottom of the pack for the whole game: so once four-fifths of the maze is played out, the Eye of God is rigged to come up next.]
-	begin;
+	if the current maze task is the pea-green leaf and the Eye of God is in the encounters pack and the number of unvisited labyrinth rooms is less than 10:[* In the quest to bring back the Eye of God, it would be a bit unfair for the Eye to remain at the bottom of the pack for the whole game: so once four-fifths of the maze is played out, the Eye of God is rigged to come up next.]
 		move the Eye of God to the locale;
 		decrease the draw count by 1;
-	end if;
-	while the draw count is greater than 1 and something (called the top card) is in the encounters pack
-	begin;
+	while the draw count is greater than 1 and something (called the top card) is in the encounters pack:
 		move the top card to the locale;
-		if the current maze level is 1[* The garden maze does not suffer from trap-doors, earthquakes or the baleful presence of the undead.]
-		begin;
+		if the current maze level is 1:[* The garden maze does not suffer from trap-doors, earthquakes or the baleful presence of the undead.]
 			if the top card is a hazard, return the top card to the pack;
 			if the top card is a monster and the defensive charm of the top card is exorcise undead, return the top card to the pack;
-		end if;
 		if the locale is the Dome of the White Bones and the top card is a hazard, return the top card to the pack;[* The Dome is a huge cave and likely to result in many cards being drawn, which means there is a good chance of a Trap or an Earthquake: when these did indeed happen in play-testing, the effect was unsatisfactory in the first case, unfair in the second. So the Dome has been made hazard-free.]
 		if the top card is an artefact and the current maze level is less than the minimum level of the top card, return the top card to the pack;[* For instance, you won't find the Ring by wandering around the hedge maze.]
 		if the top card is a monster, now the top card is surprised;
-		decrease the draw count by 1;
-	end while.
+		decrease the draw count by 1.
 
 Section E(s) - Traps and earthquakes
 
@@ -2141,10 +1956,8 @@ Hazard-playing is an action out of world applying to one thing.
 
 Every turn:
 	let the locale be the location;
-	repeat with hazard card running through hazards in the locale
-	begin;
-		try hazard-playing the hazard card;
-	end repeat.
+	repeat with hazard card running through hazards in the locale:
+		try hazard-playing the hazard card.
 
 To make the player fall to (destination - room):
 	if the destination is unvisited, draw cards for the destination;
@@ -2156,28 +1969,24 @@ Carry out hazard-playing a Trap:
 	if the position below is <0,0,0>, continue the action;
 	if the location is descending, continue the action;
 	let the place below be the room at the position below;
-	if the place below is not Solid Rock
-	begin;
+	unless the place below is Solid Rock:
 		say "You fall through a concealed Trap in the cave floor, to emerge back at...";
 		change the down exit of the location to the place below;
 		make the player fall to the place below;
 		stop;
-	end if;
-	if a labyrinth room (called the place below) is unplaced
-	begin;
+	if a labyrinth room (called the place below) is unplaced:
 		say "You fall through a concealed Trap in the cave floor!";
 		position the place below at the position below;
 		change the down exit of the location to the place below;
-		if the place below is not ascending,
+		unless the place below is ascending,
 			change the up exit of the place below to Solid Rock;
-		make the player fall to the place below;
-	end if.
+		make the player fall to the place below.
 
 A room can be Earthquake-damaged or Earthquake-undamaged. A room is usually not Earthquake-damaged. Instead of going to an Earthquake-damaged room, say "That whole cave has collapsed in an earthquake, and is impassible."
 
 Carry out hazard-playing an Earthquake:
 	return the noun to the pack;
-	if the previous location is not a labyrinth room, continue the action;
+	unless the previous location is a labyrinth room, continue the action;
 	if the previous maze level is 1, continue the action;[* An Earthquake causes a rockfall to block the room just left behind: that would make no sense up in the hedge maze on level 1.]
 	if the player is in the previous location, continue the action;
 	say "An Earthquake causes a rockfall back in [the previous location]!";
@@ -2231,16 +2040,12 @@ Effect of casting mindsift at the succubi:
 Effect of casting mindsift at the copper-scaled snake: now the player knows corrode; record outcome "extracting its recollections, simplified by its reptile brain: anger, and a much-decayed memory of the ruination spell it cast here in revenge - which, however decayed, seems to be yours now";
 	rule succeeds.
 Effect of casting mindsift at a person:   
-	repeat through Table of Enchantments
-	begin; 
-		if the second noun knows the spell entry and the player does not know the spell entry
-		begin;
+	repeat through Table of Enchantments:
+		if the second noun knows the spell entry and the player does not know the spell entry:
 			let the extracted spell be the spell entry;  
 			now the player knows the extracted spell; 
 			record outcome "and from the whirling mass of thoughts you clutch hold of something powerful and unfamiliar";
 			rule succeeds;
-		end if;
-	end repeat;  
 	record outcome "but there is nothing magical you can extract from that sudden rush of thoughts"; 
 	rule succeeds. 
 
@@ -2266,7 +2071,7 @@ The Dry Channel is west of the Exalted Throne. The Dry Channel is below the Exal
 
 The wall-paintings are scenery in the Dry Channel. Understand "paintings" or "plaster" as the wall-paintings. The description is "Fluid strokes of blue and black suggest the shapes of leaping dolphins, an octopus, and a single swimmer." Effect of casting mend at the wall-paintings: record outcome "seeming to search about for more bits of the original plaster, but there is none to reassemble"; rule succeeds.
 
-The gritty floor is scenery in the Channel. Understand "sand" or "fine" as the gritty floor. The description is "There is sand between the cracks and scattered across the surface of the stones, which have been worn to a fine polish." Instead of digging or pushing or blowing or turning the gritty floor, try looking under the gritty floor. Instead of looking under the gritty floor, say "The sand is too thin to be concealing anything of interest." Instead of touching the gritty floor, say "You brush aside a little of the sand, but to no interesting effect."
+The gritty floor is scenery in the Channel. Understand "sand" or "fine" as the gritty floor. The description is "There is sand between the cracks and scattered across the surface of the stones, which have been worn to a fine polish." Instead of pushing or turning the gritty floor, try looking under the gritty floor. Instead of looking under the gritty floor, say "The sand is too thin to be concealing anything of interest." Instead of touching the gritty floor, say "You brush aside a little of the sand, but to no interesting effect."
 
 The flimsy scroll is a scroll. "The edge of a half-buried scroll emerges from the sand." The inscribed spell of the flimsy scroll is cure baldness. Effect of casting mend at the flimsy scroll: record outcome "erasing the more recent handwriting and replacing it with older letter-forms..."; change the inscribed spell of the flimsy scroll to mindsift; rule succeeds. Understand "half-buried" as the flimsy scroll.
 
@@ -2282,32 +2087,26 @@ The description of the thick door is "Sturdy enough to hold back a very consider
 
 Understand "pick [a locked thing]" as a mistake ("You have no rogue skills at all."). 
 
-The layer of sand is a backdrop. The layer can be flowing or still. The layer is flowing. The description is "The layer of sand would come up to your knees, perhaps further, if you were standing at the bottom of it." Instead of going through the thick door in the presence of the layer when the layer is flowing: say "You cannot possibly fight your way upstream." Instead of going to the Exalted Throne in the presence of the layer when the layer is flowing: say "You head away from the torrent of sand, but it is already a struggle to move fast enough with the sand underfoot, and you don't make it to the base of the ziggurat." Effect of casting mend at the layer of sand: record outcome "smoothing the surface of the sand to perfect flatness"; rule succeeds. Instead of digging the sand: say "You turn over the sand looking for more detritus from inside, but find nothing of interest." Instead of searching the sand: try digging the sand.
+The layer of sand is a backdrop. The layer can be flowing or still. The layer is flowing. The description is "The layer of sand would come up to your knees, perhaps further, if you were standing at the bottom of it." Instead of going through the thick door in the presence of the layer when the layer is flowing: say "You cannot possibly fight your way upstream." Instead of going to the Exalted Throne in the presence of the layer when the layer is flowing: say "You head away from the torrent of sand, but it is already a struggle to move fast enough with the sand underfoot, and you don't make it to the base of the ziggurat." Effect of casting mend at the layer of sand: record outcome "smoothing the surface of the sand to perfect flatness"; rule succeeds. Instead of searching the sand: say "You turn over the sand looking for more detritus from inside, but find nothing of interest."
 
 After deciding the scope of the player when the player is in the Sanctorum:
-	if the rainbow outlines are in the Dry Channel 
-	begin;
-		if we have opened the thick door, place the sand in scope;
-	end if.
+	if the rainbow outlines are in the Dry Channel:
+		if we have opened the thick door, place the sand in scope.
 
 Every turn when the layer is flowing:  
 	if opening the thick door, rule succeeds;
-	if the player can see the sand
-	begin;
+	if the player can see the sand:
 		now the sand is still;
 		move the flimsy scroll to the Dry Channel;
-		if the player is in the Sanctum
-		begin;
+		if the player is in the Sanctum:
 			say "The sand flows up and around the walls of your sanctuary, but you, inside, continue breathing easily. Eventually the flood subsides."; 
-		otherwise;	
+		otherwise:
 			if the player is affected by aerial shield, say "Your aerial shield is no help, when your legs, waist and chest are being overwhelmed. ";
 			say "The sand keeps pouring around you until your face is covered by fine suffocating powder. It does ";
 			let the damage be the roll of 10d6;
 			say " points of damage"; 
 			make the player take the damage points of damage;
-			if the player is killed, end the game saying "You have died like a moth in an hourglass"; 
-		end if;
-	end if.
+			if the player is killed, end the game saying "You have died like a moth in an hourglass".
 
 Section W(c) - The Goddess and the Snake
 
@@ -2333,7 +2132,7 @@ Section W(d) - Knots
 
 The Knotted Room is north of the Temple Plaza. "High above you is a round opening to the room up there[if the rope ladder is not in the location]. Whatever stairs or ladder might once have reached it is now long-since eroded or removed[end if]."
 
-The ropes are fixed in place in the Knotted Room. "Hanging from the ceiling are hundreds of threads - some thick as rope, some gossamer - and each is knotted at intervals. If you knew their code, you could read histories in these, and bloody legends. As it is, they brush over you as you pass, but leave you unenlightened." Understand "knots" or "knot" or "thread" or "threads" as the ropes. Instead of pulling or taking the ropes: say "They are all too firmly secured to the ceiling." Instead of touching or examining the ropes, say "You run your fingers down the nearest filament, and read the following: bump, bump-bump, bump-space-bump..." Instead of tieing something to the ropes: try tieing the second noun to the noun. Instead of tieing the ropes to something: say "They are an awkward thickness to tie to things. Other than themselves, that is." Instead of tieing ropes to ropes: say "You try fashioning a ladder of sorts, but it does not entirely work: your knotwork skills are lacking, and the strands are too different in thickness and composition."
+The ropes are fixed in place in the Knotted Room. "Hanging from the ceiling are hundreds of threads - some thick as rope, some gossamer - and each is knotted at intervals. If you knew their code, you could read histories in these, and bloody legends. As it is, they brush over you as you pass, but leave you unenlightened." Understand "knots" or "knot" or "thread" or "threads" as the ropes. Instead of pulling or taking the ropes: say "They are all too firmly secured to the ceiling." Instead of touching or examining the ropes, say "You run your fingers down the nearest filament, and read the following: bump, bump-bump, bump-space-bump..." Instead of tying something to the ropes: try tying the second noun to the noun. Instead of tying the ropes to something: say "They are an awkward thickness to tie to things. Other than themselves, that is." Instead of tying ropes to ropes: say "You try fashioning a ladder of sorts, but it does not entirely work: your knotwork skills are lacking, and the strands are too different in thickness and composition."
 
 Effect of casting web at the ropes:
 	remove the ropes from play;
@@ -2361,12 +2160,10 @@ Instead of going up in the Knotted Room in the presence of the ropes, try climbi
 Instead of climbing the ropes:
 	if the strength of the player < 3, say "You are too physically weak to attempt it." instead;
 	decrease the strength of the player by 1;
-	if a saving roll of 25 by the player to "climb the ropes" is made
-	begin;
+	if a saving roll of 25 by the player to "climb the ropes" is made:
 		move the player to the Dim Garret;
-	otherwise;
-		say "You don't make it. This is really more the sort of thing you leave to fighters.";
-	end if.
+	otherwise:
+		say "You don't make it. This is really more the sort of thing you leave to fighters.".
 
 Section W(e) - The Garret and the Archivist
 
@@ -2394,7 +2191,7 @@ Effect of casting mend at the portable cubbyholes:
 	record outcome "reassembling a rickety but functional container";
 	rule succeeds;
 
-The archivist is a priest in the Dim Garret. It is indifferent. The archivist can be active or passive. "Crouched in the center of the room, surrounded by filaments of various weights and colours, is an archivist[if lit]. He glows with magelight[end if]." The description is "He is very thin, as though he has been preserved by drying, and wears small round spectacles[if lit]. He also glows with a flickering white light[end if]."  
+The archivist is a priest in the Dim Garret. He is indifferent. The archivist can be active or passive. "Crouched in the center of the room, surrounded by filaments of various weights and colours, is an archivist[if lit]. He glows with magelight[end if]." The description is "He is very thin, as though he has been preserved by drying, and wears small round spectacles[if lit]. He also glows with a flickering white light[end if]."  
 
 Instead of going to the Garret when the player knows magelight and the archivist is unlit for the first time:
 	say "You hesitate - after all, the old lunatic has probably gone out like a snuffed lamp by now, and if you head up there you may be required to re-light him."
@@ -2405,33 +2202,26 @@ Instead of going to a room in the presence of the unlit archivist when the playe
 	say "The archivist stops you with a sign that ripples in the air[if the archivist is affected by silence]. Apparently you will not be allowed to depart until you have done your part[otherwise]. 'Not until you have given me light - such was our compact,' he says[end if]."
  
 Every turn:
-	repeat through the Table of Enchantments
-	begin; 
-		if the duration timer entry < 1,  		now the archivist is not affected by the spell entry;	
-	end repeat;
+	repeat through the Table of Enchantments:
+		if the duration timer entry < 1, now the archivist is not affected by the spell entry;	
 	if the archivist is not affected by magelight, now the archivist is unlit.
 
 Report casting in the presence of the archivist:
 	say "As you intone the words of the [spell understood] spell, ";
-	if the current spell focus is something
-	begin;
+	if the current spell focus is something:
 		say "[the current spell focus] ";
-		if the player is not holding the current spell focus, say "vanishes as it ";
+		unless the player is holding the current spell focus, say "vanishes as it ";
 		say "releases ";
-	otherwise;
+	otherwise:
 		say "your fingers release ";
-	end if;
 	say emission of the spell understood;
-	if the second noun is not a room, say " at [the second noun]";
+	unless the second noun is a room, say " at [the second noun]";
 	say ", [current spell outcome]";
-	if the archivist is affected by the spell understood begin;
-		if duration of the spell understood is greater than 0
-		begin;
+	if the archivist is affected by the spell understood:
+		if duration of the spell understood is greater than 0:
 			say ", which will last for [duration of the spell understood in words] turn[s]";
 			change the duration timer of the spell understood to the duration of the spell understood;
 			increase the duration timer of the spell understood by 1;
-		end if;
-	end if;
 	say ".";
 	consider the current spell event;
 	now the archivist is passive;
@@ -2490,28 +2280,20 @@ blank parchment	"'I am surprised no one has yet written on such a promising surf
 cursive diary	"'Ah, pity,' he says. 'She had courage, but courage alone does not always suffice.'"
 
 Every turn:  
-	if the player can see the archivist and the archivist is active
-	begin;
-		if the archivist is affected by silence
-		begin;
+	if the player can see the archivist and the archivist is active:
+		if the archivist is affected by silence:
 			say "The archivist keeps working, but you cannot hear a move he makes.";
-		otherwise;
-			if the archivist is lit
-			begin;
+		otherwise:
+			if the archivist is lit:
 				say "The archivist works swiftly over his threads, comparing colours.";
-			otherwise;
-				repeat through Table of Archivist Chatter
-				begin;
+			otherwise:
+				repeat through Table of Archivist Chatter:
 					say "[reaction entry][paragraph break]";
 					blank out the whole row;
 					stop the action;
-				end repeat;
 				say "The archivist's fingers move briskly over the strands, knotting here and there.";
-			end if;
-		end if;
-	otherwise;
-		now the archivist is active;
-	end if.
+	otherwise:
+		now the archivist is active.
 	
 
 Instead of asking the archivist about a topic listed in the Table of Archivist Chatter: 
@@ -2528,7 +2310,7 @@ Table of Archivist Chatter
 topic	reaction
 "hello/hi/hey"	"'You again,' remarks the archivist, without looking at you. 'Or is this your first time? No matter.'"
 "time/age/temporal/reflection"	"'The time spell takes all my strength,' he says. 'I maintain it, it maintains me, nothing left over.'"
-"time spell/spell/time/scroll/temporal/age/infinity/infinite/eternity"	"The archivist holds up a peculiar scroll, twisted and stitched top to bottom so that it has no end or beginning, but as you reach out to touch it your fingers slip through. He tucks the scroll back inside his clothing. [paragraph break]'Not for you,' he says. 'It allows doing things and undoing them, going forward, going back... Such spells are not intended for us to discover, I think.'[paragraph break]Then he frowns, seeming to regret this revelation. There is a sticky sort of POP in the air around your head, and you forget -[line break]"
+"time spell/spell/time/scroll/temporal/age/infinity/infinite/eternity"	"The archivist holds up a peculiar scroll, twisted and stitched top to bottom so that it has no end or beginning, but as you reach out to touch it your fingers slip through. He tucks the scroll back inside his clothing. [paragraph break]'Not for you,' he says. 'It allows doing things and undoing them, going forward, going back... Such spells are not intended for us to discover, I think.'[paragraph break]Then he frowns, seeming to regret this revelation. There is a sticky sort of POP in the air around your head, and you forget -"
 "task/job/knots/knot/work/threads/thread/rope/ropes/archive/archives"	"'You know,' says the archivist, glancing at you over the top of his spectacles. 'This task would be easier with a bit of light. The threads have colours as well as knots.'"
 "meaning/purpose/subject/thread/threads/rope/ropes/knots/knot/archive/archives"	"'All day and night counting and comparing,' he mutters, perhaps to you or perhaps to himself. 'Comparing and counting. Oh, sometimes I go out and practice a little archery, I suppose. D'you know, a good high arrow from here can even reach the old Longwall turret? But counting! That's the thing.'"
 "light/lights/light spell"	"'I'd perform the light spell myself, but I haven't the strength, nor the wood either.'"
@@ -2543,14 +2325,12 @@ topic	reaction
 "snake/snakes/copper-scaled snake"	"'Shrinks year by year as its curse works out,' he remarks, to the air. 'It won't be much more than a grub when the spell ends. I could look - but I don't like to go that far ahead.'"
  
 To say string placement:
-	if cubbyholes are fixed in place and cubbyholes are in location
-	begin;
+	if cubbyholes are fixed in place and cubbyholes are in location:
 		say "Then he rises and tucks the strand into one of the cubbyholes; and the moment his hand leaves it, it grows old and dry and brittle as though it has been lying there for centuries. ";
 		move much-knotted string to cubbyholes;
-	otherwise;
+	otherwise:
 		say "Then he rises and lays the string a few feet from himself; and when his hand leaves it, it grows old and dry and brittle as though it has been lying there for centuries. ";
-		move much-knotted string to location;
-	end if.
+		move much-knotted string to location.
 
 Chapter N - Northern Quarter
 
@@ -2568,7 +2348,7 @@ The wooden trap-door is a door. "[if the jumble is in Old School]What must be an
 
 The jumble of school columns are fixed in place scenery in Old School. Understand "column" and "masonry" as the jumble. Instead of casting magic missile at the jumble, say "Extreme violence isn't the answer to this one." Understand the command "pry" as "open". Effect of casting mend at the jumble: record outcome "which - perhaps with an air of smugness - resists all attempt at straightening out"; rule succeeds.
 
-Pushing or pulling the jumble is a Samson act. Instead of a Samson act for the first time, say "It all looks mighty precarious, with the last of the ceiling-work liable to fall, but if you're sure this is what you want..." Instead of a Samson act: say "There is a vast, booming series of reports, the inconsequential sound of these jackstraws of stone smashing down against each other: and then the last remaining slab of ceiling-brace falls. "; if the player is not affected by aerial shield begin; say "We could go through a charade of working out [if the player is affected by ironbones]210d8+50[otherwise]420d8+100[end if] damage, but let's simply wind this up in a dignified fashion."; end the game saying "You have been buried"; stop; end if; say "Probably never has 'aerial shield' been put to so formidable a challenge, but the enchantment holds, and as the rubble settles all about the yard you half-collapse, trying to catch your breath.
+Pushing or pulling the jumble is a Samson act. Instead of a Samson act for the first time, say "It all looks mighty precarious, with the last of the ceiling-work liable to fall, but if you're sure this is what you want..." Instead of a Samson act: say "There is a vast, booming series of reports, the inconsequential sound of these jackstraws of stone smashing down against each other: and then the last remaining slab of ceiling-brace falls. "; unless the player is affected by aerial shield begin; say "We could go through a charade of working out [if the player is affected by ironbones]210d8+50[otherwise]420d8+100[end if] damage, but let's simply wind this up in a dignified fashion."; end the game saying "You have been buried"; stop; end unless; say "Probably never has 'aerial shield' been put to so formidable a challenge, but the enchantment holds, and as the rubble settles all about the yard you half-collapse, trying to catch your breath.
 
 That was Old School."; remove the jumble from play; award 14 points.
 
@@ -2590,32 +2370,12 @@ In the Archive Chamber is scenery thing called the square hole in the vaulted ce
 
 The Prison Visit is a scene. The Prison Visit begins when the player is in the Archive Chamber for the ninth turn. The Prison Visit ends when the player is not in the Archive Chamber.
 
-Table of Prison Visit Noises Off
-noise message
-"Just as you are thinking that being imprisoned down here is no life for a young magic-user with so much to give (i.e., so much to take), you think you might hear a faint noise from above."
-"No, it must have been nothing."
-"That second faint noise must have been nothing too."
-"Possibly all that masonry is re-settling itself."
-"You begin to conjure up a mental picture of some ideal rescuer, padding about through the rubble up above, and about to stumble upon you."
-"A rescuer. Absolutely. Let's see. Nice smile, healthy outdoor tan perhaps, hint of sparkling excitement in the eyes, forty feet of rope and a grappling hook coiled over one shoulder. A bit in awe of magic-users, for preference. Yes, that would do very nicely about now."
-"Well, the noises bump on. Sounds almost like pacing, in fact."
-"Is it your imagination? Or could that be the sound of breathing?"
-"Come to think of it, the thought of this imminent meeting makes you a little nervous. You fuss with your hair, look down at your fingernails, wince."
-"Any minute now. It'll be like one of those romantic-adventure poems. You'll trek off into the wilderness together."
-"That is, you'll trek off together if anything ever happens."
-"Oh, when is that divine smile going to appear at the hole in the ceiling?"
-"Ah, such a metaphor for life, this."
-"Tum te tum. Tum tum te-tum."
+Understand "tp [any room]" as teleporting. teleporting is an action out of world applying to one thing. Carry out teleporting: move player to noun.
 
 Understand the commands "yell" and "holler" as "answer". Answering is making a rumpus. Singing is making a rumpus. Asking someone for something is making a rumpus. Instead of making a rumpus during the Prison Visit, say "No matter how loudly you call out, the sound seems to be deadened by the funereal walls of this burial chamber."
 
 Every turn during the Prison Visit:
-	repeat through the Table of Prison Visit Noises Off 
-	begin;
-		say "[noise message entry][paragraph break]";
-		blank out the whole row;
-		stop;
-	end repeat.[* The repeat loop here is a bit misleading, since the "stop" means that it only ever looks at the top row of the table - but when we use up a row, we blank it out, so that next time the next row will be at the top. The effect is that the messages in the Table will be printed in sequence, once every turn, until all have been printed, and then nothing further happens.]
+	say "[one of]Just as you are thinking that being imprisoned down here is no life for a young magic-user with so much to give (i.e., so much to take), you think you might hear a faint noise from above.[or]No, it must have been nothing.[or]That second faint noise must have been nothing too.[or]Possibly all that masonry is re-settling itself.[or]You begin to conjure up a mental picture of some ideal rescuer, padding about through the rubble up above, and about to stumble upon you.[or]A rescuer. Absolutely. Let's see. Nice smile, healthy outdoor tan perhaps, hint of sparkling excitement in the eyes, forty feet of rope and a grappling hook coiled over one shoulder. A bit in awe of magic-users, for preference. Yes, that would do very nicely about now.[or]Well, the noises bump on. Sounds almost like pacing, in fact.[or]Is it your imagination? Or could that be the sound of breathing?[or]Come to think of it, the thought of this imminent meeting makes you a little nervous. You fuss with your hair, look down at your fingernails, wince.[or]Any minute now. It'll be like one of those romantic-adventure poems. You'll trek off into the wilderness together.[or]That is, you'll trek off together if anything ever happens.[or]Oh, when is that divine smile going to appear at the hole in the ceiling?[or]Ah, such a metaphor for life, this.[or]Tum te tum. Tum tum te-tum.[or][run paragraph on][stopping]". [This prints each clause exactly once, advancing to the next on each subsequent turn, until it reaches the last clause, which it will continue to print every turn as long as Prison Visit is still happening. We say "run paragraph on" in the last slot because the natural tendency for a say statement is to print a blank link, which in this case we don't want, since nothing has been said.]
 
 Effect of casting web at the square hole:
 	if Prison Visit is happening, record outcome "but although a plausible spider's-web does drape itself across the hole for a while, it obviously wasn't spectacular enough to get the attention of the mysterious person above";
@@ -2623,15 +2383,13 @@ Effect of casting web at the square hole:
 	rule succeeds.
 
 Effect of casting magic missile at the square hole:
-	if Prison Visit is happening
-	begin;
+	if Prison Visit is happening:
 		record outcome "and a spectacular firework of a missile is fired into the afternoon air. It must get the attention of anyone around, surely? And your heart surges as one end of a forty-foot coil of rope is thrown down, and a vague shape from above gives a muffled yell, and you step onto the grappling hook to be pulled up, up, above the old coffins and over the lip of the trap-doorway to...
 
 Oh, well, isn't that just [italic type]exactly[roman type] like life? You leap backwards. So does your benefactor. The trap-door slams angrily shut, swallowing the rope as if it were so much spaghetti";
 		record event the rescued from the archive rule;
-	otherwise;
+	otherwise:
 		record outcome "and a spectacular firework of a missile is fired into the afternoon air. It must get the attention of anyone around, surely? But then, in a ruined city, who's to see it";
-	end if;
 	rule succeeds.
 
 Instead of listening during Prison Visit, say "The trouble is, the harder you concentrate on listening, the more you hear your own heartbeat and breathing."
@@ -2654,7 +2412,7 @@ A pungently red scroll is a scroll in Mutatis Mutandis. The inscribed spell of t
 Instead of sleeping in Mutatis Mutandis for the first time:
 	let the depletion be the strength of the player;
 	let the depletion be the depletion divided by 2;
-	if the depletion is not 0, decrease the strength of the player by the depletion;
+	unless the depletion is 0, decrease the strength of the player by the depletion;
 	remove the skeleton from play;
 	award 150 points;
 	say "Your sleep is uneasy. A strange parade of memories of another life, long, long ago. You become her, graduating as a magic-user, celebrating in the echoey cloisters of the Collegium, buying provisions in the market, setting out with a half-dozen friends into the wilderness, fighting off the beasts of the forest - as it goes on, and on, you sink deeper into her identity and your own strength is sapped. By the time her story ends, running out of strength in the middle of the old lane, much of your own power has seeped across to her, those many years ago.
@@ -2664,13 +2422,11 @@ You sit bolt upright, your pose suddenly an echo of her skeleton's. You are awak
 The blackened outlines of an old sanctuary are fixed in place. "Through the infravision lenses, you see the blackened outlines of an old sanctuary spell." Instead of entering the blackened outlines: move the player to Mutatis Mutandis. Understand "black" as the blackened outlines.
 
 Every turn:
-	if the player is wearing the infravision spectacles
-	begin;
+	if the player is wearing the infravision spectacles:
 		move the blackened outlines to the Robing Room;
 		change the outside exit of Mutatis Mutandis to the Robing Room;
-	otherwise;
-		remove the blackened outlines from play;
-	end if.
+	otherwise:
+		remove the blackened outlines from play.
 
 
 Chapter the Last - Not for release

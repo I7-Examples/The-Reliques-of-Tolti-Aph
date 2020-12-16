@@ -1,68 +1,71 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<head>
+  <title>Graham Nelson - The Reliques of Tolti-Aph — 9 of 57</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="author" content="Graham Nelson" />
+  <meta name="description" content="A page for the game The Reliques of Tolti-Aph by Graham Nelson." />
+  <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+</head>
 
-	<head>
-		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
-		<meta name="generator" content="Adobe GoLive">
-		<title>The Reliques of Tolti-Aph - Source Text</title>
-	</head>
+<body>
 
-	<body bgcolor="#ffffff">
-		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
-					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">The Reliques of Tolti-Aph</font></h3>
-					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Graham Nelson (2005) - the Inform 7 source text</font></h3>
-				</td></tr>
-		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_6.html">Previous</a><br><a href="source_8.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Chapter 2 - Magic</b>
-<br>
+<div class = "container">
 
-<br>
-<b>Section 2(a) - The phenomenon of magic</b>
-<br>
+<div class ="sourcecoverimage">
+	<span><a href="Cover.jpg"><img src="Small Cover.jpg" border="1" /></a></span>
+</div>
 
-<br>
-A spell character is a kind of value. The spell characters are offensive, defensive, healing and arcana. A valency is a kind of value. The valencies are targeted and untargeted.
-<br>
+<div class ="sourceintroduction">
+	<h1>
+		<span>The Reliques of Tolti-Aph</span> <span class="pagination">— 9 of 57</span>
+	</h1>
+	<h2>
+		<span>Graham Nelson</span>
+	</h2>
+	<div class ="sourcebibliography">
+		<span>Release 1</span>
+	</div>
+</div>
 
-<br>
-A spell is a kind of value. The spells are defined by the Table of Enchantments.<font color=#404040><sup><a href="#note1">[1]</a></sup></font>
-<br>
+<div class = "links">
+<ul>
+<li><a href="index.html">Home page</a></li><li><a href="source.html">Beginning</a></li><li><a href="source_6.html">Previous</a></li><li><a href="source_8.html">Next</a></li>
+</ul>
+</div>
 
-<br>
-<b>Table of Enchantments</b>
-<br>
-<table><tr><td halign="left" valign="top"><u>spell</u>&nbsp;&nbsp;</td><td halign="left" valign="top"><u> nature</u>&nbsp;&nbsp;</td><td halign="left" valign="top"><u> cost</u>&nbsp;&nbsp;</td><td halign="left" valign="top"><u> requirement</u>&nbsp;&nbsp;</td><td halign="left" valign="top"><u> emission</u>&nbsp;&nbsp;</td><td halign="left" valign="top"><u> targeting</u>&nbsp;&nbsp;</td><td halign="left" valign="top"><u> duration</u>&nbsp;&nbsp;</td><td halign="left" valign="top"><u> duration timer</u>&nbsp;&nbsp;</td><td halign="left" valign="top"><u> usage count</u></td></tr>
-<tr><td halign="left" valign="top">detect trap&nbsp;&nbsp;</td><td halign="left" valign="top"> defensive&nbsp;&nbsp;</td><td halign="left" valign="top"> 1&nbsp;&nbsp;</td><td halign="left" valign="top"> air&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>diffuse blue light</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> untargeted&nbsp;&nbsp;</td><td halign="left" valign="top"> --&nbsp;&nbsp;</td><td halign="left" valign="top"> a number&nbsp;&nbsp;</td><td halign="left" valign="top"> a number</td></tr>
-<tr><td halign="left" valign="top">memorise&nbsp;&nbsp;</td><td halign="left" valign="top"> arcana&nbsp;&nbsp;</td><td halign="left" valign="top"> 3&nbsp;&nbsp;</td><td halign="left" valign="top"> air&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>a glowing symbol</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> targeted&nbsp;&nbsp;</td><td halign="left" valign="top"> --&nbsp;&nbsp;</td><td halign="left" valign="top"> </td></tr>
-<tr><td halign="left" valign="top">fashion staff&nbsp;&nbsp;</td><td halign="left" valign="top"> arcana&nbsp;&nbsp;</td><td halign="left" valign="top"> 2&nbsp;&nbsp;</td><td halign="left" valign="top"> wood&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>woodpulp</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> untargeted&nbsp;&nbsp;</td><td halign="left" valign="top"> --&nbsp;&nbsp;</td><td halign="left" valign="top"> </td></tr>
-<tr><td halign="left" valign="top">know nature&nbsp;&nbsp;</td><td halign="left" valign="top"> arcana&nbsp;&nbsp;</td><td halign="left" valign="top"> 1&nbsp;&nbsp;</td><td halign="left" valign="top"> air&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>probing rays</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> targeted&nbsp;&nbsp;</td><td halign="left" valign="top"> --</td></tr>
-<tr><td halign="left" valign="top">make sanctuary&nbsp;&nbsp;</td><td halign="left" valign="top"> arcana&nbsp;&nbsp;</td><td halign="left" valign="top"> 8&nbsp;&nbsp;</td><td halign="left" valign="top"> clay&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>rainbow walls</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> untargeted&nbsp;&nbsp;</td><td halign="left" valign="top"> --&nbsp;&nbsp;</td><td halign="left" valign="top"> </td></tr>
-<tr><td halign="left" valign="top">magelight&nbsp;&nbsp;</td><td halign="left" valign="top"> arcana&nbsp;&nbsp;</td><td halign="left" valign="top"> 4&nbsp;&nbsp;</td><td halign="left" valign="top"> wood&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>flickering white light</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> untargeted&nbsp;&nbsp;</td><td halign="left" valign="top"> 25&nbsp;&nbsp;</td><td halign="left" valign="top"> </td></tr>
-<tr><td halign="left" valign="top">mend&nbsp;&nbsp;</td><td halign="left" valign="top"> healing&nbsp;&nbsp;</td><td halign="left" valign="top"> 2&nbsp;&nbsp;</td><td halign="left" valign="top"> flesh&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>ghostly fingers</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> targeted&nbsp;&nbsp;</td><td halign="left" valign="top"> --&nbsp;&nbsp;</td><td halign="left" valign="top"> </td></tr>
-<tr><td halign="left" valign="top">magic missile&nbsp;&nbsp;</td><td halign="left" valign="top"> offensive&nbsp;&nbsp;</td><td halign="left" valign="top"> 6&nbsp;&nbsp;</td><td halign="left" valign="top"> wood&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>a fiery red bolt</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> targeted&nbsp;&nbsp;</td><td halign="left" valign="top"> --&nbsp;&nbsp;</td><td halign="left" valign="top"> </td></tr>
-<tr><td halign="left" valign="top">aerial shield&nbsp;&nbsp;</td><td halign="left" valign="top"> defensive&nbsp;&nbsp;</td><td halign="left" valign="top"> 3&nbsp;&nbsp;</td><td halign="left" valign="top"> air&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>green smoke</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> untargeted&nbsp;&nbsp;</td><td halign="left" valign="top"> 3&nbsp;&nbsp;</td><td halign="left" valign="top"> </td></tr>
-<tr><td halign="left" valign="top">silence&nbsp;&nbsp;</td><td halign="left" valign="top"> defensive&nbsp;&nbsp;</td><td halign="left" valign="top"> 4&nbsp;&nbsp;</td><td halign="left" valign="top"> air&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>a tiny white puff</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> untargeted&nbsp;&nbsp;</td><td halign="left" valign="top"> 2&nbsp;&nbsp;</td><td halign="left" valign="top"> </td></tr>
-<tr><td halign="left" valign="top">web&nbsp;&nbsp;</td><td halign="left" valign="top"> offensive&nbsp;&nbsp;</td><td halign="left" valign="top"> 4&nbsp;&nbsp;</td><td halign="left" valign="top"> air&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>a clingy white thread</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> targeted&nbsp;&nbsp;</td><td halign="left" valign="top"> --&nbsp;&nbsp;</td><td halign="left" valign="top"> </td></tr>
-<tr><td halign="left" valign="top">ward magic&nbsp;&nbsp;</td><td halign="left" valign="top"> defensive&nbsp;&nbsp;</td><td halign="left" valign="top"> 6&nbsp;&nbsp;</td><td halign="left" valign="top"> metal&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>orange sparks</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> untargeted&nbsp;&nbsp;</td><td halign="left" valign="top"> --&nbsp;&nbsp;</td><td halign="left" valign="top"> </td></tr>
-<tr><td halign="left" valign="top">exorcise undead&nbsp;&nbsp;</td><td halign="left" valign="top"> defensive&nbsp;&nbsp;</td><td halign="left" valign="top"> 7&nbsp;&nbsp;</td><td halign="left" valign="top"> metal&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>purest whiteness</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> untargeted&nbsp;&nbsp;</td><td halign="left" valign="top"> --&nbsp;&nbsp;</td><td halign="left" valign="top"> </td></tr>
-<tr><td halign="left" valign="top">dragon sleep&nbsp;&nbsp;</td><td halign="left" valign="top"> healing&nbsp;&nbsp;</td><td halign="left" valign="top"> 5&nbsp;&nbsp;</td><td halign="left" valign="top"> flesh&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>little dancing lights</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> targeted&nbsp;&nbsp;</td><td halign="left" valign="top"> --&nbsp;&nbsp;</td><td halign="left" valign="top"> </td></tr>
-<tr><td halign="left" valign="top">circumvent lock&nbsp;&nbsp;</td><td halign="left" valign="top"> healing&nbsp;&nbsp;</td><td halign="left" valign="top"> 2&nbsp;&nbsp;</td><td halign="left" valign="top"> metal&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>tendrils of metallic light</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> targeted&nbsp;&nbsp;</td><td halign="left" valign="top"> --&nbsp;&nbsp;</td><td halign="left" valign="top"> </td></tr>
-<tr><td halign="left" valign="top">inner warmth&nbsp;&nbsp;</td><td halign="left" valign="top"> defensive&nbsp;&nbsp;</td><td halign="left" valign="top"> 4&nbsp;&nbsp;</td><td halign="left" valign="top"> wood&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>reddish glowing</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> untargeted&nbsp;&nbsp;</td><td halign="left" valign="top"> 4</td></tr>
-<tr><td halign="left" valign="top">ironbones&nbsp;&nbsp;</td><td halign="left" valign="top"> defensive&nbsp;&nbsp;</td><td halign="left" valign="top"> 4&nbsp;&nbsp;</td><td halign="left" valign="top"> flesh&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>red metallic beams</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> untargeted&nbsp;&nbsp;</td><td halign="left" valign="top"> 6</td></tr>
-<tr><td halign="left" valign="top">summon elemental&nbsp;&nbsp;</td><td halign="left" valign="top"> offensive&nbsp;&nbsp;</td><td halign="left" valign="top"> 6&nbsp;&nbsp;</td><td halign="left" valign="top"> flesh&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>blood-red mist</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> untargeted&nbsp;&nbsp;</td><td halign="left" valign="top"> --</td></tr>
-</table>
-<br>
-Understand &quot;<font color=#000080>memorize</font>&quot; as memorise.<font color=#404040><sup><a href="#note2">[2]</a></sup></font>
-<br>
+<div class = "source">
+<p class="indent0"><span class="heading">Chapter 2 - Magic</span></p><p class="indent0"></p><p class="indent0"><span class="heading">Section 2(a) - The phenomenon of magic</span></p><p class="indent0"></p><p class="indent0">A spell character is a kind of value. The spell characters are offensive, defensive, healing and arcana. A valency is a kind of value. The valencies are targeted and untargeted.</p><p class="indent0"></p><p class="indent0">A spell is a kind of value. The spells are defined by the Table of Enchantments.<a name="note1ref"></a><span class="notecue"><a href="#note1">[1]</a></span></p><p class="indent0"></p><p class="indent0"><span class="heading">Table of Enchantments</span></p><table><tr><td><span class="columnhead">spell</span></td><td><span class="columnhead">nature</span></td><td><span class="columnhead">cost</span></td><td><span class="columnhead">requirement</span></td><td><span class="columnhead">emission</span></td><td><span class="columnhead">targeting</span></td><td><span class="columnhead">duration</span></td><td><span class="columnhead">duration timer</span></td><td><span class="columnhead">usage count</span></td></tr>
+<tr><td>detect trap</td><td>defensive</td><td>1</td><td>air</td><td>&quot;<span class="quote">diffuse blue light</span>&quot;</td><td>untargeted</td><td>--</td><td>a number</td><td>a number</td></tr>
+<tr><td>memorise</td><td>arcana</td><td>3</td><td>air</td><td>&quot;<span class="quote">a glowing symbol</span>&quot;</td><td>targeted</td><td>--</td><td></td></tr>
+<tr><td>fashion staff</td><td>arcana</td><td>2</td><td>wood</td><td>&quot;<span class="quote">woodpulp</span>&quot;</td><td>untargeted</td><td>--</td><td></td></tr>
+<tr><td>know nature</td><td>arcana</td><td>1</td><td>air</td><td>&quot;<span class="quote">probing rays</span>&quot;</td><td>targeted</td><td>--</td></tr>
+<tr><td>make sanctuary</td><td>arcana</td><td>8</td><td>clay</td><td>&quot;<span class="quote">rainbow walls</span>&quot;</td><td>untargeted</td><td>--</td><td></td></tr>
+<tr><td>magelight</td><td>arcana</td><td>4</td><td>wood</td><td>&quot;<span class="quote">flickering white light</span>&quot;</td><td>untargeted</td><td>25</td><td></td></tr>
+<tr><td>mend</td><td>healing</td><td>2</td><td>flesh</td><td>&quot;<span class="quote">ghostly fingers</span>&quot;</td><td>targeted</td><td>--</td><td></td></tr>
+<tr><td>magic missile</td><td>offensive</td><td>6</td><td>wood</td><td>&quot;<span class="quote">a fiery red bolt</span>&quot;</td><td>targeted</td><td>--</td><td></td></tr>
+<tr><td>aerial shield</td><td>defensive</td><td>3</td><td>air</td><td>&quot;<span class="quote">green smoke</span>&quot;</td><td>untargeted</td><td>3</td><td></td></tr>
+<tr><td>silence</td><td>defensive</td><td>4</td><td>air</td><td>&quot;<span class="quote">a tiny white puff</span>&quot;</td><td>untargeted</td><td>2</td><td></td></tr>
+<tr><td>web</td><td>offensive</td><td>4</td><td>air</td><td>&quot;<span class="quote">a clingy white thread</span>&quot;</td><td>targeted</td><td>--</td><td></td></tr>
+<tr><td>ward magic</td><td>defensive</td><td>6</td><td>metal</td><td>&quot;<span class="quote">orange sparks</span>&quot;</td><td>untargeted</td><td>--</td><td></td></tr>
+<tr><td>exorcise undead</td><td>defensive</td><td>7</td><td>metal</td><td>&quot;<span class="quote">purest whiteness</span>&quot;</td><td>untargeted</td><td>--</td><td></td></tr>
+<tr><td>dragon sleep</td><td>healing</td><td>5</td><td>flesh</td><td>&quot;<span class="quote">little dancing lights</span>&quot;</td><td>targeted</td><td>--</td><td></td></tr>
+<tr><td>circumvent lock</td><td>healing</td><td>2</td><td>metal</td><td>&quot;<span class="quote">tendrils of metallic light</span>&quot;</td><td>targeted</td><td>--</td><td></td></tr>
+<tr><td>inner warmth</td><td>defensive</td><td>4</td><td>wood</td><td>&quot;<span class="quote">reddish glowing</span>&quot;</td><td>untargeted</td><td>4</td></tr>
+<tr><td>ironbones</td><td>defensive</td><td>4</td><td>flesh</td><td>&quot;<span class="quote">red metallic beams</span>&quot;</td><td>untargeted</td><td>6</td></tr>
+<tr><td>summon elemental</td><td>offensive</td><td>6</td><td>flesh</td><td>&quot;<span class="quote">blood-red mist</span>&quot;</td><td>untargeted</td><td>--</td></tr>
+</table><p class="indent0"></p><p class="indent0">Understand &quot;<span class="quote">memorize</span>&quot; as memorise.<a name="note2ref"></a><span class="notecue"><a href="#note2">[2]</a></span></p><p class="indent0"></p>
+</div>
 
-<br>
-</font>
-					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><p><i>Notes</i><p>
-<A name="note1"><font color=#404040>[1].  This is the first of several tables which mimic the style of typical RPG manuals. That mimicry makes no difference to the game as it is perceived by the eventual player, but it helps us to write the source text. Spells are going to cost a certain number of strength points to cast, and will come in various categories: some apply to some particular item (the "targeted" ones), others do not. Most need the caster to be holding something of a particular material nature: for instance, "the requirement of magic missile" evaluates to "wood". Note the blank entries given as "--", and the entirely blank columns at the end, which are used for calculations during play.</font><p>
-<A name="note2"><font color=#404040>[2].  For American players who habitually type "-ize" spellings. Note that this is an instruction to Inform that the text "memorize" can refer to the noun "memorise" in anything the player types - it isn't a specification of a command verb, even though it will later turn out that the name of a spell can indeed be used as a command.</font><p>
-</font></p>
-					<p></p>
-				</td></tr></table>
-	</body>
+<div class ="notes">
+<p><span class="notesheading">Notes</span></p>
+<p><a name="note1"></a><span class="notetext"><a href="#note1ref">[1]</a>.  This is the first of several tables which mimic the style of typical RPG manuals. That mimicry makes no difference to the game as it is perceived by the eventual player, but it helps us to write the source text. Spells are going to cost a certain number of strength points to cast, and will come in various categories: some apply to some particular item (the "targeted" ones), others do not. Most need the caster to be holding something of a particular material nature: for instance, "the requirement of magic missile" evaluates to "wood". Note the blank entries given as "--", and the entirely blank columns at the end, which are used for calculations during play.</span></p>
+<p><a name="note2"></a><span class="notetext"><a href="#note2ref">[2]</a>.  For American players who habitually type "-ize" spellings. Note that this is an instruction to Inform that the text "memorize" can refer to the noun "memorise" in anything the player types - it isn't a specification of a command verb, even though it will later turn out that the name of a spell can indeed be used as a command.</span></p>
+
+</div>
+
+</div>
+
+</body>
 
 </html>

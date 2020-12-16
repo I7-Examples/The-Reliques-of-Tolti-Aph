@@ -1,118 +1,71 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<head>
+  <title>Graham Nelson - The Reliques of Tolti-Aph — 14 of 57</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="author" content="Graham Nelson" />
+  <meta name="description" content="A page for the game The Reliques of Tolti-Aph by Graham Nelson." />
+  <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+</head>
 
-	<head>
-		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
-		<meta name="generator" content="Adobe GoLive">
-		<title>The Reliques of Tolti-Aph - Source Text</title>
-	</head>
+<body>
 
-	<body bgcolor="#ffffff">
-		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
-					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">The Reliques of Tolti-Aph</font></h3>
-					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Graham Nelson (2005) - the Inform 7 source text</font></h3>
-				</td></tr>
-		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_11.html">Previous</a><br><a href="source_13.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Chapter 3 - Combat</b>
-<br>
+<div class = "container">
 
-<br>
-<b>Section 3(a) - Monsters are People Too</b>
-<br>
+<div class ="sourcecoverimage">
+	<span><a href="Cover.jpg"><img src="Small Cover.jpg" border="1" /></a></span>
+</div>
 
-<br>
-A person has a spell called defensive charm.
-<br>
+<div class ="sourceintroduction">
+	<h1>
+		<span>The Reliques of Tolti-Aph</span> <span class="pagination">— 14 of 57</span>
+	</h1>
+	<h2>
+		<span>Graham Nelson</span>
+	</h2>
+	<div class ="sourcebibliography">
+		<span>Release 1</span>
+	</div>
+</div>
 
-<br>
-A person has a text called hand-to-hand combat method. The hand-to-hand combat method of a person is usually &quot;<font color=#000080>with bare hands</font>&quot;. A person has a die roll called unarmed combat hit dice. The unarmed combat hit dice of a person is usually 1d2.
-<br>
+<div class = "links">
+<ul>
+<li><a href="index.html">Home page</a></li><li><a href="source.html">Beginning</a></li><li><a href="source_11.html">Previous</a></li><li><a href="source_13.html">Next</a></li>
+</ul>
+</div>
 
-<br>
-A monster is a kind of person. A monster can be hostile or indifferent. A monster is usually hostile. Definition: A monster is scary if its strength is 50 or more. Definition: A monster is feeble if its strength is 10 or less. Some kinds of monster are defined by the Table of Monstrous Beasts.
-<br>
+<div class = "source">
+<p class="indent0"><span class="heading">Chapter 3 - Combat</span></p><p class="indent0"></p><p class="indent0"><span class="heading">Section 3(a) - Monsters are People Too</span></p><p class="indent0"></p><p class="indent0">A person has a spell called defensive charm.</p><p class="indent0"></p><p class="indent0">A person has a text called hand-to-hand combat method. The hand-to-hand combat method of a person is usually &quot;<span class="quote">with bare hands</span>&quot;. A person has a die roll called unarmed combat hit dice. The unarmed combat hit dice of a person is usually 1d2.</p><p class="indent0"></p><p class="indent0">A monster is a kind of person. A monster can be hostile or indifferent. A monster is usually hostile. Definition: A monster is scary if its strength is 50 or more. Definition: A monster is feeble if its strength is 10 or less. Some kinds of monster are defined by the Table of Monstrous Beasts.</p><p class="indent0"></p><p class="indent0">Instead of asking a monster about something: say &quot;<span class="quote">[</span><span class="substitution">The noun</span><span class="quote">] is unreachable on most levels.</span>&quot;</p><p class="indent0"></p><p class="indent0">After printing the name of a monster while looking: say &quot;<span class="quote"> (STR [</span><span class="substitution">strength</span><span class="quote">])</span>&quot;.</p><p class="indent0"></p><p class="indent0"><span class="heading">Table of Monstrous Beasts</span></p><table><tr><td><span class="columnhead">name</span></td><td><span class="columnhead">strength</span></td><td><span class="columnhead">hand-to-hand combat method</span></td><td><span class="columnhead">unarmed combat hit dice</span></td><td><span class="columnhead">defensive charm</span></td></tr>
+<tr><td>goblin</td><td>5</td><td>&quot;<span class="quote">pummeling its green fists</span>&quot;</td><td>1d4</td><td>--</td></tr>
+<tr><td>gnome</td><td>2</td><td>&quot;<span class="quote">slapping its feeble arms</span>&quot;</td><td>1d2</td><td>--</td></tr>
+<tr><td>centaur</td><td>9</td><td>&quot;<span class="quote">kicking its hooves</span>&quot;</td><td>1d6</td><td>--</td></tr>
+<tr><td>werespider</td><td>7</td><td>&quot;<span class="quote">clicking its mandibles</span>&quot;</td><td>1d8+1</td><td>--</td></tr>
+<tr><td>wyvern</td><td>75</td><td>&quot;<span class="quote">beating its clawed wings</span>&quot;</td><td>2d8+5</td><td>--</td></tr>
+<tr><td>half-orc</td><td>9</td><td>&quot;<span class="quote">burrowing with its claws</span>&quot;</td><td>1d6</td><td>--</td></tr>
+<tr><td>harpy</td><td>15</td><td>&quot;<span class="quote">swooping with its talons</span>&quot;</td><td>2d6</td><td>aerial shield</td></tr>
+<tr><td>giant bat</td><td>8</td><td>&quot;<span class="quote">diving to bite</span>&quot;</td><td>2d4</td><td>aerial shield</td></tr>
+<tr><td>basilisk</td><td>4</td><td>&quot;<span class="quote">staring with cursed eyes</span>&quot;</td><td>4d6</td><td>--</td></tr>
+<tr><td>purple worm</td><td>7</td><td>&quot;<span class="quote">biting with acidic teeth</span>&quot;</td><td>2d6+1</td><td>--</td></tr>
+<tr><td>gargoyle</td><td>10</td><td>&quot;<span class="quote">punching stone fists</span>&quot;</td><td>1d8+1</td><td>--</td></tr>
+<tr><td>cave troll</td><td>14</td><td>&quot;<span class="quote">swinging enormous fists</span>&quot;</td><td>3d4</td><td>--</td></tr>
+<tr><td>cave spectre</td><td>12</td><td>&quot;<span class="quote">throwing curses</span>&quot;</td><td>2d4+3</td><td>exorcise undead</td></tr>
+<tr><td>marsh spectre</td><td>18</td><td>&quot;<span class="quote">throwing curses</span>&quot;</td><td>4d4+3</td><td>exorcise undead</td></tr>
+<tr><td>skeletal warrior</td><td>25</td><td>&quot;<span class="quote">slicing with ghostly blades</span>&quot;</td><td>2d6+3</td><td>exorcise undead</td></tr>
+<tr><td>green hydra</td><td>32</td><td>&quot;<span class="quote">ducking its heads in turn</span>&quot;</td><td>3d8+3</td><td>aerial shield</td></tr>
+<tr><td>frost giant</td><td>28</td><td>&quot;<span class="quote">throwing deadly icicles</span>&quot;</td><td>2d8+4</td><td>inner warmth</td></tr>
+<tr><td>elemental demon</td><td>35</td><td>&quot;<span class="quote">whirling with venom</span>&quot;</td><td>4d4+2</td><td>--</td></tr>
+</table><p class="indent0"></p><p class="indent0">An elemental demon called Zoorl the Elemental Demon is indifferent.<a name="note1ref"></a><span class="notecue"><a href="#note1">[1]</a></span></p><p class="indent0"></p><p class="indent0">Every turn:</p><p class="indent1">if Zoorl is in a room (called the haunt):</p><p class="indent2">unless the haunt is the location:</p><p class="indent3">remove Zoorl from play;</p><p class="indent2">otherwise:</p><p class="indent3">if Zoorl is indifferent and a hostile monster (called the victim) is in the location,</p><p class="indent4">make Zoorl strike a blow against the victim.</p><p class="indent0"></p><p class="indent0">Effect of casting web at a wyvern:<a name="note2ref"></a><span class="notecue"><a href="#note2">[2]</a></span></p><p class="indent1">record outcome &quot;<span class="quote">but the web is pathetically small compared to the great scale of the wyvern, and your efforts seem laughable</span>&quot;;</p><p class="indent1">rule succeeds.</p><p class="indent0"></p>
+</div>
 
-<br>
-Instead of asking a monster about something: say &quot;<font color=#000080>[The noun] is unreachable on most levels.</font>&quot;
-<br>
+<div class ="notes">
+<p><span class="notesheading">Notes</span></p>
+<p><a name="note1"></a><span class="notetext"><a href="#note1ref">[1]</a>.  Oh, the ennui of the underworld. The practical effect of this line is to create Zoorl and leave him out of play at the start of the game: he is the demon brought into being by the "summon elemental" spell.</span></p>
+<p><a name="note2"></a><span class="notetext"><a href="#note2ref">[2]</a>.  It turns out to be convenient to have at least one monster which is basically proof against anything the player can throw at it, and that's the wyvern. In testing, it turned out that "web" gave a lucky player a chance to defeat a wyvern, which was inconvenient for the plot. So...</span></p>
 
-<br>
-After printing the name of a monster while looking: say &quot;<font color=#000080> (STR [strength])</font>&quot;.
-<br>
+</div>
 
-<br>
-<b>Table of Monstrous Beasts</b>
-<br>
-<table><tr><td halign="left" valign="top"><u>name</u>&nbsp;&nbsp;</td><td halign="left" valign="top"><u> strength</u>&nbsp;&nbsp;</td><td halign="left" valign="top"><u> hand-to-hand combat method</u>&nbsp;&nbsp;</td><td halign="left" valign="top"><u> unarmed combat hit dice</u>&nbsp;&nbsp;</td><td halign="left" valign="top"><u> defensive charm</u></td></tr>
-<tr><td halign="left" valign="top">goblin&nbsp;&nbsp;</td><td halign="left" valign="top"> 5&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>pummeling its green fists</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> 1d4&nbsp;&nbsp;</td><td halign="left" valign="top"> --</td></tr>
-<tr><td halign="left" valign="top">gnome&nbsp;&nbsp;</td><td halign="left" valign="top"> 2&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>slapping its feeble arms</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> 1d2&nbsp;&nbsp;</td><td halign="left" valign="top"> --</td></tr>
-<tr><td halign="left" valign="top">centaur&nbsp;&nbsp;</td><td halign="left" valign="top"> 9&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>kicking its hooves</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> 1d6&nbsp;&nbsp;</td><td halign="left" valign="top"> --</td></tr>
-<tr><td halign="left" valign="top">werespider&nbsp;&nbsp;</td><td halign="left" valign="top"> 7&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>clicking its mandibles</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> 1d8+1&nbsp;&nbsp;</td><td halign="left" valign="top"> --</td></tr>
-<tr><td halign="left" valign="top">wyvern&nbsp;&nbsp;</td><td halign="left" valign="top"> 75&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>beating its clawed wings</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> 2d8+5&nbsp;&nbsp;</td><td halign="left" valign="top"> --</td></tr>
-<tr><td halign="left" valign="top">half-orc&nbsp;&nbsp;</td><td halign="left" valign="top"> 9&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>burrowing with its claws</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> 1d6&nbsp;&nbsp;</td><td halign="left" valign="top"> --</td></tr>
-<tr><td halign="left" valign="top">harpy&nbsp;&nbsp;</td><td halign="left" valign="top"> 15&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>swooping with its talons</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> 2d6&nbsp;&nbsp;</td><td halign="left" valign="top"> aerial shield</td></tr>
-<tr><td halign="left" valign="top">giant bat&nbsp;&nbsp;</td><td halign="left" valign="top"> 8&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>diving to bite</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> 2d4&nbsp;&nbsp;</td><td halign="left" valign="top"> aerial shield</td></tr>
-<tr><td halign="left" valign="top">basilisk&nbsp;&nbsp;</td><td halign="left" valign="top"> 4&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>staring with cursed eyes</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> 4d6&nbsp;&nbsp;</td><td halign="left" valign="top"> --</td></tr>
-<tr><td halign="left" valign="top">purple worm&nbsp;&nbsp;</td><td halign="left" valign="top"> 7&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>biting with acidic teeth</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> 2d6+1&nbsp;&nbsp;</td><td halign="left" valign="top"> --</td></tr>
-<tr><td halign="left" valign="top">gargoyle&nbsp;&nbsp;</td><td halign="left" valign="top"> 10&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>punching stone fists</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> 1d8+1&nbsp;&nbsp;</td><td halign="left" valign="top"> --</td></tr>
-<tr><td halign="left" valign="top">cave troll&nbsp;&nbsp;</td><td halign="left" valign="top"> 14&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>swinging enormous fists</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> 3d4&nbsp;&nbsp;</td><td halign="left" valign="top"> --</td></tr>
-<tr><td halign="left" valign="top">cave spectre&nbsp;&nbsp;</td><td halign="left" valign="top"> 12&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>throwing curses</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> 2d4+3&nbsp;&nbsp;</td><td halign="left" valign="top"> exorcise undead</td></tr>
-<tr><td halign="left" valign="top">marsh spectre&nbsp;&nbsp;</td><td halign="left" valign="top"> 18&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>throwing curses</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> 4d4+3&nbsp;&nbsp;</td><td halign="left" valign="top"> exorcise undead</td></tr>
-<tr><td halign="left" valign="top">skeletal warrior&nbsp;&nbsp;</td><td halign="left" valign="top"> 25&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>slicing with ghostly blades</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> 2d6+3&nbsp;&nbsp;</td><td halign="left" valign="top"> exorcise undead</td></tr>
-<tr><td halign="left" valign="top">green hydra&nbsp;&nbsp;</td><td halign="left" valign="top"> 32&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>ducking its heads in turn</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> 3d8+3&nbsp;&nbsp;</td><td halign="left" valign="top"> aerial shield</td></tr>
-<tr><td halign="left" valign="top">frost giant&nbsp;&nbsp;</td><td halign="left" valign="top"> 28&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>throwing deadly icicles</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> 2d8+4&nbsp;&nbsp;</td><td halign="left" valign="top"> inner warmth</td></tr>
-<tr><td halign="left" valign="top">elemental demon&nbsp;&nbsp;</td><td halign="left" valign="top"> 35&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>whirling with venom</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> 4d4+2&nbsp;&nbsp;</td><td halign="left" valign="top"> --</td></tr>
-</table>
-<br>
-An elemental demon called Zoorl the Elemental Demon is indifferent.<font color=#404040><sup><a href="#note1">[1]</a></sup></font>
-<br>
+</div>
 
-<br>
-Every turn:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if Zoorl is in a room (called the haunt)
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the haunt is not the location
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;remove Zoorl from play;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if Zoorl is indifferent and a hostile monster is in the location
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let the victim be a random hostile monster in the location;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;make Zoorl strike a blow against the victim;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;end if.
-<br>
-
-<br>
-Effect of casting web at a wyvern:<font color=#404040><sup><a href="#note2">[2]</a></sup></font>
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;record outcome &quot;<font color=#000080>but the web is pathetically small compared to the great scale of the wyvern, and your efforts seem laughable</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;rule succeeds.
-<br>
-
-<br>
-</font>
-					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><p><i>Notes</i><p>
-<A name="note1"><font color=#404040>[1].  Oh, the ennui of the underworld. The practical effect of this line is to create Zoorl and leave him out of play at the start of the game: he is the demon brought into being by the "summon elemental" spell.</font><p>
-<A name="note2"><font color=#404040>[2].  It turns out to be convenient to have at least one monster which is basically proof against anything the player can throw at it, and that's the wyvern. In testing, it turned out that "web" gave a lucky player a chance to defeat a wyvern, which was inconvenient for the plot. So...</font><p>
-</font></p>
-					<p></p>
-				</td></tr></table>
-	</body>
+</body>
 
 </html>

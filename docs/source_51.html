@@ -1,360 +1,69 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<head>
+  <title>Graham Nelson - The Reliques of Tolti-Aph — 53 of 57</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="author" content="Graham Nelson" />
+  <meta name="description" content="A page for the game The Reliques of Tolti-Aph by Graham Nelson." />
+  <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+</head>
 
-	<head>
-		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
-		<meta name="generator" content="Adobe GoLive">
-		<title>The Reliques of Tolti-Aph - Source Text</title>
-	</head>
+<body>
 
-	<body bgcolor="#ffffff">
-		<table border="0" cellpadding="2"><tr><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></font></td><td align="left" valign="top">
-					<h3><font color="#0000cc" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">The Reliques of Tolti-Aph</font></h3>
-					<h3><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif">An interactive fiction by Graham Nelson (2005) - the Inform 7 source text</font></h3>
-				</td></tr>
-		<tr align="left" valign="top"><td align="left" valign="top"><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><a href="index.html">Home page</a><br><br><a href="source.html">Contents</a><br><a href="source_50.html">Previous</a><br><a href="source_52.html">Next</a><br><br><a href="source.txt">Complete text</a></font></td><td align="left" valign="top"><font face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"><b>Section W(e) - The Garret and the Archivist</b>
-<br>
+<div class = "container">
 
-<br>
-The hole is an open unopenable door. It is scenery. Understand &quot;<font color=#000080>opening</font>&quot; as the hole. It is above the Knotted Room and below the Dim Garret. The printed name of Dim Garret is &quot;<font color=#000080>[if archivist is lit and archivist is in location]Brilliant[otherwise]Dim[end if] Garret</font>&quot;. 
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;
-<br>
-Instead of searching the hole in the Garret:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You look down into the room below, hoping your makeshift ladder will hold up for the return trip.</font>&quot;
-<br>
+<div class ="sourcecoverimage">
+	<span><a href="Cover.jpg"><img src="Small Cover.jpg" border="1" /></a></span>
+</div>
 
-<br>
-Instead of searching the hole in the Knotted Room:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if a lit thing is in the Garret, say &quot;<font color=#000080>White light and odd shadows are visible through the hole, but you can make out no more than that.</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;otherwise say &quot;<font color=#000080>It looks dark up there.</font>&quot;
-<br>
+<div class ="sourceintroduction">
+	<h1>
+		<span>The Reliques of Tolti-Aph</span> <span class="pagination">— 53 of 57</span>
+	</h1>
+	<h2>
+		<span>Graham Nelson</span>
+	</h2>
+	<div class ="sourcebibliography">
+		<span>Release 1</span>
+	</div>
+</div>
 
-<br>
-The description of the Dim Garret is &quot;<font color=#000080>A round room[if the archivist is in location and archivist is lit], dirty with age[otherwise], very badly lit[end if], with a hole in the floor giving onto the room below.</font>&quot; The line of cubbyholes is fixed in place in the Dim Garret. &quot;<font color=#000080>[if fixed in place]Empty cubbyholes, made of decaying wood, line the walls: these might once have held strands of varying thickness and colour[otherwise]On the ground is a sort of box made of rotten wood[end if].</font>&quot; It is a container. Understand &quot;<font color=#000080>cubbyhole</font>&quot; or &quot;<font color=#000080>holes</font>&quot; or &quot;<font color=#000080>nook</font>&quot; or &quot;<font color=#000080>niche</font>&quot; or &quot;<font color=#000080>niches</font>&quot; or &quot;<font color=#000080>nooks</font>&quot; or &quot;<font color=#000080>box</font>&quot; or &quot;<font color=#000080>decaying</font>&quot; or &quot;<font color=#000080>lidless</font>&quot; as the cubbyholes. The line of cubbyholes is wood. 
-<br>
+<div class = "links">
+<ul>
+<li><a href="index.html">Home page</a></li><li><a href="source.html">Beginning</a></li><li><a href="source_50.html">Previous</a></li><li><a href="source_52.html">Next</a></li>
+</ul>
+</div>
 
-<br>
-Instead of attacking the fixed in place cubbyholes: now the line of cubbyholes is portable; change the printed name of the cubbyholes to &quot;<font color=#000080>box of rotten wood</font>&quot;; say &quot;<font color=#000080>You smash the cubbyholes, which come away from the wall in fragments, leaving you with a sort of detached, lidless box made of rotten wood.</font>&quot; 
-<br>
+<div class = "source">
+<p class="indent0"><span class="heading">Section W(e) - The Garret and the Archivist</span></p><p class="indent0"></p><p class="indent0">The hole is an open unopenable door. It is scenery. Understand &quot;<span class="quote">opening</span>&quot; as the hole. It is above the Knotted Room and below the Dim Garret. The printed name of Dim Garret is &quot;<span class="quote">[</span><span class="substitution">if archivist is lit and archivist is in location</span><span class="quote">]Brilliant[</span><span class="substitution">otherwise</span><span class="quote">]Dim[</span><span class="substitution">end if</span><span class="quote">] Garret</span>&quot;. </p><p class="indent1"></p><p class="indent0">Instead of searching the hole in the Garret:</p><p class="indent1">say &quot;<span class="quote">You look down into the room below, hoping your makeshift ladder will hold up for the return trip.</span>&quot;</p><p class="indent0"></p><p class="indent0">Instead of searching the hole in the Knotted Room:</p><p class="indent1">if a lit thing is in the Garret, say &quot;<span class="quote">White light and odd shadows are visible through the hole, but you can make out no more than that.</span>&quot;;</p><p class="indent1">otherwise say &quot;<span class="quote">It looks dark up there.</span>&quot;</p><p class="indent0"></p><p class="indent0">The description of the Dim Garret is &quot;<span class="quote">A round room[</span><span class="substitution">if the archivist is in location and archivist is lit</span><span class="quote">], dirty with age[</span><span class="substitution">otherwise</span><span class="quote">], very badly lit[</span><span class="substitution">end if</span><span class="quote">], with a hole in the floor giving onto the room below.</span>&quot; The line of cubbyholes is fixed in place in the Dim Garret. &quot;<span class="quote">[</span><span class="substitution">if fixed in place</span><span class="quote">]Empty cubbyholes, made of decaying wood, line the walls: these might once have held strands of varying thickness and colour[</span><span class="substitution">otherwise</span><span class="quote">]On the ground is a sort of box made of rotten wood[</span><span class="substitution">end if</span><span class="quote">].</span>&quot; It is a container. Understand &quot;<span class="quote">cubbyhole</span>&quot; or &quot;<span class="quote">holes</span>&quot; or &quot;<span class="quote">nook</span>&quot; or &quot;<span class="quote">niche</span>&quot; or &quot;<span class="quote">niches</span>&quot; or &quot;<span class="quote">nooks</span>&quot; or &quot;<span class="quote">box</span>&quot; or &quot;<span class="quote">decaying</span>&quot; or &quot;<span class="quote">lidless</span>&quot; as the cubbyholes. The line of cubbyholes is wood. </p><p class="indent0"></p><p class="indent0">Instead of attacking the fixed in place cubbyholes: now the line of cubbyholes is portable; change the printed name of the cubbyholes to &quot;<span class="quote">box of rotten wood</span>&quot;; say &quot;<span class="quote">You smash the cubbyholes, which come away from the wall in fragments, leaving you with a sort of detached, lidless box made of rotten wood.</span>&quot; </p><p class="indent0"></p><p class="indent0">Instead of attacking the portable cubbyholes: say &quot;<span class="quote">Haven't you done enough?</span>&quot;</p><p class="indent0"></p><p class="indent0">Instead of casting mend at the portable cubbyholes when the cubbyholes are not in the location:</p><p class="indent1">say &quot;<span class="quote">To mend properly, they'd have to be set down in the room, since they reassemble into furniture.</span>&quot;</p><p class="indent0"></p><p class="indent0">Effect of casting mend at the portable cubbyholes: </p><p class="indent1">now the line of cubbyholes is fixed in place;</p><p class="indent1">change the printed name of the cubbyholes to &quot;<span class="quote">line of cubbyholes</span>&quot;;</p><p class="indent1">record outcome &quot;<span class="quote">reassembling a rickety but functional container</span>&quot;;</p><p class="indent1">rule succeeds;</p><p class="indent0"></p><p class="indent0">The archivist is a priest in the Dim Garret. He is indifferent. The archivist can be active or passive. &quot;<span class="quote">Crouched in the center of the room, surrounded by filaments of various weights and colours, is an archivist[</span><span class="substitution">if lit</span><span class="quote">]. He glows with magelight[</span><span class="substitution">end if</span><span class="quote">].</span>&quot; The description is &quot;<span class="quote">He is very thin, as though he has been preserved by drying, and wears small round spectacles[</span><span class="substitution">if lit</span><span class="quote">]. He also glows with a flickering white light[</span><span class="substitution">end if</span><span class="quote">].</span>&quot;  </p><p class="indent0"></p><p class="indent0">Instead of going to the Garret when the player knows magelight and the archivist is unlit for the first time:</p><p class="indent1">say &quot;<span class="quote">You hesitate - after all, the old lunatic has probably gone out like a snuffed lamp by now, and if you head up there you may be required to re-light him.</span>&quot;</p><p class="indent0"></p><p class="indent0">Instead of attacking the archivist: say &quot;<span class="quote">You swing at him, but make no contact. 'Ah,' he says, 'you have come far too late to kill me, I fear.'</span>&quot;</p><p class="indent0"></p><p class="indent0">Instead of going to a room in the presence of the unlit archivist when the player knows magelight:</p><p class="indent1">say &quot;<span class="quote">The archivist stops you with a sign that ripples in the air[</span><span class="substitution">if the archivist is affected by silence</span><span class="quote">]. Apparently you will not be allowed to depart until you have done your part[</span><span class="substitution">otherwise</span><span class="quote">]. 'Not until you have given me light - such was our compact,' he says[</span><span class="substitution">end if</span><span class="quote">].</span>&quot;</p><p class="indent0"> </p><p class="indent0">Every turn:</p><p class="indent1">repeat through the Table of Enchantments:</p><p class="indent2">if the duration timer entry &lt; 1, now the archivist is not affected by the spell entry; </p><p class="indent1">if the archivist is not affected by magelight, now the archivist is unlit.</p><p class="indent0"></p><p class="indent0">Report casting in the presence of the archivist:</p><p class="indent1">say &quot;<span class="quote">As you intone the words of the [</span><span class="substitution">spell understood</span><span class="quote">] spell, </span>&quot;;</p><p class="indent1">if the current spell focus is something:</p><p class="indent2">say &quot;<span class="quote">[</span><span class="substitution">the current spell focus</span><span class="quote">] </span>&quot;;</p><p class="indent2">unless the player is holding the current spell focus, say &quot;<span class="quote">vanishes as it </span>&quot;;</p><p class="indent2">say &quot;<span class="quote">releases </span>&quot;;</p><p class="indent1">otherwise:</p><p class="indent2">say &quot;<span class="quote">your fingers release </span>&quot;;</p><p class="indent1">say emission of the spell understood;</p><p class="indent1">unless the second noun is a room, say &quot;<span class="quote"> at [</span><span class="substitution">the second noun</span><span class="quote">]</span>&quot;;</p><p class="indent1">say &quot;<span class="quote">, [</span><span class="substitution">current spell outcome</span><span class="quote">]</span>&quot;;</p><p class="indent1">if the archivist is affected by the spell understood:</p><p class="indent2">if duration of the spell understood is greater than 0:</p><p class="indent3">say &quot;<span class="quote">, which will last for [</span><span class="substitution">duration of the spell understood in words</span><span class="quote">] turn[</span><span class="substitution">s</span><span class="quote">]</span>&quot;;</p><p class="indent3">change the duration timer of the spell understood to the duration of the spell understood;</p><p class="indent3">increase the duration timer of the spell understood by 1;</p><p class="indent1">say &quot;<span class="quote">.</span>&quot;;</p><p class="indent1">consider the current spell event;</p><p class="indent1">now the archivist is passive;</p><p class="indent1">stop the action. </p><p class="indent0"></p><p class="indent0">Effect of casting mindsift at the archivist:</p><p class="indent1">record outcome &quot;<span class="quote">but his eyes rise to meet your gaze. [</span><span class="substitution">if archivist is affected by silence</span><span class="quote">]He smiles and shakes his head, and you know that you have just involuntarily given him a glimpse of your own history[</span><span class="substitution">otherwise</span><span class="quote">]He smiles. 'I wouldn't,' he warns you, in the dialect of your own hometown[</span><span class="substitution">end if</span><span class="quote">]</span>&quot;;</p><p class="indent1">rule succeeds.</p><p class="indent0">Effect of casting web at the archivist:</p><p class="indent1">record outcome &quot;<span class="quote">but the strands wrap your own arms, pinning you in place, and then dissolve again with a gesture from the priest</span>&quot;;</p><p class="indent1">rule succeeds.</p><p class="indent0">Effect of casting magic missile at the archivist:</p><p class="indent1">record outcome &quot;<span class="quote">but the fire turns and threatens to engulf you instead. Only at the last moment a motion from him diverts it</span>&quot;;</p><p class="indent1">rule succeeds.</p><p class="indent0">Effect of casting mend at the archivist:</p><p class="indent1">restore the health of the player;</p><p class="indent1">record outcome &quot;<span class="quote">but the spell reflects at you, restoring your strength instead. [</span><span class="substitution">if archivist is affected by silence</span><span class="quote">]The archivist's mouth opens in laughter you cannot hear[</span><span class="substitution">otherwise</span><span class="quote">]The archivist laughs, a bright and pleased chuckle. 'You have promise. Almost I wish I could still take an apprentice,' he remarks[</span><span class="substitution">end if</span><span class="quote">]</span>&quot;;</p><p class="indent1">rule succeeds.</p><p class="indent0">Effect of casting silence at in the presence of the archivist:</p><p class="indent1">record outcome &quot;<span class="quote">settling around the archivist, who makes a comment you are unable to hear</span>&quot;;</p><p class="indent1">now the archivist is affected by silence;</p><p class="indent1">rule succeeds.</p><p class="indent0">Effect of casting aerial shield at in the presence of the archivist:</p><p class="indent1">now the archivist is affected by aerial shield;</p><p class="indent1">record outcome &quot;<span class="quote">creating a shield of protection above the archivist</span>&quot;;</p><p class="indent1">rule succeeds. </p><p class="indent0">Effect of casting magelight at in the presence of the archivist:</p><p class="indent1">now the archivist is affected by magelight;</p><p class="indent1">now the archivist is lit;</p><p class="indent1">record outcome &quot;<span class="quote">settling on the archivist</span>&quot;;</p><p class="indent1">rule succeeds. </p><p class="indent0">Effect of casting cure baldness at the archivist:</p><p class="indent1">record outcome &quot;<span class="quote">but the spell rebounds on you. [</span><span class="substitution">if archivist is affected by silence</span><span class="quote">]The archivist smirks silently[</span><span class="substitution">otherwise</span><span class="quote">]'If I may venture an opinion informed by fashion many centuries past - the curls are unbecoming,' the archivist remarks[</span><span class="substitution">end if</span><span class="quote">]</span>&quot;;</p><p class="indent1">rule succeeds.  </p><p class="indent0"></p><p class="indent0">Instead of casting memorise at in the presence of the archivist:</p><p class="indent1">say &quot;<span class="quote">The archivist holds up a hand[</span><span class="substitution">if the archivist is affected by silence</span><span class="quote">]. He points at his own forehead warningly[</span><span class="substitution">otherwise</span><span class="quote">]. 'Don't, unless you wish me to be the one to learn the spell,' he warns[</span><span class="substitution">end if</span><span class="quote">].</span>&quot;</p><p class="indent0"></p><p class="indent0">Instead of giving something to the archivist:</p><p class="indent1">say &quot;<span class="quote">You hold out [</span><span class="substitution">the noun</span><span class="quote">], but when the archivist reaches out his fingers pass through yours without even the chill that comes of touching a ghost.</span>&quot;</p><p class="indent1"></p><p class="indent0">Instead of showing a display listed in the Table of Archivist Reactions to the archivist:</p><p class="indent1">if the archivist is affected by silence, say &quot;<span class="quote">He shrugs, pointing to his silenced mouth.</span>&quot;;</p><p class="indent1">say &quot;<span class="quote">[</span><span class="substitution">reaction entry</span><span class="quote">][</span><span class="substitution">paragraph break</span><span class="quote">]</span>&quot;.</p><p class="indent0">Instead of showing or giving the much-knotted string to the archivist:</p><p class="indent1">remove the much-knotted string from play;</p><p class="indent1">now the player knows magelight;</p><p class="indent1">say &quot;<span class="quote">The archivist leans close, murmuring to himself as he interprets the spell and commits it to memory - to your memory, that is.</span>&quot;</p><p class="indent1"></p><p class="indent0">The much-knotted string is a thing. The description is &quot;<span class="quote">At a guess, it is the equivalent of a spell scroll, holding some incantation of light.</span>&quot;</p><p class="indent1"></p><p class="indent0"><span class="heading">Table of Archivist Reactions</span></p><table><tr><td><span class="columnhead">display</span></td><td><span class="columnhead">reaction</span></td></tr>
+<tr><td>stretched scroll</td><td>&quot;<span class="quote">He reads it over through the spectacles. 'Not entirely purposeless, I think,' he remarks.</span>&quot;</td></tr>
+<tr><td>blank parchment</td><td>&quot;<span class="quote">'I am surprised no one has yet written on such a promising surface,' he says.</span>&quot;</td></tr>
+<tr><td>cursive diary</td><td>&quot;<span class="quote">'Ah, pity,' he says. 'She had courage, but courage alone does not always suffice.'</span>&quot;</td></tr>
+</table><p class="indent0"></p><p class="indent0">Every turn:  </p><p class="indent1">if the player can see the archivist and the archivist is active:</p><p class="indent2">if the archivist is affected by silence:</p><p class="indent3">say &quot;<span class="quote">The archivist keeps working, but you cannot hear a move he makes.</span>&quot;;</p><p class="indent2">otherwise:</p><p class="indent3">if the archivist is lit:</p><p class="indent4">say &quot;<span class="quote">The archivist works swiftly over his threads, comparing colours.</span>&quot;;</p><p class="indent3">otherwise:</p><p class="indent4">repeat through Table of Archivist Chatter:</p><p class="indent5">say &quot;<span class="quote">[</span><span class="substitution">reaction entry</span><span class="quote">][</span><span class="substitution">paragraph break</span><span class="quote">]</span>&quot;;</p><p class="indent5">blank out the whole row;</p><p class="indent5">stop the action;</p><p class="indent4">say &quot;<span class="quote">The archivist's fingers move briskly over the strands, knotting here and there.</span>&quot;;</p><p class="indent1">otherwise:</p><p class="indent2">now the archivist is active.</p><p class="indent1"></p><p class="indent0"></p><p class="indent0">Instead of asking the archivist about a topic listed in the Table of Archivist Chatter: </p><p class="indent1">if the archivist is affected by silence, say &quot;<span class="quote">He points at his silenced throat.</span>&quot; instead;</p><p class="indent1">now the archivist is passive;</p><p class="indent1">say &quot;<span class="quote">[</span><span class="substitution">reaction entry</span><span class="quote">][</span><span class="substitution">paragraph break</span><span class="quote">]</span>&quot;;</p><p class="indent1">blank out the whole row.</p><p class="indent0"></p><p class="indent0">Instead of asking the archivist about something, say &quot;<span class="quote">'What? what? Oh, you talk nothing but nonsense,' says the archivist.</span>&quot;</p><p class="indent0"></p><p class="indent0">Instead of answering the archivist that something: try asking the archivist about it. Instead of telling the Archivist about something: try asking the archivist about it.</p><p class="indent0"> </p><p class="indent0"><span class="heading">Table of Archivist Chatter</span></p><table><tr><td><span class="columnhead">topic</span></td><td><span class="columnhead">reaction</span></td></tr>
+<tr><td>&quot;<span class="quote">hello/hi/hey</span>&quot;</td><td>&quot;<span class="quote">'You again,' remarks the archivist, without looking at you. 'Or is this your first time? No matter.'</span>&quot;</td></tr>
+<tr><td>&quot;<span class="quote">time/age/temporal/reflection</span>&quot;</td><td>&quot;<span class="quote">'The time spell takes all my strength,' he says. 'I maintain it, it maintains me, nothing left over.'</span>&quot;</td></tr>
+<tr><td>&quot;<span class="quote">time spell/spell/time/scroll/temporal/age/infinity/infinite/eternity</span>&quot;</td><td>&quot;<span class="quote">The archivist holds up a peculiar scroll, twisted and stitched top to bottom so that it has no end or beginning, but as you reach out to touch it your fingers slip through. He tucks the scroll back inside his clothing. [</span><span class="substitution">paragraph break</span><span class="quote">]'Not for you,' he says. 'It allows doing things and undoing them, going forward, going back... Such spells are not intended for us to discover, I think.'[</span><span class="substitution">paragraph break</span><span class="quote">]Then he frowns, seeming to regret this revelation. There is a sticky sort of POP in the air around your head, and you forget -</span>&quot;</td></tr>
+<tr><td>&quot;<span class="quote">task/job/knots/knot/work/threads/thread/rope/ropes/archive/archives</span>&quot;</td><td>&quot;<span class="quote">'You know,' says the archivist, glancing at you over the top of his spectacles. 'This task would be easier with a bit of light. The threads have colours as well as knots.'</span>&quot;</td></tr>
+<tr><td>&quot;<span class="quote">meaning/purpose/subject/thread/threads/rope/ropes/knots/knot/archive/archives</span>&quot;</td><td>&quot;<span class="quote">'All day and night counting and comparing,' he mutters, perhaps to you or perhaps to himself. 'Comparing and counting. Oh, sometimes I go out and practice a little archery, I suppose. D'you know, a good high arrow from here can even reach the old Longwall turret? But counting! That's the thing.'</span>&quot;</td></tr>
+<tr><td>&quot;<span class="quote">light/lights/light spell</span>&quot;</td><td>&quot;<span class="quote">'I'd perform the light spell myself, but I haven't the strength, nor the wood either.'</span>&quot;</td></tr>
+<tr><td>&quot;<span class="quote">light/lights/light spell</span>&quot;</td><td>&quot;<span class="quote">'You could do it, of course,' he says. 'Learn the light spell, cast it for me. You could keep it afterwards, if you wanted. In your head. A payment in your mind, what think you?' He tilts his head this way and that, like a bird. 'Yes?'</span>&quot;</td></tr>
+<tr><td>&quot;<span class="quote">light/lights/light spell/payment/learning/memorizing/memorising/casting</span>&quot;</td><td>&quot;<span class="quote">He selects a new strand and begins knotting it carefully, counting, muttering. You cannot hear the words. [</span><span class="substitution">string placement</span><span class="quote">] </span>&quot; </td></tr>
+<tr><td>&quot;<span class="quote">darkness/dark</span>&quot;</td><td>&quot;<span class="quote">[</span><span class="substitution">if archivist is lit</span><span class="quote">]He smiles. [</span><span class="substitution">otherwise</span><span class="quote">]He works, squinting down at the strands and cursing the darkness. [</span><span class="substitution">end if</span><span class="quote">]</span>&quot;</td></tr>
+<tr><td>&quot;<span class="quote">help/assistance</span>&quot;</td><td>&quot;<span class="quote">[</span><span class="substitution">if archivist is lit</span><span class="quote">]'Don't think I'm not grateful,' he says. 'But I must work now while the spell holds.' [</span><span class="substitution">otherwise</span><span class="quote">]'You could help if you wanted to,' he says, 'but if not, I wish you'd go away.' He follows this with a sharp glance. [</span><span class="substitution">end if</span><span class="quote">]</span>&quot;</td></tr>
+<tr><td>&quot;<span class="quote">plaster/water/goddess</span>&quot;</td><td>&quot;<span class="quote">[</span><span class="substitution">if archivist is lit</span><span class="quote">]'I do not know whether the goddess yet lives,' he says. 'Perhaps she has only moved away.' [</span><span class="substitution">otherwise</span><span class="quote">]The archivist squints over his thread, muttering: 'Water as a liquid? or the goddess herself? Difficult to say without the colours... Would you say this was blue? or green? No, you won't be able to tell any better than I.' [</span><span class="substitution">end if</span><span class="quote">]</span>&quot;</td></tr>
+<tr><td>&quot;<span class="quote">plaster/water/goddess/blue/green</span>&quot;</td><td>&quot;<span class="quote">[</span><span class="substitution">if archivist is lit</span><span class="quote">]'Grey-green is her colour, if you want to find the goddess in the strands.' But of course you wouldn't be able to make any sense of them anyway. [</span><span class="substitution">otherwise</span><span class="quote">]'They should have put a lamp in here with me,' says the archivist. 'I told them - bad arrangement - temple bureaucrats were never very wise.' [</span><span class="substitution">end if</span><span class="quote">]</span>&quot;</td></tr>
+<tr><td>&quot;<span class="quote">smart/arrangement/bureaucrats/temple</span>&quot;</td><td>&quot;<span class="quote">'This was a bustling place once,' he says. 'You wouldn't believe... they're all gone now, of course, of course. Demanding tribute is a dangerous business to get into.'</span>&quot;</td></tr>
+<tr><td>&quot;<span class="quote">tribute</span>&quot;</td><td>&quot;<span class="quote">'Folk get testy when their wells run dry,' he comments, counting. 'Apt to place blame - four, five, that's a drought for certain, and not just a dry spell.' He holds up the offending strand for you to see, but you make no more of its five-knot-row than he just told you.</span>&quot;</td></tr>
+<tr><td>&quot;<span class="quote">snake/snakes/copper-scaled snake</span>&quot;</td><td>&quot;<span class="quote">'Shrinks year by year as its curse works out,' he remarks, to the air. 'It won't be much more than a grub when the spell ends. I could look - but I don't like to go that far ahead.'</span>&quot;</td></tr>
+</table><p class="indent0"> </p><p class="indent0">To say string placement:</p><p class="indent1">if cubbyholes are fixed in place and cubbyholes are in location:</p><p class="indent2">say &quot;<span class="quote">Then he rises and tucks the strand into one of the cubbyholes; and the moment his hand leaves it, it grows old and dry and brittle as though it has been lying there for centuries. </span>&quot;;</p><p class="indent2">move much-knotted string to cubbyholes;</p><p class="indent1">otherwise:</p><p class="indent2">say &quot;<span class="quote">Then he rises and lays the string a few feet from himself; and when his hand leaves it, it grows old and dry and brittle as though it has been lying there for centuries. </span>&quot;;</p><p class="indent2">move much-knotted string to location.</p><p class="indent0"></p>
+</div>
 
-<br>
-Instead of attacking the portable cubbyholes: say &quot;<font color=#000080>Haven't you done enough?</font>&quot;
-<br>
+<div class ="notes">
 
-<br>
-Instead of casting mend at the portable cubbyholes when the cubbyholes are not in the location:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>To mend properly, they'd have to be set down in the room, since they reassemble into furniture.</font>&quot;
-<br>
+</div>
 
-<br>
-Effect of casting mend at the portable cubbyholes: 
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;now the line of cubbyholes is fixed in place;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;change the printed name of the cubbyholes to &quot;<font color=#000080>line of cubbyholes</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;record outcome &quot;<font color=#000080>reassembling a rickety but functional container</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;rule succeeds;
-<br>
+</div>
 
-<br>
-The archivist is a priest in the Dim Garret. It is indifferent. The archivist can be active or passive. &quot;<font color=#000080>Crouched in the center of the room, surrounded by filaments of various weights and colours, is an archivist[if lit]. He glows with magelight[end if].</font>&quot; The description is &quot;<font color=#000080>He is very thin, as though he has been preserved by drying, and wears small round spectacles[if lit]. He also glows with a flickering white light[end if].</font>&quot;  
-<br>
-
-<br>
-Instead of going to the Garret when the player knows magelight and the archivist is unlit for the first time:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You hesitate - after all, the old lunatic has probably gone out like a snuffed lamp by now, and if you head up there you may be required to re-light him.</font>&quot;
-<br>
-
-<br>
-Instead of attacking the archivist: say &quot;<font color=#000080>You swing at him, but make no contact. 'Ah,' he says, 'you have come far too late to kill me, I fear.'</font>&quot;
-<br>
-
-<br>
-Instead of going to a room in the presence of the unlit archivist when the player knows magelight:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>The archivist stops you with a sign that ripples in the air[if the archivist is affected by silence]. Apparently you will not be allowed to depart until you have done your part[otherwise]. 'Not until you have given me light - such was our compact,' he says[end if].</font>&quot;
-<br>
- 
-<br>
-Every turn:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;repeat through the Table of Enchantments
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;begin; 
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the duration timer entry &lt; 1,   now the archivist is not affected by the spell entry; 
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;end repeat;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the archivist is not affected by magelight, now the archivist is unlit.
-<br>
-
-<br>
-Report casting in the presence of the archivist:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>As you intone the words of the [spell understood] spell, </font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the current spell focus is something
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[the current spell focus] </font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the player is not holding the current spell focus, say &quot;<font color=#000080>vanishes as it </font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>releases </font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>your fingers release </font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;end if;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;say emission of the spell understood;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the second noun is not a room, say &quot;<font color=#000080> at [the second noun]</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>, [current spell outcome]</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the archivist is affected by the spell understood begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if duration of the spell understood is greater than 0
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>, which will last for [duration of the spell understood in words] turn[s]</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;change the duration timer of the spell understood to the duration of the spell understood;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;increase the duration timer of the spell understood by 1;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;end if;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>.</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;consider the current spell event;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;now the archivist is passive;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;stop the action. 
-<br>
-
-<br>
-Effect of casting mindsift at the archivist:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;record outcome &quot;<font color=#000080>but his eyes rise to meet your gaze. [if archivist is affected by silence]He smiles and shakes his head, and you know that you have just involuntarily given him a glimpse of your own history[otherwise]He smiles. 'I wouldn't,' he warns you, in the dialect of your own hometown[end if]</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;rule succeeds.
-<br>
-Effect of casting web at the archivist:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;record outcome &quot;<font color=#000080>but the strands wrap your own arms, pinning you in place, and then dissolve again with a gesture from the priest</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;rule succeeds.
-<br>
-Effect of casting magic missile at the archivist:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;record outcome &quot;<font color=#000080>but the fire turns and threatens to engulf you instead. Only at the last moment a motion from him diverts it</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;rule succeeds.
-<br>
-Effect of casting mend at the archivist:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;restore the health of the player;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;record outcome &quot;<font color=#000080>but the spell reflects at you, restoring your strength instead. [if archivist is affected by silence]The archivist's mouth opens in laughter you cannot hear[otherwise]The archivist laughs, a bright and pleased chuckle. 'You have promise. Almost I wish I could still take an apprentice,' he remarks[end if]</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;rule succeeds.
-<br>
-Effect of casting silence at in the presence of the archivist:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;record outcome &quot;<font color=#000080>settling around the archivist, who makes a comment you are unable to hear</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;now the archivist is affected by silence;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;rule succeeds.
-<br>
-Effect of casting aerial shield at in the presence of the archivist:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;now the archivist is affected by aerial shield;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;record outcome &quot;<font color=#000080>creating a shield of protection above the archivist</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;rule succeeds. 
-<br>
-Effect of casting magelight at in the presence of the archivist:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;now the archivist is affected by magelight;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;now the archivist is lit;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;record outcome &quot;<font color=#000080>settling on the archivist</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;rule succeeds. 
-<br>
-Effect of casting cure baldness at the archivist:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;record outcome &quot;<font color=#000080>but the spell rebounds on you. [if archivist is affected by silence]The archivist smirks silently[otherwise]'If I may venture an opinion informed by fashion many centuries past - the curls are unbecoming,' the archivist remarks[end if]</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;rule succeeds.  
-<br>
-
-<br>
-Instead of casting memorise at in the presence of the archivist:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>The archivist holds up a hand[if the archivist is affected by silence]. He points at his own forehead warningly[otherwise]. 'Don't, unless you wish me to be the one to learn the spell,' he warns[end if].</font>&quot;
-<br>
-
-<br>
-Instead of giving something to the archivist:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>You hold out [the noun], but when the archivist reaches out his fingers pass through yours without even the chill that comes of touching a ghost.</font>&quot;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;
-<br>
-Instead of showing a display listed in the Table of Archivist Reactions to the archivist:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the archivist is affected by silence, say &quot;<font color=#000080>He shrugs, pointing to his silenced mouth.</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[reaction entry][paragraph break]</font>&quot;.
-<br>
-Instead of showing or giving the much-knotted string to the archivist:
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;remove the much-knotted string from play;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;now the player knows magelight;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>The archivist leans close, murmuring to himself as he interprets the spell and commits it to memory - to your memory, that is.</font>&quot;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;
-<br>
-The much-knotted string is a thing. The description is &quot;<font color=#000080>At a guess, it is the equivalent of a spell scroll, holding some incantation of light.</font>&quot;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;
-<br>
-<b>Table of Archivist Reactions</b>
-<br>
-<table><tr><td halign="left" valign="top"><u>display</u>&nbsp;&nbsp;</td><td halign="left" valign="top"><u> reaction</u></td></tr>
-<tr><td halign="left" valign="top">stretched scroll&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>He reads it over through the spectacles. 'Not entirely purposeless, I think,' he remarks.</font>&quot;</td></tr>
-<tr><td halign="left" valign="top">blank parchment&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>'I am surprised no one has yet written on such a promising surface,' he says.</font>&quot;</td></tr>
-<tr><td halign="left" valign="top">cursive diary&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>'Ah, pity,' he says. 'She had courage, but courage alone does not always suffice.'</font>&quot;</td></tr>
-</table>
-<br>
-Every turn:  
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the player can see the archivist and the archivist is active
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the archivist is affected by silence
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>The archivist keeps working, but you cannot hear a move he makes.</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if the archivist is lit
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>The archivist works swiftly over his threads, comparing colours.</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;repeat through Table of Archivist Chatter
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[reaction entry][paragraph break]</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;blank out the whole row;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stop the action;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end repeat;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>The archivist's fingers move briskly over the strands, knotting here and there.</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end if;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;otherwise;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;now the archivist is active;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;end if.
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;
-<br>
-
-<br>
-Instead of asking the archivist about a topic listed in the Table of Archivist Chatter: 
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if the archivist is affected by silence, say &quot;<font color=#000080>He points at his silenced throat.</font>&quot; instead;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;now the archivist is passive;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;say &quot;<font color=#000080>[reaction entry][paragraph break]</font>&quot;;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;blank out the whole row.
-<br>
-
-<br>
-Instead of asking the archivist about something, say &quot;<font color=#000080>'What? what? Oh, you talk nothing but nonsense,' says the archivist.</font>&quot;
-<br>
-
-<br>
-Instead of answering the archivist that something: try asking the archivist about it. Instead of telling the Archivist about something: try asking the archivist about it.
-<br>
- 
-<br>
-<b>Table of Archivist Chatter</b>
-<br>
-<table><tr><td halign="left" valign="top"><u>topic</u>&nbsp;&nbsp;</td><td halign="left" valign="top"><u> reaction</u></td></tr>
-<tr><td halign="left" valign="top">&quot;<font color=#000080>hello/hi/hey</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>'You again,' remarks the archivist, without looking at you. 'Or is this your first time? No matter.'</font>&quot;</td></tr>
-<tr><td halign="left" valign="top">&quot;<font color=#000080>time/age/temporal/reflection</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>'The time spell takes all my strength,' he says. 'I maintain it, it maintains me, nothing left over.'</font>&quot;</td></tr>
-<tr><td halign="left" valign="top">&quot;<font color=#000080>time spell/spell/time/scroll/temporal/age/infinity/infinite/eternity</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>The archivist holds up a peculiar scroll, twisted and stitched top to bottom so that it has no end or beginning, but as you reach out to touch it your fingers slip through. He tucks the scroll back inside his clothing. [paragraph break]'Not for you,' he says. 'It allows doing things and undoing them, going forward, going back... Such spells are not intended for us to discover, I think.'[paragraph break]Then he frowns, seeming to regret this revelation. There is a sticky sort of POP in the air around your head, and you forget -[line break]</font>&quot;</td></tr>
-<tr><td halign="left" valign="top">&quot;<font color=#000080>task/job/knots/knot/work/threads/thread/rope/ropes/archive/archives</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>'You know,' says the archivist, glancing at you over the top of his spectacles. 'This task would be easier with a bit of light. The threads have colours as well as knots.'</font>&quot;</td></tr>
-<tr><td halign="left" valign="top">&quot;<font color=#000080>meaning/purpose/subject/thread/threads/rope/ropes/knots/knot/archive/archives</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>'All day and night counting and comparing,' he mutters, perhaps to you or perhaps to himself. 'Comparing and counting. Oh, sometimes I go out and practice a little archery, I suppose. D'you know, a good high arrow from here can even reach the old Longwall turret? But counting! That's the thing.'</font>&quot;</td></tr>
-<tr><td halign="left" valign="top">&quot;<font color=#000080>light/lights/light spell</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>'I'd perform the light spell myself, but I haven't the strength, nor the wood either.'</font>&quot;</td></tr>
-<tr><td halign="left" valign="top">&quot;<font color=#000080>light/lights/light spell</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>'You could do it, of course,' he says. 'Learn the light spell, cast it for me. You could keep it afterwards, if you wanted. In your head. A payment in your mind, what think you?' He tilts his head this way and that, like a bird. 'Yes?'</font>&quot;</td></tr>
-<tr><td halign="left" valign="top">&quot;<font color=#000080>light/lights/light spell/payment/learning/memorizing/memorising/casting</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>He selects a new strand and begins knotting it carefully, counting, muttering. You cannot hear the words. [string placement] </font>&quot; </td></tr>
-<tr><td halign="left" valign="top">&quot;<font color=#000080>darkness/dark</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>[if archivist is lit]He smiles. [otherwise]He works, squinting down at the strands and cursing the darkness. [end if]</font>&quot;</td></tr>
-<tr><td halign="left" valign="top">&quot;<font color=#000080>help/assistance</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>[if archivist is lit]'Don't think I'm not grateful,' he says. 'But I must work now while the spell holds.' [otherwise]'You could help if you wanted to,' he says, 'but if not, I wish you'd go away.' He follows this with a sharp glance. [end if]</font>&quot;</td></tr>
-<tr><td halign="left" valign="top">&quot;<font color=#000080>plaster/water/goddess</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>[if archivist is lit]'I do not know whether the goddess yet lives,' he says. 'Perhaps she has only moved away.' [otherwise]The archivist squints over his thread, muttering: 'Water as a liquid? or the goddess herself? Difficult to say without the colours... Would you say this was blue? or green? No, you won't be able to tell any better than I.' [end if]</font>&quot;</td></tr>
-<tr><td halign="left" valign="top">&quot;<font color=#000080>plaster/water/goddess/blue/green</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>[if archivist is lit]'Grey-green is her colour, if you want to find the goddess in the strands.' But of course you wouldn't be able to make any sense of them anyway. [otherwise]'They should have put a lamp in here with me,' says the archivist. 'I told them - bad arrangement - temple bureaucrats were never very wise.' [end if]</font>&quot;</td></tr>
-<tr><td halign="left" valign="top">&quot;<font color=#000080>smart/arrangement/bureaucrats/temple</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>'This was a bustling place once,' he says. 'You wouldn't believe... they're all gone now, of course, of course. Demanding tribute is a dangerous business to get into.'</font>&quot;</td></tr>
-<tr><td halign="left" valign="top">&quot;<font color=#000080>tribute</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>'Folk get testy when their wells run dry,' he comments, counting. 'Apt to place blame - four, five, that's a drought for certain, and not just a dry spell.' He holds up the offending strand for you to see, but you make no more of its five-knot-row than he just told you.</font>&quot;</td></tr>
-<tr><td halign="left" valign="top">&quot;<font color=#000080>snake/snakes/copper-scaled snake</font>&quot;&nbsp;&nbsp;</td><td halign="left" valign="top"> &quot;<font color=#000080>'Shrinks year by year as its curse works out,' he remarks, to the air. 'It won't be much more than a grub when the spell ends. I could look - but I don't like to go that far ahead.'</font>&quot;</td></tr>
-<tr><td halign="left" valign="top"> </td></tr>
-<tr><td halign="left" valign="top">To say string placement:</td></tr>
-<tr><td halign="left" valign="top">&nbsp;&nbsp;</td><td halign="left" valign="top"> if cubbyholes are fixed in place and cubbyholes are in location</td></tr>
-<tr><td halign="left" valign="top">&nbsp;&nbsp;</td><td halign="left" valign="top"> begin;</td></tr>
-<tr><td halign="left" valign="top">&nbsp;&nbsp;</td><td halign="left" valign="top"> say &quot;<font color=#000080>Then he rises and tucks the strand into one of the cubbyholes; and the moment his hand leaves it, it grows old and dry and brittle as though it has been lying there for centuries. </font>&quot;;</td></tr>
-<tr><td halign="left" valign="top">&nbsp;&nbsp;</td><td halign="left" valign="top"> move much-knotted string to cubbyholes;</td></tr>
-<tr><td halign="left" valign="top">&nbsp;&nbsp;</td><td halign="left" valign="top"> otherwise;</td></tr>
-<tr><td halign="left" valign="top">&nbsp;&nbsp;</td><td halign="left" valign="top"> say &quot;<font color=#000080>Then he rises and lays the string a few feet from himself; and when his hand leaves it, it grows old and dry and brittle as though it has been lying there for centuries. </font>&quot;;</td></tr>
-<tr><td halign="left" valign="top">&nbsp;&nbsp;</td><td halign="left" valign="top"> move much-knotted string to location;</td></tr>
-<tr><td halign="left" valign="top">&nbsp;&nbsp;</td><td halign="left" valign="top"> end if.</td></tr>
-</table>
-<br>
-</font>
-					<p><font size="-1" face="Trebuchet MS, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif"></font></p>
-					<p></p>
-				</td></tr></table>
-	</body>
+</body>
 
 </html>
