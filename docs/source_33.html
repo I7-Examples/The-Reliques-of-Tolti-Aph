@@ -13,7 +13,7 @@
 <div class = "container">
 
 <div class ="sourcecoverimage">
-	<span><a href="Cover.jpg"><img src="Small Cover.jpg" border="1" /></a></span>
+	<span><a href="Cover.jpg"><img src="Small Cover.jpg" border="1"></a></span>
 </div>
 
 <div class ="sourceintroduction">
@@ -24,7 +24,7 @@
 		<span>Graham Nelson</span>
 	</h2>
 	<div class ="sourcebibliography">
-		<span>Release 1</span>
+		<span>Release 3</span>
 	</div>
 </div>
 
@@ -35,7 +35,7 @@
 </div>
 
 <div class = "source">
-<p class="indent0"><span class="heading">Section E(f) - Solid Rock and labyrinth boundaries</span></p><p class="indent0"></p><p class="indent0"><span class="comment">[&quot;Solid Rock&quot; is a room which is never visited, but which is used to indicate blocked-off routes: an exit leading to Solid Rock is considered blocked. Initially, when none of the labyrinth rooms have been &quot;played&quot; into the maze, all exits are blocked in this way. Solid Rock is also used as a special value meaning that no room is at a given grid position: thus &quot;the room at &lt;1,4,12&gt;&quot; might evaluate to a room present in the maze, or it might evaluate to Solid Rock.]</span></p><p class="indent0"></p><p class="indent0">Solid Rock is a room.</p><p class="indent0"></p><p class="indent0">To make all labyrinth exits lead to Solid Rock:</p><p class="indent1">repeat with blank room running through labyrinth rooms:</p><p class="indent2">let Sh be the shape of the blank room;</p><p class="indent2">if U part of Sh is 1, change the up exit of blank room to Solid Rock;</p><p class="indent2">if D part of Sh is 1, change the down exit of blank room to Solid Rock;</p><p class="indent2">if N part of Sh is 1, change the north exit of blank room to Solid Rock;</p><p class="indent2">if E part of Sh is 1, change the east exit of blank room to Solid Rock;</p><p class="indent2">if S part of Sh is 1, change the south exit of blank room to Solid Rock;</p><p class="indent2">if W part of Sh is 1, change the west exit of blank room to Solid Rock.</p><p class="indent0"></p><p class="indent0">To decide which room is the room at (grid ref - a spatial coordinate):</p><p class="indent1">if grid ref is &lt;0,0,0&gt; then decide on Solid Rock;</p><p class="indent1">repeat with R running through rooms:</p><p class="indent2">if the grid position of R is grid ref then decide on R;</p><p class="indent1">decide on Solid Rock.</p><p class="indent0"></p>
+<p class="indent0"><span class="heading">Section E(f) - Solid Rock and labyrinth boundaries</span></p><p class="indent0"><span class="comment">[&quot;Solid Rock&quot; is a room which is never visited, but which is used to indicate blocked-off routes: an exit leading to Solid Rock is considered blocked. Initially, when none of the labyrinth rooms have been &quot;played&quot; into the maze, all exits are blocked in this way. Solid Rock is also used as a special value meaning that no room is at a given grid position: thus &quot;the room at &lt;1,4,12&gt;&quot; might evaluate to a room present in the maze, or it might evaluate to Solid Rock.]</span></p><p class="indent0">Solid Rock is a room.</p><p class="indent0">To make all labyrinth exits lead to Solid Rock:</p><p class="indent1">repeat with blank room running through labyrinth rooms:</p><p class="indent2">let Sh be the shape of the blank room;</p><p class="indent2">if U part of Sh is 1, change the up exit of blank room to Solid Rock;</p><p class="indent2">if D part of Sh is 1, change the down exit of blank room to Solid Rock;</p><p class="indent2">if N part of Sh is 1, change the north exit of blank room to Solid Rock;</p><p class="indent2">if E part of Sh is 1, change the east exit of blank room to Solid Rock;</p><p class="indent2">if S part of Sh is 1, change the south exit of blank room to Solid Rock;</p><p class="indent2">if W part of Sh is 1, change the west exit of blank room to Solid Rock.</p><p class="indent0">To decide which room is the room at (grid ref - a spatial coordinate):</p><p class="indent1">if grid ref is &lt;0,0,0&gt;:</p><p class="indent2">decide on Solid Rock;</p><p class="indent1">repeat with R running through rooms:</p><p class="indent2">if the grid position of R is grid ref:</p><p class="indent3">decide on R;</p><p class="indent1">decide on Solid Rock.</p>
 </div>
 
 <div class ="notes">
