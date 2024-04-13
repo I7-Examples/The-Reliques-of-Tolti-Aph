@@ -1,6 +1,5 @@
 "The Reliques of Tolti-Aph" by Graham Nelson
 
-Include (- Serial "201217"; -).
 The release number is 3.
 
 [Some commentators on interactive fiction suggest that it arose directly from the invention of role-playing games in the 1970s, when the nineteenth-century tabletop wargame collided with the potent cult of J. R. R. Tolkien in American college campuses. It is certainly true that Will Crowther, co-author of what is generally regarded as the first true work of IF, had been an early player of E. Gary Gygax and Dave Arneson's prototype role-playing game "Dungeons and Dragons: Rules for Fantastic Medieval Wargames Campaigns Playable with Paper and Pencil and Miniature Figures" (1974) - later, more snappily, just D&D. On the other hand, surprisingly few IF authors in the last thirty years have adopted styles of play which resemble RPGs at all closely; and the book-keeping, the randomness, the simulationist nature, the volume of detail and the open-endedness implied by a "campaign" all make the implementation of a RPG in interactive fiction something of a technical challenge. So that is what we are going to do: or at least we will work through enough of a system of RPG-like rules to demonstrate the possibility.]
